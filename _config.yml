@@ -17,6 +17,7 @@ google_analytics: G-43895YHF45 # out your google-analytics code
 # Build settings
 
 markdown: kramdown
+highlighter: rouge
 kramdown:
   input: GFM
   syntax_highlighter: rouge
