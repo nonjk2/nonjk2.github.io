@@ -6,6 +6,7 @@ categories: [blog, TIL]
 tags: [JavaScript, ES6]
 date: 2023-06-13 15:00:00 -0400
 background: "/img/posts/06.jpg"
+permalink: /hosting/
 ---
 
 <!-- <div style="max-width:800px; margin:0 auto"> -->
@@ -95,7 +96,7 @@ var , const , let의 차이를 알 수 있기 위해서는 선언과 할당의 �
 
 `function` 이나 `return` 키워드 없이 함수를 만드는 방법.
 
-```jsx
+```javaScript
 // ES5
 function func() {
 	return true
@@ -131,7 +132,7 @@ condition ? ture인경우 : false인경우
 
 배열 `[]` 이나 객체 `{}` 의 속성을 분해해서 그 값을 변수에 담을 수 있게 해주는 문법
 
-```jsx
+```javaScript
 // 배열의 경우
 let [value1, value2] = [1, "new"];
 console.log(value1); // 1
@@ -178,7 +179,7 @@ console.log(birthDay); // today
 
 객체의 key와 value 값이 같다면 , 생략 가능
 
-```jsx
+```javaScript
 const name = "nbc";
 const age = "30";
 
@@ -199,7 +200,7 @@ const obj = {
 
 배열이나 객체를 전개하는 문법. 구조분해할당과 함께 많이 사용.
 
-```jsx
+```javaScript
 // 배열
 let arr = [1, 2, 3];
 
@@ -220,7 +221,7 @@ console.log(user2.name); // nbc2
 
 ---
 
-```jsx
+```javaScript
 function func(a, b, ...args) {
   console.log(...args);
 }
@@ -237,8 +238,8 @@ func(1, 2, 3, 4, 5, 6, 7); // 3 4 5 6 7
 
 백틱(```) 과 `${}` 로 표현
 
-```jsx
-`string text 
+```javaScript
+`string text
 string text line2``string text ${value} text`;
 ```
 
