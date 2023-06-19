@@ -2,7 +2,7 @@ title: 개발자 최은석
 email: nonjk2@gmail.com
 description: TIL 과 WIL 블로그
 author: 최은석
-baseurl: "https://nonjk2.github.io/"
+baseurl: "/startbootstrap-clean-blog-jekyll"
 url: "https://deveundol.com"
 
 # Social Profiles
@@ -22,4 +22,4 @@ paginate_path: "/posts/page:num/"
 plugins:
   - jekyll-feed
   - jekyll-paginate
-  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
+  - jekyll-sitemap
