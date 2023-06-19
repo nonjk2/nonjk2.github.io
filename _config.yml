@@ -2,8 +2,8 @@ title: 개발자 최은석
 email: nonjk2@gmail.com
 description: TIL 과 WIL 블로그
 author: 최은석
-baseurl: "/startbootstrap-clean-blog-jekyll"
-url: "https://deveundol.com"
+baseurl: "/"
+url: "https://nonjk2.github.io"
 
 # Social Profiles
 twitter_username:
@@ -11,11 +11,11 @@ github_username: 최은석
 facebook_username:
 instagram_username:
 linkedin_username:
-remote_theme: StartBootstrap/startbootstrap-clean-blog-jekyll
 # Add your google-analytics ID here to activate google analytics
 google_analytics: G-43895YHF45 # out your google-analytics code
 
 # Build settings
+
 markdown: kramdown
 paginate: 5
 paginate_path: "/posts/page:num/"
