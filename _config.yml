@@ -11,7 +11,7 @@ github_username: 최은석
 facebook_username:
 instagram_username:
 linkedin_username:
-
+remote_theme: StartBootstrap/startbootstrap-clean-blog-jekyll
 # Add your google-analytics ID here to activate google analytics
 google_analytics: G-43895YHF45 # out your google-analytics code
 
