@@ -1,26 +1,25 @@
-# Dependencies
-markdown: redcarpet
-highlighter: pygments
+title: 개발자 최은석
+email: nonjk2@gmail.com
+description: TIL 과 WIL 블로그
+author: 최은석
+baseurl: "https://deveundol.com/"
+url: "https://deveundol.com/"
 
-# Permalinks
-permalink: pretty
-relative_permalinks: true
+# Social Profiles
+twitter_username:
+github_username: 최은석
+facebook_username:
+instagram_username:
+linkedin_username:
 
-# Setup
-title: 은석 블로그
-tagline: "A Jekyll theme"
-description: 'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url: http://hyde.getpoole.com
-baseurl: /
+# Add your google-analytics ID here to activate google analytics
+google_analytics: G-43895YHF45 # out your google-analytics code
 
-author:
-  name: "Mark Otto"
-  url: https://twitter.com/mdo
-
+# Build settings
+markdown: kramdown
 paginate: 5
-
-# Custom vars
-version: 2.1.0
-
-github:
-  repo: https://github.com/nonjk2
+paginate_path: "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
