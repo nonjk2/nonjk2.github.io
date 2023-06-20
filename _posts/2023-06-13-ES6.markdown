@@ -4,6 +4,7 @@ title: ES6에 대하여
 date: 2023-06-13 00:00:00 +0300
 description: ES6의 개선사항과 ES5와 ES6의 차별성을 알아보자 # Add post description (optional)
 img: js-1.png # Add image post (optional)
+fig-caption: # Add figcaption (optional)
 tags: [JavaScript, TIL] # add tag
 ---
 
