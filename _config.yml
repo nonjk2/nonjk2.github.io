@@ -1,31 +1,35 @@
 title: 개발자 최은석
-email: nonjk2@gmail.com
-description: TIL 과 WIL 블로그
-author: 최은석
-baseurl: "/"
-url: "https://nonjk2.github.io"
+description: > # this means to ignore newlines until "baseurl:"
+  안녕하세요 최은석입니다.
+permalink: ":title/"
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "http://nonjk2.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+site-twitter: #if your site has a twitter account, enter it here
 
-# Social Profiles
-twitter_username:
-github_username: 최은석
-facebook_username:
-instagram_username:
-linkedin_username:
-# Add your google-analytics ID here to activate google analytics
-google_analytics: G-43895YHF45 # out your google-analytics code
+# Author Settings
+author: 최은석 # add your name
+author-img: eunseok.jpeg # add your photo
+about-author: 프론트 엔드 개발자로 항해하는중입니다. # add description
+social-twitter: # add your Twitter handle
+social-facebook: # add your Facebook handle
+social-github: nonjk2 # add your Github handle
+social-linkedin: # add your Linkedin handle
+social-email: # add your Email address
 
-# Build settings
+# Disqus
+discus-identifier: mr-choi # add your discus identifier
 
+# Tracker
+analytics: G-43895YHF45 # Google Analytics
+
+# Build Settings
 markdown: kramdown
-highlighter: rouge
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-
-paginate: 5
-
-paginate_path: "/posts/page:num/"
 plugins:
-  - jekyll-feed
-  - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-paginate
+  - jemoji
+
+paginate: 8
+paginate_path: "/page/:num"
+
+exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
