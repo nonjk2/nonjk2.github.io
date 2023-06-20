@@ -2,7 +2,7 @@ title: 개발자 최은석
 description: > # this means to ignore newlines until "baseurl:"
   안녕하세요 최은석입니다.
 permalink: ":title/"
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://deveundol.com" # the base hostname & protocol for your site, e.g. http://example.com
 site-twitter: #if your site has a twitter account, enter it here
 
