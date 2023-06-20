@@ -7,8 +7,6 @@ img: js-1.jpg # Add image post (optional)
 tags: [JavaScript, TIL] # add tag
 ---
 
-<div style="max-width:800px; margin:0 auto">
-
 ## 목차
 
 1. [let, const](#let--const)
@@ -232,11 +230,9 @@ func(1, 2, 3, 4, 5, 6, 7); // 3 4 5 6 7
 
 여러 줄로 이뤄진 문자열과 문자 보간기능을 사용하게 만들어 주는 문자열 리터럴 표현식.
 
-백틱(```) 과 `${}` 로 표현
+백틱(` `) 과 `${}` 로 표현
 
 ```jsx
 `string text 
 string text line2``string text ${value} text`;
 ```
-
-</div>

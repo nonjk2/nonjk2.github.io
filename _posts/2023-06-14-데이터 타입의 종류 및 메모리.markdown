@@ -7,8 +7,6 @@ img: js-1.jpg # Add image post (optional)
 tags: [JavaScript, TIL] # add tag
 ---
 
-<div style="max-width:800px; margin:0 auto">
-
 ## 데이터 타입의 종류 및 메모리
 
 ---
@@ -129,5 +127,3 @@ const regExp = new RegExp("abc");
 JavaScript의 메모리 관리는 JavaScript 엔진 및 런타임 환경에 의해 처리되며 세부 사항은 구현에 따라 다를 수 있다는 점에 유의하는 것이 중요합니다. JavaScript 엔진의 garbage-collect는 개체가 더 이상 참조되지 않는 경우와 같이 더 이상 필요하지 않은 메모리를 회수하는 역할을 합니다.
 
 이것은 JavaScript 맥락에서 메모리 저장에 대한 간단한 설명입니다. 실제로 메모리 관리에는 다양한 최적화 기술, 메모리 할당 전략, CPU 캐시 및 가상 메모리 시스템과 같은 추가 메모리 계층 구조가 포함됩니다.
-
-</div>
