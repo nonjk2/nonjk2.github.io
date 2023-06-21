@@ -24,7 +24,7 @@ hy-drawer {
     // <<< link
     --hy-drawer-width: 100%;
     --hy-drawer-peek-width: .5rem;
-    --hy-drawer-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+    // --hy-drawer-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
     // >>>
   }
 
@@ -49,10 +49,10 @@ hy-drawer {
   }
 
   @media screen and (min-width: $break-point-dynamic) {
-    width: calc(50% - #{$half-content});
+    // width: calc(50% - #{$half-content});
 
     // <<< link
-    --hy-drawer-peek-width: calc(50% - #{$half-content});
+    // --hy-drawer-peek-width: calc(50% - #{$half-content});
     // >>>
   }
 
@@ -123,17 +123,17 @@ hy-drawer.loaded .sidebar {
 
   &::after {
     content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // bottom: 0;
+    // right: 0;
     background: rgba(0, 0, 0, 0.05);
   }
   // >>>
 
   &.sidebar-overlay::after {
-    background: -moz-linear-gradient(top, rgba(32,32,32,0) 0%, rgba(32,32,32,0.5) 50%, rgba(32,32,32,0) 100%); // link
+    // background: -moz-linear-gradient(top, rgba(32,32,32,0) 0%, rgba(32,32,32,0.5) 50%, rgba(32,32,32,0) 100%); // link
     background: -webkit-linear-gradient(top, rgba(32,32,32,0) 0%,rgba(32,32,32,0.5) 50%, rgba(32,32,32,0) 100%); // link
     background: linear-gradient(to bottom, rgba(32,32,32,0) 0%,rgba(32,32,32,0.5) 50%, rgba(32,32,32,0) 100%); // inline
   }

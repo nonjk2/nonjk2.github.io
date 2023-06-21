@@ -87,8 +87,8 @@ remote_theme: hydecorp/hydejack@v9
 # ----------------------------------------------------------------------------------------
 
 # Sidebar image and theme color of the site.
-accent_image: /assets/img/sidebar-bg.jpg
-# accent_color: rgb(79,177,186)
+# accent_image: /assets/img/sidebar-bg.jpg
+accent_color: rgb(156,143,125)
 
 # This is used for the `theme-color` meta tag,
 # which changes the background color of the browser UI in certain browsers.
@@ -201,7 +201,7 @@ hydejack:
   # Set to `true` if you don't to use the auto-hiding (JavaScript based) navbar.
   # Note that this will not hide the navbar completely, only replace it with a static one.
   # Use custom css to hide completely, e.g. `#_navbar { display: none }`.
-  no_navbar: false
+  no_navbar: ture
 
   # Set to true to disable the built-in search functionality.
   # Note that search is disabled during local use to save on build time.
