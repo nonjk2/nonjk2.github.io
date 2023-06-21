@@ -93,7 +93,7 @@ accent_color: rgb(156,143,125)
 # This is used for the `theme-color` meta tag,
 # which changes the background color of the browser UI in certain browsers.
 # Defaults to `accent_color`.
-theme_color: rgb(25,55,71)
+# theme_color: rgb(25,55,71)
 
 # The string encoding which fonts to fetch from Google Fonts.
 # See: <https://hydejack.com/docs/configuration/>
@@ -113,14 +113,14 @@ font_code: Fira Code, Menlo, Monaco, Consolas, monospace;
 defaults:
   # You can use this to provide a default accent color and background for
   # all pages under a given path:
-  # - scope:
-  #     path: hyde/
-  #   values:
-  #     accent_color: rgb(38,139,210)
-  #     theme_color: rgb(32,32,32)
-  #     accent_image:
-  #       background: rgb(32,32,32)
-  #       overlay: false
+  - scope:
+      path: /
+    values:
+      accent_color: rgb(156,143,125)
+      theme_color: rgb(32,32,32)
+      accent_image:
+        background: rgb(156,143,125)
+        overlay: false
 
   # Don't include documents in assets in the sitemap
   - scope:

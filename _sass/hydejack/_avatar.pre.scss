@@ -24,6 +24,12 @@
   // >>>
 
   // <<< link
+  width: 10rem;
+  height: 9rem;
+  border-radius: 100%;
+  overflow: hidden;
+  display: inline-block;
+  img { width: 100%; }
   position: relative;
   z-index: 1;
   // >>>
