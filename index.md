@@ -1,6 +1,6 @@
 ---
-layout: page
-title: Thank You!
+layout: blog
+title: 최근게시물
 sitemap: false
 ---
 
