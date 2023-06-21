@@ -2,7 +2,7 @@
 # Featured tags need to have either the `list` or `grid` layout (PRO only).
 layout: list
 # The title of the tag's page.
-title: JavaScript
+title: frontend
 # The name of the tag, used in a post's front matter (e.g. tags: [<slug>]).
 type: category
 slug: frontend
@@ -10,7 +10,7 @@ sidebar: true
 order: 1
 # (Optional) Write a short (~150 characters) description of this featured tag.
 description: >
-  JavaScript의 강의를듣고 정리한 것을 기록한다..
+  정리 및 TIL
 
 # (Optional) You can disable grouping posts by date.
 no_groups: true
