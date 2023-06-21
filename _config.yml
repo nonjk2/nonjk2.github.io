@@ -87,7 +87,7 @@ remote_theme: hydecorp/hydejack@v9
 # ----------------------------------------------------------------------------------------
 
 # Sidebar image and theme color of the site.
-# accent_image: /assets/img/sidebar-bg.jpg
+accent_image: none
 accent_color: rgb(156,143,125)
 
 # This is used for the `theme-color` meta tag,
@@ -114,13 +114,13 @@ defaults:
   # You can use this to provide a default accent color and background for
   # all pages under a given path:
   - scope:
-      path: /
+      path: /**
     values:
       accent_color: rgb(156,143,125)
       theme_color: rgb(32,32,32)
       accent_image:
         background: rgb(156,143,125)
-        overlay: false
+        overlay: true
 
   # Don't include documents in assets in the sitemap
   - scope:
