@@ -2,10 +2,10 @@
 layout: post
 title: 자바스크립트 데이터 타입
 category: frontend
-date: 2023-06-14 12:00:00 +0300
 description: >
 자바스크립트의 종류 및 메모리 등 효율성체크 동작원리를 알아보자
-img: js-1.png 
+image: 
+    path: /assets/img/frontend/js.jpeg
 tags: JavaScript # add tag
 ---
 
