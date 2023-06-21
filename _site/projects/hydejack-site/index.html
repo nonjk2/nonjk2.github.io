@@ -49,7 +49,7 @@
 
 
 
-  <meta name="theme-color" content="rgb(25,55,71)">
+  <meta name="theme-color" content="rgb(32,32,32)">
 
 
 <meta charset="utf-8">
@@ -119,14 +119,14 @@
   w._publicPath = '/assets/js/';
   w._noPushState = false;
   w._noDrawer = false;
-  w._noNavbar = false;
+  w._noNavbar = ture;
   w._noToc = false;
   w._noSearch = true;
   w._advertise = false;
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2023-06-22T01:48:44+09:00',
+    INDEX_KEY: 'index--2023-06-22T03:07:19+09:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -150,7 +150,7 @@
 
   <style id="_pageStyle">
 
-html{--accent-color: rgb(156,143,125);--accent-color-faded: rgba(156,143,125,0.5);--accent-color-highlight: rgba(156,143,125,0.1);--accent-color-darkened: #8a7c69;--theme-color: rgb(25,55,71);--dark-mode-body-bg: #2a2d2f;--dark-mode-border-color: #363a3d}
+html{--accent-color: rgb(156,143,125);--accent-color-faded: rgba(156,143,125,0.5);--accent-color-highlight: rgba(156,143,125,0.1);--accent-color-darkened: #8a7c69;--theme-color: rgb(32,32,32);--dark-mode-body-bg: #2d2d2d;--dark-mode-border-color: #393939}
 
 </style>
 
@@ -170,6 +170,8 @@ html{--accent-color: rgb(156,143,125);--accent-color-faded: rgba(156,143,125,0.5
   window._sunset =  18;
   !function(e,s){var d="light-mode",o="dark-mode",a=(new Date).getHours();"matchMedia"in e&&e.matchMedia("(prefers-color-scheme)")||(e=(a=a<=e._sunrise||a>=e._sunset?o:d)==o?d:o,s.body.classList.add(a),s.body.classList.remove(e))}(window,document);
 
+const logoImage = document.querySelectorAll('.avatar');
+console.log(logoImage)
 </script>
 
 
@@ -439,7 +441,7 @@ html{--accent-color: rgb(156,143,125);--accent-color-faded: rgba(156,143,125,0.5
     
 
 
-  <aside class="other-projects related mb4" role="complementary">  <h2>Other Projects</h2>  <div class="columns">                      <div class="column column-1-2">        <article  class="project-card"  vocab="http://schema.org/" typeof="CreativeWork" resource="/projects/qwtel/#project"  >  <meta property="name" content="@qwtel"/>  <meta property="image" content="/assets/img/projects/qwtel.jpg"/>  <a href="/projects/qwtel/" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine flip-project-img ">              <img      src="/assets/img/projects/qwtel.jpg"    srcset="/assets/img/projects/qwtel.jpg 1920w,/assets/img/projects/qwtel@0,5x.jpg 960w,/assets/img/projects/qwtel@0,25x.jpg 480w"    sizes="(min-width:86em)29.5rem,(min-width:54em)24.5rem,(min-width:42em)21.5rem,42rem"    alt="@qwtel"      width="864"  height="486"  loading="lazy"/>          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/projects/qwtel/" class="flip-title" property="mainEntityOfPage">@qwtel</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      How I use Hydejack on my personal site.    </p>      <a class="fill-card no-hover" href="/projects/qwtel/" tabindex="-1"><span class="sr-only">Continue reading @qwtel</span></a></article>      </div>      </div></aside>
+  <aside class="other-projects related mb4" role="complementary">  <h2>Other Projects</h2>  <div class="columns">                      <div class="column column-1-2">        <article  class="project-card"  vocab="http://schema.org/" typeof="CreativeWork" resource="/projects/qwtel/#project"  >  <meta property="name" content="@qwtel"/>  <meta property="image" content="/assets/img/projects/qwtel.jpg"/>  <a href="/projects/qwtel/" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine flip-project-img ">              <img      src="/assets/img/projects/qwtel.jpg"    srcset="/assets/img/projects/qwtel.jpg 1920w,/assets/img/projects/qwtel@0,5x.jpg 960w,/assets/img/projects/qwtel@0,25x.jpg 480w"    sizes="(min-width:86em)29.5rem,(min-width:54em)24.5rem,(min-width:42em)21.5rem,42rem"    alt="@qwtel"      width="864"  height="486"  loading="lazy"/>          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/projects/qwtel/" class="flip-title" property="mainEntityOfPage">@qwtel</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      How I use Hydejack on my personal site.    </p>      <a class="fill-card no-hover" href="/projects/qwtel/" tabindex="-1"><span class="sr-only">보러가기 @qwtel</span></a></article>      </div>      </div></aside>
 
   
 
@@ -490,7 +492,7 @@ html{--accent-color: rgb(156,143,125);--accent-color-faded: rgba(156,143,125,0.5
 
 
 
-<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/sidebar-bg.jpg)"></div>
+<div class="sidebar-bg sidebar-overlay" style="background:rgb(156,143,125)"></div>
 
     <div class="sidebar-sticky">
   <div class="sidebar-about">
@@ -518,6 +520,8 @@ html{--accent-color: rgb(156,143,125);--accent-color-faded: rgba(156,143,125,0.5
                           
   <li>
     
+    <input type="checkbox" id="folder-checkbox-9" />
+    
     <div class="list-wrapper">
       <a
         
@@ -527,8 +531,24 @@ html{--accent-color: rgb(156,143,125);--accent-color-faded: rgba(156,143,125,0.5
         >Computer Science</a
       >
       
+      <button class="spread-btn" onclick="javascript:spread(9)">
+        <label id="spread-icon-9" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
     </div>
-    
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-network/"
+          >Network</a
+        >
+      </li>
+      
+    </ul>
+     
   </li>
         
   <li>
