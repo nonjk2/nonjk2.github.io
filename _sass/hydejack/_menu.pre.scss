@@ -18,8 +18,8 @@ $navbar-height: 5rem;
 // <<< inline
 .fixed-common {
   position: fixed;
-  left: 0;
-  width: 100%;
+  left: 24rem;
+  // width: 100%;
   z-index: 2;
 }
 
@@ -108,8 +108,8 @@ $navbar-height: 5rem;
   width: 3.25rem;
   height: $navbar-height;
   color: var(--menu-text);
-  border-right: 1px solid var(--border-color);
-  border-left: 1px solid var(--border-color);
+  // border-right: 1px solid var(--border-color);
+  // border-left: 1px solid var(--border-color);
   margin-left: -1px;
 }
 // >>>
