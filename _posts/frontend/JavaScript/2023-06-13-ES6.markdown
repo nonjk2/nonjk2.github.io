@@ -3,30 +3,18 @@ layout: post
 title: "ES6에 대하여"
 category: frontend
 description: >
-ES6의 개선사항과 ES5와 ES6의 차별성을 알아보자 
-image: 
-    path: /assets/img/frontend/ES6.png
+  ES6의 개선사항과 ES5와 ES6의 차별성을 알아보자
+image:
+  path: /assets/img/frontend/ES6.png
 tags: JavaScript TIL
 ---
 
-## 목차
-
-- [ES6란 ?](#es6란-)
-  - [ES5와 ES6의 문법개선](#es5와-es6의-문법개선)
-  - [**자세한 내용 정리🥸**](#자세한-내용-정리)
-    - [**let , const**](#let--const)
-    - [**화살표함수 (Arrow Func)**](#화살표함수-arrow-func)
-    - [**this**](#this)
-    - [**삼항 연산자**](#삼항-연산자)
-    - [구조 분해할당](#구조-분해할당)
-    - [단축 속성명(property shorthand)](#단축-속성명property-shorthand)
-    - [전개 구문(Spread)](#전개-구문spread)
-    - [나머지 매개변수](#나머지-매개변수)
-    - [템플릿 리터럴(Template literals)](#템플릿-리터럴template-literals)
-
+<!--more-->
 # ES6란 ?
+{:.no_toc}
 
----
+* this list will be replaced by the toc
+{:toc .large-only}
 
 <aside>
 💡 ECMAScript 6 (ES6)는 JavaScript의 버전 중 하나로, 2015년에 발표되었다. ES6는 이전 버전인 ES5에서 새로운 문법과 기능을 도입하여 JavaScript 개발자들이 보다 쉽고 효율적으로 코드를 작성할 수 있도록 개선!.

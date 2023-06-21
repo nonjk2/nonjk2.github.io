@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+
+
+
+  
+    
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>자바스크립트 데이터 타입 | 개발자 최은석</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="자바스크립트 데이터 타입" />
+<meta name="author" content="<최> <은석>" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="description" content="자바스크립트의 종류 및 메모리 등 효율성체크 동작원리를 알아보자" />
+<meta property="og:description" content="자바스크립트의 종류 및 메모리 등 효율성체크 동작원리를 알아보자" />
+<link rel="canonical" href="http://localhost:4000/frontend/%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85%EC%9D%98-%EC%A2%85%EB%A5%98-%EB%B0%8F-%EB%A9%94%EB%AA%A8%EB%A6%AC.html" />
+<meta property="og:url" content="http://localhost:4000/frontend/%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85%EC%9D%98-%EC%A2%85%EB%A5%98-%EB%B0%8F-%EB%A9%94%EB%AA%A8%EB%A6%AC.html" />
+<meta property="og:site_name" content="개발자 최은석" />
+<meta property="og:image" content="http://localhost:4000/assets/img/frontend/js.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-06-14T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/img/frontend/js.jpeg" />
+<meta property="twitter:title" content="자바스크립트 데이터 타입" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"<최> <은석>"},"dateModified":"2023-06-14T00:00:00+09:00","datePublished":"2023-06-14T00:00:00+09:00","description":"자바스크립트의 종류 및 메모리 등 효율성체크 동작원리를 알아보자","headline":"자바스크립트 데이터 타입","image":"http://localhost:4000/assets/img/frontend/js.jpeg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/frontend/%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85%EC%9D%98-%EC%A2%85%EB%A5%98-%EB%B0%8F-%EB%A9%94%EB%AA%A8%EB%A6%AC.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"<최> <은석>"},"url":"http://localhost:4000/frontend/%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85%EC%9D%98-%EC%A2%85%EB%A5%98-%EB%B0%8F-%EB%A9%94%EB%AA%A8%EB%A6%AC.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+    <meta name="keywords" content="dev,frontend,TIL">
+  
+
+
+
+  <meta name="theme-color" content="rgb(25,55,71)">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="개발자 최은석">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="application-name" content="개발자 최은석">
+
+<meta name="generator" content="Hydejack v9.1.6" />
+
+
+<link rel="alternate" href="http://localhost:4000/frontend/%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85%EC%9D%98-%EC%A2%85%EB%A5%98-%EB%B0%8F-%EB%A9%94%EB%AA%A8%EB%A6%AC.html" hreflang="ko-kr">
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="개발자 최은석" />
+
+
+<link
+  rel="shortcut icon"
+  href="/assets/icons/favicon.ico"
+/>
+<link
+  rel="apple-touch-icon"
+  href="/assets/icons/icon-192x192.png"
+/>
+
+<link rel="manifest" href="/assets/site.webmanifest" />
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" /><link rel="dns-prefetch" href="https://fonts.gstatic.com" /> 
+<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+
+<link
+  rel="preload"
+  href="/assets/img/swipe.svg"
+  as="image"
+  id="_hrefSwipeSVG"
+/>
+
+<link
+  rel="dns-prefetch"
+  href="/assets/js/search-worker-9.1.6.js"
+  as="worker"
+  id="_hrefSearch"
+/>
+  
+<!-- ... -->
+
+<!-- For sidebar folder -->
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+<script src="/assets/js/sidebar-folder.js"></script>
+
+
+<script>!function(r,c){"use strict";function a(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=c.createElement("script"),e=(n.src=e,t&&a(n,"load",t,{once:!0}),c.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=c.createElement("script");function o(){r._loaded=!0,t&&a(n,"load",t,{once:!0});var e=c.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():a(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){a(c.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}}(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+!function(w) {
+  w._baseURL = '/';
+  w._publicPath = '/assets/js/';
+  w._noPushState = false;
+  w._noDrawer = false;
+  w._noNavbar = false;
+  w._noToc = false;
+  w._noSearch = true;
+  w._advertise = false;
+  w._search = {
+    DATA_URL: '/assets/sitedata.json?no-cache',
+    STORAGE_KEY: 'mini-search/',
+    INDEX_KEY: 'index--2023-06-21T18:32:35+09:00',
+  };
+  w._clapButton = true;
+}(window);</script>
+
+
+<script async src="/assets/bower_components/MathJax/es5/tex-mml-chtml.js" id="_MathJax"></script>
+
+
+<!--[if gt IE 8]><!---->
+
+  
+
+
+
+
+<link rel="stylesheet" href="/assets/css/hydejack-9.1.6.css" id="_stylePreload">
+<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans:400,400i,700,700i&display=swap" id="_fontsPreload">
+
+
+
+  <style id="_pageStyle">
+
+html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);--accent-color-highlight: rgba(79,177,186,0.1);--accent-color-darkened: #409ba3;--theme-color: rgb(25,55,71);--dark-mode-body-bg: #2a2d2f;--dark-mode-border-color: #363a3d}
+
+</style>
+
+
+<!--<![endif]-->
+
+
+
+
+
+</head>
+
+<body class="no-break-layout">
+  
+<script>
+  window._sunrise = 6;
+  window._sunset =  18;
+  !function(e,s){var d="light-mode",o="dark-mode",a=(new Date).getHours();"matchMedia"in e&&e.matchMedia("(prefers-color-scheme)")||(e=(a=a<=e._sunrise||a>=e._sunset?o:d)==o?d:o,s.body.classList.add(a),s.body.classList.remove(e))}(window,document);
+
+</script>
+
+
+
+<hy-push-state
+  id="_pushState"
+  replace-selector="#_main"
+  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
+  script-selector="script"
+  duration="500"
+  hashchange
+>
+  
+  
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only"
+      >Jump to:</span
+    >
+    <div class="nav-btn-bar">
+      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
+        <span class="sr-only"
+          >Navigation</span
+        >
+        <span class="icon-menu"></span>
+      </a>
+      <div class="nav-span"></div>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+  <main
+  id="_main"
+  class="content layout-post"
+  role="main"
+>
+  <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+    <li><a href="/">home</a></li>
+    
+      <li>
+        
+          <span>/</span>
+          
+          
+          <a href="/frontend/">frontend</a>
+        
+      </li>
+    
+      <li>
+        
+          <span>/</span>
+          <span>데이터-타입의-종류-및-메모리.html</span>
+        
+      </li>
+    
+  
+</ul></nav>
+  
+
+
+
+
+
+
+
+
+
+
+<article id="post-frontend-데이터 타입의 종류 및 메모리" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        자바스크립트 데이터 타입
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2023-06-14T00:00:00+09:00">14 Jun 2023</time> in <a href="/frontend/" class="flip-title">frontend</a> on <a href="/tag-javascript/" class="flip-title">JavaScript</a>, <span>Til</span>
+      </span>
+      
+        
+      
+    </div>
+
+    
+    
+      
+        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
+          
+
+
+<img
+  
+    src="/assets/img/frontend/js.jpeg"
+    
+    
+  
+  alt="자바스크립트 데이터 타입"
+  
+  
+  width="864"
+  height="486"
+  loading="lazy"
+/>
+
+        </div>
+      
+      
+    
+
+    
+
+
+
+  
+    <p class="note-sm" >
+      자바스크립트의 종류 및 메모리 등 효율성체크 동작원리를 알아보자
+
+    </p>
+  
+
+
+  </header>
+
+  
+    <!--more-->
+
+<h1 class="no_toc" id="데이터-타입의-종류-및-메모리">데이터 타입의 종류 및 메모리</h1>
+
+<ul class="large-only" id="markdown-toc">
+  <li><a href="#기본형" id="markdown-toc-기본형">기본형</a></li>
+  <li><a href="#참조형" id="markdown-toc-참조형"><strong>참조형</strong></a></li>
+  <li><a href="#기본형과-참조형의-구분-기준은-" id="markdown-toc-기본형과-참조형의-구분-기준은-">기본형과 참조형의 구분 기준은 ?</a></li>
+</ul>
+
+<hr />
+
+<p><img src="/assets/img/frontend/JsDataType.png" alt="JsDataType.png" /></p>
+
+<p>자바스크립트는 다양한 종류의 값을 저장하고 조작할 수 있는 여러 내장 데이터 유형을 지원합니다.
+<br /></p>
+
+<h3 id="기본형">기본형</h3>
+
+<ol>
+  <li><strong>Number</strong> 숫자 값을 나타냅니다. 정수 또는 부동 소수점 숫자일 수 있습니다. 예: <code class="language-plaintext highlighter-rouge">42</code>, <code class="language-plaintext highlighter-rouge">3.14</code>.</li>
+  <li><strong>String</strong>: 작은따옴표(<code class="language-plaintext highlighter-rouge">'</code>) 또는 큰따옴표(<code class="language-plaintext highlighter-rouge">"</code>)로 묶인 텍스트 데이터를 나타냅니다(예: <code class="language-plaintext highlighter-rouge">'Hello'</code>, <code class="language-plaintext highlighter-rouge">"JavaScript"</code>).</li>
+  <li><strong>Boolean</strong>: ‘true’ 또는 ‘false’일 수 있는 논리 값을 나타냅니다. 조건부 분기 및 논리 연산에 사용됩니다.</li>
+  <li><strong>Null</strong>: 개체 값이 의도적으로 없음을 나타냅니다. 개체 참조가 없음을 나타내는 기본 값입니다. 예: <code class="language-plaintext highlighter-rouge">null</code>.</li>
+  <li><strong>undefined</strong>: 선언되었지만 값이 할당되지 않은 변수를 나타냅니다. 정의된 값이 없음을 나타냅니다. 초기화되지 않은 변수는 기본적으로 ‘정의되지 않음’으로 설정됩니다.</li>
+  <li><strong>Symbol</strong>: ECMAScript 6(ES6)에서 도입된 고유 식별자를 나타냅니다. 기호는 이름 충돌을 피하기 위해 개체의 속성 키로 자주 사용됩니다.
+<br /></li>
+</ol>
+
+<h3 id="참조형"><strong>참조형</strong></h3>
+
+<ol>
+  <li><strong>객체</strong>: 키-값 쌍 또는 속성 모음을 나타냅니다. 객체는 객체 리터럴(<code class="language-plaintext highlighter-rouge">{}</code>)을 사용하거나 생성자 함수를 인스턴스화하여 생성할 수 있습니다. 예: <code class="language-plaintext highlighter-rouge">{ 이름: 'John', 연령: 25 }</code>.</li>
+  <li><strong>배열</strong>: 정렬된 값 목록을 나타냅니다. 배열은 단일 변수에 여러 값을 저장할 수 있습니다. 대괄호(<code class="language-plaintext highlighter-rouge">[]</code>)를 사용하여 생성됩니다. 예: <code class="language-plaintext highlighter-rouge">[1, 2, 3, 4]</code>.</li>
+  <li><strong>함수</strong>: 함수는 특정 작업을 수행하는 재사용 가능한 코드 블록입니다. JavaScript에서 함수는 또한 일급 객체로 간주됩니다. 즉, 변수에 할당되고 다른 함수에 인수로 전달되며 함수에서 값으로 반환될 수 있습니다.
+<br />
+<br /></li>
+</ol>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li><strong>날짜</strong>: <code class="language-plaintext highlighter-rouge">날짜</code> 개체는 JavaScript에서 날짜 및 시간 작업에 사용됩니다. 날짜 및 시간을 검색하고 조작하는 다양한 방법을 제공합니다. 날짜는 <code class="language-plaintext highlighter-rouge">new Date()</code> 생성자를 사용하여 만들 수 있습니다</li>
+</ol>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">currentDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+</code></pre></div></div>
+
+<ol>
+  <li><strong>RegExp</strong>: 정규식(RegEx라고도 함)은 패턴 일치 및 문자열 조작에 사용됩니다. <code class="language-plaintext highlighter-rouge">RegExp</code> 개체는 정규식과 함께 작동하는 메서드와 속성을 제공합니다. 정규 표현식은 <code class="language-plaintext highlighter-rouge">/pattern/</code> 구문 또는 <code class="language-plaintext highlighter-rouge">RegExp</code> 생성자를 사용하여 생성됩니다.</li>
+</ol>
+
+<p><br /></p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="sr">/abc/</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">regExp</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">"</span><span class="s2">abc</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ol>
+  <li><strong>Map</strong>: <code class="language-plaintext highlighter-rouge">Map</code> 개체는 키-값 쌍의 모음입니다. 임의의 값을 키와 값으로 저장할 수 있으며 항목을 검색, 추가, 제거 및 조작하는 방법을 제공합니다. ‘Map’의 키는 모든 데이터 유형이 될 수 있으며 삽입 순서를 유지합니다</li>
+  <li><strong>WeakMap</strong>: <code class="language-plaintext highlighter-rouge">WeakMap</code> 개체는 <code class="language-plaintext highlighter-rouge">Map</code>과 유사하지만 약간의 차이점이 있습니다. ‘WeakMap’의 키는 객체여야 하며 해당 객체에 대한 참조는 약하게 유지됩니다. 즉, 키 개체에 대한 다른 참조가 없으면 garbage-collect 될 수 있습니다. ‘WeakMap’은 메모리 누수를 일으키지 않고 기존 객체에 추가 데이터를 연결해야 할 때 주로 사용됩니다.</li>
+  <li><strong>Set</strong>: <code class="language-plaintext highlighter-rouge">Set</code> 개체는 각 값이 한 번만 발생할 수 있는 고유한 값의 모음입니다. 추가, 삭제, 값의 존재 확인 및 삽입 순서대로 요소를 반복하는 메서드를 제공합니다</li>
+  <li><strong>WeakSet</strong>: <code class="language-plaintext highlighter-rouge">WeakSet</code> 개체는 <code class="language-plaintext highlighter-rouge">Set</code>과 유사하지만 저장된 개체에 대한 약한 참조도 포함합니다. ‘WeakMap’과 마찬가지로, 이는 ‘WeakSet’의 개체에 대한 다른 참조가 없는 경우 garbage-collect 될 수 있도록 합니다</li>
+</ol>
+
+<p>*garbage-collect : garbage-collect는 JavaScript를 포함한 프로그래밍 언어 런타임에서 수행되는 자동 메모리 관리 프로세스입니다. 더 이상 필요하지 않거나 프로그램에서 도달할 수 없는 개체가 차지하는 메모리를 회수하여 리소스를 확보하고 메모리 누수를 방지합니다.</p>
+
+<h3 id="기본형과-참조형의-구분-기준은-">기본형과 참조형의 구분 기준은 ?</h3>
+
+<hr />
+
+<p><br /></p>
+
+<ol>
+  <li><strong>복제의 방식</strong>
+    <ol>
+      <li>기본형 : 값이 담긴 주소값을 바로 복제</li>
+      <li>참조형 : 값이 담긴 주소값들로 이루어진 묶음을 가리키는 주소값을 복제</li>
+    </ol>
+  </li>
+  <li>
+    <p><strong>불변성의 여부</strong></p>
+
+    <ol>
+      <li>기본형 : 불변성을 띔</li>
+      <li>참조형 : 불변성을 띄지 않음</li>
+    </ol>
+
+    <p>💡 <strong>불변성</strong>을 이해하기 위해서는 메모리와 데이터에 대한 내용을 이해해야 합니다
+<br /></p>
+
+    <details>
+   <summary>메모리와 데이터에 관한 배경지식</summary>
+   <div>
+
+        <ol>
+          <li>비트
+            <ol>
+              <li>컴퓨터가 이해할 수 있는 가장 작은 단위죠</li>
+              <li>0과 1을 가지고 있는 <strong>메모리를 구성하기 위한 작은 조각</strong>을 의미한다고 보면 될 것 같아요!</li>
+              <li>이 작은 조각들이 모여서 여러분들이 흔히 들으시는 <strong>‘메모리’</strong>가 만들어지는 것이죠.</li>
+            </ol>
+          </li>
+          <li>바이트
+            <ol>
+              <li>0과 1만 표현하는 비트를 모두 찾기는 부담</li>
+              <li>1개 → 2개 → … → 8개(새로운 단위 : byte)</li>
+            </ol>
+          </li>
+          <li>메모리(memo + ry) : byte 단위로 구성
+            <ol>
+              <li>모든 데이터는 byte 단위의 식별자인 메모리 주소값을 통해서 서로 구분이 됩니다.</li>
+            </ol>
+
+            <aside>
+ 💡 **만일, 64비트(8바이트) 정수는 메모리에 어떻게 저장할 수 있을까요?**
+ ⇒ 64비트를 8개의 바이트로 분할하고, 각 바이트를 메모리에 저장해야 해요. 각 바이트는 8개의 비트를 가므로 64비트 정수는 메모리에서 **8개의 연속된 바이트**에 저장된답니다.
+        
+ </aside>
+          </li>
+          <li>java, c와 다른 javascript의 메모리 관리 방식(feat. 정수형)
+            <ol>
+              <li>8을 저장하는 방법
+                <ol>
+                  <li>JS : let a = 8(8byte)</li>
+                  <li>JAVA
+                    <ol>
+                      <li>byte a = 8(1byte)</li>
+                      <li>short a = 8(2byte)</li>
+                      <li>int a = 8(4byte)</li>
+                      <li>long a = 8(16byte)</li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>java 또는 c언어가 초기에 등장했을 때 숫자 데이터 타입은 크기에 따라 다양하게 지정해줘야 할 만큼 개발자가 <strong>handling 할 요소</strong>들이 많았어요. 하지만 javascript는 이런 부분에서는 상당히 편리하죠. 메모리 이슈까지는 고민하지 않아도 되니까요 😎</li>
+            </ol>
+            <p>&lt;/div&gt;
+&lt;/details&gt;</p>
+          </li>
+        </ol>
+
+      </div></details>
+  </li>
+</ol>
+<ul>
+  <li>컴퓨터에는 다양한 유형의 메모리가 있지만 RAM(Random Access Memory)이라고도 하는 기본 시스템 메모리에 집중해 보겠습니다. RAM은 프로세서의 데이터에 대한 빠른 액세스를 제공하는 휘발성 메모리 형태입니다.</li>
+  <li>RAM은 메모리 셀 또는 바이트라고 하는 작고 동일한 크기의 단위로 나뉩니다. 각 메모리 셀에는 고유한 주소가 있으므로 주소를 지정하여 데이터를 저장하고 검색할 수 있습니다. 각 바이트는 일반적으로 8비트의 데이터를 보유합니다</li>
+  <li>JavaScript 프로그램이 실행될 때 메모리를 사용하여 변수, 개체, 함수 및 기타 데이터 구조를 저장하고 조작합니다.</li>
+</ul>
+
+<ol>
+  <li>
+    <p><strong>기본 값</strong>: 기본 값(예: 숫자, 문자열, 부울)을 보유하기 위해 변수를 만들면 값 자체가 해당 변수와 연결된 메모리 셀에 직접 저장됩니다. 예를 들어:</p>
+
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+</code></pre></div>    </div>
+
+    <p>이 경우 값 ‘42’는 변수 ‘num’에 할당된 메모리 셀에 직접 저장됩니다.</p>
+  </li>
+  <li>
+    <p><strong>참조 값</strong>: 참조 값(예: 객체, 배열, 함수)을 보유하기 위해 변수를 생성할 때 값의 실제 데이터는 메모리의 다른 곳에 저장되고 변수는 참조(또는 포인터)를 보유합니다. 데이터가 저장되는 메모리 위치로. 예를 들어:</p>
+
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">John</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">25</span> <span class="p">};</span>
+</code></pre></div>    </div>
+
+    <p>여기서 객체 <code class="language-plaintext highlighter-rouge">{ name: 'John', age: 25 }</code>는 메모리의 다른 곳에 저장되며 변수 <code class="language-plaintext highlighter-rouge">obj</code>는 해당 객체의 메모리 위치에 대한 참조를 보유합니다.</p>
+  </li>
+</ol>
+
+<p>JavaScript의 메모리 관리는 JavaScript 엔진 및 런타임 환경에 의해 처리되며 세부 사항은 구현에 따라 다를 수 있다는 점에 유의하는 것이 중요합니다. JavaScript 엔진의 garbage-collect는 개체가 더 이상 참조되지 않는 경우와 같이 더 이상 필요하지 않은 메모리를 회수하는 역할을 합니다.</p>
+
+<p>이것은 JavaScript 맥락에서 메모리 저장에 대한 간단한 설명입니다. 실제로 메모리 관리에는 다양한 최적화 기술, 메모리 할당 전략, CPU 캐시 및 가상 메모리 시스템과 같은 추가 메모리 계층 구조가 포함됩니다.</p>
+
+  
+</article>
+
+
+
+  <hr class="dingbat related mb6" />
+
+
+
+
+
+
+  
+     
+
+
+  <aside class="about related mt4 mb4" role="complementary">
+    
+    
+
+<div class="author mt4">
+  
+
+  
+    
+
+
+<img
+  
+    src="https://placehold.it/128x128"
+    srcset="https://placehold.it/128x128 1x,https://placehold.it/256x256 2x"
+    
+  
+  alt="<최> <은석>"
+  class="avatar"
+  
+  width="120"
+  height="120"
+  loading="lazy"
+/>
+
+  
+
+  
+  
+  <h2  class="page-title hr-bottom">
+    About
+  </h2>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+<p>Open <code class="language-plaintext highlighter-rouge">_data/authors.yml</code> to edit this text.</p>
+
+
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://twitter.com/<username>" title="Twitter" class="no-mark-external">
+      <span class="icon-twitter"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/<username>" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+
+  </aside>
+
+
+  
+
+  
+    
+
+
+  
+
+  
+    
+
+
+  <aside class="other-projects related mb0" role="complementary">  <h2>Related Posts</h2>  <div class="columns">          <div class="column column-1-2">                  <article class="project-card">  <a href="/frontend/ES6.html" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine flip-project-img">              <img      src="/assets/img/frontend/ES6.png"        sizes="(min-width:86em)27.5rem,(min-width:54em)24.5rem,(min-width:42em)21.5rem,42rem"    alt="ES6에 대하여"      width="864"  height="486"  loading="lazy"/>          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/frontend/ES6.html" class="flip-title">ES6에 대하여</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      ES6의 개선사항과 ES5와 ES6의 차별성을 알아보자    </p>      <a class="fill-card no-hover" href="/frontend/ES6.html" tabindex="-1"><span class="sr-only">Continue reading ES6에 대하여</span></a></article>              </div>      </div></aside>
+
+  
+
+  
+    
+
+
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Random Posts</h2>  <ul class="related-posts">          <li class="h4">  <a href="/frontend/ES6.html" class="flip-title"><span>ES6에 대하여</span></a>  <time class="faded fine" datetime="2023-06-13T00:00:00+09:00">13 Jun 2023</time></li>      </ul></aside>
+
+  
+
+  
+    
+
+  
+
+
+  
+<footer class="content" role="contentinfo">
+  <hr/>
+  
+    <p><small class="copyright">© 2021. All rights reserved.
+</small></p>
+  
+  
+    <nav class="legal"><small>
+    
+      
+      <a class="heading flip-title" href="/LICENSE/">LICENSE</a>
+      |
+    
+      
+      <a class="heading flip-title" href="/NOTICE/">NOTICE</a>
+      |
+    
+      
+      <a class="heading flip-title" href="/CHANGELOG/">CHANGELOG</a>
+      
+    
+    </small></nav>
+  
+  
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+  <hy-drawer
+  id="_drawer"
+  class=""
+  side="left"
+  threshold="10"
+  noscroll
+  
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+
+
+
+
+<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/sidebar-bg.jpg)"></div>
+
+    <div class="sidebar-sticky">
+  <div class="sidebar-about">
+    
+      <a class="no-hover" href="/" tabindex="-1">
+        <img src="/assets/img/logo.png" class="avatar" alt="개발자 최은석" width="120" height="120" loading="lazy" />
+      </a>
+    
+    <a class="sidebar-title" href="/"><h2 class="h1">개발자 최은석</h2></a>
+    
+    
+      <p class="">
+        반갑습니다.
+
+      </p>
+    
+  </div>
+
+  <nav class="sidebar-nav heading" role="navigation">
+    <span class="sr-only"
+  >Navigation:</span
+>
+<ul>
+   
+          
+  <li>
+    
+    <input type="checkbox" id="folder-checkbox-9" />
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/frontend/"
+        class="sidebar-nav-item"
+        
+        >frontend</a
+      >
+      
+      <button class="spread-btn" onclick="javascript:spread(9)">
+        <label id="spread-icon-9" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
+    </div>
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-javascript/"
+          >JavaScript</a
+        >
+      </li>
+      
+    </ul>
+     
+  </li>
+    
+</ul>
+
+  </nav>
+
+  
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://twitter.com/<username>" title="Twitter" class="no-mark-external">
+      <span class="icon-twitter"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/<username>" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+</hy-push-state>
+
+
+  <!--[if gt IE 10]><!---->
+  <script nomodule>!function(){var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())}();
+</script>
+  <script src="/assets/js/hydejack-9.1.6.js" type="module"></script>
+  <script src="/assets/js/LEGACY-hydejack-9.1.6.js" nomodule defer></script>
+  
+
+  
+  <script>!function(w, d) {
+    w.ga=w.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+    /**/
+      ga('create', 'G-43895YHF45', 'auto');
+    /**/
+
+    var pushStateEl = d.getElementById('_pushState');
+    var timeoutId;
+    pushStateEl.addEventListener('hy-push-state-load', function() {
+      w.clearTimeout(timeoutId);
+      timeoutId = w.setTimeout(function() {
+        ga('set', 'page', w.location.pathname);
+        ga('send', 'pageview');
+      }, 500);
+    });
+
+    d.addEventListener('hy--cookies-ok', function () {
+      w.ga(function(tracker) {
+        w.ga("set", "anonymizeIp", undefined);
+        localStorage && localStorage.setItem("ga--client-id", tracker.get("clientId"));
+      });
+    });
+
+    w.loadJSDeferred('https://www.google-analytics.com/analytics.js');
+  }(window, document);</script>
+
+
+  <script type="module">
+    if ('serviceWorker' in navigator) {
+      /**/
+      navigator.serviceWorker.getRegistration()
+        .then(r => r.unregister())
+        .catch(() => {});
+      /**/
+    }
+  </script>
+<!--<![endif]-->
+  
+
+
+
+<div hidden>
+  
+  <h2 class="sr-only">Templates (for web app):</h2>
+
+  <template id="_animation-template">
+  <div class="animation-main fixed-top">
+    <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+</ul></nav>
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+  <template id="_loading-template">
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+  <template id="_error-template">
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
+
+    </p>
+  </div>
+</template>
+
+  <template id="_permalink-template">
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="content-hash"></span>
+  </a>
+</template>
+
+  
+  
+    <template id="_dark-mode-template">
+  <button id="_dark-mode" class="nav-btn no-hover" >
+    <span class="sr-only">Dark Mode</span>
+    <span class="icon-brightness-contrast"></span>
+  </button>
+</template>
+
+  
+  
+</div>
+
+</body>
+</html>

@@ -3,17 +3,26 @@ layout: post
 title: "자바스크립트 데이터 타입"
 category: frontend
 description: >
-자바스크립트의 종류 및 메모리 등 효율성체크 동작원리를 알아보자
-image: 
-    path: /assets/img/frontend/js.jpeg
+  자바스크립트의 종류 및 메모리 등 효율성체크 동작원리를 알아보자
+image:
+  path: /assets/img/frontend/js.jpeg
 tags: JavaScript TIL
 ---
 
-## 데이터 타입의 종류 및 메모리
+
+<!--more-->
+
+# 데이터 타입의 종류 및 메모리
+{:.no_toc}
+
+* this list will be replaced by the toc
+{:toc .large-only}
+
 
 ---
 
-![JsDataType.png](../assets/img/dataType/JsDataType.png)
+
+![JsDataType.png](/assets/img/frontend/JsDataType.png)
 
 자바스크립트는 다양한 종류의 값을 저장하고 조작할 수 있는 여러 내장 데이터 유형을 지원합니다.
 <br>
