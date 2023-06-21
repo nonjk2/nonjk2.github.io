@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko-KR"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko-KR" /><updated>2023-06-22T03:21:58+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">개발자 최은석</title><subtitle>공부하자 📚.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko-KR"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko-KR" /><updated>2023-06-22T03:36:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">개발자 최은석</title><subtitle>공부하자 📚.
 </subtitle><author><name>최은석</name><email>nonjk2@gmail.com</email></author><entry><title type="html">OSI 7계층</title><link href="http://localhost:4000/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" rel="alternate" type="text/html" title="OSI 7계층" /><published>2023-06-19T00:00:00+09:00</published><updated>2023-06-19T00:00:00+09:00</updated><id>http://localhost:4000/computerscience/OSI%207%EA%B3%84%EC%B8%B5</id><content type="html" xml:base="http://localhost:4000/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html">&lt;aside&gt;
 💡 강의를 보면서 기록을 하여 네트워크와 HTTP 에 대한 지식을 재정리
 
@@ -19,7 +19,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;./Image/osi7_1.png&quot; alt=&quot;osi_img_01.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/network/osi7_1.png&quot; alt=&quot;osi_img_01.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;1층-물리계층-비트&quot;&gt;1층 물리계층 (비트)&lt;/h3&gt;
 
@@ -321,7 +321,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
   &lt;/li&gt;
   &lt;li&gt;Nameserver는 무조건 공인된 애들한테만 -&amp;gt; 악의적인 사용자가 있기때문&lt;/li&gt;
   &lt;li&gt;sub domain 활용 잘하면 도메인 값 아낄수있음&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>최은석</name><email>nonjk2@gmail.com</email></author><category term="ComputerScience" /><category term="Network" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/frontend/dns.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/frontend/dns.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">함수</title><link href="http://localhost:4000/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html" rel="alternate" type="text/html" title="함수" /><published>2023-06-17T00:00:00+09:00</published><updated>2023-06-17T00:00:00+09:00</updated><id>http://localhost:4000/frontend/%EC%9D%BC%EA%B8%89%20%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98%20%ED%95%A8%EC%88%98</id><content type="html" xml:base="http://localhost:4000/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html">&lt;!--more--&gt;
+&lt;/ul&gt;</content><author><name>최은석</name><email>nonjk2@gmail.com</email></author><category term="ComputerScience" /><category term="Network" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/frontend/dns.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/frontend/dns.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">함수</title><link href="http://localhost:4000/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4-%EB%A1%9C%EC%84%9C%EC%9D%98%ED%95%A8%EC%88%98.html" rel="alternate" type="text/html" title="함수" /><published>2023-06-17T00:00:00+09:00</published><updated>2023-06-17T00:00:00+09:00</updated><id>http://localhost:4000/frontend/%EC%9D%BC%EA%B8%89%20%EA%B0%9D%EC%B2%B4%20%EB%A1%9C%EC%84%9C%EC%9D%98%ED%95%A8%EC%88%98</id><content type="html" xml:base="http://localhost:4000/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4-%EB%A1%9C%EC%84%9C%EC%9D%98%ED%95%A8%EC%88%98.html">&lt;!--more--&gt;
 &lt;h1 class=&quot;no_toc&quot; id=&quot;일급-객체로서의-함수&quot;&gt;일급 객체로서의 함수&lt;/h1&gt;
 
 &lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
