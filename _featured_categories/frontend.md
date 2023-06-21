@@ -11,7 +11,6 @@ order: 1
 # (Optional) Write a short (~150 characters) description of this featured tag.
 description: >
   정리 및 TIL
-
 # (Optional) You can disable grouping posts by date.
 no_groups: true
 
