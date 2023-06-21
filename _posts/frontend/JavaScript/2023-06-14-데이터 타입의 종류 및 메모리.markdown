@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 자바스크립트 데이터 타입
+title: "자바스크립트 데이터 타입"
 category: frontend
 description: >
 자바스크립트의 종류 및 메모리 등 효율성체크 동작원리를 알아보자
 image: 
     path: /assets/img/frontend/js.jpeg
-tags: JavaScript # add tag
+tags: JavaScript TIL
 ---
 
 ## 데이터 타입의 종류 및 메모리
