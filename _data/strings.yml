@@ -41,11 +41,11 @@ loading:               Loading…
 redirecting:           Redirecting…
 
 continue_reading:      >
-  Continue reading <!--post_title-->
+  보러가기 <!--post_title-->
 
 cookies_banner:
   text:                >
-    This site uses cookies. [Cookies Policy](/cookies-policy/).
+    쿠키를 사용합니다. [Cookies Policy](/cookies-policy/).
   okay:                Okay
 
 not_found:
@@ -85,9 +85,9 @@ breadcrumbs_separator: '/'
 # Date formats
 # ---------------------------------------------------------------------------------------
 date_formats:
-  post:                '%d %b %Y'
+  post:                '%Y %b %d'
   last_modified_at:    '%Y-%m-%d'
-  related_post:        '%d %b %Y'
+  related_post:        '%Y %b %d'
   list_group_by:       '%Y'
   list_entry:          '%d %b'
   project:             '%Y'
