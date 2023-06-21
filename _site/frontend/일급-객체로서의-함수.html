@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+
+
+
+  
+    
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>함수 | 개발자 최은석</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="함수" />
+<meta name="author" content="최은석" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="description" content="함수에 대하여" />
+<meta property="og:description" content="함수에 대하여" />
+<link rel="canonical" href="http://localhost:4000/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html" />
+<meta property="og:url" content="http://localhost:4000/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html" />
+<meta property="og:site_name" content="개발자 최은석" />
+<meta property="og:image" content="http://localhost:4000/assets/img/frontend/ES6.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-06-17T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/img/frontend/ES6.png" />
+<meta property="twitter:title" content="함수" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"최은석"},"dateModified":"2023-06-17T00:00:00+09:00","datePublished":"2023-06-17T00:00:00+09:00","description":"함수에 대하여","headline":"함수","image":"http://localhost:4000/assets/img/frontend/ES6.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"최은석"},"url":"http://localhost:4000/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+    <meta name="keywords" content="dev,frontend,TIL">
+  
+
+
+
+  <meta name="theme-color" content="rgb(25,55,71)">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="개발자 최은석">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="application-name" content="개발자 최은석">
+
+<meta name="generator" content="Hydejack v9.1.6" />
+
+
+<link rel="alternate" href="http://localhost:4000/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html" hreflang="ko-kr">
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="개발자 최은석" />
+
+
+<link
+  rel="shortcut icon"
+  href="/assets/icons/favicon.ico"
+/>
+<link
+  rel="apple-touch-icon"
+  href="/assets/icons/icon-192x192.png"
+/>
+
+<link rel="manifest" href="/assets/site.webmanifest" />
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" /><link rel="dns-prefetch" href="https://fonts.gstatic.com" /> 
+<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+
+<link
+  rel="preload"
+  href="/assets/img/swipe.svg"
+  as="image"
+  id="_hrefSwipeSVG"
+/>
+
+<link
+  rel="dns-prefetch"
+  href="/assets/js/search-worker-9.1.6.js"
+  as="worker"
+  id="_hrefSearch"
+/>
+  
+<!-- ... -->
+
+<!-- For sidebar folder -->
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+<script src="/assets/js/sidebar-folder.js"></script>
+
+
+<script>!function(r,c){"use strict";function a(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=c.createElement("script"),e=(n.src=e,t&&a(n,"load",t,{once:!0}),c.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=c.createElement("script");function o(){r._loaded=!0,t&&a(n,"load",t,{once:!0});var e=c.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():a(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){a(c.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}}(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+!function(w) {
+  w._baseURL = '/';
+  w._publicPath = '/assets/js/';
+  w._noPushState = false;
+  w._noDrawer = false;
+  w._noNavbar = false;
+  w._noToc = false;
+  w._noSearch = true;
+  w._advertise = false;
+  w._search = {
+    DATA_URL: '/assets/sitedata.json?no-cache',
+    STORAGE_KEY: 'mini-search/',
+    INDEX_KEY: 'index--2023-06-22T01:42:47+09:00',
+  };
+  w._clapButton = true;
+}(window);</script>
+
+
+<script async src="/assets/bower_components/MathJax/es5/tex-mml-chtml.js" id="_MathJax"></script>
+
+
+<!--[if gt IE 8]><!---->
+
+  
+
+
+
+
+<link rel="stylesheet" href="/assets/css/hydejack-9.1.6.css" id="_stylePreload">
+<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans:400,400i,700,700i&display=swap" id="_fontsPreload">
+
+
+
+  <style id="_pageStyle">
+
+html{--accent-color: rgb(156,143,125);--accent-color-faded: rgba(156,143,125,0.5);--accent-color-highlight: rgba(156,143,125,0.1);--accent-color-darkened: #8a7c69;--theme-color: rgb(25,55,71);--dark-mode-body-bg: #2a2d2f;--dark-mode-border-color: #363a3d}
+
+</style>
+
+
+<!--<![endif]-->
+
+
+
+
+
+</head>
+
+<body class="no-break-layout">
+  
+<script>
+  window._sunrise = 6;
+  window._sunset =  18;
+  !function(e,s){var d="light-mode",o="dark-mode",a=(new Date).getHours();"matchMedia"in e&&e.matchMedia("(prefers-color-scheme)")||(e=(a=a<=e._sunrise||a>=e._sunset?o:d)==o?d:o,s.body.classList.add(a),s.body.classList.remove(e))}(window,document);
+
+</script>
+
+
+
+<hy-push-state
+  id="_pushState"
+  replace-selector="#_main"
+  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
+  script-selector="script"
+  duration="500"
+  hashchange
+>
+  
+  
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only"
+      >Jump to:</span
+    >
+    <div class="nav-btn-bar">
+      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
+        <span class="sr-only"
+          >Navigation</span
+        >
+        <span class="icon-menu"></span>
+      </a>
+      <div class="nav-span"></div>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+  <main
+  id="_main"
+  class="content layout-post"
+  role="main"
+>
+  <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+    <li><a href="/">home</a></li>
+    
+      <li>
+        
+          <span>/</span>
+          
+          
+          <a href="/frontend/">frontend</a>
+        
+      </li>
+    
+      <li>
+        
+          <span>/</span>
+          <span>일급-객체로서의-함수.html</span>
+        
+      </li>
+    
+  
+</ul></nav>
+  
+
+
+
+
+
+
+
+
+
+
+<article id="post-frontend-일급 객체로서의 함수" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        함수
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2023-06-17T00:00:00+09:00">17 Jun 2023</time> in <a href="/frontend/" class="flip-title">frontend</a> on <a href="/tag-javascript/" class="flip-title">JavaScript</a>, <span>Til</span>
+      </span>
+      
+        
+      
+    </div>
+
+    
+    
+      
+        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
+          
+
+
+<img
+  
+    src="/assets/img/frontend/ES6.png"
+    
+    
+  
+  alt="함수"
+  
+  
+  width="864"
+  height="486"
+  loading="lazy"
+/>
+
+        </div>
+      
+      
+    
+
+    
+
+
+
+  
+    <p class="note-sm" >
+      함수에 대하여
+
+    </p>
+  
+
+
+  </header>
+
+  
+    <!--more-->
+<h1 class="no_toc" id="일급-객체로서의-함수"><strong>일급 객체로서의 함수</strong></h1>
+
+<ul class="large-only" id="markdown-toc">
+  <li><a href="#변수를-함수를-할당" id="markdown-toc-변수를-함수를-할당">변수를 함수를 할당</a></li>
+  <li><a href="#함수를-인자로-다른-함수에-전달" id="markdown-toc-함수를-인자로-다른-함수에-전달">함수를 인자로 다른 함수에 전달</a></li>
+  <li><a href="#함수를-반환" id="markdown-toc-함수를-반환">함수를 반환</a></li>
+  <li><a href="#객체의-프로퍼티로-함수를-할당" id="markdown-toc-객체의-프로퍼티로-함수를-할당">객체의 프로퍼티로 함수를 할당</a></li>
+  <li><a href="#배열의-요소로-함수를-할당" id="markdown-toc-배열의-요소로-함수를-할당">배열의 요소로 함수를 할당</a></li>
+  <li><a href="#map-과-set" id="markdown-toc-map-과-set">Map 과 Set</a>    <ul>
+      <li><a href="#1-map" id="markdown-toc-1-map">(1) Map</a></li>
+      <li><a href="#2-set" id="markdown-toc-2-set">(2) Set</a></li>
+    </ul>
+  </li>
+</ul>
+<hr />
+
+<p>자바스크립트에서 함수는 일급 객체(First-Class Object). 그래서 함수를 객체처럼 여러가지 방식으로 다룰 수 있다.</p>
+
+<blockquote>
+  <p><strong>일급객체(First-class Object)란 다른 객체들에 일반적으로 적용 가능한 연산을 모두 지원하는 객체를 가리킨다. [위키백과]</strong></p>
+</blockquote>
+
+<p>함수가 일급 객체로 취급되기 때문에, 함수를 매우 유연하게 사용할 수 있다.</p>
+
+<h3 id="변수를-함수를-할당">변수를 함수를 할당</h3>
+
+<ul>
+  <li>
+    <p>함수는 변수에 할당할 수 있다. 함수는 값으로 함수는 값으로 취급되기 때문에, 다른 변수와 마찬가지로 변수에 할당할 수 있다. 변수에 할당된 함수는 나중에 사용할 수 있다.</p>
+
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sayHello</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello!</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">sayHello</span><span class="p">();</span> <span class="c1">// "Hello!" 출력</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="함수를-인자로-다른-함수에-전달">함수를 인자로 다른 함수에 전달</h3>
+
+<ul>
+  <li>
+    <p>함수는 다른 함수에 인자로 전달될 수 있다. 함수가 값으로 취급되기 때문에, 다른 함수의 인자로 전달할 수 있다. 이것은 <strong>콜백(callback)</strong>이나 <strong>고차 함수(higher-order function)</strong>를 작성하는 데 사용</p>
+
+    <ul>
+      <li>고차 함수란 함수를 인자로 받거나 함수를 출력으로 반환하는 함수를 말한다. 함수를 다루는 함수인셈 정리하면 콜백함수는 고차함수라고도 할 수 있다.</li>
+    </ul>
+
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">callFunction</span><span class="p">(</span><span class="nx">func</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">func</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">sayHello</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello!</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">callFunction</span><span class="p">(</span><span class="nx">sayHello</span><span class="p">);</span> <span class="c1">// "Hello!" 출력</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="함수를-반환">함수를 반환</h3>
+
+<ul>
+  <li>함수는 다른 함수에서 반환 될수 있다. 함수는 값으로 취급되기 때문에, 다른 함수에서 반환할 수 있다. 이것은 함수 팩토리 (factory) 나 클로저(closure)를 작성하는 데 사용됨.</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">createAdder</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">num</span><span class="p">;</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">addFive</span> <span class="o">=</span> <span class="nx">createAdder</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">addFive</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span> <span class="c1">// 15 출력</span>
+</code></pre></div></div>
+
+<h3 id="객체의-프로퍼티로-함수를-할당">객체의 프로퍼티로 함수를 할당</h3>
+
+<ul>
+  <li>함수는 객체의 프로퍼티로 할당 될 수 있다. 객체의 메소드로 함수를 호출 가능</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">John</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">sayHello</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Hello, my name is </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">person</span><span class="p">.</span><span class="nx">sayHello</span><span class="p">();</span> <span class="c1">// "Hello, my name is John" 출력</span>
+</code></pre></div></div>
+
+<h3 id="배열의-요소로-함수를-할당">배열의 요소로 함수를 할당</h3>
+
+<ul>
+  <li>함수는 배열의 요소로 할당될 수 있다. 이것은 함수를 배열에서 사용할 수 있게 함.</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">;</span>
+  <span class="p">},</span>
+<span class="p">];</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myArray</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">));</span> <span class="c1">// 15 출력</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myArray</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span> <span class="c1">// 5 출력</span>
+</code></pre></div></div>
+
+<ul>
+  <li>함수가 일급 객체로 취급되기 때문에, 자바스크립트에서 함수는 매우 유연하게 사용될 수 있다. 이것은 다양한 프로그래밍 패턴에서 사용되며 함수를 일급 객체로 다룰 수 있다는 것은 코드를 더 간결하고 모듈화된 형태로 작성 할 수 있게 해준다.</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">multiplyBy</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">x</span> <span class="o">*</span> <span class="nx">num</span><span class="p">;</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">multiplyByTwo</span> <span class="o">=</span> <span class="nx">multiplyBy</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">multiplyByThree</span> <span class="o">=</span> <span class="nx">multiplyBy</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">add</span><span class="p">(</span><span class="nx">multiplyByTwo</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="nx">multiplyByThree</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span> <span class="c1">// 40 출력</span>
+</code></pre></div></div>
+
+<h1 id="map-과-set">Map 과 Set</h1>
+
+<hr />
+
+<p><strong>JavaScript</strong>에서 <strong><code class="language-plaintext highlighter-rouge">객체(object)</code></strong>와 <strong><code class="language-plaintext highlighter-rouge">배열(array)</code></strong>을 이용하면 굉장히 다양하고 복잡한 프로그래밍을 할 수가 있다. 하지만 여러가지 문제들을 프로그래밍 적으로 반영하기엔 많이 부족하다. 이러한 한계를 극복하고자 비교적 최근 등장한 자료구조인 <code class="language-plaintext highlighter-rouge">Map</code> <code class="language-plaintext highlighter-rouge">Set</code>을 알아보자</p>
+
+<h3 id="1-map">(1) Map</h3>
+
+<p>Map은 키-쌍을 저장하는 객체와 비슷하다. Map은 각 쌍의 키와 값을 저장하며, 객체와 달리 키로 사용 할 수 있는 모든 유형을 사용할 수 있다. Map은 키가 정렬된 순서로 저장되기 때문에 , 추가한 순서대로 반복할 필요가 없다. Map 을 사용하면 다음과 같은 작업을 수행할 수 있다.</p>
+
+<ul>
+  <li>키-값 쌍 추가 및 검색(set)</li>
+  <li>키-값 쌍 삭제(delete)</li>
+  <li>모든 키-값 쌍 제거(clear)</li>
+  <li><strong>Map</strong> 크기 및 존재 여부 확인(size)</li>
+</ul>
+
+<aside>
+💡 **Map 의 메서드와 프로퍼티**
+
+- `new Map()` – 맵을 만듭니다.
+- `map.set(key, value)` – `key`를 이용해 `value`를 저장합니다.
+- `map.get(key)` – `key`에 해당하는 값을 반환합니다. `key`가 존재하지 않으면 `undefined`를 반환합니다.
+- `map.has(key)` – `key`가 존재하면 `true`, 존재하지 않으면 `false`를 반환합니다.
+- `map.delete(key)` – `key`에 해당하는 값을 삭제합니다.
+- `map.clear()` – 맵 안의 모든 요소를 제거합니다.
+- `map.size` – 요소의 개수를 반환합니다.
+</aside>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myMap</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">();</span> <span class="c1">//Map()생성자를 사용</span>
+<span class="nx">myMap</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">key</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span><span class="p">);</span> <span class="c1">//Map에 값을 추가하기위해 set()메서드 사용</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myMap</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">key</span><span class="dl">'</span><span class="p">);</span><span class="c1">//get()메서드를 사용해 'value'출력</span>
+</code></pre></div></div>
+
+<p><strong>Map</strong>에서는 <strong>keys()</strong>, <strong>values()</strong>, <strong>entries()</strong> 메소드를 사용하여 키, 값 및 키-값 쌍을 반복할 수 있다.</p>
+
+<aside>
+💡 `for of` 반복문은 ES6에 추가된 새로운 컬렉션 전용 반복 구문. `for of` 구문을 사용하기 위해선 컬렉션 객체가 `[Symbol.iterator]` 속성을 가지고 있어야한다.(직접 명시 가능).
+
+</aside>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">iterable</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">];</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">valueof</span> <span class="nx">iterable</span><span class="p">){</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// 10, 20 , 30</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">iterable</code> 은 반복자라는 뜻. 요소 하나하나를 반복할 수 있도록 배열 또는 객체와 비슷한 형태로 열거되어있는 자료구조로 이해하면 된다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myMap</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">();</span>
+<span class="nx">myMap</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">one</span><span class="dl">"</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nx">myMap</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="nx">myMap</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">three</span><span class="dl">"</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">key</span> <span class="k">of</span> <span class="nx">myMap</span><span class="p">.</span><span class="nx">keys</span><span class="p">())</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">value</span> <span class="k">of</span> <span class="nx">myMap</span><span class="p">.</span><span class="nx">values</span><span class="p">())</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">entry</span> <span class="k">of</span> <span class="nx">myMap</span><span class="p">.</span><span class="nx">entries</span><span class="p">())</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">entry</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span><span class="s2">: </span><span class="p">${</span><span class="nx">entry</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myMap</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span> <span class="c1">// 3 출력 Map의 크기를 확인</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myMap</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="p">));</span> <span class="c1">// true 출력 특정키가 Map에 존재하는지 여부를 확인</span>
+</code></pre></div></div>
+
+<h3 id="2-set">(2) Set</h3>
+
+<p>JavaScript에서 <strong><code class="language-plaintext highlighter-rouge">Map</code></strong>과 <strong><code class="language-plaintext highlighter-rouge">Set</code></strong>은 두 가지 다른 유형의 자료 구조. <strong><code class="language-plaintext highlighter-rouge">Map</code></strong>은 키-값 쌍을 저장하는 객체와 비슷하며, <strong><code class="language-plaintext highlighter-rouge">Set</code></strong>은 고유한 값을 저장하는 자료 구조다. <strong><code class="language-plaintext highlighter-rouge">Map</code></strong> 및 <strong><code class="language-plaintext highlighter-rouge">Set</code></strong>은 모두 값 추가, 검색, 삭제 및 모든 값 제거를 수행할 수 있다. <strong><code class="language-plaintext highlighter-rouge">Map</code></strong> 및 <strong><code class="language-plaintext highlighter-rouge">Set</code></strong>을 사용하여 효율적인 데이터 구성 및 검색을 수행할 수 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Set</code> 은 고유한 값을 저장하는 자료 구조다. <code class="language-plaintext highlighter-rouge">Set</code> 은 값만 저장하며, 키를 저장하지 않는다. <code class="language-plaintext highlighter-rouge">Set</code> 은 값이 중복되지 않는 유일한 요소로만 구성된다.</p>
+
+<ul>
+  <li>값 추가 및 검색</li>
+  <li>값 삭제</li>
+  <li>모든 값 제거</li>
+  <li><code class="language-plaintext highlighter-rouge">Set</code> 크기 및 존재 여부 확인</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mySet</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Set</span><span class="p">();</span> <span class="c1">//Set() 생성자 사용</span>
+<span class="nx">mySet</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">"</span><span class="s2">value1</span><span class="dl">"</span><span class="p">);</span> <span class="c1">//add()메소드 사용 추가</span>
+<span class="nx">mySet</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">"</span><span class="s2">value2</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">mySet</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">"</span><span class="s2">value3</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mySet</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="dl">"</span><span class="s2">value1</span><span class="dl">"</span><span class="p">));</span> <span class="c1">// true 출력 has() 메소드 사용</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">value</span> <span class="k">of</span> <span class="nx">mySet</span><span class="p">.</span><span class="nx">values</span><span class="p">())</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span> <span class="c1">// values()메소드를 사용하여 값을 반복</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mySet</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span> <span class="c1">// 3 출력 크기 확인</span>
+</code></pre></div></div>
+
+  
+</article>
+
+
+
+  <hr class="dingbat related mb6" />
+
+
+
+
+
+
+  
+     
+
+
+  <aside class="about related mt4 mb4" role="complementary">
+    
+    
+
+<div class="author mt4">
+  
+
+  
+    
+
+
+<img
+  
+    src="https://placehold.it/128x128"
+    srcset="https://placehold.it/128x128 1x,https://placehold.it/256x256 2x"
+    
+  
+  alt="최은석"
+  class="avatar"
+  
+  width="120"
+  height="120"
+  loading="lazy"
+/>
+
+  
+
+  
+  
+  <h2  class="page-title hr-bottom">
+    About
+  </h2>
+
+  <p>어제보단 나아졌겠지 ?</p>
+
+
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/nonjk2" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:nonjk2@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+
+  </aside>
+
+
+  
+
+  
+    
+
+
+  
+
+  
+    
+
+
+  <aside class="other-projects related mb0" role="complementary">  <h2>Related Posts</h2>  <div class="columns">          <div class="column column-1-2">                  <article class="project-card">  <a href="/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine fallback-img">          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" class="flip-title">OSI 7계층</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      OSI 7계층에 대해서 각 계층을 알아보고 더욱 파헤쳐 보자    </p>      <a class="fill-card no-hover" href="/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" tabindex="-1"><span class="sr-only">Continue reading OSI 7계층</span></a></article>              </div>          <div class="column column-1-2">                  <article class="project-card">  <a href="/computerscience/DNS.html" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine flip-project-img">              <img      src="/assets/img/frontend/dns.jpg"        sizes="(min-width:86em)29.5rem,(min-width:54em)24.5rem,(min-width:42em)21.5rem,42rem"    alt="DNS"      width="864"  height="486"  loading="lazy"/>          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/computerscience/DNS.html" class="flip-title">DNS</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      DNS 에 대해 알아보자    </p>      <a class="fill-card no-hover" href="/computerscience/DNS.html" tabindex="-1"><span class="sr-only">Continue reading DNS</span></a></article>              </div>      </div></aside>
+
+  
+
+  
+    
+
+
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Random Posts</h2>  <ul class="related-posts">          <li class="h4">  <a href="/frontend/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8.html" class="flip-title"><span>실행 컨텍스트</span></a>  <time class="faded fine" datetime="2023-06-15T00:00:00+09:00">15 Jun 2023</time></li>          <li class="h4">  <a href="/frontend/%EB%B3%80%EC%88%98-%EC%84%A0%EC%96%B8%EA%B3%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%95%A0%EB%8B%B9.html" class="flip-title"><span>변수선언과 데이터 할당</span></a>  <time class="faded fine" datetime="2023-06-15T00:00:00+09:00">15 Jun 2023</time></li>          <li class="h4">  <a href="/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" class="flip-title"><span>OSI 7계층</span></a>  <time class="faded fine" datetime="2023-06-19T00:00:00+09:00">19 Jun 2023</time></li>      </ul></aside>
+
+  
+
+  
+    
+
+  
+
+
+  
+<footer class="content" role="contentinfo">
+  <hr/>
+  
+    <p><small class="copyright">© 2021. All rights reserved.
+</small></p>
+  
+  
+    <nav class="legal"><small>
+    
+      
+      <a class="heading flip-title" href="/LICENSE/">LICENSE</a>
+      |
+    
+      
+      <a class="heading flip-title" href="/NOTICE/">NOTICE</a>
+      
+    
+    </small></nav>
+  
+  
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+  <hy-drawer
+  id="_drawer"
+  class=""
+  side="left"
+  threshold="10"
+  noscroll
+  
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+
+
+
+
+<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/sidebar-bg.jpg)"></div>
+
+    <div class="sidebar-sticky">
+  <div class="sidebar-about">
+    
+      <a class="no-hover" href="/" tabindex="-1">
+        <img src="/assets/img/logo.png" class="avatar" alt="개발자 최은석" width="120" height="120" loading="lazy" />
+      </a>
+    
+    <a class="sidebar-title" href="/"><h2 class="h1">개발자 최은석</h2></a>
+    
+    
+      <p class="">
+        반갑습니다.
+
+      </p>
+    
+  </div>
+
+  <nav class="sidebar-nav heading" role="navigation">
+    <span class="sr-only"
+  >Navigation:</span
+>
+<ul>
+   
+                          
+  <li>
+    
+    <input type="checkbox" id="folder-checkbox-9" />
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/frontend/"
+        class="sidebar-nav-item"
+        
+        >frontend</a
+      >
+      
+      <button class="spread-btn" onclick="javascript:spread(9)">
+        <label id="spread-icon-9" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
+    </div>
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-algorisme/"
+          >Algorism</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-javascript/"
+          >JavaScript</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-react/"
+          >React</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-typescript/"
+          >TypeScript</a
+        >
+      </li>
+      
+    </ul>
+     
+  </li>
+        
+  <li>
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/computerscience/"
+        class="sidebar-nav-item"
+        
+        >Computer Science</a
+      >
+      
+    </div>
+    
+  </li>
+    
+</ul>
+
+  </nav>
+
+  
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/nonjk2" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:nonjk2@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+</hy-push-state>
+
+
+  <!--[if gt IE 10]><!---->
+  <script nomodule>!function(){var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())}();
+</script>
+  <script src="/assets/js/hydejack-9.1.6.js" type="module"></script>
+  <script src="/assets/js/LEGACY-hydejack-9.1.6.js" nomodule defer></script>
+  
+
+  
+  <script>!function(w, d) {
+    w.ga=w.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+    /**/
+      ga('create', 'G-43895YHF45', 'auto');
+    /**/
+
+    var pushStateEl = d.getElementById('_pushState');
+    var timeoutId;
+    pushStateEl.addEventListener('hy-push-state-load', function() {
+      w.clearTimeout(timeoutId);
+      timeoutId = w.setTimeout(function() {
+        ga('set', 'page', w.location.pathname);
+        ga('send', 'pageview');
+      }, 500);
+    });
+
+    d.addEventListener('hy--cookies-ok', function () {
+      w.ga(function(tracker) {
+        w.ga("set", "anonymizeIp", undefined);
+        localStorage && localStorage.setItem("ga--client-id", tracker.get("clientId"));
+      });
+    });
+
+    w.loadJSDeferred('https://www.google-analytics.com/analytics.js');
+  }(window, document);</script>
+
+
+  <script type="module">
+    if ('serviceWorker' in navigator) {
+      /**/
+      navigator.serviceWorker.getRegistration()
+        .then(r => r.unregister())
+        .catch(() => {});
+      /**/
+    }
+  </script>
+<!--<![endif]-->
+  
+
+
+
+<div hidden>
+  
+  <h2 class="sr-only">Templates (for web app):</h2>
+
+  <template id="_animation-template">
+  <div class="animation-main fixed-top">
+    <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+</ul></nav>
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+  <template id="_loading-template">
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+  <template id="_error-template">
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
+
+    </p>
+  </div>
+</template>
+
+  <template id="_permalink-template">
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="content-hash"></span>
+  </a>
+</template>
+
+  
+  
+    <template id="_dark-mode-template">
+  <button id="_dark-mode" class="nav-btn no-hover" >
+    <span class="sr-only">Dark Mode</span>
+    <span class="icon-brightness-contrast"></span>
+  </button>
+</template>
+
+  
+  
+</div>
+
+</body>
+</html>

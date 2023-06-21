@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+
+
+
+  
+    
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>실행 컨텍스트 | 개발자 최은석</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="실행 컨텍스트" />
+<meta name="author" content="최은석" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="description" content="실행컨텍스트에 대해 알아보자" />
+<meta property="og:description" content="실행컨텍스트에 대해 알아보자" />
+<link rel="canonical" href="http://localhost:4000/frontend/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8.html" />
+<meta property="og:url" content="http://localhost:4000/frontend/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8.html" />
+<meta property="og:site_name" content="개발자 최은석" />
+<meta property="og:image" content="http://localhost:4000/assets/img/frontend/ES6.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-06-15T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/img/frontend/ES6.png" />
+<meta property="twitter:title" content="실행 컨텍스트" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"최은석"},"dateModified":"2023-06-15T00:00:00+09:00","datePublished":"2023-06-15T00:00:00+09:00","description":"실행컨텍스트에 대해 알아보자","headline":"실행 컨텍스트","image":"http://localhost:4000/assets/img/frontend/ES6.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/frontend/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"최은석"},"url":"http://localhost:4000/frontend/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+    <meta name="keywords" content="dev,frontend,TIL">
+  
+
+
+
+  <meta name="theme-color" content="rgb(25,55,71)">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="개발자 최은석">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="application-name" content="개발자 최은석">
+
+<meta name="generator" content="Hydejack v9.1.6" />
+
+
+<link rel="alternate" href="http://localhost:4000/frontend/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8.html" hreflang="ko-kr">
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="개발자 최은석" />
+
+
+<link
+  rel="shortcut icon"
+  href="/assets/icons/favicon.ico"
+/>
+<link
+  rel="apple-touch-icon"
+  href="/assets/icons/icon-192x192.png"
+/>
+
+<link rel="manifest" href="/assets/site.webmanifest" />
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" /><link rel="dns-prefetch" href="https://fonts.gstatic.com" /> 
+<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+
+<link
+  rel="preload"
+  href="/assets/img/swipe.svg"
+  as="image"
+  id="_hrefSwipeSVG"
+/>
+
+<link
+  rel="dns-prefetch"
+  href="/assets/js/search-worker-9.1.6.js"
+  as="worker"
+  id="_hrefSearch"
+/>
+  
+<!-- ... -->
+
+<!-- For sidebar folder -->
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+<script src="/assets/js/sidebar-folder.js"></script>
+
+
+<script>!function(r,c){"use strict";function a(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=c.createElement("script"),e=(n.src=e,t&&a(n,"load",t,{once:!0}),c.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=c.createElement("script");function o(){r._loaded=!0,t&&a(n,"load",t,{once:!0});var e=c.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():a(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){a(c.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}}(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+!function(w) {
+  w._baseURL = '/';
+  w._publicPath = '/assets/js/';
+  w._noPushState = false;
+  w._noDrawer = false;
+  w._noNavbar = false;
+  w._noToc = false;
+  w._noSearch = true;
+  w._advertise = false;
+  w._search = {
+    DATA_URL: '/assets/sitedata.json?no-cache',
+    STORAGE_KEY: 'mini-search/',
+    INDEX_KEY: 'index--2023-06-22T01:42:47+09:00',
+  };
+  w._clapButton = true;
+}(window);</script>
+
+
+<script async src="/assets/bower_components/MathJax/es5/tex-mml-chtml.js" id="_MathJax"></script>
+
+
+<!--[if gt IE 8]><!---->
+
+  
+
+
+
+
+<link rel="stylesheet" href="/assets/css/hydejack-9.1.6.css" id="_stylePreload">
+<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans:400,400i,700,700i&display=swap" id="_fontsPreload">
+
+
+
+  <style id="_pageStyle">
+
+html{--accent-color: rgb(156,143,125);--accent-color-faded: rgba(156,143,125,0.5);--accent-color-highlight: rgba(156,143,125,0.1);--accent-color-darkened: #8a7c69;--theme-color: rgb(25,55,71);--dark-mode-body-bg: #2a2d2f;--dark-mode-border-color: #363a3d}
+
+</style>
+
+
+<!--<![endif]-->
+
+
+
+
+
+</head>
+
+<body class="no-break-layout">
+  
+<script>
+  window._sunrise = 6;
+  window._sunset =  18;
+  !function(e,s){var d="light-mode",o="dark-mode",a=(new Date).getHours();"matchMedia"in e&&e.matchMedia("(prefers-color-scheme)")||(e=(a=a<=e._sunrise||a>=e._sunset?o:d)==o?d:o,s.body.classList.add(a),s.body.classList.remove(e))}(window,document);
+
+</script>
+
+
+
+<hy-push-state
+  id="_pushState"
+  replace-selector="#_main"
+  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
+  script-selector="script"
+  duration="500"
+  hashchange
+>
+  
+  
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only"
+      >Jump to:</span
+    >
+    <div class="nav-btn-bar">
+      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
+        <span class="sr-only"
+          >Navigation</span
+        >
+        <span class="icon-menu"></span>
+      </a>
+      <div class="nav-span"></div>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+  <main
+  id="_main"
+  class="content layout-post"
+  role="main"
+>
+  <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+    <li><a href="/">home</a></li>
+    
+      <li>
+        
+          <span>/</span>
+          
+          
+          <a href="/frontend/">frontend</a>
+        
+      </li>
+    
+      <li>
+        
+          <span>/</span>
+          <span>실행컨텍스트.html</span>
+        
+      </li>
+    
+  
+</ul></nav>
+  
+
+
+
+
+
+
+
+
+
+
+<article id="post-frontend-실행컨텍스트" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        실행 컨텍스트
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2023-06-15T00:00:00+09:00">15 Jun 2023</time> in <a href="/frontend/" class="flip-title">frontend</a> on <a href="/tag-javascript/" class="flip-title">JavaScript</a>, <span>Til</span>
+      </span>
+      
+        
+      
+    </div>
+
+    
+    
+      
+        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
+          
+
+
+<img
+  
+    src="/assets/img/frontend/ES6.png"
+    
+    
+  
+  alt="실행 컨텍스트"
+  
+  
+  width="864"
+  height="486"
+  loading="lazy"
+/>
+
+        </div>
+      
+      
+    
+
+    
+
+
+
+  
+    <p class="note-sm" >
+      실행컨텍스트에 대해 알아보자
+
+    </p>
+  
+
+
+  </header>
+
+  
+    <!--more-->
+<h1 class="no_toc" id="실행-컨텍스트">실행 컨텍스트</h1>
+
+<ul class="large-only" id="markdown-toc">
+  <li><a href="#1실행-컨텍스트란-" id="markdown-toc-1실행-컨텍스트란-">(1)실행 컨텍스트란 ?</a></li>
+  <li><a href="#그전에-스택이란" id="markdown-toc-그전에-스택이란">그전에 <strong>스택</strong>이란?</a></li>
+  <li><a href="#그렇다면-콜스택은-" id="markdown-toc-그렇다면-콜스택은-"><strong>그렇다면 콜스택은 ?</strong></a>    <ul>
+      <li><a href="#콜-스택-순서" id="markdown-toc-콜-스택-순서"><strong>콜 스택 순서</strong></a></li>
+    </ul>
+  </li>
+  <li><a href="#2-그러면-실행컨텍스트-스텍에-하나하나-쌓이는-객체에는-무엇이-있나" id="markdown-toc-2-그러면-실행컨텍스트-스텍에-하나하나-쌓이는-객체에는-무엇이-있나">(2) <strong>그러면 실행컨텍스트 (스텍에 하나하나 쌓이는 객체)에는 무엇이 있나?</strong></a></li>
+  <li><a href="#3-lexicalenvironment1---environmentrocordrecord와-호이스팅" id="markdown-toc-3-lexicalenvironment1---environmentrocordrecord와-호이스팅">(3) LexicalEnvironment(1) - environmentRocord(=record)와 호이스팅</a>    <ul>
+      <li><a href="#초기화를-한다는것이-이해가-안된다" id="markdown-toc-초기화를-한다는것이-이해가-안된다"><strong>초기화를 한다는것이 이해가 안된다?</strong></a></li>
+    </ul>
+  </li>
+  <li><a href="#호이스팅--함수-선언문-잠재-위험성" id="markdown-toc-호이스팅--함수-선언문-잠재-위험성"><strong>호이스팅 , 함수 선언문 잠재 위험성</strong></a></li>
+  <li><a href="#4-lexicalenvironment2---스코프-스코프-체인-outerenvironmentreferenceouter" id="markdown-toc-4-lexicalenvironment2---스코프-스코프-체인-outerenvironmentreferenceouter">(4) LexicalEnvironment(2) - 스코프, 스코프 체인, outerEnvironmentReference(=outer)</a></li>
+  <li><a href="#정리" id="markdown-toc-정리">정리</a></li>
+</ul>
+<hr />
+
+<h2 id="1실행-컨텍스트란-">(1)실행 컨텍스트란 ?</h2>
+
+<p>JavaScript에서 <code class="language-plaintext highlighter-rouge">실행 컨텍스트</code>는 JavaScript 코드가 평가되고 실행되는 환경 또는 범위와 관련된 개념 또는 실행할 코드에 제공할 <strong>환경 정보</strong>들을 모아놓은 <strong>객체</strong>입니다. 코드가 JavaScript에서 실행될 때마다 실행 컨텍스트 내에서 실행됩니다.</p>
+
+<p>JavaScript 엔진은 코드가 실행될 때마다 실행 컨텍스트를 생성합니다. 실행 컨텍스트에는 두 가지 유형이 있습니다.</p>
+
+<ol>
+  <li><strong>글로벌 실행 컨텍스트(GEC):</strong> JavaScript는 코드가 실행되기 전에 글로벌 실행 컨텍스트를 생성합니다. 이것은 전역 범위를 나타내며 함수 내에 있지 않은 모든 변수(즉, 전역 변수)는 GEC에 추가됩니다. JavaScript 프로그램에는 GEC가 하나만 있습니다.</li>
+  <li><strong>FEC(Functional Execution Context):</strong> 함수가 호출되거나 호출될 때마다 새로운 실행 컨텍스트가 생성됩니다. 이 컨텍스트를 기능 실행 컨텍스트라고 합니다. 각 함수에는 고유한 실행 컨텍스트가 있습니다.</li>
+</ol>
+
+<p>각 실행 컨텍스트는 두 단계로 나눌 수 있습니다.</p>
+
+<ol>
+  <li><strong>생성 단계:</strong> 이 단계에서 JavaScript 엔진은 메모리 내부에 변수, 함수 및 인수를 저장합니다. 변수를 ‘정의되지 않음’으로 설정하고 모든 함수 선언을 메모리에 저장합니다. 또한 현재 실행 컨텍스트에서 “<code class="language-plaintext highlighter-rouge">this</code>“의 값을 결정합니다.</li>
+  <li><strong>실행 단계:</strong> 이 단계에서 JavaScript 엔진은 코드를 한 줄씩 실행하고 생성 단계에서 이미 메모리에 저장된 변수에 실제 값을 할당합니다. 또한 함수를 호출할 수도 있습니다(이미 메모리에 있으므로).</li>
+</ol>
+
+<p>이러한 과정을 이해하기 위해서는 , <code class="language-plaintext highlighter-rouge">콜 스택</code>의 이해가 필요.</p>
+
+<h2 id="그전에-스택이란">그전에 <strong>스택</strong>이란?</h2>
+
+<p><img src="/assets/img/frontend/stackqueue.png" alt="stackqueue.png" /></p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">스택</code> 은 컴퓨터 과학에서 “스택”은 LIFO(Last In First Out) 원칙을 따르는 데이터 구조입니다. <strong>이는 나중에 들어간 원소가 가장 먼저 나온다는 의미.</strong></li>
+  <li><code class="language-plaintext highlighter-rouge">큐</code> 는 선형 자료구조의 일종으로 FIFO(First In First Out)의 구조를 가집니다.<strong>이는 먼저 들어간 원소가 가장 먼저 나온다는 의미.</strong></li>
+</ol>
+
+<h2 id="그렇다면-콜스택은-"><strong>그렇다면 콜스택은 ?</strong></h2>
+
+<p><code class="language-plaintext highlighter-rouge">콜 스택</code> 은 프로그램에서 여러 함수 호출을 추적하기 위해 JavaScript에서 사용하는 메커니즘입니다. 이것은 “LIFO(Last In, First Out)” 원칙에 따라 작동하는 JavaScript 엔진의 일부입니다. 즉, 스택에 마지막으로 푸시된 함수가 함수가 반환될 때 가장 먼저 나온다는 의미입니다.</p>
+
+<h3 id="콜-스택-순서"><strong>콜 스택 순서</strong></h3>
+
+<ol>
+  <li>JavaScript 프로그램이 실행되기 시작하면 JavaScript 엔진이 전역 실행 컨텍스트(Anonymous)를 생성하고 이를 <code class="language-plaintext highlighter-rouge">콜스택</code>에 푸시합니다.</li>
+  <li>함수가 호출될 때마다 해당 함수에 대한 새 실행 컨텍스트가 생성되고 호출 스택으로 푸시됩니다. 이 함수 실행 컨텍스트에는 함수의 인수, 지역 변수, 코드에서 현재 실행 중인 정확한 위치에 대한 정보가 포함되어 있습니다.</li>
+  <li>이 함수가 다른 함수를 호출하면 해당 함수에 대한 새 실행 컨텍스트가 생성되고 호출 스택의 맨 위에 푸시됩니다.</li>
+  <li>함수 실행이 완료되면 해당 실행 컨텍스트가 호출 스택에서 제거되고 이제 스택 맨 위에 있는 실행 컨텍스트로 제어가 돌아갑니다. 함수에 대한 로컬 변수는 버려집니다.</li>
+  <li>이 프로세스는 <code class="language-plaintext highlighter-rouge">콜스택</code>이 비어 있을 때까지 계속됩니다. 즉, 모든 실행 컨텍스트가 스택에서 제거되어 모든 코드 실행이 완료되었음을 의미합니다.</li>
+  <li>호출 스택이 할당된 것보다 더 많은 공간을 차지하면 “스택 오버플로” 오류가 발생하며, 가장 일반적으로 무한 재귀로 인해 발생합니다.</li>
+</ol>
+
+<p><img src="/assets/img/frontend/callstack.png" alt="callstack.png" /></p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">first</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">second</span><span class="p">();</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">first</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">second</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">third</span><span class="p">();</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">second</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">third</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">third</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">first</span><span class="p">();</span>
+</code></pre></div></div>
+
+<aside>
+
+💡 결국은 특정 실행 컨텍스트가 생성되는(또는 활성화되는) 시점이 콜 스택의 맨 위에 쌓이는(노출되는) 순간을 의미하구요. 곧, 현재 실행할 코드에 해당 실행 컨텍스트가 관여하게 되는 시점을 의미한다고 받아들여주시면 정확합니다
+
+</aside>
+
+<h2 id="2-그러면-실행컨텍스트-스텍에-하나하나-쌓이는-객체에는-무엇이-있나">(2) <strong>그러면 실행컨텍스트 (스텍에 하나하나 쌓이는 객체)에는 무엇이 있나?</strong></h2>
+
+<p><strong>VariableEnvironment</strong></p>
+
+<ul>
+  <li>현재 컨텍스트 내의 식별자 정보(=record)를 갖고있습니다.
+    <ol>
+      <li><strong><code class="language-plaintext highlighter-rouge">var a = 3</code></strong></li>
+      <li>위의 경우, <strong><code class="language-plaintext highlighter-rouge">var a</code></strong>를 의미</li>
+    </ol>
+  </li>
+  <li>외부 환경 정보(=outer)를 갖고있습니다.</li>
+  <li>선언 시점 LexicalEnvironment의 <strong>snapshot</strong></li>
+</ul>
+
+<p><strong>LexicalEnvironment</strong></p>
+
+<ul>
+  <li>VariableEnvironment와 동일하지만, 변경사항을 실시간으로 반영.</li>
+</ul>
+
+<p><strong>ThisBinding</strong></p>
+
+<ul>
+  <li>this 식별자가 바라봐야할 객체</li>
+</ul>
+
+<p><img src="/assets/img/frontend/ec.png" alt="ec.png" /></p>
+
+<ol>
+  <li><strong>VariableEnvironment:</strong> 특정 컨텍스트에 대한 변수, 함수 및 인수의 정보(=record)입니다. 실행 컨텍스트가 생성되면 호이스팅 프로세스 중에 이 레코드가 채워집니다. 실행 컨텍스트의 생성 단계 후에 VariableEnvironment가 변경되지 않는다는 점은 주목할 가치가 있습니다.</li>
+  <li>
+    <p><strong>LexicalEnvironment:</strong> 이것 또한 특정 컨텍스트에 대한 변수, 함수 및 인수의 정보입니다. VariableEnvironment와 달리 LexicalEnvironment는 변경할 수 있습니다. 예를 들어, 실행 단계에서 <code class="language-plaintext highlighter-rouge">let</code> 또는 <code class="language-plaintext highlighter-rouge">const</code>로 새 변수가 선언되면 업데이트됩니다. LexicalEnvironment는 또한 중첩 함수에 대한 범위 체인을 만드는 데 중요한 역할을 합니다.</p>
+
+    <p>LexicalEnvironment에는 두 가지 구성 요소가 있습니다.(사진에선 양방향이지만 x)</p>
+
+    <ul>
+      <li><strong>EnvironmentRecord:</strong>
+        <ul>
+          <li>현재 범위에서 만들어진 선언의 레코드입니다. (=record)</li>
+          <li>함수에 지정된 매개변수 식별자, 함수자체, var로 선언된 변수 식별자 등</li>
+          <li>컨텍스트 내부를 처음부터 끝까지 <strong>순서대로</strong> 훑어가며 수집<strong>(호이스팅)</strong></li>
+        </ul>
+      </li>
+      <li><strong>Outer Environment Reference:</strong> 범위 체인 조회를 용이하게 하는 상위 범위의 LexicalEnvironment에 대한 참조입니다. (=outer)</li>
+    </ul>
+  </li>
+  <li><strong>ThisBinding:</strong> 이것은 현재 컨텍스트에서 <code class="language-plaintext highlighter-rouge">this</code>의 값을 나타냅니다. <code class="language-plaintext highlighter-rouge">this</code>의 값은 <strong>함수가 호출되는 방식에 따라 결정</strong>됩니다. 전역 객체, 특정 객체 인스턴스(객체에서 메소드가 호출될 때), 생성자 함수에서 새로 생성된 객체 또는 <code class="language-plaintext highlighter-rouge">call</code>, <code class="language-plaintext highlighter-rouge">apply</code> , <code class="language-plaintext highlighter-rouge">bind</code>와 같은 기능을 사용할 때 개발자가 지정한 것을 참조할 수 있습니다.</li>
+</ol>
+
+<p>실행 컨텍스트가 생성되면 VariableEnvironment, LexicalEnvironment 및 ThisBinding의 세 가지를 설정합니다. 그리고 함수가 호출될 때마다 새로운 실행 컨텍스트가 생성되어 호출 스택에 푸시되고 이러한 단계가 반복됩니다.</p>
+
+<blockquote>
+  <p>실행 컨텍스트를 생성할 때, VE에 정보를 먼저 담은 다음, 이를 그대로 복사해서 LE를 만들고 이후에는 주로 LE를 활용</p>
+</blockquote>
+
+<h2 id="3-lexicalenvironment1---environmentrocordrecord와-호이스팅">(3) LexicalEnvironment(1) - environmentRocord(=record)와 호이스팅</h2>
+
+<p><strong>호이스팅</strong>은 코드가 실행되기 전에 실행 컨텍스트의 생성 단계에서 변수 및 함수 선언이 포함된 범위의 맨 위로 이동되는 <strong>JavaScript의 동작입니다. 초기화가 아닌 선언만 호이스팅된다는 점에 유의하는 것이 중요</strong>합니다.</p>
+
+<ul>
+  <li>새 실행 컨텍스트가 생성되면(생성 단계 중) JavaScript 엔진은 변수 및 함수 선언에 대한 컨텍스트 코드를 스캔합니다.</li>
+  <li>모든 변수(<code class="language-plaintext highlighter-rouge">var</code>로 선언됨) 및 해당 범위 내의 함수 선언은 <code class="language-plaintext highlighter-rouge">VariableEnvironment</code>에 추가됩니다. 변수는 <code class="language-plaintext highlighter-rouge">정의되지 않음</code> 값으로 초기화되며 함수 선언은 전체적으로 저장됩니다.</li>
+  <li>ES6에 도입된 <code class="language-plaintext highlighter-rouge">let</code> 및 <code class="language-plaintext highlighter-rouge">const</code> 선언도 호이스팅되지만 초기화는 호이스팅되지 않습니다. 이를 선언하는 코드 줄이 실행될 때까지 “<strong>초기화되지 않은</strong>” 상태에 놓입니다. 블록 시작부터 선언까지의 이 영역을 “임시 데드 존”이라고 합니다.</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myVar</span><span class="p">);</span> <span class="c1">// undefined</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myFunc</span><span class="p">);</span> <span class="c1">// [Function: myFunc]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myLetVar</span><span class="p">);</span> <span class="c1">// ReferenceError: myLetVar is not defined</span>
+
+<span class="kd">var</span> <span class="nx">myVar</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">myFunc</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="dl">"</span><span class="s2">Hello, world!</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">myLetVar</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>이 예제에서 <code class="language-plaintext highlighter-rouge">myVar</code>는 변수 선언이 호이스트되었지만 초기화되지 않았기 때문에 <code class="language-plaintext highlighter-rouge">정의되지 않음</code>입니다. 함수 선언도 호이스팅되기 때문에 <code class="language-plaintext highlighter-rouge">myFunc</code>는 완전히 정의된 함수입니다. console.log 호출 시 <code class="language-plaintext highlighter-rouge">let</code> 선언이 “초기화되지 않은” 상태이기 때문에 <code class="language-plaintext highlighter-rouge">myLetVar</code>는 ReferenceError를 발생시킵니다.</p>
+
+<p>호이스팅을 이해하면 JavaScript 코드에서 잠재적인 혼란과 버그를 피할 수 있습니다. 일반적으로 코드를 더 명확하게 만들고 호이스팅으로 인한 의도하지 않은 동작을 방지하기 위해 범위의 시작 부분에 변수를 선언하는 것이 좋습니다.</p>
+
+<h3 id="초기화를-한다는것이-이해가-안된다"><strong>초기화를 한다는것이 이해가 안된다?</strong></h3>
+
+<aside>
+
+💡 프로그래밍에서 초기화는 선언 시점에 변수에 초기 값을 할당하는 프로세스입니다. 변수는 코드가 작동하는 값을 저장하고 초기화는 처음부터 정의된 값을 갖도록 보장하기 때문에 중요한 측면입니다.
+
+</aside>
+
+<p>JavaScript에서는 할당 연산자(<code class="language-plaintext highlighter-rouge">=</code>)를 사용하여 선언 시 변수를 초기화할 수 있습니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">eun</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+<span class="c1">//이 예에서 'eun', 30 및 3.14는</span>
+<span class="c1">//변수 name, age 및 pi에 각각 할당된 초기 값</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">var</code> 및 <code class="language-plaintext highlighter-rouge">let</code>으로 선언된 변수는 나중에 프로그램에서 재할당될 수 있지만 <code class="language-plaintext highlighter-rouge">const</code>로 선언된 변수는 재할당할 수 없습니다. 상수이며 일단 초기화되면 값을 변경할 수 없습니다</p>
+
+<p>또한 JavaScript에서 <code class="language-plaintext highlighter-rouge">var</code>로 선언된 초기화되지 않은 변수는 <code class="language-plaintext highlighter-rouge">undefined</code>로 자동 초기화됩니다. <code class="language-plaintext highlighter-rouge">let</code> 및 <code class="language-plaintext highlighter-rouge">const</code>로 선언된 변수도 호이스팅되지만 정의된 코드 줄이 실행될 때까지 초기화되지 않은 상태로 유지되므로 초기화되기 전에 액세스하려고 하면 ReferenceError가 발생합니다</p>
+
+<h2 id="호이스팅--함수-선언문-잠재-위험성"><strong>호이스팅 , 함수 선언문 잠재 위험성</strong></h2>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">));</span>
+
+<span class="c1">// 함수 선언문으로 짠 코드</span>
+<span class="c1">// 100번째 줄 : 시니어 개발자 코드(활용하는 곳 -&gt; 200군데)</span>
+<span class="c1">// hoisting에 의해 함수 전체가 위로 쭉!</span>
+<span class="kd">function</span> <span class="nx">sum</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">...</span>
+<span class="p">...</span>
+
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+<span class="p">...</span>
+
+<span class="c1">// 함수 선언문으로 짠 코드</span>
+<span class="c1">// 5000번째 줄 : 신입이 개발자 코드(활용하는 곳 -&gt; 10군데)</span>
+<span class="c1">// hoisting에 의해 함수 전체가 위로 쭉!</span>
+<span class="kd">function</span> <span class="nx">sum</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> + </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">y</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> = </span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">...</span>
+
+<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>협업을 많이 하고, 복잡한 코드일 수록. 전역 공간에서 이루어지는 코드 협업일 수록 <strong><code class="language-plaintext highlighter-rouge">함수 표현식</code></strong>을 활용하는 습관을 들이도록 합시다</p>
+
+<h2 id="4-lexicalenvironment2---스코프-스코프-체인-outerenvironmentreferenceouter">(4) LexicalEnvironment(2) - 스코프, 스코프 체인, outerEnvironmentReference(=outer)</h2>
+
+<p><strong>Scopes:</strong> JavaScript에서 범위는 변수가 정의되고 액세스할 수 있는 코드 영역입니다. JavaScript에는 세 가지 유형의 범위가 있습니다.</p>
+
+<ul>
+  <li><strong>Global Scope:</strong> 함수 또는 블록 외부에서 선언된 변수는 전역 범위에 있습니다. 함수 내를 포함하여 코드의 모든 부분에서 액세스할 수 있습니다.</li>
+  <li><strong>Function Scope:</strong> <code class="language-plaintext highlighter-rouge">var</code> 키워드를 사용하여 함수 내에서 선언된 변수는 함수의 로컬 범위에 있습니다. 해당 기능 내에서만 액세스할 수 있으며 외부에서는 액세스할 수 없습니다.</li>
+  <li><strong>Block Scope:</strong> ES6에서 <code class="language-plaintext highlighter-rouge">let</code> 및 <code class="language-plaintext highlighter-rouge">const</code>가 도입되면서 JavaScript는 블록 범위 지정을 얻었습니다. 블록 <code class="language-plaintext highlighter-rouge">{...}</code> 내에서 <code class="language-plaintext highlighter-rouge">let</code> 또는 <code class="language-plaintext highlighter-rouge">const</code>로 선언된 모든 변수는 해당 블록의 범위에 있으며 블록 외부에서 액세스할 수 없습니다.</li>
+</ul>
+
+<p><strong>Scope Chains:</strong> JavaScript에서 변수를 조회해야 하는 경우 현재 범위(scope)에서 시작합니다. 거기에서 변수를 찾지 못하면 다음 외부 범위로 이동하고 변수를 찾거나 전역 범위에 도달할 때까지 이 프로세스를 계속합니다. 이러한 범위 계층 구조를 “범위 체인”이라고 합니다.</p>
+
+<p>JavaScript의 범위 체인은 함수가 호출되는 순서(동적)가 아니라 코드에 함수가 작성되는 순서(어휘적)에 따라 결정됩니다. 이를 어휘 범위 지정이라고 합니다.</p>
+
+<p><img src="/assets/img/frontend/scopeChain.png" alt="scopeChain.png" /></p>
+
+<p><strong>outerEnvironmentReference:</strong> 외부 범위(부모 함수 또는 전역 범위)의 LexicalEnvironment에 대한 참조입니다. JavaScript가 범위 체인을 만드는 방법입니다.</p>
+
+<ul>
+  <li><strong>outer는 현재 호출된 함수가 선언될 당시</strong>(이 말이 중요)의 LexicalEnvironment를 참조</li>
+  <li>항상 outer는 오직 자신이 <strong>선언된 시점</strong>의 LexicalEnvironment를 참조하고 있으므로, <strong>가장 가까운 요소부터 차례대로 접근 가능</strong></li>
+</ul>
+
+<p>실행 컨텍스트가 생성되면 해당 LexicalEnvironment는 상위 범위의 LexicalEnvironment를 가리키는 <code class="language-plaintext highlighter-rouge">outerEnvironmentReference</code>를 가져옵니다. 변수가 현재 범위에서 발견되지 않으면 JavaScript는 ‘outerEnvironmentReference’를 사용하여 상위 범위를 확인하고 변수를 찾거나 전역 범위(부모가 없음)에 도달할 때까지 계속합니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">globalVar</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">나는 전역 변수입니다</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 이 변수는 전역 스코프에 있습니다</span>
+
+<span class="kd">function</span> <span class="nx">outerFunc</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">outerVar</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">나는 외부 함수에 있습니다</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 이 변수는 outerFunc의 스코프에 있습니다</span>
+
+  <span class="kd">function</span> <span class="nx">innerFunc</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">innerVar</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">나는 내부 함수에 있습니다</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 이 변수는 innerFunc의 스코프에 있습니다</span>
+
+    <span class="c1">// innerFunc에서는 세 변수 모두에 접근할 수 있습니다</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">innerVar</span><span class="p">);</span> <span class="c1">// 출력: "나는 내부 함수에 있습니다"</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">outerVar</span><span class="p">);</span> <span class="c1">// 출력: "나는 외부 함수에 있습니다"</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">globalVar</span><span class="p">);</span> <span class="c1">// 출력: "나는 전역 변수입니다"</span>
+  <span class="p">}</span>
+
+  <span class="nx">innerFunc</span><span class="p">();</span>
+
+  <span class="c1">// outerFunc에서는 outerVar와 globalVar에 접근할 수 있지만 innerVar에는 접근할 수 없습니다</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">outerVar</span><span class="p">);</span> <span class="c1">// 출력: "나는 외부 함수에 있습니다"</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">globalVar</span><span class="p">);</span> <span class="c1">// 출력: "나는 전역 변수입니다"</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">innerVar</span><span class="p">);</span> <span class="c1">// Uncaught ReferenceError: innerVar is not defined</span>
+<span class="p">}</span>
+
+<span class="nx">outerFunc</span><span class="p">();</span>
+
+<span class="c1">// 전역 스코프에서는 globalVar에만 접근할 수 있습니다</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">globalVar</span><span class="p">);</span> <span class="c1">// 출력: "나는 전역 변수입니다"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">outerVar</span><span class="p">);</span> <span class="c1">// Uncaught ReferenceError: outerVar is not defined</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">innerVar</span><span class="p">);</span> <span class="c1">// Uncaught ReferenceError: innerVar is not defined</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">globalVar</code>는 전역 범위에서 정의되므로 어디에서나 액세스할 수 있습니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">outerVar</code>는 <code class="language-plaintext highlighter-rouge">outerFunc</code> 내에 정의되어 있으므로 <code class="language-plaintext highlighter-rouge">outerFunc</code> 및 <code class="language-plaintext highlighter-rouge">outerFunc</code> 내에 정의된 모든 함수 내에서만 액세스할 수 있습니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">innerVar</code>는 <code class="language-plaintext highlighter-rouge">innerFunc</code> 내에 정의되어 있으므로 <code class="language-plaintext highlighter-rouge">innerFunc</code> 내에서만 액세스할 수 있습니다.</li>
+</ul>
+
+<p>‘innerFunc’가 호출되면 자체 LexicalEnvironment를 사용하여 새 실행 컨텍스트를 만듭니다. 이 LexicalEnvironment의 ‘outerEnvironmentReference’는 ‘outerFunc’의 LexicalEnvironment를 가리킵니다. 이렇게 하면 <code class="language-plaintext highlighter-rouge">innerFunc</code>가 <code class="language-plaintext highlighter-rouge">outerFunc</code>에 정의된 변수에 액세스할 수 있습니다. <code class="language-plaintext highlighter-rouge">outerFunc</code> 및 전역 범위에도 동일하게 적용됩니다.</p>
+
+<p>이것은 범위 체인의 개념을 보여줍니다. 현재 범위에서 변수를 찾을 수 없으면 JavaScript는 <code class="language-plaintext highlighter-rouge">outerEnvironmentReference</code>를 사용하여 다음 외부 범위를 살펴보고 변수를 찾거나 전역 범위에 도달할 때까지 계속합니다.</p>
+
+<p>또한 JavaScript의 어휘 범위 지정에 대한 데모이기도 합니다. <code class="language-plaintext highlighter-rouge">innerFunc</code>는 <code class="language-plaintext highlighter-rouge">outerFunc</code> 내에서 호출되지만 코드에서 작성된 위치 때문에 여전히 전역 범위에 액세스할 수 있습니다. JavaScript가 동적 범위 지정을 사용하는 경우에는 그렇지 않습니다.</p>
+
+<p><img src="/assets/img/frontend/EC2.png" alt="EC2.png" /></p>
+
+<blockquote>
+  <p>각각의 실행 컨텍스트는 LE 안에 <strong>record와 outer를 가지고 있고</strong>, outer 안에는 그 실행 컨텍스트가 <strong>선언될 당시의 LE정보</strong>가 다 들어있으니 <strong>scope chain</strong>에 의해 상위 컨텍스트의 record를 읽어올 수 있다.</p>
+</blockquote>
+
+<h1 id="정리">정리</h1>
+
+<aside>
+
+💡 - **실행 컨텍스트**는 **실행할 코드에 제공할 환경 정보**들을 모아놓은 객체.
+
+- 그 객체 안에는 3가지가 존재합니다.
+  ✓ VariableEnvironment
+  ✓ LexicalEnvironment
+  ✓ ThisBindings
+- VE와 LE는 실행컨텍스트 생성 시점에 내용이 완전히 같고, 이후 스냅샷 유지 여부가 다릅니다.
+- LE는 다음 2가지 정보를 가지고 있습니다.
+  ✓ record(=environmentRecord) ← **이 record의 수집과정이 hoisting**
+  ✓ outer(=outerEnvironmentReference)
+  -JavaScript의 스코프 체인은 각 실행 컨텍스트의 LexicalEnvironment에 있는 `outerEnvironmentReference`에 의해 형성됩니다
+
+</aside>
+
+  
+</article>
+
+
+
+  <hr class="dingbat related mb6" />
+
+
+
+
+
+
+  
+     
+
+
+  <aside class="about related mt4 mb4" role="complementary">
+    
+    
+
+<div class="author mt4">
+  
+
+  
+    
+
+
+<img
+  
+    src="https://placehold.it/128x128"
+    srcset="https://placehold.it/128x128 1x,https://placehold.it/256x256 2x"
+    
+  
+  alt="최은석"
+  class="avatar"
+  
+  width="120"
+  height="120"
+  loading="lazy"
+/>
+
+  
+
+  
+  
+  <h2  class="page-title hr-bottom">
+    About
+  </h2>
+
+  <p>어제보단 나아졌겠지 ?</p>
+
+
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/nonjk2" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:nonjk2@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+
+  </aside>
+
+
+  
+
+  
+    
+
+
+  
+
+  
+    
+
+
+  <aside class="other-projects related mb0" role="complementary">  <h2>Related Posts</h2>  <div class="columns">          <div class="column column-1-2">                  <article class="project-card">  <a href="/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine fallback-img">          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" class="flip-title">OSI 7계층</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      OSI 7계층에 대해서 각 계층을 알아보고 더욱 파헤쳐 보자    </p>      <a class="fill-card no-hover" href="/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" tabindex="-1"><span class="sr-only">Continue reading OSI 7계층</span></a></article>              </div>          <div class="column column-1-2">                  <article class="project-card">  <a href="/computerscience/DNS.html" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine flip-project-img">              <img      src="/assets/img/frontend/dns.jpg"        sizes="(min-width:86em)29.5rem,(min-width:54em)24.5rem,(min-width:42em)21.5rem,42rem"    alt="DNS"      width="864"  height="486"  loading="lazy"/>          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/computerscience/DNS.html" class="flip-title">DNS</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      DNS 에 대해 알아보자    </p>      <a class="fill-card no-hover" href="/computerscience/DNS.html" tabindex="-1"><span class="sr-only">Continue reading DNS</span></a></article>              </div>      </div></aside>
+
+  
+
+  
+    
+
+
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Random Posts</h2>  <ul class="related-posts">          <li class="h4">  <a href="/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" class="flip-title"><span>OSI 7계층</span></a>  <time class="faded fine" datetime="2023-06-19T00:00:00+09:00">19 Jun 2023</time></li>          <li class="h4">  <a href="/computerscience/DNS.html" class="flip-title"><span>DNS</span></a>  <time class="faded fine" datetime="2023-06-18T00:00:00+09:00">18 Jun 2023</time></li>          <li class="h4">  <a href="/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html" class="flip-title"><span>함수</span></a>  <time class="faded fine" datetime="2023-06-17T00:00:00+09:00">17 Jun 2023</time></li>      </ul></aside>
+
+  
+
+  
+    
+
+  
+
+
+  
+<footer class="content" role="contentinfo">
+  <hr/>
+  
+    <p><small class="copyright">© 2021. All rights reserved.
+</small></p>
+  
+  
+    <nav class="legal"><small>
+    
+      
+      <a class="heading flip-title" href="/LICENSE/">LICENSE</a>
+      |
+    
+      
+      <a class="heading flip-title" href="/NOTICE/">NOTICE</a>
+      
+    
+    </small></nav>
+  
+  
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+  <hy-drawer
+  id="_drawer"
+  class=""
+  side="left"
+  threshold="10"
+  noscroll
+  
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+
+
+
+
+<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/sidebar-bg.jpg)"></div>
+
+    <div class="sidebar-sticky">
+  <div class="sidebar-about">
+    
+      <a class="no-hover" href="/" tabindex="-1">
+        <img src="/assets/img/logo.png" class="avatar" alt="개발자 최은석" width="120" height="120" loading="lazy" />
+      </a>
+    
+    <a class="sidebar-title" href="/"><h2 class="h1">개발자 최은석</h2></a>
+    
+    
+      <p class="">
+        반갑습니다.
+
+      </p>
+    
+  </div>
+
+  <nav class="sidebar-nav heading" role="navigation">
+    <span class="sr-only"
+  >Navigation:</span
+>
+<ul>
+   
+                          
+  <li>
+    
+    <input type="checkbox" id="folder-checkbox-9" />
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/frontend/"
+        class="sidebar-nav-item"
+        
+        >frontend</a
+      >
+      
+      <button class="spread-btn" onclick="javascript:spread(9)">
+        <label id="spread-icon-9" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
+    </div>
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-algorisme/"
+          >Algorism</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-javascript/"
+          >JavaScript</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-react/"
+          >React</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-typescript/"
+          >TypeScript</a
+        >
+      </li>
+      
+    </ul>
+     
+  </li>
+        
+  <li>
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/computerscience/"
+        class="sidebar-nav-item"
+        
+        >Computer Science</a
+      >
+      
+    </div>
+    
+  </li>
+    
+</ul>
+
+  </nav>
+
+  
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/nonjk2" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:nonjk2@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+</hy-push-state>
+
+
+  <!--[if gt IE 10]><!---->
+  <script nomodule>!function(){var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())}();
+</script>
+  <script src="/assets/js/hydejack-9.1.6.js" type="module"></script>
+  <script src="/assets/js/LEGACY-hydejack-9.1.6.js" nomodule defer></script>
+  
+
+  
+  <script>!function(w, d) {
+    w.ga=w.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+    /**/
+      ga('create', 'G-43895YHF45', 'auto');
+    /**/
+
+    var pushStateEl = d.getElementById('_pushState');
+    var timeoutId;
+    pushStateEl.addEventListener('hy-push-state-load', function() {
+      w.clearTimeout(timeoutId);
+      timeoutId = w.setTimeout(function() {
+        ga('set', 'page', w.location.pathname);
+        ga('send', 'pageview');
+      }, 500);
+    });
+
+    d.addEventListener('hy--cookies-ok', function () {
+      w.ga(function(tracker) {
+        w.ga("set", "anonymizeIp", undefined);
+        localStorage && localStorage.setItem("ga--client-id", tracker.get("clientId"));
+      });
+    });
+
+    w.loadJSDeferred('https://www.google-analytics.com/analytics.js');
+  }(window, document);</script>
+
+
+  <script type="module">
+    if ('serviceWorker' in navigator) {
+      /**/
+      navigator.serviceWorker.getRegistration()
+        .then(r => r.unregister())
+        .catch(() => {});
+      /**/
+    }
+  </script>
+<!--<![endif]-->
+  
+
+
+
+<div hidden>
+  
+  <h2 class="sr-only">Templates (for web app):</h2>
+
+  <template id="_animation-template">
+  <div class="animation-main fixed-top">
+    <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+</ul></nav>
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+  <template id="_loading-template">
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+  <template id="_error-template">
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
+
+    </p>
+  </div>
+</template>
+
+  <template id="_permalink-template">
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="content-hash"></span>
+  </a>
+</template>
+
+  
+  
+    <template id="_dark-mode-template">
+  <button id="_dark-mode" class="nav-btn no-hover" >
+    <span class="sr-only">Dark Mode</span>
+    <span class="icon-brightness-contrast"></span>
+  </button>
+</template>
+
+  
+  
+</div>
+
+</body>
+</html>

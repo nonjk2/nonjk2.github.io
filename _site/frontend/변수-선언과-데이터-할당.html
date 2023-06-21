@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+
+
+
+  
+    
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>변수선언과 데이터 할당 | 개발자 최은석</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="변수선언과 데이터 할당" />
+<meta name="author" content="최은석" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="description" content="변수 선언과 데이터 할당에 대하여" />
+<meta property="og:description" content="변수 선언과 데이터 할당에 대하여" />
+<link rel="canonical" href="http://localhost:4000/frontend/%EB%B3%80%EC%88%98-%EC%84%A0%EC%96%B8%EA%B3%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%95%A0%EB%8B%B9.html" />
+<meta property="og:url" content="http://localhost:4000/frontend/%EB%B3%80%EC%88%98-%EC%84%A0%EC%96%B8%EA%B3%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%95%A0%EB%8B%B9.html" />
+<meta property="og:site_name" content="개발자 최은석" />
+<meta property="og:image" content="http://localhost:4000/assets/img/frontend/ES6.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-06-15T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/img/frontend/ES6.png" />
+<meta property="twitter:title" content="변수선언과 데이터 할당" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"최은석"},"dateModified":"2023-06-15T00:00:00+09:00","datePublished":"2023-06-15T00:00:00+09:00","description":"변수 선언과 데이터 할당에 대하여","headline":"변수선언과 데이터 할당","image":"http://localhost:4000/assets/img/frontend/ES6.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/frontend/%EB%B3%80%EC%88%98-%EC%84%A0%EC%96%B8%EA%B3%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%95%A0%EB%8B%B9.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"최은석"},"url":"http://localhost:4000/frontend/%EB%B3%80%EC%88%98-%EC%84%A0%EC%96%B8%EA%B3%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%95%A0%EB%8B%B9.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+    <meta name="keywords" content="dev,frontend,TIL">
+  
+
+
+
+  <meta name="theme-color" content="rgb(25,55,71)">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="개발자 최은석">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="application-name" content="개발자 최은석">
+
+<meta name="generator" content="Hydejack v9.1.6" />
+
+
+<link rel="alternate" href="http://localhost:4000/frontend/%EB%B3%80%EC%88%98-%EC%84%A0%EC%96%B8%EA%B3%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%95%A0%EB%8B%B9.html" hreflang="ko-kr">
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="개발자 최은석" />
+
+
+<link
+  rel="shortcut icon"
+  href="/assets/icons/favicon.ico"
+/>
+<link
+  rel="apple-touch-icon"
+  href="/assets/icons/icon-192x192.png"
+/>
+
+<link rel="manifest" href="/assets/site.webmanifest" />
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" /><link rel="dns-prefetch" href="https://fonts.gstatic.com" /> 
+<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+
+<link
+  rel="preload"
+  href="/assets/img/swipe.svg"
+  as="image"
+  id="_hrefSwipeSVG"
+/>
+
+<link
+  rel="dns-prefetch"
+  href="/assets/js/search-worker-9.1.6.js"
+  as="worker"
+  id="_hrefSearch"
+/>
+  
+<!-- ... -->
+
+<!-- For sidebar folder -->
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+<script src="/assets/js/sidebar-folder.js"></script>
+
+
+<script>!function(r,c){"use strict";function a(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=c.createElement("script"),e=(n.src=e,t&&a(n,"load",t,{once:!0}),c.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=c.createElement("script");function o(){r._loaded=!0,t&&a(n,"load",t,{once:!0});var e=c.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():a(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){a(c.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}}(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+!function(w) {
+  w._baseURL = '/';
+  w._publicPath = '/assets/js/';
+  w._noPushState = false;
+  w._noDrawer = false;
+  w._noNavbar = false;
+  w._noToc = false;
+  w._noSearch = true;
+  w._advertise = false;
+  w._search = {
+    DATA_URL: '/assets/sitedata.json?no-cache',
+    STORAGE_KEY: 'mini-search/',
+    INDEX_KEY: 'index--2023-06-22T01:42:47+09:00',
+  };
+  w._clapButton = true;
+}(window);</script>
+
+
+<script async src="/assets/bower_components/MathJax/es5/tex-mml-chtml.js" id="_MathJax"></script>
+
+
+<!--[if gt IE 8]><!---->
+
+  
+
+
+
+
+<link rel="stylesheet" href="/assets/css/hydejack-9.1.6.css" id="_stylePreload">
+<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans:400,400i,700,700i&display=swap" id="_fontsPreload">
+
+
+
+  <style id="_pageStyle">
+
+html{--accent-color: rgb(156,143,125);--accent-color-faded: rgba(156,143,125,0.5);--accent-color-highlight: rgba(156,143,125,0.1);--accent-color-darkened: #8a7c69;--theme-color: rgb(25,55,71);--dark-mode-body-bg: #2a2d2f;--dark-mode-border-color: #363a3d}
+
+</style>
+
+
+<!--<![endif]-->
+
+
+
+
+
+</head>
+
+<body class="no-break-layout">
+  
+<script>
+  window._sunrise = 6;
+  window._sunset =  18;
+  !function(e,s){var d="light-mode",o="dark-mode",a=(new Date).getHours();"matchMedia"in e&&e.matchMedia("(prefers-color-scheme)")||(e=(a=a<=e._sunrise||a>=e._sunset?o:d)==o?d:o,s.body.classList.add(a),s.body.classList.remove(e))}(window,document);
+
+</script>
+
+
+
+<hy-push-state
+  id="_pushState"
+  replace-selector="#_main"
+  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
+  script-selector="script"
+  duration="500"
+  hashchange
+>
+  
+  
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only"
+      >Jump to:</span
+    >
+    <div class="nav-btn-bar">
+      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
+        <span class="sr-only"
+          >Navigation</span
+        >
+        <span class="icon-menu"></span>
+      </a>
+      <div class="nav-span"></div>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+  <main
+  id="_main"
+  class="content layout-post"
+  role="main"
+>
+  <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+    <li><a href="/">home</a></li>
+    
+      <li>
+        
+          <span>/</span>
+          
+          
+          <a href="/frontend/">frontend</a>
+        
+      </li>
+    
+      <li>
+        
+          <span>/</span>
+          <span>변수-선언과-데이터-할당.html</span>
+        
+      </li>
+    
+  
+</ul></nav>
+  
+
+
+
+
+
+
+
+
+
+
+<article id="post-frontend-변수 선언과 데이터 할당" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        변수선언과 데이터 할당
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2023-06-15T00:00:00+09:00">15 Jun 2023</time> in <a href="/frontend/" class="flip-title">frontend</a> on <a href="/tag-javascript/" class="flip-title">JavaScript</a>, <span>Til</span>
+      </span>
+      
+        
+      
+    </div>
+
+    
+    
+      
+        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
+          
+
+
+<img
+  
+    src="/assets/img/frontend/ES6.png"
+    
+    
+  
+  alt="변수선언과 데이터 할당"
+  
+  
+  width="864"
+  height="486"
+  loading="lazy"
+/>
+
+        </div>
+      
+      
+    
+
+    
+
+
+
+  
+    <p class="note-sm" >
+      변수 선언과 데이터 할당에 대하여
+
+    </p>
+  
+
+
+  </header>
+
+  
+    <!--more-->
+
+<h1 class="no_toc" id="변수-선언과-데이터-할당">변수 선언과 데이터 할당</h1>
+
+<ul class="large-only" id="markdown-toc">
+  <li><a href="#자바스크립트에서-메모리의-데이터-할당은-어떻게-이루어질까" id="markdown-toc-자바스크립트에서-메모리의-데이터-할당은-어떻게-이루어질까">자바스크립트에서 메모리의 데이터 할당은 어떻게 이루어질까?</a>    <ul>
+      <li><a href="#메모리의-구조는" id="markdown-toc-메모리의-구조는">💡메모리의 구조는?</a></li>
+      <li><a href="#그-외-메모리에-대해서" id="markdown-toc-그-외-메모리에-대해서"><strong>그 외 메모리에 대해서</strong></a></li>
+    </ul>
+  </li>
+  <li><a href="#1기본형-데이터타입-메모리-할당" id="markdown-toc-1기본형-데이터타입-메모리-할당">(1)기본형 데이터타입 메모리 할당</a>    <ul>
+      <li><a href="#왜-변수값을-바로-대입하지않나요-" id="markdown-toc-왜-변수값을-바로-대입하지않나요-">왜 변수값을 바로 대입하지않나요 ??</a></li>
+    </ul>
+  </li>
+  <li><a href="#2참조형-데이터타입-메모리할당" id="markdown-toc-2참조형-데이터타입-메모리할당">(2)참조형 데이터타입 메모리할당</a>    <ul>
+      <li><a href="#참조카운트란-무엇일까요" id="markdown-toc-참조카운트란-무엇일까요"><strong>참조카운트란 무엇일까요?</strong></a></li>
+      <li><a href="#가비지컬렉터gc-garbage-collector" id="markdown-toc-가비지컬렉터gc-garbage-collector">가비지컬렉터(GC, Garbage Collector)</a></li>
+      <li><a href="#변수-복사의-비교" id="markdown-toc-변수-복사의-비교"><strong>변수 복사의 비교</strong></a></li>
+      <li><a href="#복사-이후-값-변경객체의-프로퍼티-변경" id="markdown-toc-복사-이후-값-변경객체의-프로퍼티-변경">복사 이후 값 변경(객체의 프로퍼티 변경)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<ul>
+  <li><strong>변수 선언</strong> : 변수를 정의하는 것을 의미</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">developer</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>변수 할당</strong> : 변수가 선언된 후 대입 연산자(=)를 통해 값을 넣어주는 것을 의미</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">developer</span><span class="p">;</span>
+<span class="nx">developer</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">eunseok</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>변수 초기화 :</strong> 변수를 선언함과 동시에 값을 넣어 주는 것을 의미</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">developer</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">eunseok</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="자바스크립트에서-메모리의-데이터-할당은-어떻게-이루어질까">자바스크립트에서 메모리의 데이터 할당은 어떻게 이루어질까?</h2>
+
+<p>위 코드에서 자바스크립트는 몇가지 작업을 수행합니다.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">developer</code>이라는 변수를 선언합니다.</li>
+  <li>문자열에 대한 메모리를 할당합니다.</li>
+  <li>할당된 메모리에서 ‘eunseok’ 이라는 문자열을 저장합니다.</li>
+  <li>‘<code class="language-plaintext highlighter-rouge">developer</code>‘에서 메모리의 해당 문자열에 대한 참조를 생성합니다.</li>
+</ol>
+
+<h3 id="메모리의-구조는">💡메모리의 구조는?</h3>
+
+<p><img src="/assets/img/frontend/memorys.png" alt="다운로드 (2).png" /></p>
+
+<ol>
+  <li><strong>메모리 셀과 바이트</strong>
+    <ul>
+      <li>컴퓨터 메모리는 실제로 메모리 셀로 구성됩니다. 이러한 셀은 비트로 <code class="language-plaintext highlighter-rouge">1</code> 또는 <code class="language-plaintext highlighter-rouge">0</code>이 될 수 있는 이진 단위입니다. 8개의 비트가 모여 컴퓨터 시스템의 기본 데이터 단위인 1바이트를 형성합니다.</li>
+    </ul>
+  </li>
+  <li><strong>메모리 주소 지정</strong>
+    <ul>
+      <li>각 메모리 셀(또는 정의에 따라 각 바이트)에는 실제로 고유한 주소가 있습니다. CPU는 이 주소를 사용하여 메모리에서 데이터를 읽고 메모리에 데이터를 씁니다.</li>
+    </ul>
+  </li>
+  <li><strong>CPU와 메모리 상호 작용</strong>:
+    <ul>
+      <li>CPU는 실제로 메모리에서 명령과 데이터를 가져오고 레지스터의 데이터에 대한 명령을 실행한 다음 결과를 다시 메모리에 저장합니다. 이를 <strong>fetch-decode-execute(</strong>프로그램 실행 구조)라고 합니다.</li>
+    </ul>
+  </li>
+  <li><strong>대용량 데이터</strong>
+    <ul>
+      <li>단일 바이트에 저장할 수 없는 더 큰 데이터 값은 실제로 여러 바이트(또는 정의에 따라 여러 메모리 셀)에 걸쳐 저장됩니다.</li>
+    </ul>
+  </li>
+  <li><strong>대용량 데이터 읽기</strong>
+    <ul>
+      <li>많은 양의 데이터가 여러 메모리 위치에 저장되어 있는 경우 올바르게 읽는 데 필요한 것은 데이터의 첫 번째 바이트 주소와 데이터 길이(바이트)입니다</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="그-외-메모리에-대해서"><strong>그 외 메모리에 대해서</strong></h3>
+
+<ul>
+  <li><strong>메모리 유형</strong>
+    <ul>
+      <li>컴퓨터에는 RAM(Random Access Memory), ROM(Read-Only Memory), 캐시 메모리, 가상 메모리 등 다양한 유형의 메모리가 있습니다. 각 유형의 메모리에는 고유한 용도가 있습니다</li>
+    </ul>
+  </li>
+  <li><strong>메모리 계층 구조</strong>
+    <ul>
+      <li>컴퓨터 시스템의 메모리는 비용과 속도 사이의 균형을 반영하는 계층 구조로 구성됩니다. 예를 들어 CPU 내부의 레지스터는 가장 빠르지만 가장 비싼 유형의 메모리인 반면, 하드 드라이브는 느리지만 저렴한 비용으로 많은 양의 스토리지를 제공합니다.</li>
+    </ul>
+  </li>
+  <li><strong>메모리 관리</strong>
+    <ul>
+      <li>운영 체제는 컴퓨터의 메모리 관리를 담당합니다. 사용 중인 메모리 부분을 추적하고 프로세스가 요청할 때 메모리를 할당하고 더 이상 필요하지 않으면 할당을 해제합니다.</li>
+    </ul>
+  </li>
+  <li><strong>주소 지정 모드</strong>
+    <ul>
+      <li>CPU는 다른 주소 지정 모드를 사용하여 필요한 데이터를 찾을 수 있습니다. 예를 들어 직접 주소 지정(데이터 주소를 직접 지정), 간접 주소 지정(데이터 주소를 다른 주소에 저장) 등을 사용할 수 있습니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>다시 돌아와서 자바스크립트에서 기본형데이터타입 과 참조형데이터타입은 메모리 할당 방식이 다릅니다.</p>
+
+<h2 id="1기본형-데이터타입-메모리-할당">(1)기본형 데이터타입 메모리 할당</h2>
+
+<p><strong>기본형 데이터타입</strong>인 String을 변수선언을 하였을때</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello, World!</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>이를 “값으로 전달” 또는 “값으로 저장”이라고 합니다.</p>
+
+<p>그리고 위 경우 변수 <code class="language-plaintext highlighter-rouge">str</code>은 <code class="language-plaintext highlighter-rouge">"Hello, World!"</code> 값을 직접 보유합니다. 새 변수에 <code class="language-plaintext highlighter-rouge">str</code>을 할당하면 값의 복사본이 만들어지고 새 변수에 저장됩니다</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">str2</span> <span class="o">=</span> <span class="nx">str</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">str2</code>는 <code class="language-plaintext highlighter-rouge">"Hello, World!"</code>도 포함합니다. 그러나 <code class="language-plaintext highlighter-rouge">str</code>과 <code class="language-plaintext highlighter-rouge">str2</code>는 완전히 별개입니다. 하나를 변경해도 다른 하나는 영향을 받지 않습니다.</p>
+
+<p>예를들어 메모리를 가시적으로 표현한다면 아래와 같습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>주소</th>
+      <th>…</th>
+      <th>1002</th>
+      <th>1003</th>
+      <th>1004</th>
+      <th>1005</th>
+      <th>…</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>데이터</td>
+      <td> </td>
+      <td>변수이름:str ,참조:5004</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>주소</td>
+      <td>…</td>
+      <td>5002</td>
+      <td>5003</td>
+      <td>5004</td>
+      <td>5005</td>
+      <td>…</td>
+    </tr>
+    <tr>
+      <td>데이터</td>
+      <td> </td>
+      <td>//~~~</td>
+      <td>//~~~</td>
+      <td>“Hello, World!”</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>위 에서 기술한바와같이</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">str</code>이라는 변수를 선언합니다.</li>
+  <li>문자열에 대한 메모리를 할당합니다.</li>
+  <li>할당된 메모리에서 ‘Hello, World!’ 라는 문자열을 저장합니다.</li>
+  <li>‘<code class="language-plaintext highlighter-rouge">str</code>‘에서 메모리의 해당 문자열에 대한 참조를 생성합니다.</li>
+</ol>
+
+<h3 id="왜-변수값을-바로-대입하지않나요-">왜 변수값을 바로 대입하지않나요 ??</h3>
+
+<p>값을 바로 변수에 대입하지 않는 이유(=무조건 새로 만드는 이유)</p>
+
+<ul>
+  <li>자유로운 데이터 변환
+    <ul>
+      <li>이미 입력한 문자열이 길어진다면 뒤에 주소들을 한칸씩 다미뤄야함</li>
+      <li>숫자는 항상 8byte로 고정이지만, 문자는 고정이 아닙니다,(영문 : 1byte, 한글 : 2byte). 그래서 할당된 데이터보다 훨씬 더큰 데이터를 변경해주려면 매우 많은 메모리셀이 필요</li>
+    </ul>
+  </li>
+  <li>메모리의 효율적 관리
+    <ul>
+      <li>똑같은 데이터를 여러번 저장해야 한다면?</li>
+      <li>1만개의 변수를 생성해서 모든 변수에 숫자 1을 할당하는 상황을 가정해 봅시다. 모든 변수를 별개로 인식한다고 한다면, 1만개의 변수 공간을 확보해야 합니다.
+        <ul>
+          <li>바로 대입하는 case) 숫자형은 8 바이트 고정이죠?
+            <ul>
+              <li>1만개 * 8byte = <strong>8만 byte</strong></li>
+            </ul>
+          </li>
+          <li>변수 영역에 별도 저장 case)
+            <ul>
+              <li>변수 영역 : 2바이트 1만개 = ****2만바이트</li>
+              <li>데이터 영역 : 8바이트 1개 = 8바이트</li>
+              <li>총 : <strong>2만 8바이트</strong></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="2참조형-데이터타입-메모리할당">(2)참조형 데이터타입 메모리할당</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>주소</th>
+      <th>…</th>
+      <th>1002</th>
+      <th>1003</th>
+      <th>1004</th>
+      <th>1005</th>
+      <th>…</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>데이터</td>
+      <td> </td>
+      <td>obj /참조 7103~7104</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>주소</td>
+      <td>…</td>
+      <td>5002</td>
+      <td>5003</td>
+      <td>5004</td>
+      <td>5005</td>
+      <td>…</td>
+    </tr>
+    <tr>
+      <td>데이터</td>
+      <td> </td>
+      <td>1</td>
+      <td>‘bbb’</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>기본형 데이터타입과 참조형 데이터타입의 메모리할당 과정의 차이점은 : 객체의 변수 (property) 영역의 별도 존재 여부입니다</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>주소</th>
+      <th>…</th>
+      <th>7103</th>
+      <th>7104</th>
+      <th>7105</th>
+      <th>…</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>데이터</td>
+      <td> </td>
+      <td>a , 참조 : 5002</td>
+      <td>b , 참조: 5003</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+	<span class="na">b</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bbb,
+};
+</span></code></pre></div></div>
+
+<p><strong>참조형 데이터가 불변하지 않다</strong>라는 이유 : <code class="language-plaintext highlighter-rouge">obj1.a = 2</code> 라는 코드가있을 경우</p>
+
+<ol>
+  <li>5004번 주소에 2 값이 새로 할당되고</li>
+  <li>7103번 주소에 5004번으로 참조가 바뀐다.</li>
+  <li>그리고 5002 번값은 <strong>가비지 - 컬렉터</strong>에의해 수거가 된다.</li>
+</ol>
+
+<h3 id="참조카운트란-무엇일까요"><strong>참조카운트란 무엇일까요?</strong></h3>
+
+<aside>
+💡 **객체를 참조하는 변수나 다른 객체의 수를 나타내는 값**입니다. 참조 카운트가 0인 객체는 더 이상 사용되지 않으므로, **가비지 컬렉터**에 의해 메모리에서 제거됩니다.
+
+</aside>
+
+<h3 id="가비지컬렉터gc-garbage-collector">가비지컬렉터(GC, Garbage Collector)</h3>
+
+<aside>
+💡 더 이상 사용되지 않는 객체를 자동으로 메모리에서 제거하는 역할을 합니다. 자바스크립트는 가비지 컬렉션을 수행함으로써 개발자가 명시적으로 메모리 관리를 하지 않아도 되도록 지원합니다. 자바스크립트 엔진에서 내부적으로 수행되며, 개발자는 가비지 컬렉션에 대한 직접적인 제어를 할 수 없습니다.
+
+</aside>
+
+<h3 id="변수-복사의-비교"><strong>변수 복사의 비교</strong></h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">//기본형</span>
+<span class="kd">var</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="p">{</span> <span class="na">c</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="na">d</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ddd</span><span class="dl">"</span> <span class="p">};</span> <span class="c1">//참조형</span>
+
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span> <span class="c1">//기본형</span>
+<span class="kd">var</span> <span class="nx">obj2</span> <span class="o">=</span> <span class="nx">obj1</span><span class="p">;</span> <span class="c1">//참조형</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>주소</th>
+      <th>1001</th>
+      <th>1002</th>
+      <th>1003</th>
+      <th>1004</th>
+      <th>1005</th>
+      <th>…</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>데이터</td>
+      <td>a/5001</td>
+      <td>obj1/7103~7014</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>주소</td>
+      <td>5001</td>
+      <td>5002</td>
+      <td>5003</td>
+      <td>5004</td>
+      <td>5005</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>데이터</td>
+      <td>10</td>
+      <td>10</td>
+      <td>ddd</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>주소</th>
+      <th>7103</th>
+      <th>7104</th>
+      <th>…</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>데이터</td>
+      <td>c / 5002</td>
+      <td>d/ 5003</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="복사-이후-값-변경객체의-프로퍼티-변경">복사 이후 값 변경(객체의 프로퍼티 변경)</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">//기본형</span>
+<span class="kd">var</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="p">{</span> <span class="na">c</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="na">d</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ddd</span><span class="dl">"</span> <span class="p">};</span> <span class="c1">//참조형</span>
+
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span> <span class="c1">//기본형</span>
+<span class="kd">var</span> <span class="nx">obj2</span> <span class="o">=</span> <span class="nx">obj1</span><span class="p">;</span> <span class="c1">//참조형</span>
+
+<span class="nx">b</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+<span class="nx">obj2</span><span class="p">.</span><span class="nx">c</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>기본형과 참조형의 변수 복사 시 주요한 절차의 차이점</p>
+
+<ul>
+  <li>기본형
+    <ul>
+      <li>숫자 15라는 값을 데이터 영역에서 검색 후 없다면 생성</li>
+      <li>검색한 결과주소 또는 생성한 주소를 변수 영역 b에 갈아끼움</li>
+      <li>a와 b는 서로 다른 데이터 영역의 주소를 바라보고 있기 때문에 <strong><code class="language-plaintext highlighter-rouge">영향 없음</code></strong></li>
+    </ul>
+  </li>
+  <li>
+    <p>참조형</p>
+
+    <ul>
+      <li>숫자 20이라는 값을 데이터 영역에서 검색 후 없다면 생성</li>
+      <li>검색한 결과주소 또는 생성한 주소 obj2에게 지정되어 있는 별도 영역(7103~)에 갈아끼움</li>
+      <li>obj1도 똑같은 주소를 바라보고 있기 때문에 <strong><code class="language-plaintext highlighter-rouge">obj1까지 변경이 됨</code></strong></li>
+    </ul>
+
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 기본형 변수 복사의 결과는 다른 값!</span>
+<span class="nx">a</span> <span class="o">!==</span> <span class="nx">b</span><span class="p">;</span>
+
+<span class="c1">// 참조형 변수 복사의 결과는 같은 값!(원하지 않았던 결과😭)</span>
+<span class="nx">obj1</span> <span class="o">===</span> <span class="nx">obj2</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+  
+</article>
+
+
+
+  <hr class="dingbat related mb6" />
+
+
+
+
+
+
+  
+     
+
+
+  <aside class="about related mt4 mb4" role="complementary">
+    
+    
+
+<div class="author mt4">
+  
+
+  
+    
+
+
+<img
+  
+    src="https://placehold.it/128x128"
+    srcset="https://placehold.it/128x128 1x,https://placehold.it/256x256 2x"
+    
+  
+  alt="최은석"
+  class="avatar"
+  
+  width="120"
+  height="120"
+  loading="lazy"
+/>
+
+  
+
+  
+  
+  <h2  class="page-title hr-bottom">
+    About
+  </h2>
+
+  <p>어제보단 나아졌겠지 ?</p>
+
+
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/nonjk2" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:nonjk2@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+
+  </aside>
+
+
+  
+
+  
+    
+
+
+  
+
+  
+    
+
+
+  <aside class="other-projects related mb0" role="complementary">  <h2>Related Posts</h2>  <div class="columns">          <div class="column column-1-2">                  <article class="project-card">  <a href="/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine fallback-img">          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" class="flip-title">OSI 7계층</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      OSI 7계층에 대해서 각 계층을 알아보고 더욱 파헤쳐 보자    </p>      <a class="fill-card no-hover" href="/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" tabindex="-1"><span class="sr-only">Continue reading OSI 7계층</span></a></article>              </div>          <div class="column column-1-2">                  <article class="project-card">  <a href="/computerscience/DNS.html" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine flip-project-img">              <img      src="/assets/img/frontend/dns.jpg"        sizes="(min-width:86em)29.5rem,(min-width:54em)24.5rem,(min-width:42em)21.5rem,42rem"    alt="DNS"      width="864"  height="486"  loading="lazy"/>          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/computerscience/DNS.html" class="flip-title">DNS</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      DNS 에 대해 알아보자    </p>      <a class="fill-card no-hover" href="/computerscience/DNS.html" tabindex="-1"><span class="sr-only">Continue reading DNS</span></a></article>              </div>      </div></aside>
+
+  
+
+  
+    
+
+
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Random Posts</h2>  <ul class="related-posts">          <li class="h4">  <a href="/frontend/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8.html" class="flip-title"><span>실행 컨텍스트</span></a>  <time class="faded fine" datetime="2023-06-15T00:00:00+09:00">15 Jun 2023</time></li>          <li class="h4">  <a href="/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html" class="flip-title"><span>함수</span></a>  <time class="faded fine" datetime="2023-06-17T00:00:00+09:00">17 Jun 2023</time></li>          <li class="h4">  <a href="/frontend/%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85%EC%9D%98-%EC%A2%85%EB%A5%98-%EB%B0%8F-%EB%A9%94%EB%AA%A8%EB%A6%AC.html" class="flip-title"><span>자바스크립트 데이터 타입</span></a>  <time class="faded fine" datetime="2023-06-14T00:00:00+09:00">14 Jun 2023</time></li>      </ul></aside>
+
+  
+
+  
+    
+
+  
+
+
+  
+<footer class="content" role="contentinfo">
+  <hr/>
+  
+    <p><small class="copyright">© 2021. All rights reserved.
+</small></p>
+  
+  
+    <nav class="legal"><small>
+    
+      
+      <a class="heading flip-title" href="/LICENSE/">LICENSE</a>
+      |
+    
+      
+      <a class="heading flip-title" href="/NOTICE/">NOTICE</a>
+      
+    
+    </small></nav>
+  
+  
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+  <hy-drawer
+  id="_drawer"
+  class=""
+  side="left"
+  threshold="10"
+  noscroll
+  
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+
+
+
+
+<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/sidebar-bg.jpg)"></div>
+
+    <div class="sidebar-sticky">
+  <div class="sidebar-about">
+    
+      <a class="no-hover" href="/" tabindex="-1">
+        <img src="/assets/img/logo.png" class="avatar" alt="개발자 최은석" width="120" height="120" loading="lazy" />
+      </a>
+    
+    <a class="sidebar-title" href="/"><h2 class="h1">개발자 최은석</h2></a>
+    
+    
+      <p class="">
+        반갑습니다.
+
+      </p>
+    
+  </div>
+
+  <nav class="sidebar-nav heading" role="navigation">
+    <span class="sr-only"
+  >Navigation:</span
+>
+<ul>
+   
+                          
+  <li>
+    
+    <input type="checkbox" id="folder-checkbox-9" />
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/frontend/"
+        class="sidebar-nav-item"
+        
+        >frontend</a
+      >
+      
+      <button class="spread-btn" onclick="javascript:spread(9)">
+        <label id="spread-icon-9" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
+    </div>
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-algorisme/"
+          >Algorism</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-javascript/"
+          >JavaScript</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-react/"
+          >React</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-typescript/"
+          >TypeScript</a
+        >
+      </li>
+      
+    </ul>
+     
+  </li>
+        
+  <li>
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/computerscience/"
+        class="sidebar-nav-item"
+        
+        >Computer Science</a
+      >
+      
+    </div>
+    
+  </li>
+    
+</ul>
+
+  </nav>
+
+  
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/nonjk2" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:nonjk2@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+</hy-push-state>
+
+
+  <!--[if gt IE 10]><!---->
+  <script nomodule>!function(){var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())}();
+</script>
+  <script src="/assets/js/hydejack-9.1.6.js" type="module"></script>
+  <script src="/assets/js/LEGACY-hydejack-9.1.6.js" nomodule defer></script>
+  
+
+  
+  <script>!function(w, d) {
+    w.ga=w.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+    /**/
+      ga('create', 'G-43895YHF45', 'auto');
+    /**/
+
+    var pushStateEl = d.getElementById('_pushState');
+    var timeoutId;
+    pushStateEl.addEventListener('hy-push-state-load', function() {
+      w.clearTimeout(timeoutId);
+      timeoutId = w.setTimeout(function() {
+        ga('set', 'page', w.location.pathname);
+        ga('send', 'pageview');
+      }, 500);
+    });
+
+    d.addEventListener('hy--cookies-ok', function () {
+      w.ga(function(tracker) {
+        w.ga("set", "anonymizeIp", undefined);
+        localStorage && localStorage.setItem("ga--client-id", tracker.get("clientId"));
+      });
+    });
+
+    w.loadJSDeferred('https://www.google-analytics.com/analytics.js');
+  }(window, document);</script>
+
+
+  <script type="module">
+    if ('serviceWorker' in navigator) {
+      /**/
+      navigator.serviceWorker.getRegistration()
+        .then(r => r.unregister())
+        .catch(() => {});
+      /**/
+    }
+  </script>
+<!--<![endif]-->
+  
+
+
+
+<div hidden>
+  
+  <h2 class="sr-only">Templates (for web app):</h2>
+
+  <template id="_animation-template">
+  <div class="animation-main fixed-top">
+    <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+</ul></nav>
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+  <template id="_loading-template">
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+  <template id="_error-template">
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
+
+    </p>
+  </div>
+</template>
+
+  <template id="_permalink-template">
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="content-hash"></span>
+  </a>
+</template>
+
+  
+  
+    <template id="_dark-mode-template">
+  <button id="_dark-mode" class="nav-btn no-hover" >
+    <span class="sr-only">Dark Mode</span>
+    <span class="icon-brightness-contrast"></span>
+  </button>
+</template>
+
+  
+  
+</div>
+
+</body>
+</html>

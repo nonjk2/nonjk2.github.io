@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+
+
+
+  
+    
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>DNS | 개발자 최은석</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="DNS" />
+<meta name="author" content="최은석" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="description" content="DNS 에 대해 알아보자" />
+<meta property="og:description" content="DNS 에 대해 알아보자" />
+<link rel="canonical" href="http://localhost:4000/computerscience/DNS.html" />
+<meta property="og:url" content="http://localhost:4000/computerscience/DNS.html" />
+<meta property="og:site_name" content="개발자 최은석" />
+<meta property="og:image" content="http://localhost:4000/assets/img/frontend/dns.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-06-18T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/img/frontend/dns.jpg" />
+<meta property="twitter:title" content="DNS" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"최은석"},"dateModified":"2023-06-18T00:00:00+09:00","datePublished":"2023-06-18T00:00:00+09:00","description":"DNS 에 대해 알아보자","headline":"DNS","image":"http://localhost:4000/assets/img/frontend/dns.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/computerscience/DNS.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"최은석"},"url":"http://localhost:4000/computerscience/DNS.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+    <meta name="keywords" content="dev,frontend,TIL">
+  
+
+
+
+  <meta name="theme-color" content="rgb(25,55,71)">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="개발자 최은석">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="application-name" content="개발자 최은석">
+
+<meta name="generator" content="Hydejack v9.1.6" />
+
+
+<link rel="alternate" href="http://localhost:4000/computerscience/DNS.html" hreflang="ko-kr">
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="개발자 최은석" />
+
+
+<link
+  rel="shortcut icon"
+  href="/assets/icons/favicon.ico"
+/>
+<link
+  rel="apple-touch-icon"
+  href="/assets/icons/icon-192x192.png"
+/>
+
+<link rel="manifest" href="/assets/site.webmanifest" />
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" /><link rel="dns-prefetch" href="https://fonts.gstatic.com" /> 
+<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+
+<link
+  rel="preload"
+  href="/assets/img/swipe.svg"
+  as="image"
+  id="_hrefSwipeSVG"
+/>
+
+<link
+  rel="dns-prefetch"
+  href="/assets/js/search-worker-9.1.6.js"
+  as="worker"
+  id="_hrefSearch"
+/>
+  
+<!-- ... -->
+
+<!-- For sidebar folder -->
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+<script src="/assets/js/sidebar-folder.js"></script>
+
+
+<script>!function(r,c){"use strict";function a(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=c.createElement("script"),e=(n.src=e,t&&a(n,"load",t,{once:!0}),c.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=c.createElement("script");function o(){r._loaded=!0,t&&a(n,"load",t,{once:!0});var e=c.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():a(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){a(c.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}}(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+!function(w) {
+  w._baseURL = '/';
+  w._publicPath = '/assets/js/';
+  w._noPushState = false;
+  w._noDrawer = false;
+  w._noNavbar = false;
+  w._noToc = false;
+  w._noSearch = true;
+  w._advertise = false;
+  w._search = {
+    DATA_URL: '/assets/sitedata.json?no-cache',
+    STORAGE_KEY: 'mini-search/',
+    INDEX_KEY: 'index--2023-06-22T01:42:47+09:00',
+  };
+  w._clapButton = true;
+}(window);</script>
+
+
+<script async src="/assets/bower_components/MathJax/es5/tex-mml-chtml.js" id="_MathJax"></script>
+
+
+<!--[if gt IE 8]><!---->
+
+  
+
+
+
+
+<link rel="stylesheet" href="/assets/css/hydejack-9.1.6.css" id="_stylePreload">
+<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans:400,400i,700,700i&display=swap" id="_fontsPreload">
+
+
+
+  <style id="_pageStyle">
+
+html{--accent-color: rgb(156,143,125);--accent-color-faded: rgba(156,143,125,0.5);--accent-color-highlight: rgba(156,143,125,0.1);--accent-color-darkened: #8a7c69;--theme-color: rgb(25,55,71);--dark-mode-body-bg: #2a2d2f;--dark-mode-border-color: #363a3d}
+
+</style>
+
+
+<!--<![endif]-->
+
+
+
+
+
+</head>
+
+<body class="no-break-layout">
+  
+<script>
+  window._sunrise = 6;
+  window._sunset =  18;
+  !function(e,s){var d="light-mode",o="dark-mode",a=(new Date).getHours();"matchMedia"in e&&e.matchMedia("(prefers-color-scheme)")||(e=(a=a<=e._sunrise||a>=e._sunset?o:d)==o?d:o,s.body.classList.add(a),s.body.classList.remove(e))}(window,document);
+
+</script>
+
+
+
+<hy-push-state
+  id="_pushState"
+  replace-selector="#_main"
+  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
+  script-selector="script"
+  duration="500"
+  hashchange
+>
+  
+  
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only"
+      >Jump to:</span
+    >
+    <div class="nav-btn-bar">
+      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
+        <span class="sr-only"
+          >Navigation</span
+        >
+        <span class="icon-menu"></span>
+      </a>
+      <div class="nav-span"></div>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+  <main
+  id="_main"
+  class="content layout-post"
+  role="main"
+>
+  <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+    <li><a href="/">home</a></li>
+    
+      <li>
+        
+          <span>/</span>
+          
+          
+          <a href="/computerscience/">computerscience</a>
+        
+      </li>
+    
+      <li>
+        
+          <span>/</span>
+          <span>DNS.html</span>
+        
+      </li>
+    
+  
+</ul></nav>
+  
+
+
+
+
+
+
+
+
+
+
+<article id="post-computerscience-DNS" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        DNS
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2023-06-18T00:00:00+09:00">18 Jun 2023</time> in <span>Computerscience</span> on <a href="/tag-network/" class="flip-title">Network</a>
+      </span>
+      
+        
+      
+    </div>
+
+    
+    
+      
+        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
+          
+
+
+<img
+  
+    src="/assets/img/frontend/dns.jpg"
+    
+    
+  
+  alt="DNS"
+  
+  
+  width="864"
+  height="486"
+  loading="lazy"
+/>
+
+        </div>
+      
+      
+    
+
+    
+
+
+
+  
+    <p class="note-sm" >
+      DNS 에 대해 알아보자
+
+    </p>
+  
+
+
+  </header>
+
+  
+    <!--more-->
+
+<h1 class="no_toc" id="dns">DNS</h1>
+
+<ul class="large-only" id="markdown-toc">
+  <li><a href="#-dns는-어떻게-작동하지" id="markdown-toc--dns는-어떻게-작동하지">💡 DNS는 어떻게 작동하지?</a>    <ul>
+      <li><a href="#dns-조회는-어떤-단계를-거칠까" id="markdown-toc-dns-조회는-어떤-단계를-거칠까">DNS 조회는 어떤 단계를 거칠까?</a></li>
+      <li><a href="#dns-조회의-8단계" id="markdown-toc-dns-조회의-8단계">DNS 조회의 8단계</a></li>
+    </ul>
+  </li>
+  <li><a href="#dns-캐싱이란--dns-캐싱은-어디서-발생할까" id="markdown-toc-dns-캐싱이란--dns-캐싱은-어디서-발생할까">DNS 캐싱이란 ? DNS 캐싱은 어디서 발생할까?</a>    <ul>
+      <li><a href="#브라우저-dns-캐싱" id="markdown-toc-브라우저-dns-캐싱">브라우저 DNS 캐싱</a></li>
+    </ul>
+  </li>
+</ul>
+<hr />
+
+<ul>
+  <li>DNS란 Domain Name System의 약자로 인터넷 주소창에 Host Domain Name을 입력했을 때 해당 문자를 IP주소로 변환해주는 시스템</li>
+  <li>인터넷에 연결된 각 기기에는 다른 컴퓨터가 기기를 찾는데 사용하는 고유한 ip 주소가 있다.</li>
+  <li>DNS서버를 사용하면 ipv4 (192.168.1.1) ipv6 (2400:cb00:2048:1::c629:d7a2) 와 같은 주소를 기억할 필요없다.</li>
+  <li><a href="http://naver.com/">Naver.com</a> , <a href="http://daum.net/">Daum.net</a> 등 -&gt; 전화번호를 이름으로 저장하는것과 비슷</li>
+</ul>
+
+<h2 id="-dns는-어떻게-작동하지">💡 DNS는 어떻게 작동하지?</h2>
+
+<ul>
+  <li>
+    <p>DNS 확인 프로세스에는 호스트 이름(예: www.example.com)을 컴퓨터 친화적인 IP 주소(예: 192.168.1.1)로 변환하는 과정이 포함한다. IP 주소는 인터넷의 각 기기에 제공되며, 거리 주소가 특정한 집을 찾는 데 사용되는 것처럼, 적절한 인터넷 기기를 찾기 위해서는 IP 주소가 필요하다. 사용자가 어떤 웹페이지를 로드하려고 할 때에는 사용자가 웹브라우저에 입력한 내용(예: example.com)을 example.com 웹페이지를 찾는 데 필요한 컴퓨터 친화적 주소로 변환해야 한다.</p>
+  </li>
+  <li>
+    <p>DNS 확인의 기반 프로세스를 이해하려면, DNS 쿼리가 통과해야 하는 다양한 하드웨어 구성 요소에 대해 알아야 한다. 웹브라우저 입장에서는 DNS 확인이 “막후에서” 발생하며 최초의 사용자 요청 외에 사용자 컴퓨터와의 추가적인 대화는 x.</p>
+  </li>
+</ul>
+
+<h3 id="dns-조회는-어떤-단계를-거칠까">DNS 조회는 어떤 단계를 거칠까?</h3>
+
+<ul>
+  <li>대부분의 경우, DNS는 도메인 이름을 적절한 IP 주소로 변환하는 일에 관여. 이 프로세스의 작동 방식을 알려면, 웹 브라우저에서 DNS 조회 프로세스를 거쳐 다시 돌아오는 DNS 조회 경로를 따르는 것이 좋다.
+<br /></li>
+</ul>
+
+<blockquote>
+  <p>참고: DNS 조회 정보는 쿼리 컴퓨터 내부에서 로컬로 또는 DNS 인프라에서 원격으로 캐시되는 경우가 많습니다. DNS 조회에는 일반적으로 8단계가 있지만, <strong>DNS 정보가 캐시되어 있으면 DNS 조회 프로세스에서 몇 단계를 건너 뛸 수 있으므로, 더 빨라집니다.</strong> 아래 예시는 캐시되지 않은 8단계를 모두 보여줍니다.
+<img src="/assets/img/network/what_is_a_dns_server_dns_lookup.png" alt="what_is_a_dns_server_dns_lookup.png" /></p>
+</blockquote>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>DNS Resolver</strong>
+    <ul>
+      <li>DNS Resolver는 클라이언트 측 소프트웨어 또는 DNS 조회 시작을 담당하는 네트워크 구성 요소.다양한 DNS 서버와 통신하여 도메인 이름을 IP 주소로 확인한다.</li>
+    </ul>
+  </li>
+  <li><strong>Root Server</strong>
+    <ul>
+      <li><strong>Root</strong> 서버는 DNS 인프라의 중요한 부분. 최상위 도메인(.com, .org, .net 등)에 대한 정보를 유지 관리하는 신뢰할 수 있는 서버 집합. 전 세계적으로 13개의 루트 서버 클러스터가 있으며 각각은 A에서 M까지의 문자로 식별. 주요 기능은 적절한 TLD 서버에 참조를 제공하는 것.</li>
+    </ul>
+  </li>
+  <li><strong>TLD Server</strong>
+    <ul>
+      <li>TLD 서버는 .com, .org, .net과 같은 최상위 도메인과 .us, .uk 등과 같은 국가 코드 TLD를 처리할 책임이 있다. 이러한 서버는 해당 TLD에 등록된 도메인 이름에 대한 정보를 유지한다. 예를 들어 .com으로 끝나는 도메인 이름을 조회하는 경우 .com용 TLD 서버는 해당 도메인 이름을 확인하는 데 필요한 정보를 갖게 된다.</li>
+    </ul>
+  </li>
+  <li><strong>DNS Server</strong> - DNS 서버는 도메인 이름을 IP 주소에 매핑하는 <strong>DNS 레코드</strong>를 저장하고 관리한다. 신뢰할 수 있는 DNS 서버 및 재귀 DNS 서버를 포함하여 여러 수준의 DNS 서버가 있다. - <strong>Authoritative DNS Server</strong>: <strong>Authoritative DNS Server</strong>는 특정 도메인에 대한 DNS 레코드를 저장하고 제공하는 역할을 한다. DNS 해석기는 도메인 이름을 쿼리할 때 해당 도메인과 연결된 신뢰할 수 있는 DNS 서버에 연결하여 해당 IP 주소 또는 기타 DNS 레코드를 얻는다. - <strong>Recursive DNS Server</strong>: Recursive DNS Server는 일반적으로 인터넷 서비스 공급자(ISP) 또는 타사 DNS 공급자가 제공한다(third-party DNS provider). DNS resolver가 쿼리를 받으면 <strong>Recursive DNS Server</strong>에 연결하여 클라이언트를 대신하여 도메인 이름을 확인할 수 있다. <strong>Recursive DNS Server</strong>는 캐시에 요청된 정보가 없으면 루트 서버에서 시작하여 요청된 도메인의 IP 주소를 얻을 때까지 DNS 계층 구조를 재귀적으로 통과한다.
+<br /><br /><br /></li>
+</ul>
+
+<h3 id="dns-조회의-8단계">DNS 조회의 8단계</h3>
+
+<ol>
+  <li>사용자가 웹 브라우저에 ‘example.com’을 입력하면, 쿼리가 인터넷으로 이동하고 DNS 재귀 확인자가 이를 수신.</li>
+  <li>이어서 확인자가 DNS 루트 이름 서버(.)를 쿼리.</li>
+  <li>다음으로, 루트 서버가, 도메인에 대한 정보를 저장하는 최상위 도메인(TLD) DNS 서버(예: .com 또는 .net)의 주소로 확인자에 응답. example.com을 검색할 경우의 요청은 .com TLD를 가리킨다.</li>
+  <li>이제, 확인자가 .com TLD에 요청.</li>
+  <li>이어서, TLD 서버가 도메인 이름 서버(example.com)의 IP 주소로 응답.</li>
+  <li>마지막으로, 재귀 확인자가 도메인의 이름 서버로 쿼리를 보낸다.</li>
+  <li>이제, example.com의 IP 주소가 이름 서버에서 확인자에게 반환.</li>
+  <li>이어서, DNS 확인자가, 처음 요청한 도메인의 IP 주소로 웹 브라우저에 응답.</li>
+</ol>
+
+<p>DNS 조회의 8단계를 거쳐 example.com의 IP 주소가 반환되면, 이제 브라우저가 웹 페이지를 요청할 수 있다.</p>
+
+<ol>
+  <li>브라우저가 IP 주소로 <a href="https://www.cloudflare.com/learning/ddos/glossary/hypertext-transfer-protocol-http/">HTTP</a> 요청을 보낸다.</li>
+  <li>해당 IP의 서버가 브라우저에서 렌더링할 웹 페이지를 반환(10단계).</li>
+</ol>
+
+<ul>
+  <li>이 과정들은 브라우저에서 서비스.</li>
+</ul>
+
+<h2 id="dns-캐싱이란--dns-캐싱은-어디서-발생할까">DNS 캐싱이란 ? DNS 캐싱은 어디서 발생할까?</h2>
+
+<ul>
+  <li>캐싱의 목적은 데이터를 임시 저장하여, 데이터 요청에 대해 성능과 신뢰성을 높이는 것. DNS 캐싱은 요청하는 클라이언트와 가까운 곳에 데이터를 저장함으로써, DNS 쿼리를 조기에 확인할 수 있고 DNS 조회 체인의 추가 쿼리를 피할 수 있으므로, 로드 시간이 향상되고 대역폭/CPU 소비가 줄어든다. DNS 데이터는 다양한 위치에 캐시될 수 있으며, 각 위치는 TTL(Time-To-Live)에 의해 정의된 설정 시간 동안 DNS 레코드를 저장한다.</li>
+</ul>
+
+<h3 id="브라우저-dns-캐싱">브라우저 DNS 캐싱</h3>
+
+<ul>
+  <li>최신 웹 브라우저는 기본적으로 정해진 시간 동안 DNS 레코드를 캐시하도록 설계되었다. 그 목적은 분명하다. DNS 캐싱이 웹 브라우저와 가까울수록 캐시를 확인하고 IP 주소에 대한 올바른 요청을 하기 위해 처리해야 할 단계가 적어진다. DNS 레코드를 요청할 때 브라우저 캐시에서 처음으로 요청한 레코드를 확인하는 것.
+<br /><br /><br /></li>
+  <li>
+    <p><strong>DNS Record Type ⇒ 위사진 7번과정</strong></p>
+
+    <ul>
+      <li>레코드 타입
+<img src="/assets/img/network/Understanding-Different-Types-of-Record-in-DNS-Server-2-1.png" alt="Understanding-Different-Types-of-Record-in-DNS-Server-2-1.png" />
+        <ul>
+          <li>레코드 설명
+            <ol>
+              <li><strong>A 레코드</strong>(주소 레코드): 가장 일반적인 DNS 레코드 유형. 도메인 또는 하위 도메인을 IPv4 주소로 지정하는 데 사용.</li>
+              <li><strong>AAAA 레코드</strong>(쿼드 A 레코드): A 레코드와 유사하지만 도메인 또는 하위 도메인을 IPv6 주소로 가리키는 데 사용.</li>
+              <li><strong>CNAME 레코드</strong>(정식 이름 레코드): 이 레코드는 한 도메인 이름에서 다른 도메인 이름으로 별칭을 만든다. 예를 들어 <a href="http://www.example.com/">www.example.com</a>을 example.com의 별칭으로 만들어 두 도메인 이름이 동일한 웹사이트로 연결되도록 할 수 있다.</li>
+              <li><strong>MX 레코드</strong>(메일 교환 레코드): 이 레코드는 도메인을 대신하여 이메일 메시지 수락을 담당하는 메일 서버를 가리킨다.</li>
+              <li><strong>NS 레코드</strong>(네임 서버 레코드): 이 레코드는 도메인에 대한 권한이 있는 네임 서버를 가리킨다. 이것은 일반적으로 도메인 등록 기관에서 설정되며 도메인에 대한 다른 레코드를 찾을 위치를 DNS 시스템에 알려준다.</li>
+              <li><strong>SOA 레코드</strong>(권한 레코드 시작): 이 레코드는 기본 이름 서버, 도메인 관리자의 이메일, 도메인 일련 번호 및 영역 새로 고침과 관련된 여러 타이머를 포함하여 도메인에 대한 중요한 세부 정보를 제공한다.</li>
+              <li><strong>TXT 레코드</strong>(텍스트 레코드): 이 유형의 레코드를 사용하면 관리자가 임의의 텍스트를 DNS 레코드에 삽입할 수 있다. 이는 이메일 유효성 검사를 위한 SPF(Sender Policy Framework) 레코드 또는 Google 웹마스터 도구와 같은 서비스의 도메인 확인과 같은 다양한 유형의 유효성 검사에 자주 사용다.</li>
+              <li><strong>SRV 레코드</strong>(서비스 레코드): 이 레코드는 도메인 이름의 일부로 사용되는 기호 이름과 전송 프로토콜을 정의. 레코드 콘텐츠에서 서비스에 대한 우선 순위, 가중치, 포트 및 대상을 정의한다.</li>
+              <li><strong>PTR 레코드</strong>(포인터 레코드): 이 유형의 레코드는 DNS 역방향 조회에 사용되며 IP 주소를 도메인 이름에 매핑한다(A 또는 AAAA 레코드의 반대).</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Nameserver는 무조건 공인된 애들한테만 -&gt; 악의적인 사용자가 있기때문</li>
+  <li>sub domain 활용 잘하면 도메인 값 아낄수있음</li>
+</ul>
+
+  
+</article>
+
+
+
+  <hr class="dingbat related mb6" />
+
+
+
+
+
+
+  
+     
+
+
+  <aside class="about related mt4 mb4" role="complementary">
+    
+    
+
+<div class="author mt4">
+  
+
+  
+    
+
+
+<img
+  
+    src="https://placehold.it/128x128"
+    srcset="https://placehold.it/128x128 1x,https://placehold.it/256x256 2x"
+    
+  
+  alt="최은석"
+  class="avatar"
+  
+  width="120"
+  height="120"
+  loading="lazy"
+/>
+
+  
+
+  
+  
+  <h2  class="page-title hr-bottom">
+    About
+  </h2>
+
+  <p>어제보단 나아졌겠지 ?</p>
+
+
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/nonjk2" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:nonjk2@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+
+  </aside>
+
+
+  
+
+  
+    
+
+
+  
+
+  
+    
+
+
+  <aside class="other-projects related mb0" role="complementary">  <h2>Related Posts</h2>  <div class="columns">          <div class="column column-1-2">                  <article class="project-card">  <a href="/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine fallback-img">          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" class="flip-title">OSI 7계층</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      OSI 7계층에 대해서 각 계층을 알아보고 더욱 파헤쳐 보자    </p>      <a class="fill-card no-hover" href="/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" tabindex="-1"><span class="sr-only">Continue reading OSI 7계층</span></a></article>              </div>          <div class="column column-1-2">                  <article class="project-card">  <a href="/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine flip-project-img">              <img      src="/assets/img/frontend/ES6.png"        sizes="(min-width:86em)29.5rem,(min-width:54em)24.5rem,(min-width:42em)21.5rem,42rem"    alt="함수"      width="864"  height="486"  loading="lazy"/>          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html" class="flip-title">함수</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      함수에 대하여    </p>      <a class="fill-card no-hover" href="/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html" tabindex="-1"><span class="sr-only">Continue reading 함수</span></a></article>              </div>      </div></aside>
+
+  
+
+  
+    
+
+
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Random Posts</h2>  <ul class="related-posts">          <li class="h4">  <a href="/frontend/%EB%B3%80%EC%88%98-%EC%84%A0%EC%96%B8%EA%B3%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%95%A0%EB%8B%B9.html" class="flip-title"><span>변수선언과 데이터 할당</span></a>  <time class="faded fine" datetime="2023-06-15T00:00:00+09:00">15 Jun 2023</time></li>          <li class="h4">  <a href="/frontend/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8.html" class="flip-title"><span>실행 컨텍스트</span></a>  <time class="faded fine" datetime="2023-06-15T00:00:00+09:00">15 Jun 2023</time></li>          <li class="h4">  <a href="/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html" class="flip-title"><span>함수</span></a>  <time class="faded fine" datetime="2023-06-17T00:00:00+09:00">17 Jun 2023</time></li>      </ul></aside>
+
+  
+
+  
+    
+
+  
+
+
+  
+<footer class="content" role="contentinfo">
+  <hr/>
+  
+    <p><small class="copyright">© 2021. All rights reserved.
+</small></p>
+  
+  
+    <nav class="legal"><small>
+    
+      
+      <a class="heading flip-title" href="/LICENSE/">LICENSE</a>
+      |
+    
+      
+      <a class="heading flip-title" href="/NOTICE/">NOTICE</a>
+      
+    
+    </small></nav>
+  
+  
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+  <hy-drawer
+  id="_drawer"
+  class=""
+  side="left"
+  threshold="10"
+  noscroll
+  
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+
+
+
+
+<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/sidebar-bg.jpg)"></div>
+
+    <div class="sidebar-sticky">
+  <div class="sidebar-about">
+    
+      <a class="no-hover" href="/" tabindex="-1">
+        <img src="/assets/img/logo.png" class="avatar" alt="개발자 최은석" width="120" height="120" loading="lazy" />
+      </a>
+    
+    <a class="sidebar-title" href="/"><h2 class="h1">개발자 최은석</h2></a>
+    
+    
+      <p class="">
+        반갑습니다.
+
+      </p>
+    
+  </div>
+
+  <nav class="sidebar-nav heading" role="navigation">
+    <span class="sr-only"
+  >Navigation:</span
+>
+<ul>
+   
+                          
+  <li>
+    
+    <input type="checkbox" id="folder-checkbox-9" />
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/frontend/"
+        class="sidebar-nav-item"
+        
+        >frontend</a
+      >
+      
+      <button class="spread-btn" onclick="javascript:spread(9)">
+        <label id="spread-icon-9" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
+    </div>
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-algorisme/"
+          >Algorism</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-javascript/"
+          >JavaScript</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-react/"
+          >React</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-typescript/"
+          >TypeScript</a
+        >
+      </li>
+      
+    </ul>
+     
+  </li>
+        
+  <li>
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/computerscience/"
+        class="sidebar-nav-item"
+        
+        >Computer Science</a
+      >
+      
+    </div>
+    
+  </li>
+    
+</ul>
+
+  </nav>
+
+  
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/nonjk2" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:nonjk2@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+</hy-push-state>
+
+
+  <!--[if gt IE 10]><!---->
+  <script nomodule>!function(){var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())}();
+</script>
+  <script src="/assets/js/hydejack-9.1.6.js" type="module"></script>
+  <script src="/assets/js/LEGACY-hydejack-9.1.6.js" nomodule defer></script>
+  
+
+  
+  <script>!function(w, d) {
+    w.ga=w.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+    /**/
+      ga('create', 'G-43895YHF45', 'auto');
+    /**/
+
+    var pushStateEl = d.getElementById('_pushState');
+    var timeoutId;
+    pushStateEl.addEventListener('hy-push-state-load', function() {
+      w.clearTimeout(timeoutId);
+      timeoutId = w.setTimeout(function() {
+        ga('set', 'page', w.location.pathname);
+        ga('send', 'pageview');
+      }, 500);
+    });
+
+    d.addEventListener('hy--cookies-ok', function () {
+      w.ga(function(tracker) {
+        w.ga("set", "anonymizeIp", undefined);
+        localStorage && localStorage.setItem("ga--client-id", tracker.get("clientId"));
+      });
+    });
+
+    w.loadJSDeferred('https://www.google-analytics.com/analytics.js');
+  }(window, document);</script>
+
+
+  <script type="module">
+    if ('serviceWorker' in navigator) {
+      /**/
+      navigator.serviceWorker.getRegistration()
+        .then(r => r.unregister())
+        .catch(() => {});
+      /**/
+    }
+  </script>
+<!--<![endif]-->
+  
+
+
+
+<div hidden>
+  
+  <h2 class="sr-only">Templates (for web app):</h2>
+
+  <template id="_animation-template">
+  <div class="animation-main fixed-top">
+    <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+</ul></nav>
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+  <template id="_loading-template">
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+  <template id="_error-template">
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
+
+    </p>
+  </div>
+</template>
+
+  <template id="_permalink-template">
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="content-hash"></span>
+  </a>
+</template>
+
+  
+  
+    <template id="_dark-mode-template">
+  <button id="_dark-mode" class="nav-btn no-hover" >
+    <span class="sr-only">Dark Mode</span>
+    <span class="icon-brightness-contrast"></span>
+  </button>
+</template>
+
+  
+  
+</div>
+
+</body>
+</html>

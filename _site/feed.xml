@@ -1,5 +1,1298 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko-KR"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko-KR" /><updated>2023-06-22T00:35:43+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">개발자 최은석</title><subtitle>공부하자 📚.
-</subtitle><author><name>최은석</name><email>nonjk2@gmail.com</email></author><entry><title type="html">자바스크립트 데이터 타입</title><link href="http://localhost:4000/frontend/%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85%EC%9D%98-%EC%A2%85%EB%A5%98-%EB%B0%8F-%EB%A9%94%EB%AA%A8%EB%A6%AC.html" rel="alternate" type="text/html" title="자바스크립트 데이터 타입" /><published>2023-06-14T00:00:00+09:00</published><updated>2023-06-14T00:00:00+09:00</updated><id>http://localhost:4000/frontend/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%83%80%EC%9E%85%EC%9D%98%20%EC%A2%85%EB%A5%98%20%EB%B0%8F%20%EB%A9%94%EB%AA%A8%EB%A6%AC</id><content type="html" xml:base="http://localhost:4000/frontend/%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85%EC%9D%98-%EC%A2%85%EB%A5%98-%EB%B0%8F-%EB%A9%94%EB%AA%A8%EB%A6%AC.html">&lt;!--more--&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko-KR"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko-KR" /><updated>2023-06-22T01:42:47+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">개발자 최은석</title><subtitle>공부하자 📚.
+</subtitle><author><name>최은석</name><email>nonjk2@gmail.com</email></author><entry><title type="html">OSI 7계층</title><link href="http://localhost:4000/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" rel="alternate" type="text/html" title="OSI 7계층" /><published>2023-06-19T00:00:00+09:00</published><updated>2023-06-19T00:00:00+09:00</updated><id>http://localhost:4000/computerscience/OSI%207%EA%B3%84%EC%B8%B5</id><content type="html" xml:base="http://localhost:4000/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html">&lt;aside&gt;
+💡 강의를 보면서 기록을 하여 네트워크와 HTTP 에 대한 지식을 재정리
+
+&lt;/aside&gt;
+&lt;!--more--&gt;
+
+&lt;h1 class=&quot;no_toc&quot; id=&quot;osi-7계층&quot;&gt;OSI 7계층&lt;/h1&gt;
+
+&lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1층-물리계층-비트&quot; id=&quot;markdown-toc-1층-물리계층-비트&quot;&gt;1층 물리계층 (비트)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2층-데이터-링크-계층-프레임&quot; id=&quot;markdown-toc-2층-데이터-링크-계층-프레임&quot;&gt;2층 데이터 링크 계층 (프레임)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3층-네트워크-계층-패킷&quot; id=&quot;markdown-toc-3층-네트워크-계층-패킷&quot;&gt;3층 네트워크 계층 (패킷)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4층-전송-계층-세그먼트&quot; id=&quot;markdown-toc-4층-전송-계층-세그먼트&quot;&gt;4층 전송 계층 (세그먼트)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5층-세션-계층--6층-표현-계층--7층-응용-계층&quot; id=&quot;markdown-toc-5층-세션-계층--6층-표현-계층--7층-응용-계층&quot;&gt;5층 세션 계층 , 6층 표현 계층 , 7층 응용 계층&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#정리&quot; id=&quot;markdown-toc-정리&quot;&gt;정리&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#내컴퓨터에서-다른컴퓨터로-데이터-전송되는-전체과정&quot; id=&quot;markdown-toc-내컴퓨터에서-다른컴퓨터로-데이터-전송되는-전체과정&quot;&gt;내컴퓨터에서 다른컴퓨터로 데이터 전송되는 전체과정&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;./Image/osi7_1.png&quot; alt=&quot;osi_img_01.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1층-물리계층-비트&quot;&gt;1층 물리계층 (비트)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;bit : 01001011100111001
+    &lt;ul&gt;
+      &lt;li&gt;컴퓨터는 0과 1밖에 모른다
+0과 1은 비트 , 랜선을 통해서 0과 1데이터가 왓다갓다(전기신호)
+비트도 검증코드 확인작업이 있을수 있다.
+&lt;del&gt;컴퓨터가 알아서 해줌&lt;/del&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2층-데이터-링크-계층-프레임&quot;&gt;2층 데이터 링크 계층 (프레임)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;MAC주소 , IP 헤더 , TCP 헤더 , 데이터&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;데이터링크&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;실제 데이터를 보는 방법은 &lt;strong&gt;와이어샤크&lt;/strong&gt; 라는 도구를 씀&lt;/li&gt;
+  &lt;li&gt;데이터 예시 : 010 1100 1100 1100 11100 가 있으면 전체를 묶어서 &lt;strong&gt;프레임&lt;/strong&gt;이라고 부름&lt;/li&gt;
+  &lt;li&gt;앞에서부터 목적지 출발지 유형 데이터 트레일러 등 - 예시 비트를 짤라서 이러한 데이터를 보냄&lt;/li&gt;
+  &lt;li&gt;데이터 링크에서는 MAC주소라는것을 활용함 목적지 , 출발지 등에는 MAC주소가 담긴다&lt;/li&gt;
+  &lt;li&gt;MAC주소 -&amp;gt; 블루투스나 이런것을 연결할 때 00-0C-29-6C-F3-ES이런 것을 보게 되는데 이것이 &lt;strong&gt;랜카드의 ID&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;처음부터 정해진 비트로 1:1관계로 연결되어서 비효율적이라고 생각할수있지만 스위치, 허브 를 통하여 서로 다른 입출구를 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/network/switch.png&quot; alt=&quot;허브 ,스위치 모습&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;허브 ,스위치 모습&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;이더넷&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;프로토콜&lt;/strong&gt; 이란 약속이라 볼수있음 서로의 컴퓨터에선 같은 값에 서로다른 뜻을 부여할수있으므로 프로토콜이란 정의하에 같은 뜻을 전달&lt;/li&gt;
+  &lt;li&gt;허브 , 스위치에 연결된 MAC주소끼리는 데이터 전송이 가능&lt;/li&gt;
+  &lt;li&gt;WIFI도 이더넷과 비슷한 하나의 프로토콜 데이터링크 계층이라고 볼수있다. AP(access point)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ex) 출발지가 내컴퓨터 비트를 가르킨다면 도착지는 와이파이 비트를 가르킴&lt;/p&gt;
+
+&lt;h3 id=&quot;3층-네트워크-계층-패킷&quot;&gt;3층 네트워크 계층 (패킷)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;IP 헤더 , TCP 헤더 , 데이터&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;네트워크&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;예) 192.35.15.17 -&amp;gt;32bit ipv4&lt;/li&gt;
+  &lt;li&gt;ip란 mac주소들이 모여있는 주소 하지만 mac주소가 너무 많아졌다 . (0~255 개수는 256 = 2^8 2의 8승 01이 8자리)&lt;/li&gt;
+  &lt;li&gt;255.255.255.255 최대치를 뽑더라도 43억 &amp;lt; 인구수 80억&lt;/li&gt;
+  &lt;li&gt;네트워크가 고갈되다 보니까 ipv6 128bit 가 나왔지만 익숙하지않아 ipv4를 쓰는곳이 매우 많다. 고갈됬는데 안넘어가는이유는 사설 ip때문!&lt;/li&gt;
+  &lt;li&gt;예를들면 192.168.0.15 -&amp;gt; 요거는 사설ip 일확률 99.99%&lt;/li&gt;
+  &lt;li&gt;아이피에는 공인 ip와 사설ip 가있음 공인 ip 를 알아야 다른사람과 소통이 가능&lt;/li&gt;
+  &lt;li&gt;사설 ip는 보통 192.168과 172.16~172.31 그리고 10으로 시작한다 ipv6는 128bit 라서 복잡함 알파벳도 들어가있고&lt;/li&gt;
+  &lt;li&gt;MAC주소들이있는 스위치 그 스위치들이 모여있는 &lt;strong&gt;라우터&lt;/strong&gt; 라우터는 스위치보다 클수있고 그것은 하나의 네트워크를 구성함&lt;/li&gt;
+  &lt;li&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;하나의 건물에서 하나의 라우터를 사용시 옆건물 네트워크에 진입할때 프레임을보면 목적MAC + 출발지 MAC + 네트워크데이터 + 트레일러가 있다 네트워크 데이터에는 위와같이 목적ip(옆건물 네트워크ip) + 출발 ip (내라우터(내건물 네트워크ip)) + 전송계층데이터 로 이루어진다 패킷 -&amp;gt; 목적ip(옆건물 네트워크ip) + 출발 ip (내라우터(내건물 네트워크ip)) + 전송계층데이터&lt;/strong&gt;
+라우터 네트워크 ip는 공인ip그 내부 네트워크가 더필요하다면 사설ip를 이용해 사용할수있음&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;네트워크에는 대표 주소인 IP가 있다 그러나 개수 한정으로 내부 네트워크는 사설 ip를 씀 예를들면 공유기에 공인 ip를 받는 랜선을 꼽고 거기서 사설ip를 생산해 내부에 뿌림&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;가끔가다 192.168.0.255 보는데 이것은 브로드캐스트라고 불림 255번한테 데이터를 보내면 네트워크 내부 전체한테 전송이 됌&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;특수 IP 127.0.0.1 = &lt;a href=&quot;http://localhost/&quot;&gt;localhost&lt;/a&gt; 내컴퓨터를 가리킴&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4층-전송-계층-세그먼트&quot;&gt;4층 전송 계층 (세그먼트)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;TCP 헤더 , 데이터&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;전송 계층 데이터&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;포트 ex) 15.163.24.8 : 포트번호&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;80 -&amp;gt; HTTP&lt;/li&gt;
+  &lt;li&gt;443 -&amp;gt; HTTPS&lt;/li&gt;
+  &lt;li&gt;22 -&amp;gt; SSH&lt;/li&gt;
+  &lt;li&gt;53-&amp;gt; DNS&lt;/li&gt;
+  &lt;li&gt;SMTP&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;0~1023 well known port 잘알려진 포트&lt;/p&gt;
+
+&lt;p&gt;포트를 통해서 목적지 어떤 데이터를 어떻게 처리해야되나 , 오류체크 등&lt;/p&gt;
+
+&lt;p&gt;전송계층 데이터는 &lt;strong&gt;세그먼트&lt;/strong&gt; 라고 말함&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;세그먼트 = TCP헤더 + 데이터(세션계층 데이터)&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;프로토콜&lt;/strong&gt; -&amp;gt; &lt;strong&gt;TCP / UDP&lt;/strong&gt;
+&lt;strong&gt;TCP&lt;/strong&gt; (http 1.1 , http 2 )
+3way handshake 라는 것을 활용하여 연결 맺었는지 확인 및 데이터를 받았는지 확인
+&lt;strong&gt;UDP&lt;/strong&gt; (http3) -&amp;gt; 세그먼트의경우 UDP헤더 + 데이터
+확인하지않고 그냥 날림 / 동영상이나,사진 등 멀티미디어를 보낼때 UDP 프로토콜을 사용함 &lt;strong&gt;TCP의 많은 프로세스에 비해 빠름&lt;/strong&gt;
+tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더 느림&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;5층-세션-계층--6층-표현-계층--7층-응용-계층&quot;&gt;5층 세션 계층 , 6층 표현 계층 , 7층 응용 계층&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;세션 표현 응용&lt;/strong&gt; &lt;strong&gt;http 데이터&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;HTTP 데이터 = HTTP 헤더 + HTTP 본문 (body)로 구성&lt;/p&gt;
+
+&lt;p&gt;HTTP 헤더 = 요청/응답&lt;/p&gt;
+
+&lt;p&gt;예 ) 요청 : get/index.html , host:&lt;a href=&quot;http://eundol.com/&quot;&gt;eundol.com&lt;/a&gt; 등이 0101001101 이렇게 바뀌어서 전달됨&lt;/p&gt;
+
+&lt;p&gt;암호화는 세션층! =&amp;gt; HTTPS (ssl/tls)&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;표현 UTF-8 , ASC&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;, jpg , png 등&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;정리&quot;&gt;정리&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/network/tcp%3Aip_osi7.png&quot; alt=&quot;tcp/ip 모델 과 osi 7계층 모델&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;tcp/ip 모델 과 osi 7계층 모델&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/network/httpFrame.png&quot; alt=&quot;http&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;보낼때&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;HTTP 헤더(post/users) = 본문 응용계층&lt;/li&gt;
+  &lt;li&gt;HTTPS 암호화 = 세션계층&lt;/li&gt;
+  &lt;li&gt;TCP헤더 443 = 전송계층&lt;/li&gt;
+  &lt;li&gt;IP주소 목적지 = 출발지 네트워크 계층&lt;/li&gt;
+  &lt;li&gt;MAC주소 목적지 = 출발지 데이터링크 계층&lt;/li&gt;
+  &lt;li&gt;1010110비트 = 물리 계층&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;받을 때&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;받는쪽은 전기신호가오면 프레임으로 바뀌고 하나하나 분해하여 필요한것을 데이터로 가져옴 (ex) post/users&lt;/p&gt;
+
+&lt;h3 id=&quot;내컴퓨터에서-다른컴퓨터로-데이터-전송되는-전체과정&quot;&gt;내컴퓨터에서 다른컴퓨터로 데이터 전송되는 전체과정&lt;/h3&gt;
+
+&lt;p&gt;다른 컴퓨터 -&amp;gt; NAVER일경우 https(443) dns를통해 ip주소를 알수있음&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;목적지 Ip = 네이버 ip&lt;/li&gt;
+  &lt;li&gt;출발 ip = 내 ip&lt;/li&gt;
+  &lt;li&gt;출발 포트 = 내포트&lt;/li&gt;
+  &lt;li&gt;목적지 포트 = 443&lt;/li&gt;
+  &lt;li&gt;출발 MAC = 내 MAC&lt;/li&gt;
+  &lt;li&gt;목적지 MAC = 내 네트워크(라우터) MAC주소&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;처음 내라우터 -&amp;gt; 네이버 라우터 -&amp;gt; 네이버 라우터 MAC -&amp;gt; Naver Server -&amp;gt; http 요청 읽고 응답 response 역순&lt;/p&gt;</content><author><name>최은석</name><email>nonjk2@gmail.com</email></author><category term="ComputerScience" /><category term="Network" /><summary type="html">💡 강의를 보면서 기록을 하여 네트워크와 HTTP 에 대한 지식을 재정리</summary></entry><entry><title type="html">DNS</title><link href="http://localhost:4000/computerscience/DNS.html" rel="alternate" type="text/html" title="DNS" /><published>2023-06-18T00:00:00+09:00</published><updated>2023-06-18T00:00:00+09:00</updated><id>http://localhost:4000/computerscience/DNS</id><content type="html" xml:base="http://localhost:4000/computerscience/DNS.html">&lt;!--more--&gt;
+
+&lt;h1 class=&quot;no_toc&quot; id=&quot;dns&quot;&gt;DNS&lt;/h1&gt;
+
+&lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#-dns는-어떻게-작동하지&quot; id=&quot;markdown-toc--dns는-어떻게-작동하지&quot;&gt;💡 DNS는 어떻게 작동하지?&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#dns-조회는-어떤-단계를-거칠까&quot; id=&quot;markdown-toc-dns-조회는-어떤-단계를-거칠까&quot;&gt;DNS 조회는 어떤 단계를 거칠까?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#dns-조회의-8단계&quot; id=&quot;markdown-toc-dns-조회의-8단계&quot;&gt;DNS 조회의 8단계&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#dns-캐싱이란--dns-캐싱은-어디서-발생할까&quot; id=&quot;markdown-toc-dns-캐싱이란--dns-캐싱은-어디서-발생할까&quot;&gt;DNS 캐싱이란 ? DNS 캐싱은 어디서 발생할까?&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#브라우저-dns-캐싱&quot; id=&quot;markdown-toc-브라우저-dns-캐싱&quot;&gt;브라우저 DNS 캐싱&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DNS란 Domain Name System의 약자로 인터넷 주소창에 Host Domain Name을 입력했을 때 해당 문자를 IP주소로 변환해주는 시스템&lt;/li&gt;
+  &lt;li&gt;인터넷에 연결된 각 기기에는 다른 컴퓨터가 기기를 찾는데 사용하는 고유한 ip 주소가 있다.&lt;/li&gt;
+  &lt;li&gt;DNS서버를 사용하면 ipv4 (192.168.1.1) ipv6 (2400:cb00:2048:1::c629:d7a2) 와 같은 주소를 기억할 필요없다.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://naver.com/&quot;&gt;Naver.com&lt;/a&gt; , &lt;a href=&quot;http://daum.net/&quot;&gt;Daum.net&lt;/a&gt; 등 -&amp;gt; 전화번호를 이름으로 저장하는것과 비슷&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;-dns는-어떻게-작동하지&quot;&gt;💡 DNS는 어떻게 작동하지?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;DNS 확인 프로세스에는 호스트 이름(예: www.example.com)을 컴퓨터 친화적인 IP 주소(예: 192.168.1.1)로 변환하는 과정이 포함한다. IP 주소는 인터넷의 각 기기에 제공되며, 거리 주소가 특정한 집을 찾는 데 사용되는 것처럼, 적절한 인터넷 기기를 찾기 위해서는 IP 주소가 필요하다. 사용자가 어떤 웹페이지를 로드하려고 할 때에는 사용자가 웹브라우저에 입력한 내용(예: example.com)을 example.com 웹페이지를 찾는 데 필요한 컴퓨터 친화적 주소로 변환해야 한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;DNS 확인의 기반 프로세스를 이해하려면, DNS 쿼리가 통과해야 하는 다양한 하드웨어 구성 요소에 대해 알아야 한다. 웹브라우저 입장에서는 DNS 확인이 “막후에서” 발생하며 최초의 사용자 요청 외에 사용자 컴퓨터와의 추가적인 대화는 x.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;dns-조회는-어떤-단계를-거칠까&quot;&gt;DNS 조회는 어떤 단계를 거칠까?&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;대부분의 경우, DNS는 도메인 이름을 적절한 IP 주소로 변환하는 일에 관여. 이 프로세스의 작동 방식을 알려면, 웹 브라우저에서 DNS 조회 프로세스를 거쳐 다시 돌아오는 DNS 조회 경로를 따르는 것이 좋다.
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;참고: DNS 조회 정보는 쿼리 컴퓨터 내부에서 로컬로 또는 DNS 인프라에서 원격으로 캐시되는 경우가 많습니다. DNS 조회에는 일반적으로 8단계가 있지만, &lt;strong&gt;DNS 정보가 캐시되어 있으면 DNS 조회 프로세스에서 몇 단계를 건너 뛸 수 있으므로, 더 빨라집니다.&lt;/strong&gt; 아래 예시는 캐시되지 않은 8단계를 모두 보여줍니다.
+&lt;img src=&quot;/assets/img/network/what_is_a_dns_server_dns_lookup.png&quot; alt=&quot;what_is_a_dns_server_dns_lookup.png&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;DNS Resolver&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;DNS Resolver는 클라이언트 측 소프트웨어 또는 DNS 조회 시작을 담당하는 네트워크 구성 요소.다양한 DNS 서버와 통신하여 도메인 이름을 IP 주소로 확인한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Root Server&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Root&lt;/strong&gt; 서버는 DNS 인프라의 중요한 부분. 최상위 도메인(.com, .org, .net 등)에 대한 정보를 유지 관리하는 신뢰할 수 있는 서버 집합. 전 세계적으로 13개의 루트 서버 클러스터가 있으며 각각은 A에서 M까지의 문자로 식별. 주요 기능은 적절한 TLD 서버에 참조를 제공하는 것.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;TLD Server&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;TLD 서버는 .com, .org, .net과 같은 최상위 도메인과 .us, .uk 등과 같은 국가 코드 TLD를 처리할 책임이 있다. 이러한 서버는 해당 TLD에 등록된 도메인 이름에 대한 정보를 유지한다. 예를 들어 .com으로 끝나는 도메인 이름을 조회하는 경우 .com용 TLD 서버는 해당 도메인 이름을 확인하는 데 필요한 정보를 갖게 된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DNS Server&lt;/strong&gt; - DNS 서버는 도메인 이름을 IP 주소에 매핑하는 &lt;strong&gt;DNS 레코드&lt;/strong&gt;를 저장하고 관리한다. 신뢰할 수 있는 DNS 서버 및 재귀 DNS 서버를 포함하여 여러 수준의 DNS 서버가 있다. - &lt;strong&gt;Authoritative DNS Server&lt;/strong&gt;: &lt;strong&gt;Authoritative DNS Server&lt;/strong&gt;는 특정 도메인에 대한 DNS 레코드를 저장하고 제공하는 역할을 한다. DNS 해석기는 도메인 이름을 쿼리할 때 해당 도메인과 연결된 신뢰할 수 있는 DNS 서버에 연결하여 해당 IP 주소 또는 기타 DNS 레코드를 얻는다. - &lt;strong&gt;Recursive DNS Server&lt;/strong&gt;: Recursive DNS Server는 일반적으로 인터넷 서비스 공급자(ISP) 또는 타사 DNS 공급자가 제공한다(third-party DNS provider). DNS resolver가 쿼리를 받으면 &lt;strong&gt;Recursive DNS Server&lt;/strong&gt;에 연결하여 클라이언트를 대신하여 도메인 이름을 확인할 수 있다. &lt;strong&gt;Recursive DNS Server&lt;/strong&gt;는 캐시에 요청된 정보가 없으면 루트 서버에서 시작하여 요청된 도메인의 IP 주소를 얻을 때까지 DNS 계층 구조를 재귀적으로 통과한다.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;dns-조회의-8단계&quot;&gt;DNS 조회의 8단계&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;사용자가 웹 브라우저에 ‘example.com’을 입력하면, 쿼리가 인터넷으로 이동하고 DNS 재귀 확인자가 이를 수신.&lt;/li&gt;
+  &lt;li&gt;이어서 확인자가 DNS 루트 이름 서버(.)를 쿼리.&lt;/li&gt;
+  &lt;li&gt;다음으로, 루트 서버가, 도메인에 대한 정보를 저장하는 최상위 도메인(TLD) DNS 서버(예: .com 또는 .net)의 주소로 확인자에 응답. example.com을 검색할 경우의 요청은 .com TLD를 가리킨다.&lt;/li&gt;
+  &lt;li&gt;이제, 확인자가 .com TLD에 요청.&lt;/li&gt;
+  &lt;li&gt;이어서, TLD 서버가 도메인 이름 서버(example.com)의 IP 주소로 응답.&lt;/li&gt;
+  &lt;li&gt;마지막으로, 재귀 확인자가 도메인의 이름 서버로 쿼리를 보낸다.&lt;/li&gt;
+  &lt;li&gt;이제, example.com의 IP 주소가 이름 서버에서 확인자에게 반환.&lt;/li&gt;
+  &lt;li&gt;이어서, DNS 확인자가, 처음 요청한 도메인의 IP 주소로 웹 브라우저에 응답.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;DNS 조회의 8단계를 거쳐 example.com의 IP 주소가 반환되면, 이제 브라우저가 웹 페이지를 요청할 수 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;브라우저가 IP 주소로 &lt;a href=&quot;https://www.cloudflare.com/learning/ddos/glossary/hypertext-transfer-protocol-http/&quot;&gt;HTTP&lt;/a&gt; 요청을 보낸다.&lt;/li&gt;
+  &lt;li&gt;해당 IP의 서버가 브라우저에서 렌더링할 웹 페이지를 반환(10단계).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;이 과정들은 브라우저에서 서비스.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;dns-캐싱이란--dns-캐싱은-어디서-발생할까&quot;&gt;DNS 캐싱이란 ? DNS 캐싱은 어디서 발생할까?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;캐싱의 목적은 데이터를 임시 저장하여, 데이터 요청에 대해 성능과 신뢰성을 높이는 것. DNS 캐싱은 요청하는 클라이언트와 가까운 곳에 데이터를 저장함으로써, DNS 쿼리를 조기에 확인할 수 있고 DNS 조회 체인의 추가 쿼리를 피할 수 있으므로, 로드 시간이 향상되고 대역폭/CPU 소비가 줄어든다. DNS 데이터는 다양한 위치에 캐시될 수 있으며, 각 위치는 TTL(Time-To-Live)에 의해 정의된 설정 시간 동안 DNS 레코드를 저장한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;브라우저-dns-캐싱&quot;&gt;브라우저 DNS 캐싱&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;최신 웹 브라우저는 기본적으로 정해진 시간 동안 DNS 레코드를 캐시하도록 설계되었다. 그 목적은 분명하다. DNS 캐싱이 웹 브라우저와 가까울수록 캐시를 확인하고 IP 주소에 대한 올바른 요청을 하기 위해 처리해야 할 단계가 적어진다. DNS 레코드를 요청할 때 브라우저 캐시에서 처음으로 요청한 레코드를 확인하는 것.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;DNS Record Type ⇒ 위사진 7번과정&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;레코드 타입
+&lt;img src=&quot;/assets/img/network/Understanding-Different-Types-of-Record-in-DNS-Server-2-1.png&quot; alt=&quot;Understanding-Different-Types-of-Record-in-DNS-Server-2-1.png&quot; /&gt;
+        &lt;ul&gt;
+          &lt;li&gt;레코드 설명
+            &lt;ol&gt;
+              &lt;li&gt;&lt;strong&gt;A 레코드&lt;/strong&gt;(주소 레코드): 가장 일반적인 DNS 레코드 유형. 도메인 또는 하위 도메인을 IPv4 주소로 지정하는 데 사용.&lt;/li&gt;
+              &lt;li&gt;&lt;strong&gt;AAAA 레코드&lt;/strong&gt;(쿼드 A 레코드): A 레코드와 유사하지만 도메인 또는 하위 도메인을 IPv6 주소로 가리키는 데 사용.&lt;/li&gt;
+              &lt;li&gt;&lt;strong&gt;CNAME 레코드&lt;/strong&gt;(정식 이름 레코드): 이 레코드는 한 도메인 이름에서 다른 도메인 이름으로 별칭을 만든다. 예를 들어 &lt;a href=&quot;http://www.example.com/&quot;&gt;www.example.com&lt;/a&gt;을 example.com의 별칭으로 만들어 두 도메인 이름이 동일한 웹사이트로 연결되도록 할 수 있다.&lt;/li&gt;
+              &lt;li&gt;&lt;strong&gt;MX 레코드&lt;/strong&gt;(메일 교환 레코드): 이 레코드는 도메인을 대신하여 이메일 메시지 수락을 담당하는 메일 서버를 가리킨다.&lt;/li&gt;
+              &lt;li&gt;&lt;strong&gt;NS 레코드&lt;/strong&gt;(네임 서버 레코드): 이 레코드는 도메인에 대한 권한이 있는 네임 서버를 가리킨다. 이것은 일반적으로 도메인 등록 기관에서 설정되며 도메인에 대한 다른 레코드를 찾을 위치를 DNS 시스템에 알려준다.&lt;/li&gt;
+              &lt;li&gt;&lt;strong&gt;SOA 레코드&lt;/strong&gt;(권한 레코드 시작): 이 레코드는 기본 이름 서버, 도메인 관리자의 이메일, 도메인 일련 번호 및 영역 새로 고침과 관련된 여러 타이머를 포함하여 도메인에 대한 중요한 세부 정보를 제공한다.&lt;/li&gt;
+              &lt;li&gt;&lt;strong&gt;TXT 레코드&lt;/strong&gt;(텍스트 레코드): 이 유형의 레코드를 사용하면 관리자가 임의의 텍스트를 DNS 레코드에 삽입할 수 있다. 이는 이메일 유효성 검사를 위한 SPF(Sender Policy Framework) 레코드 또는 Google 웹마스터 도구와 같은 서비스의 도메인 확인과 같은 다양한 유형의 유효성 검사에 자주 사용다.&lt;/li&gt;
+              &lt;li&gt;&lt;strong&gt;SRV 레코드&lt;/strong&gt;(서비스 레코드): 이 레코드는 도메인 이름의 일부로 사용되는 기호 이름과 전송 프로토콜을 정의. 레코드 콘텐츠에서 서비스에 대한 우선 순위, 가중치, 포트 및 대상을 정의한다.&lt;/li&gt;
+              &lt;li&gt;&lt;strong&gt;PTR 레코드&lt;/strong&gt;(포인터 레코드): 이 유형의 레코드는 DNS 역방향 조회에 사용되며 IP 주소를 도메인 이름에 매핑한다(A 또는 AAAA 레코드의 반대).&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Nameserver는 무조건 공인된 애들한테만 -&amp;gt; 악의적인 사용자가 있기때문&lt;/li&gt;
+  &lt;li&gt;sub domain 활용 잘하면 도메인 값 아낄수있음&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>최은석</name><email>nonjk2@gmail.com</email></author><category term="ComputerScience" /><category term="Network" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/frontend/dns.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/frontend/dns.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">함수</title><link href="http://localhost:4000/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html" rel="alternate" type="text/html" title="함수" /><published>2023-06-17T00:00:00+09:00</published><updated>2023-06-17T00:00:00+09:00</updated><id>http://localhost:4000/frontend/%EC%9D%BC%EA%B8%89%20%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98%20%ED%95%A8%EC%88%98</id><content type="html" xml:base="http://localhost:4000/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html">&lt;!--more--&gt;
+&lt;h1 class=&quot;no_toc&quot; id=&quot;일급-객체로서의-함수&quot;&gt;&lt;strong&gt;일급 객체로서의 함수&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#변수를-함수를-할당&quot; id=&quot;markdown-toc-변수를-함수를-할당&quot;&gt;변수를 함수를 할당&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#함수를-인자로-다른-함수에-전달&quot; id=&quot;markdown-toc-함수를-인자로-다른-함수에-전달&quot;&gt;함수를 인자로 다른 함수에 전달&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#함수를-반환&quot; id=&quot;markdown-toc-함수를-반환&quot;&gt;함수를 반환&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#객체의-프로퍼티로-함수를-할당&quot; id=&quot;markdown-toc-객체의-프로퍼티로-함수를-할당&quot;&gt;객체의 프로퍼티로 함수를 할당&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#배열의-요소로-함수를-할당&quot; id=&quot;markdown-toc-배열의-요소로-함수를-할당&quot;&gt;배열의 요소로 함수를 할당&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#map-과-set&quot; id=&quot;markdown-toc-map-과-set&quot;&gt;Map 과 Set&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#1-map&quot; id=&quot;markdown-toc-1-map&quot;&gt;(1) Map&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2-set&quot; id=&quot;markdown-toc-2-set&quot;&gt;(2) Set&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;자바스크립트에서 함수는 일급 객체(First-Class Object). 그래서 함수를 객체처럼 여러가지 방식으로 다룰 수 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;일급객체(First-class Object)란 다른 객체들에 일반적으로 적용 가능한 연산을 모두 지원하는 객체를 가리킨다. [위키백과]&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;함수가 일급 객체로 취급되기 때문에, 함수를 매우 유연하게 사용할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;변수를-함수를-할당&quot;&gt;변수를 함수를 할당&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;함수는 변수에 할당할 수 있다. 함수는 값으로 함수는 값으로 취급되기 때문에, 다른 변수와 마찬가지로 변수에 할당할 수 있다. 변수에 할당된 함수는 나중에 사용할 수 있다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sayHello&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Hello!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;sayHello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &quot;Hello!&quot; 출력&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;함수를-인자로-다른-함수에-전달&quot;&gt;함수를 인자로 다른 함수에 전달&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;함수는 다른 함수에 인자로 전달될 수 있다. 함수가 값으로 취급되기 때문에, 다른 함수의 인자로 전달할 수 있다. 이것은 &lt;strong&gt;콜백(callback)&lt;/strong&gt;이나 &lt;strong&gt;고차 함수(higher-order function)&lt;/strong&gt;를 작성하는 데 사용&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;고차 함수란 함수를 인자로 받거나 함수를 출력으로 반환하는 함수를 말한다. 함수를 다루는 함수인셈 정리하면 콜백함수는 고차함수라고도 할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sayHello&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Hello!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;callFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sayHello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &quot;Hello!&quot; 출력&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;함수를-반환&quot;&gt;함수를 반환&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;함수는 다른 함수에서 반환 될수 있다. 함수는 값으로 취급되기 때문에, 다른 함수에서 반환할 수 있다. 이것은 함수 팩토리 (factory) 나 클로저(closure)를 작성하는 데 사용됨.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createAdder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;addFive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createAdder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addFive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 15 출력&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;객체의-프로퍼티로-함수를-할당&quot;&gt;객체의 프로퍼티로 함수를 할당&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;함수는 객체의 프로퍼티로 할당 될 수 있다. 객체의 메소드로 함수를 호출 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;John&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;sayHello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`Hello, my name is &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sayHello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &quot;Hello, my name is John&quot; 출력&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;배열의-요소로-함수를-할당&quot;&gt;배열의 요소로 함수를 할당&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;함수는 배열의 요소로 할당될 수 있다. 이것은 함수를 배열에서 사용할 수 있게 함.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 15 출력&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 5 출력&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;함수가 일급 객체로 취급되기 때문에, 자바스크립트에서 함수는 매우 유연하게 사용될 수 있다. 이것은 다양한 프로그래밍 패턴에서 사용되며 함수를 일급 객체로 다룰 수 있다는 것은 코드를 더 간결하고 모듈화된 형태로 작성 할 수 있게 해준다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;multiplyBy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;multiplyByTwo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;multiplyBy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;multiplyByThree&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;multiplyBy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;multiplyByTwo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;multiplyByThree&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 40 출력&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;map-과-set&quot;&gt;Map 과 Set&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;JavaScript&lt;/strong&gt;에서 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;객체(object)&lt;/code&gt;&lt;/strong&gt;와 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;배열(array)&lt;/code&gt;&lt;/strong&gt;을 이용하면 굉장히 다양하고 복잡한 프로그래밍을 할 수가 있다. 하지만 여러가지 문제들을 프로그래밍 적으로 반영하기엔 많이 부족하다. 이러한 한계를 극복하고자 비교적 최근 등장한 자료구조인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Map&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Set&lt;/code&gt;을 알아보자&lt;/p&gt;
+
+&lt;h3 id=&quot;1-map&quot;&gt;(1) Map&lt;/h3&gt;
+
+&lt;p&gt;Map은 키-쌍을 저장하는 객체와 비슷하다. Map은 각 쌍의 키와 값을 저장하며, 객체와 달리 키로 사용 할 수 있는 모든 유형을 사용할 수 있다. Map은 키가 정렬된 순서로 저장되기 때문에 , 추가한 순서대로 반복할 필요가 없다. Map 을 사용하면 다음과 같은 작업을 수행할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;키-값 쌍 추가 및 검색(set)&lt;/li&gt;
+  &lt;li&gt;키-값 쌍 삭제(delete)&lt;/li&gt;
+  &lt;li&gt;모든 키-값 쌍 제거(clear)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Map&lt;/strong&gt; 크기 및 존재 여부 확인(size)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;aside&gt;
+💡 **Map 의 메서드와 프로퍼티**
+
+- `new Map()` – 맵을 만듭니다.
+- `map.set(key, value)` – `key`를 이용해 `value`를 저장합니다.
+- `map.get(key)` – `key`에 해당하는 값을 반환합니다. `key`가 존재하지 않으면 `undefined`를 반환합니다.
+- `map.has(key)` – `key`가 존재하면 `true`, 존재하지 않으면 `false`를 반환합니다.
+- `map.delete(key)` – `key`에 해당하는 값을 삭제합니다.
+- `map.clear()` – 맵 안의 모든 요소를 제거합니다.
+- `map.size` – 요소의 개수를 반환합니다.
+&lt;/aside&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myMap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Map()생성자를 사용&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;myMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Map에 값을 추가하기위해 set()메서드 사용&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//get()메서드를 사용해 &apos;value&apos;출력&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Map&lt;/strong&gt;에서는 &lt;strong&gt;keys()&lt;/strong&gt;, &lt;strong&gt;values()&lt;/strong&gt;, &lt;strong&gt;entries()&lt;/strong&gt; 메소드를 사용하여 키, 값 및 키-값 쌍을 반복할 수 있다.&lt;/p&gt;
+
+&lt;aside&gt;
+💡 `for of` 반복문은 ES6에 추가된 새로운 컬렉션 전용 반복 구문. `for of` 구문을 사용하기 위해선 컬렉션 객체가 `[Symbol.iterator]` 속성을 가지고 있어야한다.(직접 명시 가능).
+
+&lt;/aside&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;iterable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;valueof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;iterable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 10, 20 , 30&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iterable&lt;/code&gt; 은 반복자라는 뜻. 요소 하나하나를 반복할 수 있도록 배열 또는 객체와 비슷한 형태로 열거되어있는 자료구조로 이해하면 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myMap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;myMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;one&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;myMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;two&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;myMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;three&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;entry&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 3 출력 Map의 크기를 확인&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;has&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;two&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true 출력 특정키가 Map에 존재하는지 여부를 확인&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;2-set&quot;&gt;(2) Set&lt;/h3&gt;
+
+&lt;p&gt;JavaScript에서 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Map&lt;/code&gt;&lt;/strong&gt;과 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Set&lt;/code&gt;&lt;/strong&gt;은 두 가지 다른 유형의 자료 구조. &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Map&lt;/code&gt;&lt;/strong&gt;은 키-값 쌍을 저장하는 객체와 비슷하며, &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Set&lt;/code&gt;&lt;/strong&gt;은 고유한 값을 저장하는 자료 구조다. &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Map&lt;/code&gt;&lt;/strong&gt; 및 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Set&lt;/code&gt;&lt;/strong&gt;은 모두 값 추가, 검색, 삭제 및 모든 값 제거를 수행할 수 있다. &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Map&lt;/code&gt;&lt;/strong&gt; 및 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Set&lt;/code&gt;&lt;/strong&gt;을 사용하여 효율적인 데이터 구성 및 검색을 수행할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Set&lt;/code&gt; 은 고유한 값을 저장하는 자료 구조다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Set&lt;/code&gt; 은 값만 저장하며, 키를 저장하지 않는다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Set&lt;/code&gt; 은 값이 중복되지 않는 유일한 요소로만 구성된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;값 추가 및 검색&lt;/li&gt;
+  &lt;li&gt;값 삭제&lt;/li&gt;
+  &lt;li&gt;모든 값 제거&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Set&lt;/code&gt; 크기 및 존재 여부 확인&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mySet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Set() 생성자 사용&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;mySet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;value1&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//add()메소드 사용 추가&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;mySet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;value2&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;mySet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;value3&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mySet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;has&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;value1&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true 출력 has() 메소드 사용&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mySet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// values()메소드를 사용하여 값을 반복&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mySet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 3 출력 크기 확인&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>최은석</name><email>nonjk2@gmail.com</email></author><category term="frontend" /><category term="JavaScript" /><category term="TIL" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/frontend/ES6.png" /><media:content medium="image" url="http://localhost:4000/assets/img/frontend/ES6.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">변수선언과 데이터 할당</title><link href="http://localhost:4000/frontend/%EB%B3%80%EC%88%98-%EC%84%A0%EC%96%B8%EA%B3%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%95%A0%EB%8B%B9.html" rel="alternate" type="text/html" title="변수선언과 데이터 할당" /><published>2023-06-15T00:00:00+09:00</published><updated>2023-06-15T00:00:00+09:00</updated><id>http://localhost:4000/frontend/%EB%B3%80%EC%88%98%20%EC%84%A0%EC%96%B8%EA%B3%BC%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%95%A0%EB%8B%B9</id><content type="html" xml:base="http://localhost:4000/frontend/%EB%B3%80%EC%88%98-%EC%84%A0%EC%96%B8%EA%B3%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%95%A0%EB%8B%B9.html">&lt;!--more--&gt;
+
+&lt;h1 class=&quot;no_toc&quot; id=&quot;변수-선언과-데이터-할당&quot;&gt;변수 선언과 데이터 할당&lt;/h1&gt;
+
+&lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#자바스크립트에서-메모리의-데이터-할당은-어떻게-이루어질까&quot; id=&quot;markdown-toc-자바스크립트에서-메모리의-데이터-할당은-어떻게-이루어질까&quot;&gt;자바스크립트에서 메모리의 데이터 할당은 어떻게 이루어질까?&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#메모리의-구조는&quot; id=&quot;markdown-toc-메모리의-구조는&quot;&gt;💡메모리의 구조는?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#그-외-메모리에-대해서&quot; id=&quot;markdown-toc-그-외-메모리에-대해서&quot;&gt;&lt;strong&gt;그 외 메모리에 대해서&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#1기본형-데이터타입-메모리-할당&quot; id=&quot;markdown-toc-1기본형-데이터타입-메모리-할당&quot;&gt;(1)기본형 데이터타입 메모리 할당&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#왜-변수값을-바로-대입하지않나요-&quot; id=&quot;markdown-toc-왜-변수값을-바로-대입하지않나요-&quot;&gt;왜 변수값을 바로 대입하지않나요 ??&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2참조형-데이터타입-메모리할당&quot; id=&quot;markdown-toc-2참조형-데이터타입-메모리할당&quot;&gt;(2)참조형 데이터타입 메모리할당&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#참조카운트란-무엇일까요&quot; id=&quot;markdown-toc-참조카운트란-무엇일까요&quot;&gt;&lt;strong&gt;참조카운트란 무엇일까요?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#가비지컬렉터gc-garbage-collector&quot; id=&quot;markdown-toc-가비지컬렉터gc-garbage-collector&quot;&gt;가비지컬렉터(GC, Garbage Collector)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#변수-복사의-비교&quot; id=&quot;markdown-toc-변수-복사의-비교&quot;&gt;&lt;strong&gt;변수 복사의 비교&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#복사-이후-값-변경객체의-프로퍼티-변경&quot; id=&quot;markdown-toc-복사-이후-값-변경객체의-프로퍼티-변경&quot;&gt;복사 이후 값 변경(객체의 프로퍼티 변경)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;변수 선언&lt;/strong&gt; : 변수를 정의하는 것을 의미&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;developer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;변수 할당&lt;/strong&gt; : 변수가 선언된 후 대입 연산자(=)를 통해 값을 넣어주는 것을 의미&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;developer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;developer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;eunseok&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;변수 초기화 :&lt;/strong&gt; 변수를 선언함과 동시에 값을 넣어 주는 것을 의미&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;developer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;eunseok&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;자바스크립트에서-메모리의-데이터-할당은-어떻게-이루어질까&quot;&gt;자바스크립트에서 메모리의 데이터 할당은 어떻게 이루어질까?&lt;/h2&gt;
+
+&lt;p&gt;위 코드에서 자바스크립트는 몇가지 작업을 수행합니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;developer&lt;/code&gt;이라는 변수를 선언합니다.&lt;/li&gt;
+  &lt;li&gt;문자열에 대한 메모리를 할당합니다.&lt;/li&gt;
+  &lt;li&gt;할당된 메모리에서 ‘eunseok’ 이라는 문자열을 저장합니다.&lt;/li&gt;
+  &lt;li&gt;‘&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;developer&lt;/code&gt;‘에서 메모리의 해당 문자열에 대한 참조를 생성합니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;메모리의-구조는&quot;&gt;💡메모리의 구조는?&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/frontend/memorys.png&quot; alt=&quot;다운로드 (2).png&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;메모리 셀과 바이트&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;컴퓨터 메모리는 실제로 메모리 셀로 구성됩니다. 이러한 셀은 비트로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt; 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;이 될 수 있는 이진 단위입니다. 8개의 비트가 모여 컴퓨터 시스템의 기본 데이터 단위인 1바이트를 형성합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;메모리 주소 지정&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;각 메모리 셀(또는 정의에 따라 각 바이트)에는 실제로 고유한 주소가 있습니다. CPU는 이 주소를 사용하여 메모리에서 데이터를 읽고 메모리에 데이터를 씁니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CPU와 메모리 상호 작용&lt;/strong&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;CPU는 실제로 메모리에서 명령과 데이터를 가져오고 레지스터의 데이터에 대한 명령을 실행한 다음 결과를 다시 메모리에 저장합니다. 이를 &lt;strong&gt;fetch-decode-execute(&lt;/strong&gt;프로그램 실행 구조)라고 합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;대용량 데이터&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;단일 바이트에 저장할 수 없는 더 큰 데이터 값은 실제로 여러 바이트(또는 정의에 따라 여러 메모리 셀)에 걸쳐 저장됩니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;대용량 데이터 읽기&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;많은 양의 데이터가 여러 메모리 위치에 저장되어 있는 경우 올바르게 읽는 데 필요한 것은 데이터의 첫 번째 바이트 주소와 데이터 길이(바이트)입니다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;그-외-메모리에-대해서&quot;&gt;&lt;strong&gt;그 외 메모리에 대해서&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;메모리 유형&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;컴퓨터에는 RAM(Random Access Memory), ROM(Read-Only Memory), 캐시 메모리, 가상 메모리 등 다양한 유형의 메모리가 있습니다. 각 유형의 메모리에는 고유한 용도가 있습니다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;메모리 계층 구조&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;컴퓨터 시스템의 메모리는 비용과 속도 사이의 균형을 반영하는 계층 구조로 구성됩니다. 예를 들어 CPU 내부의 레지스터는 가장 빠르지만 가장 비싼 유형의 메모리인 반면, 하드 드라이브는 느리지만 저렴한 비용으로 많은 양의 스토리지를 제공합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;메모리 관리&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;운영 체제는 컴퓨터의 메모리 관리를 담당합니다. 사용 중인 메모리 부분을 추적하고 프로세스가 요청할 때 메모리를 할당하고 더 이상 필요하지 않으면 할당을 해제합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;주소 지정 모드&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;CPU는 다른 주소 지정 모드를 사용하여 필요한 데이터를 찾을 수 있습니다. 예를 들어 직접 주소 지정(데이터 주소를 직접 지정), 간접 주소 지정(데이터 주소를 다른 주소에 저장) 등을 사용할 수 있습니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;다시 돌아와서 자바스크립트에서 기본형데이터타입 과 참조형데이터타입은 메모리 할당 방식이 다릅니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;1기본형-데이터타입-메모리-할당&quot;&gt;(1)기본형 데이터타입 메모리 할당&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;기본형 데이터타입&lt;/strong&gt;인 String을 변수선언을 하였을때&lt;/p&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Hello, World!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이를 “값으로 전달” 또는 “값으로 저장”이라고 합니다.&lt;/p&gt;
+
+&lt;p&gt;그리고 위 경우 변수 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;str&lt;/code&gt;은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;Hello, World!&quot;&lt;/code&gt; 값을 직접 보유합니다. 새 변수에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;str&lt;/code&gt;을 할당하면 값의 복사본이 만들어지고 새 변수에 저장됩니다&lt;/p&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;str2&lt;/code&gt;는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;Hello, World!&quot;&lt;/code&gt;도 포함합니다. 그러나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;str&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;str2&lt;/code&gt;는 완전히 별개입니다. 하나를 변경해도 다른 하나는 영향을 받지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;예를들어 메모리를 가시적으로 표현한다면 아래와 같습니다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;주소&lt;/th&gt;
+      &lt;th&gt;…&lt;/th&gt;
+      &lt;th&gt;1002&lt;/th&gt;
+      &lt;th&gt;1003&lt;/th&gt;
+      &lt;th&gt;1004&lt;/th&gt;
+      &lt;th&gt;1005&lt;/th&gt;
+      &lt;th&gt;…&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;데이터&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;변수이름:str ,참조:5004&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;주소&lt;/td&gt;
+      &lt;td&gt;…&lt;/td&gt;
+      &lt;td&gt;5002&lt;/td&gt;
+      &lt;td&gt;5003&lt;/td&gt;
+      &lt;td&gt;5004&lt;/td&gt;
+      &lt;td&gt;5005&lt;/td&gt;
+      &lt;td&gt;…&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;데이터&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;//~~~&lt;/td&gt;
+      &lt;td&gt;//~~~&lt;/td&gt;
+      &lt;td&gt;“Hello, World!”&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;위 에서 기술한바와같이&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;str&lt;/code&gt;이라는 변수를 선언합니다.&lt;/li&gt;
+  &lt;li&gt;문자열에 대한 메모리를 할당합니다.&lt;/li&gt;
+  &lt;li&gt;할당된 메모리에서 ‘Hello, World!’ 라는 문자열을 저장합니다.&lt;/li&gt;
+  &lt;li&gt;‘&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;str&lt;/code&gt;‘에서 메모리의 해당 문자열에 대한 참조를 생성합니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;왜-변수값을-바로-대입하지않나요-&quot;&gt;왜 변수값을 바로 대입하지않나요 ??&lt;/h3&gt;
+
+&lt;p&gt;값을 바로 변수에 대입하지 않는 이유(=무조건 새로 만드는 이유)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;자유로운 데이터 변환
+    &lt;ul&gt;
+      &lt;li&gt;이미 입력한 문자열이 길어진다면 뒤에 주소들을 한칸씩 다미뤄야함&lt;/li&gt;
+      &lt;li&gt;숫자는 항상 8byte로 고정이지만, 문자는 고정이 아닙니다,(영문 : 1byte, 한글 : 2byte). 그래서 할당된 데이터보다 훨씬 더큰 데이터를 변경해주려면 매우 많은 메모리셀이 필요&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;메모리의 효율적 관리
+    &lt;ul&gt;
+      &lt;li&gt;똑같은 데이터를 여러번 저장해야 한다면?&lt;/li&gt;
+      &lt;li&gt;1만개의 변수를 생성해서 모든 변수에 숫자 1을 할당하는 상황을 가정해 봅시다. 모든 변수를 별개로 인식한다고 한다면, 1만개의 변수 공간을 확보해야 합니다.
+        &lt;ul&gt;
+          &lt;li&gt;바로 대입하는 case) 숫자형은 8 바이트 고정이죠?
+            &lt;ul&gt;
+              &lt;li&gt;1만개 * 8byte = &lt;strong&gt;8만 byte&lt;/strong&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;변수 영역에 별도 저장 case)
+            &lt;ul&gt;
+              &lt;li&gt;변수 영역 : 2바이트 1만개 = ****2만바이트&lt;/li&gt;
+              &lt;li&gt;데이터 영역 : 8바이트 1개 = 8바이트&lt;/li&gt;
+              &lt;li&gt;총 : &lt;strong&gt;2만 8바이트&lt;/strong&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2참조형-데이터타입-메모리할당&quot;&gt;(2)참조형 데이터타입 메모리할당&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;주소&lt;/th&gt;
+      &lt;th&gt;…&lt;/th&gt;
+      &lt;th&gt;1002&lt;/th&gt;
+      &lt;th&gt;1003&lt;/th&gt;
+      &lt;th&gt;1004&lt;/th&gt;
+      &lt;th&gt;1005&lt;/th&gt;
+      &lt;th&gt;…&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;데이터&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;obj /참조 7103~7104&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;주소&lt;/td&gt;
+      &lt;td&gt;…&lt;/td&gt;
+      &lt;td&gt;5002&lt;/td&gt;
+      &lt;td&gt;5003&lt;/td&gt;
+      &lt;td&gt;5004&lt;/td&gt;
+      &lt;td&gt;5005&lt;/td&gt;
+      &lt;td&gt;…&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;데이터&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;‘bbb’&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;기본형 데이터타입과 참조형 데이터타입의 메모리할당 과정의 차이점은 : 객체의 변수 (property) 영역의 별도 존재 여부입니다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;주소&lt;/th&gt;
+      &lt;th&gt;…&lt;/th&gt;
+      &lt;th&gt;7103&lt;/th&gt;
+      &lt;th&gt;7104&lt;/th&gt;
+      &lt;th&gt;7105&lt;/th&gt;
+      &lt;th&gt;…&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;데이터&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;a , 참조 : 5002&lt;/td&gt;
+      &lt;td&gt;b , 참조: 5003&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;bbb,
+};
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;참조형 데이터가 불변하지 않다&lt;/strong&gt;라는 이유 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;obj1.a = 2&lt;/code&gt; 라는 코드가있을 경우&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;5004번 주소에 2 값이 새로 할당되고&lt;/li&gt;
+  &lt;li&gt;7103번 주소에 5004번으로 참조가 바뀐다.&lt;/li&gt;
+  &lt;li&gt;그리고 5002 번값은 &lt;strong&gt;가비지 - 컬렉터&lt;/strong&gt;에의해 수거가 된다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;참조카운트란-무엇일까요&quot;&gt;&lt;strong&gt;참조카운트란 무엇일까요?&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;aside&gt;
+💡 **객체를 참조하는 변수나 다른 객체의 수를 나타내는 값**입니다. 참조 카운트가 0인 객체는 더 이상 사용되지 않으므로, **가비지 컬렉터**에 의해 메모리에서 제거됩니다.
+
+&lt;/aside&gt;
+
+&lt;h3 id=&quot;가비지컬렉터gc-garbage-collector&quot;&gt;가비지컬렉터(GC, Garbage Collector)&lt;/h3&gt;
+
+&lt;aside&gt;
+💡 더 이상 사용되지 않는 객체를 자동으로 메모리에서 제거하는 역할을 합니다. 자바스크립트는 가비지 컬렉션을 수행함으로써 개발자가 명시적으로 메모리 관리를 하지 않아도 되도록 지원합니다. 자바스크립트 엔진에서 내부적으로 수행되며, 개발자는 가비지 컬렉션에 대한 직접적인 제어를 할 수 없습니다.
+
+&lt;/aside&gt;
+
+&lt;h3 id=&quot;변수-복사의-비교&quot;&gt;&lt;strong&gt;변수 복사의 비교&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//기본형&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;ddd&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//참조형&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//기본형&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//참조형&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;주소&lt;/th&gt;
+      &lt;th&gt;1001&lt;/th&gt;
+      &lt;th&gt;1002&lt;/th&gt;
+      &lt;th&gt;1003&lt;/th&gt;
+      &lt;th&gt;1004&lt;/th&gt;
+      &lt;th&gt;1005&lt;/th&gt;
+      &lt;th&gt;…&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;데이터&lt;/td&gt;
+      &lt;td&gt;a/5001&lt;/td&gt;
+      &lt;td&gt;obj1/7103~7014&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;주소&lt;/td&gt;
+      &lt;td&gt;5001&lt;/td&gt;
+      &lt;td&gt;5002&lt;/td&gt;
+      &lt;td&gt;5003&lt;/td&gt;
+      &lt;td&gt;5004&lt;/td&gt;
+      &lt;td&gt;5005&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;데이터&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;ddd&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;주소&lt;/th&gt;
+      &lt;th&gt;7103&lt;/th&gt;
+      &lt;th&gt;7104&lt;/th&gt;
+      &lt;th&gt;…&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;데이터&lt;/td&gt;
+      &lt;td&gt;c / 5002&lt;/td&gt;
+      &lt;td&gt;d/ 5003&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;복사-이후-값-변경객체의-프로퍼티-변경&quot;&gt;복사 이후 값 변경(객체의 프로퍼티 변경)&lt;/h3&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//기본형&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;ddd&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//참조형&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//기본형&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//참조형&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;obj2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;기본형과 참조형의 변수 복사 시 주요한 절차의 차이점&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기본형
+    &lt;ul&gt;
+      &lt;li&gt;숫자 15라는 값을 데이터 영역에서 검색 후 없다면 생성&lt;/li&gt;
+      &lt;li&gt;검색한 결과주소 또는 생성한 주소를 변수 영역 b에 갈아끼움&lt;/li&gt;
+      &lt;li&gt;a와 b는 서로 다른 데이터 영역의 주소를 바라보고 있기 때문에 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;영향 없음&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;참조형&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;숫자 20이라는 값을 데이터 영역에서 검색 후 없다면 생성&lt;/li&gt;
+      &lt;li&gt;검색한 결과주소 또는 생성한 주소 obj2에게 지정되어 있는 별도 영역(7103~)에 갈아끼움&lt;/li&gt;
+      &lt;li&gt;obj1도 똑같은 주소를 바라보고 있기 때문에 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;obj1까지 변경이 됨&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 기본형 변수 복사의 결과는 다른 값!&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 참조형 변수 복사의 결과는 같은 값!(원하지 않았던 결과😭)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;obj1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>최은석</name><email>nonjk2@gmail.com</email></author><category term="frontend" /><category term="JavaScript" /><category term="TIL" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/frontend/ES6.png" /><media:content medium="image" url="http://localhost:4000/assets/img/frontend/ES6.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">실행 컨텍스트</title><link href="http://localhost:4000/frontend/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8.html" rel="alternate" type="text/html" title="실행 컨텍스트" /><published>2023-06-15T00:00:00+09:00</published><updated>2023-06-15T00:00:00+09:00</updated><id>http://localhost:4000/frontend/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/frontend/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8.html">&lt;!--more--&gt;
+&lt;h1 class=&quot;no_toc&quot; id=&quot;실행-컨텍스트&quot;&gt;실행 컨텍스트&lt;/h1&gt;
+
+&lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1실행-컨텍스트란-&quot; id=&quot;markdown-toc-1실행-컨텍스트란-&quot;&gt;(1)실행 컨텍스트란 ?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#그전에-스택이란&quot; id=&quot;markdown-toc-그전에-스택이란&quot;&gt;그전에 &lt;strong&gt;스택&lt;/strong&gt;이란?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#그렇다면-콜스택은-&quot; id=&quot;markdown-toc-그렇다면-콜스택은-&quot;&gt;&lt;strong&gt;그렇다면 콜스택은 ?&lt;/strong&gt;&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#콜-스택-순서&quot; id=&quot;markdown-toc-콜-스택-순서&quot;&gt;&lt;strong&gt;콜 스택 순서&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-그러면-실행컨텍스트-스텍에-하나하나-쌓이는-객체에는-무엇이-있나&quot; id=&quot;markdown-toc-2-그러면-실행컨텍스트-스텍에-하나하나-쌓이는-객체에는-무엇이-있나&quot;&gt;(2) &lt;strong&gt;그러면 실행컨텍스트 (스텍에 하나하나 쌓이는 객체)에는 무엇이 있나?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-lexicalenvironment1---environmentrocordrecord와-호이스팅&quot; id=&quot;markdown-toc-3-lexicalenvironment1---environmentrocordrecord와-호이스팅&quot;&gt;(3) LexicalEnvironment(1) - environmentRocord(=record)와 호이스팅&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#초기화를-한다는것이-이해가-안된다&quot; id=&quot;markdown-toc-초기화를-한다는것이-이해가-안된다&quot;&gt;&lt;strong&gt;초기화를 한다는것이 이해가 안된다?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#호이스팅--함수-선언문-잠재-위험성&quot; id=&quot;markdown-toc-호이스팅--함수-선언문-잠재-위험성&quot;&gt;&lt;strong&gt;호이스팅 , 함수 선언문 잠재 위험성&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-lexicalenvironment2---스코프-스코프-체인-outerenvironmentreferenceouter&quot; id=&quot;markdown-toc-4-lexicalenvironment2---스코프-스코프-체인-outerenvironmentreferenceouter&quot;&gt;(4) LexicalEnvironment(2) - 스코프, 스코프 체인, outerEnvironmentReference(=outer)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#정리&quot; id=&quot;markdown-toc-정리&quot;&gt;정리&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1실행-컨텍스트란-&quot;&gt;(1)실행 컨텍스트란 ?&lt;/h2&gt;
+
+&lt;p&gt;JavaScript에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;실행 컨텍스트&lt;/code&gt;는 JavaScript 코드가 평가되고 실행되는 환경 또는 범위와 관련된 개념 또는 실행할 코드에 제공할 &lt;strong&gt;환경 정보&lt;/strong&gt;들을 모아놓은 &lt;strong&gt;객체&lt;/strong&gt;입니다. 코드가 JavaScript에서 실행될 때마다 실행 컨텍스트 내에서 실행됩니다.&lt;/p&gt;
+
+&lt;p&gt;JavaScript 엔진은 코드가 실행될 때마다 실행 컨텍스트를 생성합니다. 실행 컨텍스트에는 두 가지 유형이 있습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;글로벌 실행 컨텍스트(GEC):&lt;/strong&gt; JavaScript는 코드가 실행되기 전에 글로벌 실행 컨텍스트를 생성합니다. 이것은 전역 범위를 나타내며 함수 내에 있지 않은 모든 변수(즉, 전역 변수)는 GEC에 추가됩니다. JavaScript 프로그램에는 GEC가 하나만 있습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;FEC(Functional Execution Context):&lt;/strong&gt; 함수가 호출되거나 호출될 때마다 새로운 실행 컨텍스트가 생성됩니다. 이 컨텍스트를 기능 실행 컨텍스트라고 합니다. 각 함수에는 고유한 실행 컨텍스트가 있습니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;각 실행 컨텍스트는 두 단계로 나눌 수 있습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;생성 단계:&lt;/strong&gt; 이 단계에서 JavaScript 엔진은 메모리 내부에 변수, 함수 및 인수를 저장합니다. 변수를 ‘정의되지 않음’으로 설정하고 모든 함수 선언을 메모리에 저장합니다. 또한 현재 실행 컨텍스트에서 “&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this&lt;/code&gt;“의 값을 결정합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;실행 단계:&lt;/strong&gt; 이 단계에서 JavaScript 엔진은 코드를 한 줄씩 실행하고 생성 단계에서 이미 메모리에 저장된 변수에 실제 값을 할당합니다. 또한 함수를 호출할 수도 있습니다(이미 메모리에 있으므로).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이러한 과정을 이해하기 위해서는 , &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;콜 스택&lt;/code&gt;의 이해가 필요.&lt;/p&gt;
+
+&lt;h2 id=&quot;그전에-스택이란&quot;&gt;그전에 &lt;strong&gt;스택&lt;/strong&gt;이란?&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/frontend/stackqueue.png&quot; alt=&quot;stackqueue.png&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;스택&lt;/code&gt; 은 컴퓨터 과학에서 “스택”은 LIFO(Last In First Out) 원칙을 따르는 데이터 구조입니다. &lt;strong&gt;이는 나중에 들어간 원소가 가장 먼저 나온다는 의미.&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;큐&lt;/code&gt; 는 선형 자료구조의 일종으로 FIFO(First In First Out)의 구조를 가집니다.&lt;strong&gt;이는 먼저 들어간 원소가 가장 먼저 나온다는 의미.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;그렇다면-콜스택은-&quot;&gt;&lt;strong&gt;그렇다면 콜스택은 ?&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;콜 스택&lt;/code&gt; 은 프로그램에서 여러 함수 호출을 추적하기 위해 JavaScript에서 사용하는 메커니즘입니다. 이것은 “LIFO(Last In, First Out)” 원칙에 따라 작동하는 JavaScript 엔진의 일부입니다. 즉, 스택에 마지막으로 푸시된 함수가 함수가 반환될 때 가장 먼저 나온다는 의미입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;콜-스택-순서&quot;&gt;&lt;strong&gt;콜 스택 순서&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;JavaScript 프로그램이 실행되기 시작하면 JavaScript 엔진이 전역 실행 컨텍스트(Anonymous)를 생성하고 이를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;콜스택&lt;/code&gt;에 푸시합니다.&lt;/li&gt;
+  &lt;li&gt;함수가 호출될 때마다 해당 함수에 대한 새 실행 컨텍스트가 생성되고 호출 스택으로 푸시됩니다. 이 함수 실행 컨텍스트에는 함수의 인수, 지역 변수, 코드에서 현재 실행 중인 정확한 위치에 대한 정보가 포함되어 있습니다.&lt;/li&gt;
+  &lt;li&gt;이 함수가 다른 함수를 호출하면 해당 함수에 대한 새 실행 컨텍스트가 생성되고 호출 스택의 맨 위에 푸시됩니다.&lt;/li&gt;
+  &lt;li&gt;함수 실행이 완료되면 해당 실행 컨텍스트가 호출 스택에서 제거되고 이제 스택 맨 위에 있는 실행 컨텍스트로 제어가 돌아갑니다. 함수에 대한 로컬 변수는 버려집니다.&lt;/li&gt;
+  &lt;li&gt;이 프로세스는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;콜스택&lt;/code&gt;이 비어 있을 때까지 계속됩니다. 즉, 모든 실행 컨텍스트가 스택에서 제거되어 모든 코드 실행이 완료되었음을 의미합니다.&lt;/li&gt;
+  &lt;li&gt;호출 스택이 할당된 것보다 더 많은 공간을 차지하면 “스택 오버플로” 오류가 발생하며, 가장 일반적으로 무한 재귀로 인해 발생합니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/frontend/callstack.png&quot; alt=&quot;callstack.png&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;third&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;third&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;third&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;aside&gt;
+
+💡 결국은 특정 실행 컨텍스트가 생성되는(또는 활성화되는) 시점이 콜 스택의 맨 위에 쌓이는(노출되는) 순간을 의미하구요. 곧, 현재 실행할 코드에 해당 실행 컨텍스트가 관여하게 되는 시점을 의미한다고 받아들여주시면 정확합니다
+
+&lt;/aside&gt;
+
+&lt;h2 id=&quot;2-그러면-실행컨텍스트-스텍에-하나하나-쌓이는-객체에는-무엇이-있나&quot;&gt;(2) &lt;strong&gt;그러면 실행컨텍스트 (스텍에 하나하나 쌓이는 객체)에는 무엇이 있나?&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;VariableEnvironment&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;현재 컨텍스트 내의 식별자 정보(=record)를 갖고있습니다.
+    &lt;ol&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var a = 3&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;위의 경우, &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var a&lt;/code&gt;&lt;/strong&gt;를 의미&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;외부 환경 정보(=outer)를 갖고있습니다.&lt;/li&gt;
+  &lt;li&gt;선언 시점 LexicalEnvironment의 &lt;strong&gt;snapshot&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;LexicalEnvironment&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;VariableEnvironment와 동일하지만, 변경사항을 실시간으로 반영.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;ThisBinding&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;this 식별자가 바라봐야할 객체&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/frontend/ec.png&quot; alt=&quot;ec.png&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;VariableEnvironment:&lt;/strong&gt; 특정 컨텍스트에 대한 변수, 함수 및 인수의 정보(=record)입니다. 실행 컨텍스트가 생성되면 호이스팅 프로세스 중에 이 레코드가 채워집니다. 실행 컨텍스트의 생성 단계 후에 VariableEnvironment가 변경되지 않는다는 점은 주목할 가치가 있습니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;LexicalEnvironment:&lt;/strong&gt; 이것 또한 특정 컨텍스트에 대한 변수, 함수 및 인수의 정보입니다. VariableEnvironment와 달리 LexicalEnvironment는 변경할 수 있습니다. 예를 들어, 실행 단계에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let&lt;/code&gt; 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const&lt;/code&gt;로 새 변수가 선언되면 업데이트됩니다. LexicalEnvironment는 또한 중첩 함수에 대한 범위 체인을 만드는 데 중요한 역할을 합니다.&lt;/p&gt;
+
+    &lt;p&gt;LexicalEnvironment에는 두 가지 구성 요소가 있습니다.(사진에선 양방향이지만 x)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;EnvironmentRecord:&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;현재 범위에서 만들어진 선언의 레코드입니다. (=record)&lt;/li&gt;
+          &lt;li&gt;함수에 지정된 매개변수 식별자, 함수자체, var로 선언된 변수 식별자 등&lt;/li&gt;
+          &lt;li&gt;컨텍스트 내부를 처음부터 끝까지 &lt;strong&gt;순서대로&lt;/strong&gt; 훑어가며 수집&lt;strong&gt;(호이스팅)&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Outer Environment Reference:&lt;/strong&gt; 범위 체인 조회를 용이하게 하는 상위 범위의 LexicalEnvironment에 대한 참조입니다. (=outer)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ThisBinding:&lt;/strong&gt; 이것은 현재 컨텍스트에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this&lt;/code&gt;의 값을 나타냅니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this&lt;/code&gt;의 값은 &lt;strong&gt;함수가 호출되는 방식에 따라 결정&lt;/strong&gt;됩니다. 전역 객체, 특정 객체 인스턴스(객체에서 메소드가 호출될 때), 생성자 함수에서 새로 생성된 객체 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;call&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;apply&lt;/code&gt; , &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bind&lt;/code&gt;와 같은 기능을 사용할 때 개발자가 지정한 것을 참조할 수 있습니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;실행 컨텍스트가 생성되면 VariableEnvironment, LexicalEnvironment 및 ThisBinding의 세 가지를 설정합니다. 그리고 함수가 호출될 때마다 새로운 실행 컨텍스트가 생성되어 호출 스택에 푸시되고 이러한 단계가 반복됩니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;실행 컨텍스트를 생성할 때, VE에 정보를 먼저 담은 다음, 이를 그대로 복사해서 LE를 만들고 이후에는 주로 LE를 활용&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;3-lexicalenvironment1---environmentrocordrecord와-호이스팅&quot;&gt;(3) LexicalEnvironment(1) - environmentRocord(=record)와 호이스팅&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;호이스팅&lt;/strong&gt;은 코드가 실행되기 전에 실행 컨텍스트의 생성 단계에서 변수 및 함수 선언이 포함된 범위의 맨 위로 이동되는 &lt;strong&gt;JavaScript의 동작입니다. 초기화가 아닌 선언만 호이스팅된다는 점에 유의하는 것이 중요&lt;/strong&gt;합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;새 실행 컨텍스트가 생성되면(생성 단계 중) JavaScript 엔진은 변수 및 함수 선언에 대한 컨텍스트 코드를 스캔합니다.&lt;/li&gt;
+  &lt;li&gt;모든 변수(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt;로 선언됨) 및 해당 범위 내의 함수 선언은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VariableEnvironment&lt;/code&gt;에 추가됩니다. 변수는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;정의되지 않음&lt;/code&gt; 값으로 초기화되며 함수 선언은 전체적으로 저장됩니다.&lt;/li&gt;
+  &lt;li&gt;ES6에 도입된 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let&lt;/code&gt; 및 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const&lt;/code&gt; 선언도 호이스팅되지만 초기화는 호이스팅되지 않습니다. 이를 선언하는 코드 줄이 실행될 때까지 “&lt;strong&gt;초기화되지 않은&lt;/strong&gt;” 상태에 놓입니다. 블록 시작부터 선언까지의 이 영역을 “임시 데드 존”이라고 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myVar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// undefined&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// [Function: myFunc]&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myLetVar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ReferenceError: myLetVar is not defined&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myVar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Hello, world!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myLetVar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이 예제에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;myVar&lt;/code&gt;는 변수 선언이 호이스트되었지만 초기화되지 않았기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;정의되지 않음&lt;/code&gt;입니다. 함수 선언도 호이스팅되기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;myFunc&lt;/code&gt;는 완전히 정의된 함수입니다. console.log 호출 시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let&lt;/code&gt; 선언이 “초기화되지 않은” 상태이기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;myLetVar&lt;/code&gt;는 ReferenceError를 발생시킵니다.&lt;/p&gt;
+
+&lt;p&gt;호이스팅을 이해하면 JavaScript 코드에서 잠재적인 혼란과 버그를 피할 수 있습니다. 일반적으로 코드를 더 명확하게 만들고 호이스팅으로 인한 의도하지 않은 동작을 방지하기 위해 범위의 시작 부분에 변수를 선언하는 것이 좋습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;초기화를-한다는것이-이해가-안된다&quot;&gt;&lt;strong&gt;초기화를 한다는것이 이해가 안된다?&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;aside&gt;
+
+💡 프로그래밍에서 초기화는 선언 시점에 변수에 초기 값을 할당하는 프로세스입니다. 변수는 코드가 작동하는 값을 저장하고 초기화는 처음부터 정의된 값을 갖도록 보장하기 때문에 중요한 측면입니다.
+
+&lt;/aside&gt;
+
+&lt;p&gt;JavaScript에서는 할당 연산자(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;=&lt;/code&gt;)를 사용하여 선언 시 변수를 초기화할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;eun&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//이 예에서 &apos;eun&apos;, 30 및 3.14는&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//변수 name, age 및 pi에 각각 할당된 초기 값&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt; 및 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let&lt;/code&gt;으로 선언된 변수는 나중에 프로그램에서 재할당될 수 있지만 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const&lt;/code&gt;로 선언된 변수는 재할당할 수 없습니다. 상수이며 일단 초기화되면 값을 변경할 수 없습니다&lt;/p&gt;
+
+&lt;p&gt;또한 JavaScript에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt;로 선언된 초기화되지 않은 변수는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;로 자동 초기화됩니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let&lt;/code&gt; 및 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const&lt;/code&gt;로 선언된 변수도 호이스팅되지만 정의된 코드 줄이 실행될 때까지 초기화되지 않은 상태로 유지되므로 초기화되기 전에 액세스하려고 하면 ReferenceError가 발생합니다&lt;/p&gt;
+
+&lt;h2 id=&quot;호이스팅--함수-선언문-잠재-위험성&quot;&gt;&lt;strong&gt;호이스팅 , 함수 선언문 잠재 위험성&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 함수 선언문으로 짠 코드&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 100번째 줄 : 시니어 개발자 코드(활용하는 곳 -&amp;gt; 200군데)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// hoisting에 의해 함수 전체가 위로 쭉!&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 함수 선언문으로 짠 코드&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 5000번째 줄 : 신입이 개발자 코드(활용하는 곳 -&amp;gt; 10군데)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// hoisting에 의해 함수 전체가 위로 쭉!&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt; + &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt; = &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;협업을 많이 하고, 복잡한 코드일 수록. 전역 공간에서 이루어지는 코드 협업일 수록 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;함수 표현식&lt;/code&gt;&lt;/strong&gt;을 활용하는 습관을 들이도록 합시다&lt;/p&gt;
+
+&lt;h2 id=&quot;4-lexicalenvironment2---스코프-스코프-체인-outerenvironmentreferenceouter&quot;&gt;(4) LexicalEnvironment(2) - 스코프, 스코프 체인, outerEnvironmentReference(=outer)&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Scopes:&lt;/strong&gt; JavaScript에서 범위는 변수가 정의되고 액세스할 수 있는 코드 영역입니다. JavaScript에는 세 가지 유형의 범위가 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Global Scope:&lt;/strong&gt; 함수 또는 블록 외부에서 선언된 변수는 전역 범위에 있습니다. 함수 내를 포함하여 코드의 모든 부분에서 액세스할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Function Scope:&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt; 키워드를 사용하여 함수 내에서 선언된 변수는 함수의 로컬 범위에 있습니다. 해당 기능 내에서만 액세스할 수 있으며 외부에서는 액세스할 수 없습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Block Scope:&lt;/strong&gt; ES6에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let&lt;/code&gt; 및 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const&lt;/code&gt;가 도입되면서 JavaScript는 블록 범위 지정을 얻었습니다. 블록 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{...}&lt;/code&gt; 내에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let&lt;/code&gt; 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const&lt;/code&gt;로 선언된 모든 변수는 해당 블록의 범위에 있으며 블록 외부에서 액세스할 수 없습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Scope Chains:&lt;/strong&gt; JavaScript에서 변수를 조회해야 하는 경우 현재 범위(scope)에서 시작합니다. 거기에서 변수를 찾지 못하면 다음 외부 범위로 이동하고 변수를 찾거나 전역 범위에 도달할 때까지 이 프로세스를 계속합니다. 이러한 범위 계층 구조를 “범위 체인”이라고 합니다.&lt;/p&gt;
+
+&lt;p&gt;JavaScript의 범위 체인은 함수가 호출되는 순서(동적)가 아니라 코드에 함수가 작성되는 순서(어휘적)에 따라 결정됩니다. 이를 어휘 범위 지정이라고 합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/frontend/scopeChain.png&quot; alt=&quot;scopeChain.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;outerEnvironmentReference:&lt;/strong&gt; 외부 범위(부모 함수 또는 전역 범위)의 LexicalEnvironment에 대한 참조입니다. JavaScript가 범위 체인을 만드는 방법입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;outer는 현재 호출된 함수가 선언될 당시&lt;/strong&gt;(이 말이 중요)의 LexicalEnvironment를 참조&lt;/li&gt;
+  &lt;li&gt;항상 outer는 오직 자신이 &lt;strong&gt;선언된 시점&lt;/strong&gt;의 LexicalEnvironment를 참조하고 있으므로, &lt;strong&gt;가장 가까운 요소부터 차례대로 접근 가능&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;실행 컨텍스트가 생성되면 해당 LexicalEnvironment는 상위 범위의 LexicalEnvironment를 가리키는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outerEnvironmentReference&lt;/code&gt;를 가져옵니다. 변수가 현재 범위에서 발견되지 않으면 JavaScript는 ‘outerEnvironmentReference’를 사용하여 상위 범위를 확인하고 변수를 찾거나 전역 범위(부모가 없음)에 도달할 때까지 계속합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;globalVar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;나는 전역 변수입니다&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 이 변수는 전역 스코프에 있습니다&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;outerFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;outerVar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;나는 외부 함수에 있습니다&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 이 변수는 outerFunc의 스코프에 있습니다&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;innerFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;innerVar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;나는 내부 함수에 있습니다&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 이 변수는 innerFunc의 스코프에 있습니다&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// innerFunc에서는 세 변수 모두에 접근할 수 있습니다&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerVar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 출력: &quot;나는 내부 함수에 있습니다&quot;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;outerVar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 출력: &quot;나는 외부 함수에 있습니다&quot;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;globalVar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 출력: &quot;나는 전역 변수입니다&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;innerFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// outerFunc에서는 outerVar와 globalVar에 접근할 수 있지만 innerVar에는 접근할 수 없습니다&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;outerVar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 출력: &quot;나는 외부 함수에 있습니다&quot;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;globalVar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 출력: &quot;나는 전역 변수입니다&quot;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerVar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Uncaught ReferenceError: innerVar is not defined&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;outerFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 전역 스코프에서는 globalVar에만 접근할 수 있습니다&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;globalVar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 출력: &quot;나는 전역 변수입니다&quot;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;outerVar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Uncaught ReferenceError: outerVar is not defined&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerVar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Uncaught ReferenceError: innerVar is not defined&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;globalVar&lt;/code&gt;는 전역 범위에서 정의되므로 어디에서나 액세스할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outerVar&lt;/code&gt;는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outerFunc&lt;/code&gt; 내에 정의되어 있으므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outerFunc&lt;/code&gt; 및 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outerFunc&lt;/code&gt; 내에 정의된 모든 함수 내에서만 액세스할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;innerVar&lt;/code&gt;는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;innerFunc&lt;/code&gt; 내에 정의되어 있으므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;innerFunc&lt;/code&gt; 내에서만 액세스할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;‘innerFunc’가 호출되면 자체 LexicalEnvironment를 사용하여 새 실행 컨텍스트를 만듭니다. 이 LexicalEnvironment의 ‘outerEnvironmentReference’는 ‘outerFunc’의 LexicalEnvironment를 가리킵니다. 이렇게 하면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;innerFunc&lt;/code&gt;가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outerFunc&lt;/code&gt;에 정의된 변수에 액세스할 수 있습니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outerFunc&lt;/code&gt; 및 전역 범위에도 동일하게 적용됩니다.&lt;/p&gt;
+
+&lt;p&gt;이것은 범위 체인의 개념을 보여줍니다. 현재 범위에서 변수를 찾을 수 없으면 JavaScript는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outerEnvironmentReference&lt;/code&gt;를 사용하여 다음 외부 범위를 살펴보고 변수를 찾거나 전역 범위에 도달할 때까지 계속합니다.&lt;/p&gt;
+
+&lt;p&gt;또한 JavaScript의 어휘 범위 지정에 대한 데모이기도 합니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;innerFunc&lt;/code&gt;는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outerFunc&lt;/code&gt; 내에서 호출되지만 코드에서 작성된 위치 때문에 여전히 전역 범위에 액세스할 수 있습니다. JavaScript가 동적 범위 지정을 사용하는 경우에는 그렇지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/frontend/EC2.png&quot; alt=&quot;EC2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;각각의 실행 컨텍스트는 LE 안에 &lt;strong&gt;record와 outer를 가지고 있고&lt;/strong&gt;, outer 안에는 그 실행 컨텍스트가 &lt;strong&gt;선언될 당시의 LE정보&lt;/strong&gt;가 다 들어있으니 &lt;strong&gt;scope chain&lt;/strong&gt;에 의해 상위 컨텍스트의 record를 읽어올 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;정리&quot;&gt;정리&lt;/h1&gt;
+
+&lt;aside&gt;
+
+💡 - **실행 컨텍스트**는 **실행할 코드에 제공할 환경 정보**들을 모아놓은 객체.
+
+- 그 객체 안에는 3가지가 존재합니다.
+  ✓ VariableEnvironment
+  ✓ LexicalEnvironment
+  ✓ ThisBindings
+- VE와 LE는 실행컨텍스트 생성 시점에 내용이 완전히 같고, 이후 스냅샷 유지 여부가 다릅니다.
+- LE는 다음 2가지 정보를 가지고 있습니다.
+  ✓ record(=environmentRecord) ← **이 record의 수집과정이 hoisting**
+  ✓ outer(=outerEnvironmentReference)
+  -JavaScript의 스코프 체인은 각 실행 컨텍스트의 LexicalEnvironment에 있는 `outerEnvironmentReference`에 의해 형성됩니다
+
+&lt;/aside&gt;</content><author><name>최은석</name><email>nonjk2@gmail.com</email></author><category term="frontend" /><category term="JavaScript" /><category term="TIL" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/frontend/ES6.png" /><media:content medium="image" url="http://localhost:4000/assets/img/frontend/ES6.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">자바스크립트 데이터 타입</title><link href="http://localhost:4000/frontend/%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85%EC%9D%98-%EC%A2%85%EB%A5%98-%EB%B0%8F-%EB%A9%94%EB%AA%A8%EB%A6%AC.html" rel="alternate" type="text/html" title="자바스크립트 데이터 타입" /><published>2023-06-14T00:00:00+09:00</published><updated>2023-06-14T00:00:00+09:00</updated><id>http://localhost:4000/frontend/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%83%80%EC%9E%85%EC%9D%98%20%EC%A2%85%EB%A5%98%20%EB%B0%8F%20%EB%A9%94%EB%AA%A8%EB%A6%AC</id><content type="html" xml:base="http://localhost:4000/frontend/%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85%EC%9D%98-%EC%A2%85%EB%A5%98-%EB%B0%8F-%EB%A9%94%EB%AA%A8%EB%A6%AC.html">&lt;!--more--&gt;
 
 &lt;h1 class=&quot;no_toc&quot; id=&quot;데이터-타입의-종류-및-메모리&quot;&gt;데이터 타입의 종류 및 메모리&lt;/h1&gt;
 
@@ -176,7 +1469,7 @@
 
 &lt;p&gt;JavaScript의 메모리 관리는 JavaScript 엔진 및 런타임 환경에 의해 처리되며 세부 사항은 구현에 따라 다를 수 있다는 점에 유의하는 것이 중요합니다. JavaScript 엔진의 garbage-collect는 개체가 더 이상 참조되지 않는 경우와 같이 더 이상 필요하지 않은 메모리를 회수하는 역할을 합니다.&lt;/p&gt;
 
-&lt;p&gt;이것은 JavaScript 맥락에서 메모리 저장에 대한 간단한 설명입니다. 실제로 메모리 관리에는 다양한 최적화 기술, 메모리 할당 전략, CPU 캐시 및 가상 메모리 시스템과 같은 추가 메모리 계층 구조가 포함됩니다.&lt;/p&gt;</content><author><name>최은석</name><email>nonjk2@gmail.com</email></author><category term="frontend" /><category term="JavaScript" /><category term="TIL" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/frontend/js.jpeg" /><media:content medium="image" url="http://localhost:4000/assets/img/frontend/js.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">ES6에 대하여</title><link href="http://localhost:4000/frontend/ES6.html" rel="alternate" type="text/html" title="ES6에 대하여" /><published>2023-06-13T00:00:00+09:00</published><updated>2023-06-13T00:00:00+09:00</updated><id>http://localhost:4000/frontend/ES6</id><content type="html" xml:base="http://localhost:4000/frontend/ES6.html">&lt;!--more--&gt;
+&lt;p&gt;이것은 JavaScript 맥락에서 메모리 저장에 대한 간단한 설명입니다. 실제로 메모리 관리에는 다양한 최적화 기술, 메모리 할당 전략, CPU 캐시 및 가상 메모리 시스템과 같은 추가 메모리 계층 구조가 포함됩니다.&lt;/p&gt;</content><author><name>최은석</name><email>nonjk2@gmail.com</email></author><category term="frontend" /><category term="JavaScript" /><category term="TIL" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/frontend/ES6.png" /><media:content medium="image" url="http://localhost:4000/assets/img/frontend/ES6.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">ES6에 대하여</title><link href="http://localhost:4000/frontend/ES6.html" rel="alternate" type="text/html" title="ES6에 대하여" /><published>2023-06-13T00:00:00+09:00</published><updated>2023-06-13T00:00:00+09:00</updated><id>http://localhost:4000/frontend/ES6</id><content type="html" xml:base="http://localhost:4000/frontend/ES6.html">&lt;!--more--&gt;
 &lt;h1 class=&quot;no_toc&quot; id=&quot;es6란-&quot;&gt;ES6란 ?&lt;/h1&gt;
 
 &lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
