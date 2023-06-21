@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko-KR"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko-KR" /><updated>2023-06-22T01:42:47+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">개발자 최은석</title><subtitle>공부하자 📚.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko-KR"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko-KR" /><updated>2023-06-22T01:47:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">개발자 최은석</title><subtitle>공부하자 📚.
 </subtitle><author><name>최은석</name><email>nonjk2@gmail.com</email></author><entry><title type="html">OSI 7계층</title><link href="http://localhost:4000/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" rel="alternate" type="text/html" title="OSI 7계층" /><published>2023-06-19T00:00:00+09:00</published><updated>2023-06-19T00:00:00+09:00</updated><id>http://localhost:4000/computerscience/OSI%207%EA%B3%84%EC%B8%B5</id><content type="html" xml:base="http://localhost:4000/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html">&lt;aside&gt;
 💡 강의를 보면서 기록을 하여 네트워크와 HTTP 에 대한 지식을 재정리
 
@@ -322,7 +322,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
   &lt;li&gt;Nameserver는 무조건 공인된 애들한테만 -&amp;gt; 악의적인 사용자가 있기때문&lt;/li&gt;
   &lt;li&gt;sub domain 활용 잘하면 도메인 값 아낄수있음&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>최은석</name><email>nonjk2@gmail.com</email></author><category term="ComputerScience" /><category term="Network" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/frontend/dns.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/frontend/dns.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">함수</title><link href="http://localhost:4000/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html" rel="alternate" type="text/html" title="함수" /><published>2023-06-17T00:00:00+09:00</published><updated>2023-06-17T00:00:00+09:00</updated><id>http://localhost:4000/frontend/%EC%9D%BC%EA%B8%89%20%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98%20%ED%95%A8%EC%88%98</id><content type="html" xml:base="http://localhost:4000/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html">&lt;!--more--&gt;
-&lt;h1 class=&quot;no_toc&quot; id=&quot;일급-객체로서의-함수&quot;&gt;&lt;strong&gt;일급 객체로서의 함수&lt;/strong&gt;&lt;/h1&gt;
+&lt;h1 class=&quot;no_toc&quot; id=&quot;일급-객체로서의-함수&quot;&gt;일급 객체로서의 함수&lt;/h1&gt;
 
 &lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#변수를-함수를-할당&quot; id=&quot;markdown-toc-변수를-함수를-할당&quot;&gt;변수를 함수를 할당&lt;/a&gt;&lt;/li&gt;
@@ -346,7 +346,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
 
 &lt;p&gt;함수가 일급 객체로 취급되기 때문에, 함수를 매우 유연하게 사용할 수 있다.&lt;/p&gt;
 
-&lt;h3 id=&quot;변수를-함수를-할당&quot;&gt;변수를 함수를 할당&lt;/h3&gt;
+&lt;h2 id=&quot;변수를-함수를-할당&quot;&gt;변수를 함수를 할당&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -361,7 +361,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;함수를-인자로-다른-함수에-전달&quot;&gt;함수를 인자로 다른 함수에 전달&lt;/h3&gt;
+&lt;h2 id=&quot;함수를-인자로-다른-함수에-전달&quot;&gt;함수를 인자로 다른 함수에 전달&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -384,7 +384,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;함수를-반환&quot;&gt;함수를 반환&lt;/h3&gt;
+&lt;h2 id=&quot;함수를-반환&quot;&gt;함수를 반환&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;함수는 다른 함수에서 반환 될수 있다. 함수는 값으로 취급되기 때문에, 다른 함수에서 반환할 수 있다. 이것은 함수 팩토리 (factory) 나 클로저(closure)를 작성하는 데 사용됨.&lt;/li&gt;
@@ -400,7 +400,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
 &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addFive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 15 출력&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;객체의-프로퍼티로-함수를-할당&quot;&gt;객체의 프로퍼티로 함수를 할당&lt;/h3&gt;
+&lt;h2 id=&quot;객체의-프로퍼티로-함수를-할당&quot;&gt;객체의 프로퍼티로 함수를 할당&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;함수는 객체의 프로퍼티로 할당 될 수 있다. 객체의 메소드로 함수를 호출 가능&lt;/li&gt;
@@ -416,7 +416,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
 &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sayHello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &quot;Hello, my name is John&quot; 출력&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;배열의-요소로-함수를-할당&quot;&gt;배열의 요소로 함수를 할당&lt;/h3&gt;
+&lt;h2 id=&quot;배열의-요소로-함수를-할당&quot;&gt;배열의 요소로 함수를 할당&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;함수는 배열의 요소로 할당될 수 있다. 이것은 함수를 배열에서 사용할 수 있게 함.&lt;/li&gt;
@@ -455,7 +455,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
 &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;multiplyByTwo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;multiplyByThree&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 40 출력&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h1 id=&quot;map-과-set&quot;&gt;Map 과 Set&lt;/h1&gt;
+&lt;h2 id=&quot;map-과-set&quot;&gt;Map 과 Set&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -556,7 +556,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
 &lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#자바스크립트에서-메모리의-데이터-할당은-어떻게-이루어질까&quot; id=&quot;markdown-toc-자바스크립트에서-메모리의-데이터-할당은-어떻게-이루어질까&quot;&gt;자바스크립트에서 메모리의 데이터 할당은 어떻게 이루어질까?&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#메모리의-구조는&quot; id=&quot;markdown-toc-메모리의-구조는&quot;&gt;💡메모리의 구조는?&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#그-외-메모리에-대해서&quot; id=&quot;markdown-toc-그-외-메모리에-대해서&quot;&gt;&lt;strong&gt;그 외 메모리에 대해서&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#그-외-메모리에-대해서&quot; id=&quot;markdown-toc-그-외-메모리에-대해서&quot;&gt;그 외 메모리에 대해서&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#1기본형-데이터타입-메모리-할당&quot; id=&quot;markdown-toc-1기본형-데이터타입-메모리-할당&quot;&gt;(1)기본형 데이터타입 메모리 할당&lt;/a&gt;    &lt;ul&gt;
@@ -564,9 +564,9 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#2참조형-데이터타입-메모리할당&quot; id=&quot;markdown-toc-2참조형-데이터타입-메모리할당&quot;&gt;(2)참조형 데이터타입 메모리할당&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#참조카운트란-무엇일까요&quot; id=&quot;markdown-toc-참조카운트란-무엇일까요&quot;&gt;&lt;strong&gt;참조카운트란 무엇일까요?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#참조카운트란-무엇일까요&quot; id=&quot;markdown-toc-참조카운트란-무엇일까요&quot;&gt;참조카운트란 무엇일까요?&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#가비지컬렉터gc-garbage-collector&quot; id=&quot;markdown-toc-가비지컬렉터gc-garbage-collector&quot;&gt;가비지컬렉터(GC, Garbage Collector)&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#변수-복사의-비교&quot; id=&quot;markdown-toc-변수-복사의-비교&quot;&gt;&lt;strong&gt;변수 복사의 비교&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#변수-복사의-비교&quot; id=&quot;markdown-toc-변수-복사의-비교&quot;&gt;변수 복사의 비교&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#복사-이후-값-변경객체의-프로퍼티-변경&quot; id=&quot;markdown-toc-복사-이후-값-변경객체의-프로퍼티-변경&quot;&gt;복사 이후 값 변경(객체의 프로퍼티 변경)&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -637,7 +637,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;그-외-메모리에-대해서&quot;&gt;&lt;strong&gt;그 외 메모리에 대해서&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;그-외-메모리에-대해서&quot;&gt;그 외 메모리에 대해서&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;메모리 유형&lt;/strong&gt;
@@ -852,7 +852,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
   &lt;li&gt;그리고 5002 번값은 &lt;strong&gt;가비지 - 컬렉터&lt;/strong&gt;에의해 수거가 된다.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;참조카운트란-무엇일까요&quot;&gt;&lt;strong&gt;참조카운트란 무엇일까요?&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;참조카운트란-무엇일까요&quot;&gt;참조카운트란 무엇일까요?&lt;/h3&gt;
 
 &lt;aside&gt;
 💡 **객체를 참조하는 변수나 다른 객체의 수를 나타내는 값**입니다. 참조 카운트가 0인 객체는 더 이상 사용되지 않으므로, **가비지 컬렉터**에 의해 메모리에서 제거됩니다.
@@ -866,7 +866,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
 
 &lt;/aside&gt;
 
-&lt;h3 id=&quot;변수-복사의-비교&quot;&gt;&lt;strong&gt;변수 복사의 비교&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;변수-복사의-비교&quot;&gt;변수 복사의 비교&lt;/h3&gt;
 
 &lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//기본형&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;ddd&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//참조형&lt;/span&gt;
@@ -980,17 +980,17 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
 
 &lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#1실행-컨텍스트란-&quot; id=&quot;markdown-toc-1실행-컨텍스트란-&quot;&gt;(1)실행 컨텍스트란 ?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#그전에-스택이란&quot; id=&quot;markdown-toc-그전에-스택이란&quot;&gt;그전에 &lt;strong&gt;스택&lt;/strong&gt;이란?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#그렇다면-콜스택은-&quot; id=&quot;markdown-toc-그렇다면-콜스택은-&quot;&gt;&lt;strong&gt;그렇다면 콜스택은 ?&lt;/strong&gt;&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#콜-스택-순서&quot; id=&quot;markdown-toc-콜-스택-순서&quot;&gt;&lt;strong&gt;콜 스택 순서&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#그전에-스택이란&quot; id=&quot;markdown-toc-그전에-스택이란&quot;&gt;그전에 스택이란?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#그렇다면-콜스택은-&quot; id=&quot;markdown-toc-그렇다면-콜스택은-&quot;&gt;그렇다면 콜스택은 ?&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#콜-스택-순서&quot; id=&quot;markdown-toc-콜-스택-순서&quot;&gt;콜 스택 순서&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2-그러면-실행컨텍스트-스텍에-하나하나-쌓이는-객체에는-무엇이-있나&quot; id=&quot;markdown-toc-2-그러면-실행컨텍스트-스텍에-하나하나-쌓이는-객체에는-무엇이-있나&quot;&gt;(2) &lt;strong&gt;그러면 실행컨텍스트 (스텍에 하나하나 쌓이는 객체)에는 무엇이 있나?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-그러면-실행컨텍스트-스텍에-하나하나-쌓이는-객체에는-무엇이-있나&quot; id=&quot;markdown-toc-2-그러면-실행컨텍스트-스텍에-하나하나-쌓이는-객체에는-무엇이-있나&quot;&gt;(2) 그러면 실행컨텍스트 (스텍에 하나하나 쌓이는 객체)에는 무엇이 있나?&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#3-lexicalenvironment1---environmentrocordrecord와-호이스팅&quot; id=&quot;markdown-toc-3-lexicalenvironment1---environmentrocordrecord와-호이스팅&quot;&gt;(3) LexicalEnvironment(1) - environmentRocord(=record)와 호이스팅&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#초기화를-한다는것이-이해가-안된다&quot; id=&quot;markdown-toc-초기화를-한다는것이-이해가-안된다&quot;&gt;&lt;strong&gt;초기화를 한다는것이 이해가 안된다?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#초기화-란&quot; id=&quot;markdown-toc-초기화-란&quot;&gt;초기화 란?&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#호이스팅--함수-선언문-잠재-위험성&quot; id=&quot;markdown-toc-호이스팅--함수-선언문-잠재-위험성&quot;&gt;&lt;strong&gt;호이스팅 , 함수 선언문 잠재 위험성&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#호이스팅--함수-선언문-잠재-위험성&quot; id=&quot;markdown-toc-호이스팅--함수-선언문-잠재-위험성&quot;&gt;호이스팅 , 함수 선언문 잠재 위험성&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#4-lexicalenvironment2---스코프-스코프-체인-outerenvironmentreferenceouter&quot; id=&quot;markdown-toc-4-lexicalenvironment2---스코프-스코프-체인-outerenvironmentreferenceouter&quot;&gt;(4) LexicalEnvironment(2) - 스코프, 스코프 체인, outerEnvironmentReference(=outer)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#정리&quot; id=&quot;markdown-toc-정리&quot;&gt;정리&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1016,7 +1016,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
 
 &lt;p&gt;이러한 과정을 이해하기 위해서는 , &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;콜 스택&lt;/code&gt;의 이해가 필요.&lt;/p&gt;
 
-&lt;h2 id=&quot;그전에-스택이란&quot;&gt;그전에 &lt;strong&gt;스택&lt;/strong&gt;이란?&lt;/h2&gt;
+&lt;h2 id=&quot;그전에-스택이란&quot;&gt;그전에 스택이란?&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/frontend/stackqueue.png&quot; alt=&quot;stackqueue.png&quot; /&gt;&lt;/p&gt;
 
@@ -1025,11 +1025,11 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;큐&lt;/code&gt; 는 선형 자료구조의 일종으로 FIFO(First In First Out)의 구조를 가집니다.&lt;strong&gt;이는 먼저 들어간 원소가 가장 먼저 나온다는 의미.&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;그렇다면-콜스택은-&quot;&gt;&lt;strong&gt;그렇다면 콜스택은 ?&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;그렇다면-콜스택은-&quot;&gt;그렇다면 콜스택은 ?&lt;/h2&gt;
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;콜 스택&lt;/code&gt; 은 프로그램에서 여러 함수 호출을 추적하기 위해 JavaScript에서 사용하는 메커니즘입니다. 이것은 “LIFO(Last In, First Out)” 원칙에 따라 작동하는 JavaScript 엔진의 일부입니다. 즉, 스택에 마지막으로 푸시된 함수가 함수가 반환될 때 가장 먼저 나온다는 의미입니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;콜-스택-순서&quot;&gt;&lt;strong&gt;콜 스택 순서&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;콜-스택-순서&quot;&gt;콜 스택 순서&lt;/h3&gt;
 
 &lt;ol&gt;
   &lt;li&gt;JavaScript 프로그램이 실행되기 시작하면 JavaScript 엔진이 전역 실행 컨텍스트(Anonymous)를 생성하고 이를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;콜스택&lt;/code&gt;에 푸시합니다.&lt;/li&gt;
@@ -1065,7 +1065,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
 
 &lt;/aside&gt;
 
-&lt;h2 id=&quot;2-그러면-실행컨텍스트-스텍에-하나하나-쌓이는-객체에는-무엇이-있나&quot;&gt;(2) &lt;strong&gt;그러면 실행컨텍스트 (스텍에 하나하나 쌓이는 객체)에는 무엇이 있나?&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;2-그러면-실행컨텍스트-스텍에-하나하나-쌓이는-객체에는-무엇이-있나&quot;&gt;(2) 그러면 실행컨텍스트 (스텍에 하나하나 쌓이는 객체)에는 무엇이 있나?&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;VariableEnvironment&lt;/strong&gt;&lt;/p&gt;
 
@@ -1146,7 +1146,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
 
 &lt;p&gt;호이스팅을 이해하면 JavaScript 코드에서 잠재적인 혼란과 버그를 피할 수 있습니다. 일반적으로 코드를 더 명확하게 만들고 호이스팅으로 인한 의도하지 않은 동작을 방지하기 위해 범위의 시작 부분에 변수를 선언하는 것이 좋습니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;초기화를-한다는것이-이해가-안된다&quot;&gt;&lt;strong&gt;초기화를 한다는것이 이해가 안된다?&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;초기화-란&quot;&gt;초기화 란?&lt;/h3&gt;
 
 &lt;aside&gt;
 
@@ -1167,7 +1167,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
 
 &lt;p&gt;또한 JavaScript에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt;로 선언된 초기화되지 않은 변수는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;로 자동 초기화됩니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let&lt;/code&gt; 및 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const&lt;/code&gt;로 선언된 변수도 호이스팅되지만 정의된 코드 줄이 실행될 때까지 초기화되지 않은 상태로 유지되므로 초기화되기 전에 액세스하려고 하면 ReferenceError가 발생합니다&lt;/p&gt;
 
-&lt;h2 id=&quot;호이스팅--함수-선언문-잠재-위험성&quot;&gt;&lt;strong&gt;호이스팅 , 함수 선언문 잠재 위험성&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;호이스팅--함수-선언문-잠재-위험성&quot;&gt;호이스팅 , 함수 선언문 잠재 위험성&lt;/h2&gt;
 
 &lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
 
@@ -1298,7 +1298,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
 
 &lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#기본형&quot; id=&quot;markdown-toc-기본형&quot;&gt;기본형&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#참조형&quot; id=&quot;markdown-toc-참조형&quot;&gt;&lt;strong&gt;참조형&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#참조형&quot; id=&quot;markdown-toc-참조형&quot;&gt;참조형&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#기본형과-참조형의-구분-기준은-&quot; id=&quot;markdown-toc-기본형과-참조형의-구분-기준은-&quot;&gt;기본형과 참조형의 구분 기준은 ?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1321,7 +1321,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
 &lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;참조형&quot;&gt;&lt;strong&gt;참조형&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;참조형&quot;&gt;참조형&lt;/h3&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;객체&lt;/strong&gt;: 키-값 쌍 또는 속성 모음을 나타냅니다. 객체는 객체 리터럴(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{}&lt;/code&gt;)을 사용하거나 생성자 함수를 인스턴스화하여 생성할 수 있습니다. 예: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ 이름: &apos;John&apos;, 연령: 25 }&lt;/code&gt;.&lt;/li&gt;
@@ -1364,7 +1364,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
 
 &lt;p&gt;*garbage-collect : garbage-collect는 JavaScript를 포함한 프로그래밍 언어 런타임에서 수행되는 자동 메모리 관리 프로세스입니다. 더 이상 필요하지 않거나 프로그램에서 도달할 수 없는 개체가 차지하는 메모리를 회수하여 리소스를 확보하고 메모리 누수를 방지합니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;기본형과-참조형의-구분-기준은-&quot;&gt;기본형과 참조형의 구분 기준은 ?&lt;/h3&gt;
+&lt;h2 id=&quot;기본형과-참조형의-구분-기준은-&quot;&gt;기본형과 참조형의 구분 기준은 ?&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -1474,11 +1474,11 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
 
 &lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#es5와-es6의-문법개선&quot; id=&quot;markdown-toc-es5와-es6의-문법개선&quot;&gt;ES5와 ES6의 문법개선&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#자세한-내용-정리&quot; id=&quot;markdown-toc-자세한-내용-정리&quot;&gt;&lt;strong&gt;자세한 내용 정리🥸&lt;/strong&gt;&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#let--const&quot; id=&quot;markdown-toc-let--const&quot;&gt;&lt;strong&gt;let , const&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#화살표함수-arrow-func&quot; id=&quot;markdown-toc-화살표함수-arrow-func&quot;&gt;&lt;strong&gt;화살표함수 (Arrow Func)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#this&quot; id=&quot;markdown-toc-this&quot;&gt;&lt;strong&gt;this&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#삼항-연산자&quot; id=&quot;markdown-toc-삼항-연산자&quot;&gt;&lt;strong&gt;삼항 연산자&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#자세한-내용-정리&quot; id=&quot;markdown-toc-자세한-내용-정리&quot;&gt;자세한 내용 정리🥸&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#let--const&quot; id=&quot;markdown-toc-let--const&quot;&gt;let , const&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#화살표함수-arrow-func&quot; id=&quot;markdown-toc-화살표함수-arrow-func&quot;&gt;화살표함수 (Arrow Func)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#this&quot; id=&quot;markdown-toc-this&quot;&gt;this&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#삼항-연산자&quot; id=&quot;markdown-toc-삼항-연산자&quot;&gt;삼항 연산자&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#구조-분해할당&quot; id=&quot;markdown-toc-구조-분해할당&quot;&gt;구조 분해할당&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#단축-속성명property-shorthand&quot; id=&quot;markdown-toc-단축-속성명property-shorthand&quot;&gt;단축 속성명(property shorthand)&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#전개-구문spread&quot; id=&quot;markdown-toc-전개-구문spread&quot;&gt;전개 구문(Spread)&lt;/a&gt;&lt;/li&gt;
@@ -1621,9 +1621,9 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h2 id=&quot;자세한-내용-정리&quot;&gt;&lt;strong&gt;자세한 내용 정리🥸&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;자세한-내용-정리&quot;&gt;자세한 내용 정리🥸&lt;/h2&gt;
 
-&lt;h3 id=&quot;let--const&quot;&gt;&lt;strong&gt;let , const&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;let--const&quot;&gt;let , const&lt;/h3&gt;
 
 &lt;hr /&gt;
 
@@ -1636,7 +1636,7 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
   &lt;li&gt;할당: 변수에 값을 저장하는 것(= 할당연산자)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;화살표함수-arrow-func&quot;&gt;&lt;strong&gt;화살표함수 (Arrow Func)&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;화살표함수-arrow-func&quot;&gt;화살표함수 (Arrow Func)&lt;/h3&gt;
 
 &lt;hr /&gt;
 
@@ -1661,11 +1661,11 @@ tcp헤더가 udp헤더보다 용량이 훨 큼 따라서 tcp헤더가 약간 더
 &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;this&quot;&gt;&lt;strong&gt;this&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;this&quot;&gt;this&lt;/h3&gt;
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;function&lt;/code&gt; 은 호출을 할 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this&lt;/code&gt;가 정해지지만, 화살표 함수는 선언할 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this&lt;/code&gt;가 정해진다&lt;/p&gt;
 
-&lt;h3 id=&quot;삼항-연산자&quot;&gt;&lt;strong&gt;삼항 연산자&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;삼항-연산자&quot;&gt;삼항 연산자&lt;/h3&gt;
 
 &lt;hr /&gt;
 

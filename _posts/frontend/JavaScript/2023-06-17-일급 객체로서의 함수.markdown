@@ -9,7 +9,7 @@ image:
 tags: JavaScript TIL
 ---
 <!--more-->
-# **일급 객체로서의 함수**
+# 일급 객체로서의 함수
 {:.no_toc}
 
 * this list will be replaced by the toc
@@ -22,7 +22,7 @@ tags: JavaScript TIL
 
 함수가 일급 객체로 취급되기 때문에, 함수를 매우 유연하게 사용할 수 있다.
 
-### 변수를 함수를 할당
+## 변수를 함수를 할당
 
 - 함수는 변수에 할당할 수 있다. 함수는 값으로 함수는 값으로 취급되기 때문에, 다른 변수와 마찬가지로 변수에 할당할 수 있다. 변수에 할당된 함수는 나중에 사용할 수 있다.
 
@@ -34,7 +34,7 @@ tags: JavaScript TIL
   sayHello(); // "Hello!" 출력
   ```
 
-### 함수를 인자로 다른 함수에 전달
+## 함수를 인자로 다른 함수에 전달
 
 - 함수는 다른 함수에 인자로 전달될 수 있다. 함수가 값으로 취급되기 때문에, 다른 함수의 인자로 전달할 수 있다. 이것은 **콜백(callback)**이나 **고차 함수(higher-order function)**를 작성하는 데 사용
 
@@ -52,7 +52,7 @@ tags: JavaScript TIL
   callFunction(sayHello); // "Hello!" 출력
   ```
 
-### 함수를 반환
+## 함수를 반환
 
 - 함수는 다른 함수에서 반환 될수 있다. 함수는 값으로 취급되기 때문에, 다른 함수에서 반환할 수 있다. 이것은 함수 팩토리 (factory) 나 클로저(closure)를 작성하는 데 사용됨.
 
@@ -67,7 +67,7 @@ const addFive = createAdder(5);
 console.log(addFive(10)); // 15 출력
 ```
 
-### 객체의 프로퍼티로 함수를 할당
+## 객체의 프로퍼티로 함수를 할당
 
 - 함수는 객체의 프로퍼티로 할당 될 수 있다. 객체의 메소드로 함수를 호출 가능
 
@@ -82,7 +82,7 @@ const person = {
 person.sayHello(); // "Hello, my name is John" 출력
 ```
 
-### 배열의 요소로 함수를 할당
+## 배열의 요소로 함수를 할당
 
 - 함수는 배열의 요소로 할당될 수 있다. 이것은 함수를 배열에서 사용할 수 있게 함.
 
@@ -119,7 +119,7 @@ const multiplyByThree = multiplyBy(3);
 const result = add(multiplyByTwo(5), multiplyByThree(10)); // 40 출력
 ```
 
-# Map 과 Set
+## Map 과 Set
 
 ---
 

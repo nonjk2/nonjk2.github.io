@@ -124,7 +124,7 @@
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2023-06-22T01:42:47+09:00',
+    INDEX_KEY: 'index--2023-06-22T01:47:08+09:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -305,7 +305,7 @@ html{--accent-color: rgb(156,143,125);--accent-color-faded: rgba(156,143,125,0.5
 <ul class="large-only" id="markdown-toc">
   <li><a href="#자바스크립트에서-메모리의-데이터-할당은-어떻게-이루어질까" id="markdown-toc-자바스크립트에서-메모리의-데이터-할당은-어떻게-이루어질까">자바스크립트에서 메모리의 데이터 할당은 어떻게 이루어질까?</a>    <ul>
       <li><a href="#메모리의-구조는" id="markdown-toc-메모리의-구조는">💡메모리의 구조는?</a></li>
-      <li><a href="#그-외-메모리에-대해서" id="markdown-toc-그-외-메모리에-대해서"><strong>그 외 메모리에 대해서</strong></a></li>
+      <li><a href="#그-외-메모리에-대해서" id="markdown-toc-그-외-메모리에-대해서">그 외 메모리에 대해서</a></li>
     </ul>
   </li>
   <li><a href="#1기본형-데이터타입-메모리-할당" id="markdown-toc-1기본형-데이터타입-메모리-할당">(1)기본형 데이터타입 메모리 할당</a>    <ul>
@@ -313,9 +313,9 @@ html{--accent-color: rgb(156,143,125);--accent-color-faded: rgba(156,143,125,0.5
     </ul>
   </li>
   <li><a href="#2참조형-데이터타입-메모리할당" id="markdown-toc-2참조형-데이터타입-메모리할당">(2)참조형 데이터타입 메모리할당</a>    <ul>
-      <li><a href="#참조카운트란-무엇일까요" id="markdown-toc-참조카운트란-무엇일까요"><strong>참조카운트란 무엇일까요?</strong></a></li>
+      <li><a href="#참조카운트란-무엇일까요" id="markdown-toc-참조카운트란-무엇일까요">참조카운트란 무엇일까요?</a></li>
       <li><a href="#가비지컬렉터gc-garbage-collector" id="markdown-toc-가비지컬렉터gc-garbage-collector">가비지컬렉터(GC, Garbage Collector)</a></li>
-      <li><a href="#변수-복사의-비교" id="markdown-toc-변수-복사의-비교"><strong>변수 복사의 비교</strong></a></li>
+      <li><a href="#변수-복사의-비교" id="markdown-toc-변수-복사의-비교">변수 복사의 비교</a></li>
       <li><a href="#복사-이후-값-변경객체의-프로퍼티-변경" id="markdown-toc-복사-이후-값-변경객체의-프로퍼티-변경">복사 이후 값 변경(객체의 프로퍼티 변경)</a></li>
     </ul>
   </li>
@@ -386,7 +386,7 @@ html{--accent-color: rgb(156,143,125);--accent-color-faded: rgba(156,143,125,0.5
   </li>
 </ol>
 
-<h3 id="그-외-메모리에-대해서"><strong>그 외 메모리에 대해서</strong></h3>
+<h3 id="그-외-메모리에-대해서">그 외 메모리에 대해서</h3>
 
 <ul>
   <li><strong>메모리 유형</strong>
@@ -601,7 +601,7 @@ html{--accent-color: rgb(156,143,125);--accent-color-faded: rgba(156,143,125,0.5
   <li>그리고 5002 번값은 <strong>가비지 - 컬렉터</strong>에의해 수거가 된다.</li>
 </ol>
 
-<h3 id="참조카운트란-무엇일까요"><strong>참조카운트란 무엇일까요?</strong></h3>
+<h3 id="참조카운트란-무엇일까요">참조카운트란 무엇일까요?</h3>
 
 <aside>
 💡 **객체를 참조하는 변수나 다른 객체의 수를 나타내는 값**입니다. 참조 카운트가 0인 객체는 더 이상 사용되지 않으므로, **가비지 컬렉터**에 의해 메모리에서 제거됩니다.
@@ -615,7 +615,7 @@ html{--accent-color: rgb(156,143,125);--accent-color-faded: rgba(156,143,125,0.5
 
 </aside>
 
-<h3 id="변수-복사의-비교"><strong>변수 복사의 비교</strong></h3>
+<h3 id="변수-복사의-비교">변수 복사의 비교</h3>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">//기본형</span>
 <span class="kd">var</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="p">{</span> <span class="na">c</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="na">d</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ddd</span><span class="dl">"</span> <span class="p">};</span> <span class="c1">//참조형</span>
@@ -860,7 +860,7 @@ html{--accent-color: rgb(156,143,125);--accent-color-faded: rgba(156,143,125,0.5
     
 
 
-  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Random Posts</h2>  <ul class="related-posts">          <li class="h4">  <a href="/frontend/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8.html" class="flip-title"><span>실행 컨텍스트</span></a>  <time class="faded fine" datetime="2023-06-15T00:00:00+09:00">15 Jun 2023</time></li>          <li class="h4">  <a href="/frontend/%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%A1%9C%EC%84%9C%EC%9D%98-%ED%95%A8%EC%88%98.html" class="flip-title"><span>함수</span></a>  <time class="faded fine" datetime="2023-06-17T00:00:00+09:00">17 Jun 2023</time></li>          <li class="h4">  <a href="/frontend/%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85%EC%9D%98-%EC%A2%85%EB%A5%98-%EB%B0%8F-%EB%A9%94%EB%AA%A8%EB%A6%AC.html" class="flip-title"><span>자바스크립트 데이터 타입</span></a>  <time class="faded fine" datetime="2023-06-14T00:00:00+09:00">14 Jun 2023</time></li>      </ul></aside>
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Random Posts</h2>  <ul class="related-posts">          <li class="h4">  <a href="/computerscience/OSI-7%EA%B3%84%EC%B8%B5.html" class="flip-title"><span>OSI 7계층</span></a>  <time class="faded fine" datetime="2023-06-19T00:00:00+09:00">19 Jun 2023</time></li>          <li class="h4">  <a href="/computerscience/DNS.html" class="flip-title"><span>DNS</span></a>  <time class="faded fine" datetime="2023-06-18T00:00:00+09:00">18 Jun 2023</time></li>          <li class="h4">  <a href="/frontend/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8.html" class="flip-title"><span>실행 컨텍스트</span></a>  <time class="faded fine" datetime="2023-06-15T00:00:00+09:00">15 Jun 2023</time></li>      </ul></aside>
 
   
 
