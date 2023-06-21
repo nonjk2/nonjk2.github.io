@@ -40,8 +40,8 @@ logo: /assets/img/logo.png
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name: <최> <은석>
-  email: <trgf456@naver.com>
+  name: 최은석
+  email: nonjk2@gmail.com
   # # Used by `jekyll-seo-tag`:
   # twitter:             <username>
   
@@ -64,8 +64,7 @@ legal:
     url: /LICENSE/
   - title: NOTICE
     url: /NOTICE/
-  - title: CHANGELOG
-    url: /CHANGELOG/
+  
 
 # This text will appear in a `<small>` tag in the footer of every page.
 copyright: © 2021. All rights reserved.
