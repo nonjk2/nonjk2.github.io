@@ -23,19 +23,28 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 .avatar {
-  
-  width: 7rem;
-  height: 7rem;
+  // <<< inline
+  width: 10rem;
+  height: 9rem;
   border-radius: 100%;
   overflow: hidden;
   display: inline-block;
   img { width: 100%; }
-  
+  // >>>
 
-  
+  // <<< link
+  width: 10rem;
+  height: 9rem;
+  border-radius: 100%;
+  overflow: hidden;
+  display: inline-block;
+  img { width: 100%; }
+  position: relative;
+  z-index: 1;
+  // >>>
 }
 
-
+// <<< inline
 .content .avatar {
   @extend .color-transition;
   float: right;
@@ -45,4 +54,6 @@
   margin-top: -1.5rem;
   margin-right: -1rem;
 }
+// >>>
+
 
