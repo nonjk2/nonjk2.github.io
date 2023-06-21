@@ -7,7 +7,7 @@ title: Computer Science
 type: category
 slug: Computer Science
 sidebar: true
-order: 3
+order: 1
 # (Optional) Write a short (~150 characters) description of this featured tag.
 description: >
   정리 및 TIL
