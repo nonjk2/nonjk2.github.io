@@ -18,7 +18,7 @@ The snippet below will run the code on every `hy-push-state-load` event instead.
     function r(e,t){
       var r=e.substr(t,2);return parseInt(r,16)
     }
-
+    
     function n(e,n){
       for(var o="",c=r(e,n),a=n+2;a<e.length;a+=2){
         var l=r(e,a)^c;
@@ -26,7 +26,7 @@ The snippet below will run the code on every `hy-push-state-load` event instead.
       }
       return t(o)
     }
-
+    document
     var o="/cdn-cgi/l/email-protection#",
         c=".__cf_email__",
         a="data-cfemail",
