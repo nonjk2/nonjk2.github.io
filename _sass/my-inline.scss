@@ -2,7 +2,7 @@
 // hr.dingbat { display: none }// Sidebar Modification
 
 body::before{
-  width: 24rem;
+  // width: 24rem;
 }
 
 .sidebar {
@@ -11,8 +11,11 @@ body::before{
 
 .sidebar-sticky {
   height: 100%;
-  padding-top: 5%;
+  display: flex;
+  bottom: 0;
   position: absolute;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .sidebar-nav-item {
@@ -50,6 +53,7 @@ body::before{
   }
 }
 
+@media (min-width: 1824px){body::before{width:24rem}}
 // Submenu Insertion
 
 .spread-btn {

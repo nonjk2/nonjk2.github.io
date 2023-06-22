@@ -87,13 +87,13 @@ remote_theme: hydecorp/hydejack@v9
 # ----------------------------------------------------------------------------------------
 
 # Sidebar image and theme color of the site.
-accent_image: none
-accent_color: rgb(156,143,125)
+accent_image: /assets/img/sidebar-bg.jpeg
+# accent_color: rgb(156,143,125)
 
 # This is used for the `theme-color` meta tag,
 # which changes the background color of the browser UI in certain browsers.
 # Defaults to `accent_color`.
-theme_color: rgb(156,143,125)
+# theme_color: rgb(156,143,125)
 
 # The string encoding which fonts to fetch from Google Fonts.
 # See: <https://hydejack.com/docs/configuration/>
@@ -113,14 +113,14 @@ font_code: Fira Code, Menlo, Monaco, Consolas, monospace;
 defaults:
   # You can use this to provide a default accent color and background for
   # all pages under a given path:
-  - scope:
-      path: /**
-    values:
-      accent_color: rgb(156,143,125)
-      theme_color: rgb(32,32,32)
-      accent_image:
-        background: rgb(156,143,125)
-        overlay: true
+  # - scope:
+  #     path: /**
+  #   values:
+  #     accent_color: rgb(156,143,125)
+  #     theme_color: rgb(32,32,32)
+  #     accent_image:
+  #       background: rgb(156,143,125)
+  #       overlay: true
 
   # Don't include documents in assets in the sitemap
   - scope:
@@ -237,7 +237,7 @@ hydejack:
 
   # You can set this to `true` if you don't want to set the `theme-color` meta tag,
   # This only affects the meta tag, not the color specified in the app manifest.
-  no_theme_color: false
+  no_theme_color: ture
 
   # Disable the breadcrumbs above the title
   no_breadcrumbs: false
@@ -397,21 +397,21 @@ jekyll_compose:
         A short ~160 character description of your post for search engines,
         social media previews, etc.
       image:
-        path: /assets/img/sidebar-bg.jpg
+        path: /assets/img/sidebar-bg.jpeg
     posts:
       layout: post
       description: >
         A short ~160 character description of your post for search engines,
         social media previews, etc.
       image:
-        path: /assets/img/sidebar-bg.jpg
+        path: /assets/img/sidebar-bg.jpeg
     projects:
       layout: project
       description: >
         A short ~160 character description of your post for search engines,
         social media previews, etc.
       image:
-        path: /assets/img/sidebar-bg.jpg
+        path: /assets/img/sidebar-bg.jpeg
       links:
         - title: Project Link
           url: https://example.com

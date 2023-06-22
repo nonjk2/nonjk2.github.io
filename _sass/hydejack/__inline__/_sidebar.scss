@@ -91,7 +91,6 @@ hy-drawer {
 }
 
 
-
 .sidebar-bg {
   
   position: absolute;
@@ -100,7 +99,7 @@ hy-drawer {
   width: 100vw;
   height: 100%;
   background: #202020 center / cover;
-
+  background-size: contain;
   &::after {
     content: "";
     // position: absolute;
