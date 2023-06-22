@@ -33,20 +33,21 @@
   // >>>
 
   // <<< link
-  // width: 5rem;
-  // height: 6rem;
+  width: 7rem;
+  height: 7rem;
   border-radius: 100%;
   overflow: hidden;
   display: inline-block;
   img { width: 100%; }
   position: relative;
   z-index: 1;
-  transition: all 0.5s;
   // >>>
+  transform:scale(1.0);
+  transition: transform 0.2s;
   
 }
 .avatar:hover{
-  scale: 1.3;
+  transform:scale(1.1);   
 }
 
 // <<< inline
