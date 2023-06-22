@@ -9,6 +9,33 @@ body::before{
   text-align: center;
 }
 
+.avatar {
+  // <<< inline
+  // width: 10rem;
+  // height: 9rem;
+  border-radius: 100%;
+  overflow: hidden;
+  display: inline-block;
+  img { width: 100%; }
+  // >>>
+
+  // <<< link
+  width: 7rem;
+  height: 7rem;
+  border-radius: 100%;
+  overflow: hidden;
+  display: inline-block;
+  img { width: 100%; }
+  position: relative;
+  z-index: 1;
+  // >>>
+  transform:scale(1.0);
+  transition: transform 0.2s;
+  
+}
+.avatar:hover{
+  transform:scale(1.2);   
+}
 .sidebar-sticky {
   height: 100%;
   display: flex;
