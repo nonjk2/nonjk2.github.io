@@ -5,7 +5,7 @@ category: frontend
 description: >
   useState 파헤지기
 image:
-  path: /assets/img/frontend/usestate.png
+  path: /assets/img/frontend/react/usestate.png
 tags: React TIL
 ---
 <!--more-->
