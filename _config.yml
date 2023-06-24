@@ -19,7 +19,7 @@ url: https://deveundol.com
 lang: ko-KR
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title: 개발자 최은석
+title: Dev.최은석
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
