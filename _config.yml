@@ -133,12 +133,12 @@ defaults:
     values:
       layout: plain
       sitemap: false
-
+  
   # # You can use the following to enable comments on all posts.
-  # - scope:
-  #     type:            posts
-  #   values:
-  #     comments:        true
+  - scope:
+      type: posts
+    values:
+      comments: true
 
   # `jekyll-seo-tag` will mark collection outputs as `BlogPosting`,
   # but we want them to be `WebPage`s:
@@ -172,7 +172,7 @@ google_analytics: G-43895YHF45
 
 # Setting a disqus shortname will enable the comment section on
 # pages with `comments: true` in the front matter.
-# disqus:                <username>
+disqus: deveundol
 
 # Setting a tinyletter username will enable the newsletter subscription box.
 # PRO version only!
