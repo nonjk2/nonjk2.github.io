@@ -1,17 +1,16 @@
 ---
 # Featured tags need to have either the `list` or `grid` layout (PRO only).
-layout: grid
+layout: list
 # The title of the tag's page.
-title: ComputerScience
+title: devlog
 # The name of the tag, used in a post's front matter (e.g. tags: [<slug>]).
 type: category
-slug: ComputerScience
+slug: devlog
 sidebar: true
 order: 1
 # (Optional) Write a short (~150 characters) description of this featured tag.
 description: >
-  정리 및 TIL
-
+  WIL 과 TIL 그리고 끠적임
 # (Optional) You can disable grouping posts by date.
 no_groups: true
 

@@ -18,7 +18,7 @@ tags: React WIL
 
 이번주부터 react에대해 자세히 하나하나 차근차근 공부하기 시작했다.
 
-리액트란 무엇인가를 설명할 수 있는 [React Virtual DOM](2023-06-26-VirtualDOM.markdown){:.heading.flip-title}{:.read-more}을 알아보았다. 짧게 요약하면
+리액트란 무엇인가를 설명할 수 있는 [React Virtual DOM](./2023-06-23-VirtualDOM.markdown){:.heading.flip-title}{:.read-more}을 알아보았다. 짧게 요약하면
 
 ## React 가상돔(Virtual DOM)
 
