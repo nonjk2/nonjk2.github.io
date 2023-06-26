@@ -18,7 +18,7 @@ tags: React WIL
 
 이번주부터 react에대해 자세히 하나하나 차근차근 공부하기 시작했다.
 
-리액트란 무엇인가를 설명할 수 있는 [virtual dom](2023-06-26-VirtualDOM.markdown){:.heading.flip-title}{:.read-more}을 알아보았다. 짧게 요약하면
+리액트란 무엇인가를 설명할 수 있는 [React Virtual DOM](2023-06-26-VirtualDOM.markdown){:.heading.flip-title}{:.read-more}을 알아보았다. 짧게 요약하면
 
 ## React 가상돔(Virtual DOM)
 
@@ -33,7 +33,7 @@ tags: React WIL
 
 ---
 
-다음으로 TIL을 적고싶었던게 [useState](2023-06-24-useState.markdown){:.heading.flip-title}{:.read-more} 다 virtual state에서 re-render를 시키는 요소인 `state`에 대해 알아 보았다.
+다음으로 TIL을 적고싶었던게 [useState](./2023-06-24-useState.markdown){:.heading.flip-title}{:.read-more} 다 virtual state에서 re-render를 시키는 요소인 `state`에 대해 알아 보았다.
 
 ## State
 
@@ -56,7 +56,7 @@ tags: React WIL
 
 ## Lifecycle
 
-자세히 보러가기 -> [Lifecycle](2023-06-24-ReactLifeCycle.markdown){:.heading.flip-title}{:.read-more}
+자세히 보러가기 -> [React 의 생명주기](./2023-06-24-ReactLifeCycle.markdown){:.heading.flip-title}{:.read-more}
 **정리**
 
 >- 리액트의 컴포넌트 생명주기 3단계
