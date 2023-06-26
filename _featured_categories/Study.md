@@ -7,7 +7,7 @@ title: Study
 type: category
 slug: Study
 sidebar: true
-order: 1
+order: 3
 # (Optional) Write a short (~150 characters) description of this featured tag.
 description: >
   정리 및 TIL

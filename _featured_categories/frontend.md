@@ -7,7 +7,7 @@ title: frontend
 type: category
 slug: frontend
 sidebar: true
-order: 1
+order: 2
 # (Optional) Write a short (~150 characters) description of this featured tag.
 description: >
   정리 및 TIL
