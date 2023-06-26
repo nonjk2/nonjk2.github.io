@@ -7,6 +7,10 @@ body::before{
 
 .sidebar {
   text-align: center;
+  
+}
+.sidebar a {
+  text-decoration: none;
 }
 
 .avatar {
@@ -45,6 +49,12 @@ body::before{
   flex-direction: column;
   justify-content: space-between;
 }
+
+.sidebar-nav {
+  flex-grow: 1;
+  padding-top: 12rem; 
+}
+
 
 .sidebar-nav-item {
   padding: 0.25rem 0;

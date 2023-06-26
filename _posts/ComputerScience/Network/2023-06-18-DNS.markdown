@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "DNS"
-category: ComputerScience
+category: Study
 description: >
   DNS 에 대해 알아보자
 image:
   path: /assets/img/frontend/dns.jpg
-tags: Network
-permalink: ComputerScience/Network/Dns
+tags: ComputerScience
+permalink: Study/ComputerScience/Dns
 ---
 <!--more-->
 
