@@ -8,6 +8,7 @@ description: >
 image:
   path: /assets/img/frontend/react/virtual.png
 tags: React TIL
+permalink: frontend/React/virtualdom
 ---
 <!--more-->
 

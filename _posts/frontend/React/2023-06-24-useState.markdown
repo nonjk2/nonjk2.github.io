@@ -7,6 +7,7 @@ description: >
 image:
   path: /assets/img/frontend/react/usestate.png
 tags: React TIL
+permalink: frontend/React/state
 ---
 <!--more-->
 # State란

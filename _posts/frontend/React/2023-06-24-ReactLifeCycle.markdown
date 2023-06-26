@@ -7,6 +7,7 @@ description: >
 image:
   path: /assets/img/frontend/react/lifecycle3.png
 tags: React TIL
+permalink: frontend/React/lifecycle
 ---
 
 리액트 16.4v 이후 버전 라이프사이클

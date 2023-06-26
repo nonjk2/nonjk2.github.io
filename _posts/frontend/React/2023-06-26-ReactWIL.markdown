@@ -7,6 +7,7 @@ description: >
 image:
   path: /assets/img/frontend/react/WIL0625.png
 tags: React WIL
+permalink: WIL3
 ---
 <!--more-->
 
