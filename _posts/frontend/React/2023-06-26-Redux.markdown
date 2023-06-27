@@ -1,0 +1,408 @@
+---
+layout: post
+title: "redux"
+category: frontend
+description: >
+  리액트 상태관리라이브러리 redux를 알아보자
+image:
+  path: /assets/img/frontend/react/redux.png
+tags: React TIL
+permalink: frontend/React/redux
+---
+<!--more-->
+
+
+# Redux
+{:.no_toc}
+
+* this list will be replaced by the toc
+{:toc .large-only}
+
+React에서 상태관리 라이브러리가 뭐가있을까요 라고 물으면 항상 첫번째로 나오는 리덕스다. 유명한만큼 그 기능들과 엄청난 퍼포먼스를 제공한다.
+
+~~요즘은 안쓴다던데 ?~~
+
+암튼 그 리덕스를 알아보려 한다. 일단 redux ,redux-toolkit 으로 나눠 기술하려한다. redux를 알면 redux-toolkit은 5분만 봐도 알수있다고 한다.
+
+- [redux용어](./2023-06-26-ReduxLang.markdown){:.heading.flip-title}{:.read-more}에 대해 대충 기억을 하면서 Todo List에 적용을 해보자
+
+그전에 리덕스에는 3가지 원칙이 있단다 그걸 알아보자
+
+## 리덕스 3가지 원칙
+
+### 첫째
+
+- 애플리케이션의 모든 상태는 하나의 저장소 안에 하나의 객체 트리 구조로 저장된다
+
+### 둘째
+
+- 상태는 읽기 전용이다
+
+상태를 변화시키는 유일한 방법은 무슨 로직이 벌어질지 묘사하는 `action` 객체를 전달하는 방법뿐
+
+### 셋째
+
+- 변화는 순수 함수로 작성되어야한다.
+
+action에 의해 상태트리가 어떻게 변화하는지 지정하기 위해 순수 리듀서를 작성하자
+
+```js
+function visibilityFilter(state = "SHOW_ALL", action) {
+  switch (action.type) {
+    case "SET_VISIBILITY_FILTER":
+      return action.filter;
+    default:
+      return state;
+  }
+}
+
+function todos(state = [], action) {
+  switch (action.type) {
+    case "ADD_TODO":
+      return [
+        ...state,
+        {
+          text: action.text,
+          completed: false,
+        },
+      ];
+    case "COMPLETE_TODO":
+      return state.map((todo, index) => {
+        if (index === action.index) {
+          return Object.assign({}, todo, {
+            completed: true,
+          });
+        }
+        return todo;
+      });
+    default:
+      return state;
+  }
+}
+
+import { combineReducers, createStore } from "redux";
+const reducer = combineReducers({ visibilityFilter, todos });
+const store = createStore(reducer);
+```
+
+요로코롬 ㅎ
+
+**하나의 함수에 하나의 로직** 다른 로직 넣지 않기
+
+## 불변성
+
+리덕스 객체들은 항상 불변성을 유지해야한다.
+리덕스에는 불변성을 유지하기위해 Immutable라이브러리가 내장되있다곤 하는데
+
+그래도 객체를 반환할때는 항상 새배열 새값을 만들어서 **리턴**하자
+
+## 정규화된 상태
+
+음 어떻게보면 실력편차가 여기서 나올수도 있겠다. 백엔드의 db 테이블 구조를 잘 모른다면 이구조가 어려울수도 있고 , ~~똥마려우면 귀찮을수도 있겠다~~.
+
+보통 이제 리덕스를 처음 쓴다면 이렇게 쓸수도 있겠다.
+
+<details>
+<summary>간단</summary>
+
+```ts
+interface SimpleState {
+  posts: Array<{ id: string; author: string; body: string }>;
+  comments: Array<{ id: string; author: string; comment: string }>;
+  users: Array<{ username: string; name: string }>;
+}
+
+const initialState: SimpleState = {
+  posts: [],
+  comments: [],
+  users: [],
+};
+
+// 액션 타입과 액션을 정의
+type ActionType = "ADD_POST" | "ADD_COMMENT" | "ADD_USER";
+
+interface Action {
+  type: ActionType;
+  payload: any;
+}
+
+// 리듀서 정의
+const myApp = (
+  state: SimpleState = initialState,
+  action: Action
+): SimpleState => {
+  switch (action.type) {
+    case "ADD_POST":
+      return {
+        ...state,
+        posts: state.posts.concat(action.payload),
+      };
+    case "ADD_COMMENT":
+      return {
+        ...state,
+        comments: state.comments.concat(action.payload),
+      };
+    case "ADD_USER":
+      return {
+        ...state,
+        users: state.users.concat(action.payload),
+      };
+    default:
+      return state;
+  }
+};
+```
+
+</details>
+
+정규화 해보자..
+
+<details>
+<summary>정규화</summary>
+
+```ts
+import { createStore, Action } from "redux";
+
+interface Post {
+  id: string;
+  author: string;
+  body: string;
+}
+
+interface Comment {
+  id: string;
+  author: string;
+  comment: string;
+}
+
+interface User {
+  username: string;
+  name: string;
+}
+
+interface State {
+  posts: {
+    byId: Record<string, Post>;
+    allIds: string[];
+  };
+  comments: {
+    byId: Record<string, Comment>;
+    allIds: string[];
+  };
+  users: {
+    byId: Record<string, User>;
+    allIds: string[];
+  };
+}
+
+type BlogAction = Action<"ADD_POST" | "ADD_COMMENT" | "ADD_USER"> & {
+  post?: Post;
+  comment?: Comment;
+  user?: User;
+};
+
+const initialState: State = {
+  posts: {
+    byId: {},
+    allIds: [],
+  },
+  comments: {
+    byId: {},
+    allIds: [],
+  },
+  users: {
+    byId: {},
+    allIds: [],
+  },
+};
+
+const myApp = (state: State = initialState, action: BlogAction): State => {
+  switch (action.type) {
+    case "ADD_POST":
+      return {
+        ...state,
+        posts: {
+          ...state.posts,
+          byId: {
+            ...state.posts.byId,
+            [action.post!.id]: action.post!,
+          },
+          allIds: [...state.posts.allIds, action.post!.id],
+        },
+      };
+    case "ADD_COMMENT":
+      return {
+        ...state,
+        comments: {
+          ...state.comments,
+          byId: {
+            ...state.comments.byId,
+            [action.comment!.id]: action.comment!,
+          },
+          allIds: [...state.comments.allIds, action.comment!.id],
+        },
+      };
+    case "ADD_USER":
+      return {
+        ...state,
+        users: {
+          ...state.users,
+          byId: {
+            ...state.users.byId,
+            [action.user!.username]: action.user!,
+          },
+          allIds: [...state.users.allIds, action.user!.username],
+        },
+      };
+    default:
+      return state;
+  }
+};
+
+const store = createStore(myApp);
+
+store.dispatch({
+  type: "ADD_POST",
+  post: { id: "post1", author: "user1", body: "..." },
+});
+store.dispatch({
+  type: "ADD_COMMENT",
+  comment: { id: "comment1", author: "user2", comment: "..." },
+});
+store.dispatch({
+  type: "ADD_USER",
+  user: { username: "user1", name: "User 1" },
+});
+
+console.log(store.getState());
+```
+
+</details>
+
+## 기본구조
+
+폴더구조는 사람마다 다르지만 나같은경우
+
+- `src`
+  - `components`
+  - `store`
+    - `index.ts`
+    - `action`
+      - `index.ts`
+      - `blogAction.ts`
+    - `reducers`
+      - `index.ts`
+      - `blogApp.ts`
+- `types`
+
+app , index외 등등 요로코롬 둔다. 물런 toolkit을 쓰면 달라지지만
+작은것들 부터 위로 크게 만들어봅시다
+
+1. 액션 만들고 `store/actions/blogActions.ts`
+
+```ts
+export const addPost = (post) => {
+  return {
+    type: "ADD_POST",
+    post,
+  };
+};
+
+export const addComment = (comment) => {
+  return {
+    type: "ADD_COMMENT",
+    comment,
+  };
+};
+
+export const addUser = (user) => {
+  return {
+    type: "ADD_USER",
+    user,
+  };
+};
+```
+
+- 1-1 `actions/index.ts`
+
+```ts
+export * from "./blogActions";
+```
+
+2. 리듀서 만들고~ `store/reducers/blogAction.ts`
+
+```ts
+const blogApp = (state: State, action: BlogAction): State => {};
+export default blogApp;
+```
+
+3. 리듀서 합체 `store/reducers/index.ts`
+
+```ts
+export default combineReducers({
+  blogApp,
+});
+```
+
+4. 스토어 생성 `store/index.ts`
+
+```ts
+const store = createStore(rootReducer);
+export default store;
+```
+
+5. 마지막으로 앱에 입혀주자 `index.tsx`
+
+```tsx
+ <Provider store={store}>
+    <App />
+</Provider>,
+```
+
+## 사용방법
+
+지금까지 구조를 익혔으니 사용 방법을 코드 한번에 사용방법을 알아보자
+
+```tsx
+const BlogApp = () => {
+  const dispatch = useDispatch();
+  const posts = useSelector((state) =>
+    state.posts.allIds.map((id) => state.posts.byId[id])
+  );
+
+  const [newPost, setNewPost] = useState<post>({
+    id: "",
+    author: "",
+    body: "",
+  });
+
+  const handleAddPost = () => {
+    dispatch(addPost(newPost));
+    setNewPost({ id: "", author: "", body: "" });
+  };
+
+  return (
+    <div>
+      <input
+        placeholder="Post ID"
+        value={newPost.id}
+        onChange={(e) => setNewPost({ ...newPost, id: e.target.value })}
+      />
+      // 대충 Author , body Input
+      <button onClick={handleAddPost}>Add Post</button>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>
+            <h2>{post.author}</h2>
+            <p>{post.body}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default BlogApp;
+```
+
+음 여기까지 바닐라 리덕스의 구조를 알아봤는데 다음 포스팅은 직접 리덕스 툴킷 알아보고 사용해보자 보러가기[리덕스 툴킷](./2023-06-26-ReduxToolkit.markdown){:.heading.flip-title}{:.read-more}
