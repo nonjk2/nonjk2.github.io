@@ -22,7 +22,8 @@ permalink: frontend/React/reduxtoolkit
 
 ## 리덕스 데이터 흐름도
 
-![리덕스데이터흐름](../img/reduxImage.gif)
+![리덕스데이터흐름](/assets/img/frontend/react/reduxImage.gif)
+
 [출처 : redux-docs](https://ko.redux.js.org/)
 
 - 리덕스는 일반적으로 리덕스와 리액트를 함께 통합하기위해 React-Redux 라이브러리와 함께 사용
