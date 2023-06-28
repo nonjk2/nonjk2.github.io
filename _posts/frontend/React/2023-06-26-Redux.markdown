@@ -102,8 +102,6 @@ const store = createStore(reducer);
 
 보통 이제 리덕스를 처음 쓴다면 이렇게 쓸수도 있겠다.
 
-<details>
-<summary>간단</summary>
 
 ```ts
 
@@ -152,12 +150,10 @@ const myApp = (
 };
 ```
 
-</details>
+
 
 정규화 해보자..
 
-<details>
-<summary>정규화</summary>
 
 ```ts
 
@@ -277,7 +273,6 @@ store.dispatch({
 
 ```
 
-</details>
 
 ## 기본구조
 
@@ -354,8 +349,8 @@ export default store;
 5. 마지막으로 앱에 입혀주자 `index.tsx`
 
 ```tsx
- <Provider store={store}>
-    <App />
+<Provider store={store}>
+  <App />
 </Provider>,
 ```
 
