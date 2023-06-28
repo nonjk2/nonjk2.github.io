@@ -293,7 +293,7 @@ store.dispatch({
 app , index외 등등 요로코롬 둔다. 물런 toolkit을 쓰면 달라지지만
 작은것들 부터 위로 크게 만들어봅시다
 
-1. 액션 만들고 `store/actions/blogActions.ts`
+액션 만들고 `store/actions/blogActions.ts`
 
 ```ts
 export const addPost = (post) => {
@@ -318,20 +318,20 @@ export const addUser = (user) => {
 };
 ```
 
-- 1-1 `actions/index.ts`
+`actions/index.ts`
 
 ```ts
 export * from "./blogActions";
 ```
 
-2. 리듀서 만들고~ `store/reducers/blogAction.ts`
+리듀서 만들고~ `store/reducers/blogAction.ts`
 
 ```ts
 const blogApp = (state: State, action: BlogAction): State => {};
 export default blogApp;
 ```
 
-3. 리듀서 합체 `store/reducers/index.ts`
+리듀서 합체 `store/reducers/index.ts`
 
 ```ts
 export default combineReducers({
@@ -339,14 +339,14 @@ export default combineReducers({
 });
 ```
 
-4. 스토어 생성 `store/index.ts`
+스토어 생성 `store/index.ts`
 
 ```ts
 const store = createStore(rootReducer);
 export default store;
 ```
 
-5. 마지막으로 앱에 입혀주자 `index.tsx`
+마지막으로 앱에 입혀주자 `index.tsx`
 
 ```tsx
 <Provider store={store}>
