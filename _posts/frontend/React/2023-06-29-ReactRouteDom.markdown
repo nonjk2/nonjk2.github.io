@@ -27,7 +27,7 @@ React Router DOM을 사용하면 웹 앱에서 동적으로다가 라우팅을 �
 
 리액트는 SPA이기 때문에 하나의 index.html 템플릿 파일을 가지고 있다. 이 하나의 템플릿에 자바스크립트를 이용해서 다른 컴포넌트를 이 index.html 템플릿에 넣어가지고 페이지를 바꿔준다. 이 때 React Router Dom 라이브러리가 새 컴포넌트로 라우팅/탐색을 하고 렌더링하는데 쓰인다.
 
-![Untitled](assets/img/frontend/react/route1.png)
+![Untitled](/assets/img/frontend/react/route1.png)
 
 ## React Router Dom 설치하기
 
@@ -37,7 +37,7 @@ npm install react-router-dom --save
 yarn add react-router-dom
 ```
 
-![Untitled](assets/img/frontend/react/route2.png)
+![Untitled](/assets/img/frontend/react/route2.png)
 
 ## BrowserRouter
 
@@ -69,7 +69,7 @@ BrowserRouter 는 HTML5의 History API를 사용하여 페이지를 새로고침
 
 [History API - Web API | MDN](https://developer.mozilla.org/ko/docs/Web/API/History_API)
 
-![Untitled](assets/img/frontend/react/route3.png)
+![Untitled](/assets/img/frontend/react/route3.png)
 
 `Routes` : 앱에서 생성될 모든 개별 경로에 대한 컨테이너/상위 역할을 한다.
 
@@ -82,13 +82,13 @@ BrowserRouter 는 HTML5의 History API를 사용하여 페이지를 새로고침
 
 ### **중첩 라우팅(nested routing)**
 
-![Untitled](assets/img/frontend/react/route4.png)
+![Untitled](/assets/img/frontend/react/route4.png)
 
 이것은 **React Router**의 가장 좋은 기능중 하나다. 대부분의 레이아웃은 URL의 세그먼트에 연결된다.
 
 ### **Outlet**
 
-![Untitled](assets/img/frontend/react/route5.png)
+![Untitled](/assets/img/frontend/react/route5.png)
 
 v6 로 업그레드 되면서 나온 `Outlet`
 
@@ -100,7 +100,7 @@ v6 로 업그레드 되면서 나온 `Outlet`
 
 ### **useNavigate**
 
-![Untitled](assets/img/frontend/react/route6.png)
+![Untitled](/assets/img/frontend/react/route6.png)
 
 navigate에
 
@@ -108,7 +108,7 @@ replace: true를 사용하면 navigate에 적힌 주소로 넘어간 후 뒤로 
 
 false가 디폴트고 뒤로 가기 가능.
 
-![Untitled](assets/img/frontend/react/route7.png)
+![Untitled](/assets/img/frontend/react/route7.png)
 
 - 넷플릭스에서 검색하기를 누르고 뒤로가기를 하면 바로 뒷페이지로 가는게 아니고 검색하기 창으로 넘어감.
 
@@ -124,7 +124,7 @@ false가 디폴트고 뒤로 가기 가능.
 
 yeah )
 
-![Untitled](assets/img/frontend/react/route8.png)
+![Untitled](/assets/img/frontend/react/route8.png)
 
 ### **useLocation**
 
@@ -137,11 +137,11 @@ yeah )
 
 이녀석은 현재 위치 객체를 반환한다 현재 위치가 변경될 때마다 일부 side effect를 수행하려는 경우에 유용할 수 있다.
 
-![Untitled](assets/img/frontend/react/route9.png)
+![Untitled](/assets/img/frontend/react/route9.png)
 
 ### **useRoutes**
 
 `useRoutes Hooks`는 `Routes` ,`Route` 와 기능적으로 비슷함 대신 요소 대신 JavaScript 객체를 사용하여 경로를 정의.
 
-![Untitled](assets/img/frontend/react/route10.png)
+![Untitled](/assets/img/frontend/react/route10.png)
 도움된사이트[https://itchallenger.tistory.com/566](https://itchallenger.tistory.com/566)
