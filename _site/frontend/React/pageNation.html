@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+
+
+
+  
+    
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>페이지네이션 with Study | Dev.최은석</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="페이지네이션 with Study" />
+<meta name="author" content="최은석" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="description" content="페이지네이션을 구현하자" />
+<meta property="og:description" content="페이지네이션을 구현하자" />
+<link rel="canonical" href="http://localhost:4000/frontend/react/pageNation" />
+<meta property="og:url" content="http://localhost:4000/frontend/react/pageNation" />
+<meta property="og:site_name" content="Dev.최은석" />
+<meta property="og:image" content="http://localhost:4000/assets/img/frontend/react/pageNation.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-06-27T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/img/frontend/react/pageNation.png" />
+<meta property="twitter:title" content="페이지네이션 with Study" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"최은석"},"dateModified":"2023-06-27T00:00:00+09:00","datePublished":"2023-06-27T00:00:00+09:00","description":"페이지네이션을 구현하자","headline":"페이지네이션 with Study","image":"http://localhost:4000/assets/img/frontend/react/pageNation.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/frontend/react/pageNation"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"최은석"},"url":"http://localhost:4000/frontend/react/pageNation"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+    <meta name="keywords" content="dev,frontend,TIL">
+  
+
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Dev.최은석">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="application-name" content="Dev.최은석">
+
+<meta name="generator" content="Hydejack v9.1.6" />
+
+
+<link rel="alternate" href="http://localhost:4000/frontend/react/pageNation" hreflang="ko-kr">
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Dev.최은석" />
+
+
+<link
+  rel="shortcut icon"
+  href="/assets/icons/favicon.ico"
+/>
+<link
+  rel="apple-touch-icon"
+  href="/assets/icons/icon-192x192.png"
+/>
+
+<link rel="manifest" href="/assets/site.webmanifest" />
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" /><link rel="dns-prefetch" href="https://fonts.gstatic.com" /> 
+<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+
+<link
+  rel="preload"
+  href="/assets/img/swipe.svg"
+  as="image"
+  id="_hrefSwipeSVG"
+/>
+
+<link
+  rel="dns-prefetch"
+  href="/assets/js/search-worker-9.1.6.js"
+  as="worker"
+  id="_hrefSearch"
+/>
+  
+<link
+  rel="dns-prefetch"
+  href="https://deveundol.disqus.com"
+  id="_hrefDisqus"
+/>
+
+<!-- ... -->
+
+<!-- For sidebar folder -->
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+<script src="/assets/js/sidebar-folder.js"></script>
+
+
+<script>!function(r,c){"use strict";function a(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=c.createElement("script"),e=(n.src=e,t&&a(n,"load",t,{once:!0}),c.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=c.createElement("script");function o(){r._loaded=!0,t&&a(n,"load",t,{once:!0});var e=c.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():a(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){a(c.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}}(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+!function(w) {
+  w._baseURL = '/';
+  w._publicPath = '/assets/js/';
+  w._noPushState = false;
+  w._noDrawer = false;
+  w._noNavbar = ture;
+  w._noToc = false;
+  w._noSearch = true;
+  w._advertise = false;
+  w._search = {
+    DATA_URL: '/assets/sitedata.json?no-cache',
+    STORAGE_KEY: 'mini-search/',
+    INDEX_KEY: 'index--2023-07-01T13:25:41+09:00',
+  };
+  w._clapButton = true;
+}(window);</script>
+
+
+<script async src="/assets/bower_components/MathJax/es5/tex-mml-chtml.js" id="_MathJax"></script>
+
+
+<!--[if gt IE 8]><!---->
+
+  
+
+
+
+
+<link rel="stylesheet" href="/assets/css/hydejack-9.1.6.css" id="_stylePreload">
+<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans:400,400i,700,700i&display=swap" id="_fontsPreload">
+
+
+
+  <style id="_pageStyle">
+
+html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);--accent-color-highlight: rgba(79,177,186,0.1);--accent-color-darkened: #409ba3;--theme-color: rgb(8,46,57);--dark-mode-body-bg: #282f31;--dark-mode-border-color: #343c3f}
+
+</style>
+
+
+<!--<![endif]-->
+
+
+
+
+
+</head>
+
+<body class="no-break-layout">
+  
+<script>
+  window._sunrise = 6;
+  window._sunset =  18;
+  !function(e,s){var d="light-mode",o="dark-mode",a=(new Date).getHours();"matchMedia"in e&&e.matchMedia("(prefers-color-scheme)")||(e=(a=a<=e._sunrise||a>=e._sunset?o:d)==o?d:o,s.body.classList.add(a),s.body.classList.remove(e))}(window,document);
+
+</script>
+
+
+
+<hy-push-state
+  id="_pushState"
+  replace-selector="#_main"
+  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
+  script-selector="script"
+  duration="500"
+  hashchange
+>
+  
+  
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only"
+      >Jump to:</span
+    >
+    <div class="nav-btn-bar">
+      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
+        <span class="sr-only"
+          >Navigation</span
+        >
+        <span class="icon-menu"></span>
+      </a>
+      <div class="nav-span"></div>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+  <main
+  id="_main"
+  class="content layout-post"
+  role="main"
+>
+  <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+    <li><a href="/">home</a></li>
+    
+      <li>
+        
+          <span>/</span>
+          
+          
+          <a href="/frontend/">frontend</a>
+        
+      </li>
+    
+      <li>
+        
+          <span>/</span>
+          
+          
+          <a href="/frontend/react/">react</a>
+        
+      </li>
+    
+      <li>
+        
+          <span>/</span>
+          <span>pageNation</span>
+        
+      </li>
+    
+  
+</ul></nav>
+  
+
+
+
+
+
+
+
+
+
+
+<article id="post-frontend-react-페이지네이션" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        페이지네이션 with Study
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2023-06-27T00:00:00+09:00">2023 Jun 27</time> in <a href="/frontend/" class="flip-title">frontend</a> on <a href="/tag-%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84/" class="flip-title">기능구현</a>
+      </span>
+      
+        
+      
+    </div>
+
+    
+    
+      
+        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
+          
+
+
+<img
+  
+    src="/assets/img/frontend/react/pageNation.png"
+    
+    
+  
+  alt="페이지네이션 with Study"
+  
+  
+  width="864"
+  height="486"
+  loading="lazy"
+/>
+
+        </div>
+      
+      
+    
+
+    
+
+
+
+  
+    <p class="note-sm" >
+      페이지네이션을 구현하자
+
+    </p>
+  
+
+
+  </header>
+
+  
+    <!--more-->
+
+<h1 class="no_toc" id="리액트-기능구현-스터디-">리액트 기능구현 스터디 <pagenation></pagenation></h1>
+
+<ul class="large-only" id="markdown-toc">
+  <li><a href="#페이지네이션" id="markdown-toc-페이지네이션">페이지네이션</a></li>
+  <li><a href="#힘들었던상황" id="markdown-toc-힘들었던상황">힘들었던상황</a>    <ul>
+      <li><a href="#이미지-그나마-개선" id="markdown-toc-이미지-그나마-개선">이미지 그나마 개선</a></li>
+      <li><a href="#새로고침-개선" id="markdown-toc-새로고침-개선">새로고침 개선</a></li>
+    </ul>
+  </li>
+  <li><a href="#개선사항" id="markdown-toc-개선사항">개선사항</a>    <ul>
+      <li><a href="#코드리뷰" id="markdown-toc-코드리뷰">코드리뷰</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>리액트의 폼을 끌어올리기위해 웹,앱을 제작할때 알면좋은 , 배우기 좋은 기능들을 연습해보자 생각하다가 페이지네이션을 공부하기로 맘먹었다.</p>
+
+<p>혼자 스터디를 하기 적적해서 스터디를 같이할 사람들을 끌어모았고 반응이 생각보다 좋았다.
+사람이 모인김에 혼자할때와는 다른 방식으로 할겸 같은 input 에 다른 output이 나오길 기대하며 여러가지 조건들을 추가했다.</p>
+
+<p><a href="https://github.com/nonjk2/ReactStudy/blob/main/%ED%8E%98%EC%9D%B4%EC%A7%80%EB%84%A4%EC%9D%B4%EC%85%98/README.md">조건</a>들을 정리해보면</p>
+
+<ol>
+  <li>같은 데이터 (OpenAPI)</li>
+  <li>같은 폼 (디자인)</li>
+  <li>시간 제한 - 5시간 페이지 네이션 완료</li>
+</ol>
+
+<p>으로 시작해 다같은 시간에 바로 시작했다.</p>
+
+<h2 id="페이지네이션">페이지네이션</h2>
+
+<p>일단 페이지네이션이란 검색 결과를 가져올때 데이터를 일정 숫자만큼 나눠서 일부만 가져오는 기법 이라고 한다. 보통 백엔드에서도 API를 보낼때에 page번호와 갯수를 따로 요청한다.</p>
+
+<p>그럼 프론트엔드에선 페이지 번호와 알맞게 필요한 데이터만큼 요청을해서 가져오면 된다.</p>
+
+<p>백엔드의 페이지네이션에는 두가지 방법이있는데 , 각각 <code class="language-plaintext highlighter-rouge">Offset-based 페이징</code> ,<code class="language-plaintext highlighter-rouge">Cursor-based 페이징</code> 이라고 한다 offest-base 페이징 같은 경우</p>
+
+<p>간단히 설명하면 <code class="language-plaintext highlighter-rouge">Offset-based 페이징</code> 같은경우 페이지번호와 페이지당 개수를 요청받아
+db의 저장된 순서대로 1~50 51 ~100 이렇게 가져오는 방법이다
+제일 기본적인 방법이고 만약에 새게시물이나 상품같은 새 데이터가 추가되면 데이터 베이스의 번호 순서가 바뀌어 요즘 방식과는 잘 안맞아 묻힌 방식이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Cursor-based 페이징</code> 같은 경우에는 처음 50개를 가져오면 마지막번호나 모든 정보에 고유아이디를 넘겨서 받는다. 요청param에 cursor를 넘겨 그 이후부터 받는 방법이다. 요즘은 인피니티 스크롤이라던가 다른 많은 페이징 기법때문에 이방법을 매우 선호한다.</p>
+
+<p>우리는 하지만 고정된 10000개의 데이터를 핸들링하기때문에 <code class="language-plaintext highlighter-rouge">Offset-based 페이징</code> 방법으로 했다. <del>openAPI ㅈㄴ 찾기힘듬</del></p>
+
+<h2 id="힘들었던상황">힘들었던상황</h2>
+
+<p><strong>첫번째</strong>로 이미지 로딩속도가 있겠다. 안그래도 이미지를 받아오는데 시간이 많이 걸렸는데 이미지 크기가 크고 , gif도 있어서 한페이지당 이미지를 다로드하는데에 시간이 걸렸다 (이래서 Next 넥스트 하나부다)</p>
+
+<p>암튼 전페이지로가면 캐시된(아무 옵션이 없으면 브라우저 캐시정책으로 보통 30일동안 캐시됨) 이미지덕분에 엄청 빨리 로드되지만 처음가본 페이지에 가면 fetch와 이미지 로드속도가 많이걸렸다</p>
+
+<h3 id="이미지-그나마-개선">이미지 그나마 개선</h3>
+
+<p>음 이러한 상황들을 어떻게 할까 고민하다가 급한 한국인의 마음으로 사용자의 입장에서 생각을 한번해보고 개선하였다 fetch할때 로딩 한번주고 , 이미지를 불러올때 로딩을 한번 더주고 눈에 보이는 상황이라면 그나마 급한 한국인들의 마음을 달래주지않을까 싶어
+이런형식으로 나타내었다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// 이미지 로드</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">load</span><span class="p">,</span> <span class="nx">setLoad</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">handleImageLoad</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">setLoad</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"img_div"</span><span class="p">&gt;</span>
+  <span class="si">{</span><span class="nx">load</span> <span class="o">&amp;&amp;</span> <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"loading-overlay"</span><span class="p">&gt;</span>로딩 중...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span><span class="si">}</span>
+  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="p">=</span><span class="si">{</span><span class="nx">url</span><span class="si">}</span> <span class="na">alt</span><span class="p">=</span><span class="s">""</span> <span class="na">onLoad</span><span class="p">=</span><span class="si">{</span><span class="nx">handleImageLoad</span><span class="si">}</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+</code></pre></div></div>
+
+<p>이미지로드는 각각의 이미지 로드를 통해 시각적인 답답함을 해소해주었다.
+그리고 <a href="https://github.com/nonjk2/ReactStudy/blob/main/pageNation/src/hooks/usePageNation.js">usePageNation</a>을 통해 가져온 loading 으로 관리를 해주었다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">CatListSection</span><span class="p">&gt;</span>
+  <span class="si">{</span><span class="nx">loading</span> <span class="p">?</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">Spinner</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"loading_spinner_box"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"loading_spinner"</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">Spinner</span><span class="p">&gt;</span>
+  <span class="p">)</span> <span class="p">:</span> <span class="p">(</span>
+    <span class="nx">cats</span> <span class="o">&amp;&amp;</span>
+    <span class="nx">cats</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nc">CatListItem</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">e</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span> <span class="na">item</span><span class="p">=</span> <span class="p">/&gt;)</span>
+  <span class="p">)</span><span class="si">}</span>
+<span class="p">&lt;/</span><span class="nc">CatListSection</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p>두번째로는 새로고침이다 페이지네이션같은경우 예를들어 5페이지를 갔을때 5페이지 그대로 페이지가 이동된채로 새로고침이 되어있어야하는데 내가 짯던 코드는 새로고침을 했을때에는 1페이지 초기화면으로 페이지가 리다이렉트 되었다.</p>
+
+<h3 id="새로고침-개선">새로고침 개선</h3>
+
+<p>그래서 선택했던 방법이 라우팅이다</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">Routes</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/"</span> <span class="na">element</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">Layout</span> <span class="p">/&gt;</span><span class="si">}</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/:page"</span> <span class="na">element</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">CatList</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">index</span> <span class="na">element</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">CatList</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nc">Route</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nc">Routes</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">navigate</span> <span class="o">=</span> <span class="nx">useNavigate</span><span class="p">();</span>
+
+<span class="kd">const</span> <span class="nx">handleNextPageGroup</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">nextPageGroupStart</span> <span class="o">=</span> <span class="nx">currentPageGroup</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="nx">navigate</span><span class="p">(</span><span class="s2">`/</span><span class="p">${</span><span class="nx">nextPageGroupStart</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">handlePrevPageGroup</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">prevPageGroupStart</span> <span class="o">=</span> <span class="p">(</span><span class="nx">currentPageGroup</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="p">;</span>
+  <span class="nx">navigate</span><span class="p">(</span><span class="s2">`/</span><span class="p">${</span><span class="nx">prevPageGroupStart</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="c1">///elements</span>
+<span class="p">{</span>
+  <span class="nx">pageNumbers</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">pageNumber</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">pageNumber</span> <span class="o">&gt;</span> <span class="nx">TotalPagesPerPage</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"pageLinkNumberCont"</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">pageNumber</span><span class="si">}</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">to</span><span class="p">=</span><span class="si">{</span><span class="s2">`/</span><span class="p">${</span><span class="nx">pageNumber</span><span class="p">}</span><span class="s2">`</span><span class="si">}</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">span</span>
+            <span class="na">style</span><span class="p">=</span>
+          <span class="p">&gt;</span>
+            <span class="si">{</span><span class="nx">pageNumber</span><span class="si">}</span>
+          <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>다이나믹 라우팅을 활용하여서 페이지 번호를 파람으로 넘기고
+버튼을 누르면 링크를 통해 페이지 번호가 넘어가게 했다
+다음 이전 버튼은 페이지 그룹 State 를 넘겼다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">npm run dev</code>를 통해 로컬에서 확인했을때 새로고침이 무난히 잘 실행 되었는데 여기서 문제가 하나 더 발생했다 vercel에 배포를 하였을때 새로고침을하면 <strong>404 not found</strong>가 떳다.</p>
+
+<p>무슨일인지 한참을 알아보다가 SPA에서는 모든 경로가 동일한 HTML 파일을 가리키지만 새로고침이나 직접 URL입력 등을 통해 서버에 요청이가면 해당 경로의 파일을 찾지 못한단다…</p>
+
+<p>이걸 해결하기위해선 서버 설정을 하나의 HTML파일을 바라보게하면 된단다.</p>
+
+<p>바로 vercel.json</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"routes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"handle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filesystem"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/.*"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/index.html"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>을 root에 만들고 바로 배포를 하니 새로고침을해도 404를 바라보지않는다 ㅎㅎ</p>
+
+<h2 id="개선사항">개선사항</h2>
+
+<p>다음은 개선해야될 부분이다. 추가를 하려고하니 시간이 부족하고 이것만하자니 할게 너무많아 천천히 하나하나 해볼생각이다.</p>
+
+<ol>
+  <li>드롭다운으로 limit 설정</li>
+  <li>스타일링 grid 좀더 디테일하게</li>
+  <li>이미지 리사이징 작은크기를 받기</li>
+  <li>Nextjs 13v 으로 마이그레이션하기</li>
+</ol>
+
+<h3 id="코드리뷰">코드리뷰</h3>
+
+<p>매니저님이 친히 코드리뷰를 해주셨는데 좋은 피드백을 엄청 쉽게쉽게 많이 받을수있었다.</p>
+
+<ul>
+  <li>네트워크탭 자세히 보는법
+    <ul>
+      <li>네트워크탭 요청을 보면 html과 요청과 응답 헤더 등을 많은걸 보고 미리 확인가능</li>
+    </ul>
+  </li>
+  <li>스타일링 디테일 (grid , list , animation 등)
+    <ul>
+      <li>몇달전만해도 신입의 기준이 NEXTjs , TS 였지만 이제는 스타일링도 거의 기준이 되어간단다. <del>토스,,,,내가 뭘 잘못했습니까</del></li>
+    </ul>
+  </li>
+  <li>limit 설정
+    <ul>
+      <li>limit을 설정할수있게 드롭다운 바나 등등으로 많이 불러올수 있게 설정하면 좋겠다. 라는 피드백을 주셨다.</li>
+    </ul>
+  </li>
+  <li>시간이없어 코드의 피드백은 받지 못했지만 그저 간단한 기능인만큼 기획적인면 기능적인 면에서의 피드백을 들을 수 있어 좋았다.</li>
+</ul>
+
+<p>배포중 - <a href="https://react-study-nu.vercel.app">페이지네이션</a></p>
+
+  
+</article>
+
+
+
+  <hr class="dingbat related mb6" />
+
+
+
+
+
+
+  
+     
+
+
+  <aside class="about related mt4 mb4" role="complementary">
+    
+    
+
+<div class="author mt4">
+  
+
+  
+    
+
+
+<img
+  
+    src="https://placehold.it/128x128"
+    srcset="https://placehold.it/128x128 1x,https://placehold.it/256x256 2x"
+    
+  
+  alt="최은석"
+  class="avatar"
+  
+  width="120"
+  height="120"
+  loading="lazy"
+/>
+
+  
+
+  
+  
+  <h2  class="page-title hr-bottom">
+    About
+  </h2>
+
+  <p>어제보단 나아졌겠지 ?</p>
+
+
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/nonjk2" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:nonjk2@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+
+  </aside>
+
+
+  
+
+  
+    
+
+
+  
+
+  
+    
+
+
+  <aside class="other-projects related mb0" role="complementary">  <h2>Related Posts</h2>  <div class="columns">          <div class="column column-1-2">                  <article class="project-card">  <a href="/Study/ComputerScience/MarkdownAll" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine fallback-img">          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/Study/ComputerScience/MarkdownAll" class="flip-title">마크다운 작성 feat.markdown 익스텐션</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      내가 마크다운 작성하는법    </p>      <a class="fill-card no-hover" href="/Study/ComputerScience/MarkdownAll" tabindex="-1"><span class="sr-only">보러가기 마크다운 작성 feat.markdown 익스텐션</span></a></article>              </div>          <div class="column column-1-2">                  <article class="project-card">  <a href="/frontend/React/goodreact" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine flip-project-img">              <img      src="/assets/img/frontend/react/background.jpg"        sizes="(min-width:86em)27.5rem,(min-width:54em)22.5rem,(min-width:42em)19.5rem,38rem"    alt="리액트 컴포넌트 최적화"      width="864"  height="486"  loading="lazy"/>          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/frontend/React/goodreact" class="flip-title">리액트 컴포넌트 최적화</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      컴포넌트 최적화 (1) 해보자    </p>      <a class="fill-card no-hover" href="/frontend/React/goodreact" tabindex="-1"><span class="sr-only">보러가기 리액트 컴포넌트 최적화</span></a></article>              </div>      </div></aside>
+
+  
+
+  
+    
+
+
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Random Posts</h2>  <ul class="related-posts">          <li class="h4">  <a href="/frontend/React/lifecycle" class="flip-title"><span>React 의 생명주기</span></a>  <time class="faded fine" datetime="2023-06-24T00:00:00+09:00">2023 Jun 24</time></li>          <li class="h4">  <a href="/frontend/JavaScript/datatype" class="flip-title"><span>자바스크립트 데이터 타입</span></a>  <time class="faded fine" datetime="2023-06-14T00:00:00+09:00">2023 Jun 14</time></li>          <li class="h4">  <a href="/frontend/React/state" class="flip-title"><span>useState</span></a>  <time class="faded fine" datetime="2023-06-24T00:00:00+09:00">2023 Jun 24</time></li>      </ul></aside>
+
+  
+
+  
+    
+<aside class="comments related" role="complementary">
+  <h2 class="hr-bottom">Comments</h2>
+  
+
+<div id="disqus_thread"></div>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script>!function(w, d) {
+  if (d.getElementById("disqus_thread")) {
+    if (w.DISQUS) {
+      w.DISQUS.reset({
+        reload: true,
+        config() {
+          this.page.url = w.location.href;
+          this.page.title = d.title;
+        },
+      });
+    } else {
+      w.disqus_config = function disqusConfig() {
+        this.page.url = w.location.href;
+        this.page.title = d.title;
+      };
+      w.loadJSDeferred(d.getElementById("_hrefDisqus").href + '/embed.js');
+    }
+  }
+}(window, document);</script>
+
+
+</aside>
+
+
+  
+
+
+  
+<footer class="content" role="contentinfo">
+  <hr/>
+  
+    <p><small class="copyright">© 2021. All rights reserved.
+</small></p>
+  
+  
+    <nav class="legal"><small>
+    
+      
+      <a class="heading flip-title" href="/LICENSE/">LICENSE</a>
+      |
+    
+      
+      <a class="heading flip-title" href="/NOTICE/">NOTICE</a>
+      
+    
+    </small></nav>
+  
+  
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+  <hy-drawer
+  id="_drawer"
+  class=""
+  side="left"
+  threshold="10"
+  noscroll
+  
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+
+
+
+
+<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(79,177,186);background-image:url(/assets/img/sidebar-bg.jpeg)"></div>
+
+    <div class="sidebar-sticky">
+  <div class="sidebar-about">
+    
+      <a class="no-hover" href="/" tabindex="-1">
+        <img src="/assets/img/logo.png" class="avatar" alt="Dev.최은석" width="120" height="120" loading="lazy" />
+      </a>
+    
+    <a class="sidebar-title" href="/"><h2 class="h1">Dev.최은석</h2></a>
+    
+    
+      <p class="">
+        반갑습니다.
+
+      </p>
+    
+  </div>
+
+  <nav class="sidebar-nav heading" role="navigation">
+    <span class="sr-only"
+  >Navigation:</span
+>
+<ul>
+   
+                      
+  <li>
+    
+    <input type="checkbox" id="folder-checkbox-9" />
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/devlog/"
+        class="sidebar-nav-item"
+        
+        >devlog</a
+      >
+      
+      <button class="spread-btn" onclick="javascript:spread(9)">
+        <label id="spread-icon-9" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
+    </div>
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-wil/"
+          >WIL</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-til/"
+          >TIL</a
+        >
+      </li>
+      
+    </ul>
+     
+  </li>
+        
+  <li>
+    
+    <input type="checkbox" id="folder-checkbox-10" />
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/frontend/"
+        class="sidebar-nav-item"
+        
+        >frontend</a
+      >
+      
+      <button class="spread-btn" onclick="javascript:spread(10)">
+        <label id="spread-icon-10" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
+    </div>
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-react/"
+          >React</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-javascript/"
+          >JavaScript</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84/"
+          >기능구현</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-algorisme/"
+          >Algorism</a
+        >
+      </li>
+      
+    </ul>
+     
+  </li>
+                    
+  <li>
+    
+    <input type="checkbox" id="folder-checkbox-11" />
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/study/"
+        class="sidebar-nav-item"
+        
+        >Study</a
+      >
+      
+      <button class="spread-btn" onclick="javascript:spread(11)">
+        <label id="spread-icon-11" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
+    </div>
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-computerscience/"
+          >ComputerScience</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-other/"
+          >other</a
+        >
+      </li>
+      
+    </ul>
+     
+  </li>
+        
+</ul>
+
+  </nav>
+
+  
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/nonjk2" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:nonjk2@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+</hy-push-state>
+
+
+  <!--[if gt IE 10]><!---->
+  <script nomodule>!function(){var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())}();
+</script>
+  <script src="/assets/js/hydejack-9.1.6.js" type="module"></script>
+  <script src="/assets/js/LEGACY-hydejack-9.1.6.js" nomodule defer></script>
+  
+
+  
+  <script>!function(w, d) {
+    w.ga=w.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+    /**/
+      ga('create', 'G-43895YHF45', 'auto');
+    /**/
+
+    var pushStateEl = d.getElementById('_pushState');
+    var timeoutId;
+    pushStateEl.addEventListener('hy-push-state-load', function() {
+      w.clearTimeout(timeoutId);
+      timeoutId = w.setTimeout(function() {
+        ga('set', 'page', w.location.pathname);
+        ga('send', 'pageview');
+      }, 500);
+    });
+
+    d.addEventListener('hy--cookies-ok', function () {
+      w.ga(function(tracker) {
+        w.ga("set", "anonymizeIp", undefined);
+        localStorage && localStorage.setItem("ga--client-id", tracker.get("clientId"));
+      });
+    });
+
+    w.loadJSDeferred('https://www.google-analytics.com/analytics.js');
+  }(window, document);</script>
+
+
+  <script type="module">
+    if ('serviceWorker' in navigator) {
+      /**/
+      navigator.serviceWorker.getRegistration()
+        .then(r => r.unregister())
+        .catch(() => {});
+      /**/
+    }
+  </script>
+<!--<![endif]-->
+  
+
+
+
+<div hidden>
+  
+  <h2 class="sr-only">Templates (for web app):</h2>
+
+  <template id="_animation-template">
+  <div class="animation-main fixed-top">
+    <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+</ul></nav>
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+  <template id="_loading-template">
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+  <template id="_error-template">
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
+
+    </p>
+  </div>
+</template>
+
+  <template id="_permalink-template">
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="content-hash"></span>
+  </a>
+</template>
+
+  
+  
+    <template id="_dark-mode-template">
+  <button id="_dark-mode" class="nav-btn no-hover" >
+    <span class="sr-only">Dark Mode</span>
+    <span class="icon-brightness-contrast"></span>
+  </button>
+</template>
+
+  
+  
+</div>
+
+</body>
+</html>

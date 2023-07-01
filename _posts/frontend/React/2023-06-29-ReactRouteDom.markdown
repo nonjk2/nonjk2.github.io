@@ -122,7 +122,7 @@ false가 디폴트고 뒤로 가기 가능.
 
 :style 문법을 path 경로에 사용해도 `useParams()`로 읽을 수 있음!.
 
-yeah )
+yeah)
 
 ![Untitled](/assets/img/frontend/react/route8.png)
 

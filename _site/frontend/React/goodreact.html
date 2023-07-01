@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+
+
+
+  
+    
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>리액트 컴포넌트 최적화 | Dev.최은석</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="리액트 컴포넌트 최적화" />
+<meta name="author" content="최은석" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="description" content="컴포넌트 최적화 (1) 해보자" />
+<meta property="og:description" content="컴포넌트 최적화 (1) 해보자" />
+<link rel="canonical" href="http://localhost:4000/frontend/React/goodreact" />
+<meta property="og:url" content="http://localhost:4000/frontend/React/goodreact" />
+<meta property="og:site_name" content="Dev.최은석" />
+<meta property="og:image" content="http://localhost:4000/assets/img/frontend/react/background.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-06-29T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/img/frontend/react/background.jpg" />
+<meta property="twitter:title" content="리액트 컴포넌트 최적화" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"최은석"},"dateModified":"2023-06-29T00:00:00+09:00","datePublished":"2023-06-29T00:00:00+09:00","description":"컴포넌트 최적화 (1) 해보자","headline":"리액트 컴포넌트 최적화","image":"http://localhost:4000/assets/img/frontend/react/background.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/frontend/React/goodreact"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"최은석"},"url":"http://localhost:4000/frontend/React/goodreact"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+    <meta name="keywords" content="dev,frontend,TIL">
+  
+
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Dev.최은석">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="application-name" content="Dev.최은석">
+
+<meta name="generator" content="Hydejack v9.1.6" />
+
+
+<link rel="alternate" href="http://localhost:4000/frontend/React/goodreact" hreflang="ko-kr">
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Dev.최은석" />
+
+
+<link
+  rel="shortcut icon"
+  href="/assets/icons/favicon.ico"
+/>
+<link
+  rel="apple-touch-icon"
+  href="/assets/icons/icon-192x192.png"
+/>
+
+<link rel="manifest" href="/assets/site.webmanifest" />
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" /><link rel="dns-prefetch" href="https://fonts.gstatic.com" /> 
+<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+
+<link
+  rel="preload"
+  href="/assets/img/swipe.svg"
+  as="image"
+  id="_hrefSwipeSVG"
+/>
+
+<link
+  rel="dns-prefetch"
+  href="/assets/js/search-worker-9.1.6.js"
+  as="worker"
+  id="_hrefSearch"
+/>
+  
+<link
+  rel="dns-prefetch"
+  href="https://deveundol.disqus.com"
+  id="_hrefDisqus"
+/>
+
+<!-- ... -->
+
+<!-- For sidebar folder -->
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+<script src="/assets/js/sidebar-folder.js"></script>
+
+
+<script>!function(r,c){"use strict";function a(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=c.createElement("script"),e=(n.src=e,t&&a(n,"load",t,{once:!0}),c.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=c.createElement("script");function o(){r._loaded=!0,t&&a(n,"load",t,{once:!0});var e=c.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():a(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){a(c.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}}(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+!function(w) {
+  w._baseURL = '/';
+  w._publicPath = '/assets/js/';
+  w._noPushState = false;
+  w._noDrawer = false;
+  w._noNavbar = ture;
+  w._noToc = false;
+  w._noSearch = true;
+  w._advertise = false;
+  w._search = {
+    DATA_URL: '/assets/sitedata.json?no-cache',
+    STORAGE_KEY: 'mini-search/',
+    INDEX_KEY: 'index--2023-07-01T13:25:41+09:00',
+  };
+  w._clapButton = true;
+}(window);</script>
+
+
+<script async src="/assets/bower_components/MathJax/es5/tex-mml-chtml.js" id="_MathJax"></script>
+
+
+<!--[if gt IE 8]><!---->
+
+  
+
+
+
+
+<link rel="stylesheet" href="/assets/css/hydejack-9.1.6.css" id="_stylePreload">
+<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans:400,400i,700,700i&display=swap" id="_fontsPreload">
+
+
+
+  <style id="_pageStyle">
+
+html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);--accent-color-highlight: rgba(79,177,186,0.1);--accent-color-darkened: #409ba3;--theme-color: rgb(8,46,57);--dark-mode-body-bg: #282f31;--dark-mode-border-color: #343c3f}
+
+</style>
+
+
+<!--<![endif]-->
+
+
+
+
+
+</head>
+
+<body class="no-break-layout">
+  
+<script>
+  window._sunrise = 6;
+  window._sunset =  18;
+  !function(e,s){var d="light-mode",o="dark-mode",a=(new Date).getHours();"matchMedia"in e&&e.matchMedia("(prefers-color-scheme)")||(e=(a=a<=e._sunrise||a>=e._sunset?o:d)==o?d:o,s.body.classList.add(a),s.body.classList.remove(e))}(window,document);
+
+</script>
+
+
+
+<hy-push-state
+  id="_pushState"
+  replace-selector="#_main"
+  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
+  script-selector="script"
+  duration="500"
+  hashchange
+>
+  
+  
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only"
+      >Jump to:</span
+    >
+    <div class="nav-btn-bar">
+      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
+        <span class="sr-only"
+          >Navigation</span
+        >
+        <span class="icon-menu"></span>
+      </a>
+      <div class="nav-span"></div>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+  <main
+  id="_main"
+  class="content layout-post"
+  role="main"
+>
+  <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+    <li><a href="/">home</a></li>
+    
+      <li>
+        
+          <span>/</span>
+          
+          
+          <a href="/frontend/">frontend</a>
+        
+      </li>
+    
+      <li>
+        
+          <span>/</span>
+          
+          
+          <a href="/frontend/React/">React</a>
+        
+      </li>
+    
+      <li>
+        
+          <span>/</span>
+          <span>goodreact</span>
+        
+      </li>
+    
+  
+</ul></nav>
+  
+
+
+
+
+
+
+
+
+
+
+<article id="post-frontend-React-리액트 컴포넌트 최적화" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        리액트 컴포넌트 최적화
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2023-06-29T00:00:00+09:00">2023 Jun 29</time> in <a href="/frontend/" class="flip-title">frontend</a> on <a href="/tag-react/" class="flip-title">React</a>, <a href="/tag-til/" class="flip-title">TIL</a>
+      </span>
+      
+        
+      
+    </div>
+
+    
+    
+      
+        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
+          
+
+
+<img
+  
+    src="/assets/img/frontend/react/background.jpg"
+    
+    
+  
+  alt="리액트 컴포넌트 최적화"
+  
+  
+  width="864"
+  height="486"
+  loading="lazy"
+/>
+
+        </div>
+      
+      
+    
+
+    
+
+
+
+  
+    <p class="note-sm" >
+      컴포넌트 최적화 (1) 해보자
+
+    </p>
+  
+
+
+  </header>
+
+  
+    <!--more-->
+
+<h1 class="no_toc" id="컴포넌트-최적화-1">컴포넌트 최적화 (1)</h1>
+
+<ul class="large-only" id="markdown-toc">
+  <li><a href="#컴포넌트-최적화의-중요성" id="markdown-toc-컴포넌트-최적화의-중요성">컴포넌트 최적화의 중요성</a></li>
+  <li><a href="#성능-개선의-장점" id="markdown-toc-성능-개선의-장점">성능 개선의 장점</a></li>
+  <li><a href="#컴포넌트-최적화-방법" id="markdown-toc-컴포넌트-최적화-방법">컴포넌트 최적화 방법</a>    <ul>
+      <li><a href="#reactmemo를-활용한-컴포넌트-메모이제이션" id="markdown-toc-reactmemo를-활용한-컴포넌트-메모이제이션">React.memo를 활용한 컴포넌트 메모이제이션</a>        <ul>
+          <li><a href="#그럼-어떨때-쓰일까-보통" id="markdown-toc-그럼-어떨때-쓰일까-보통">그럼 어떨때 쓰일까 보통</a></li>
+        </ul>
+      </li>
+      <li><a href="#usememo" id="markdown-toc-usememo"><code class="language-plaintext highlighter-rouge">useMemo</code></a></li>
+      <li><a href="#usecallback" id="markdown-toc-usecallback">useCallback</a></li>
+    </ul>
+  </li>
+  <li><a href="#근본적인-최적화" id="markdown-toc-근본적인-최적화">근본적인 최적화</a>    <ul>
+      <li><a href="#컴포넌트-분할" id="markdown-toc-컴포넌트-분할">컴포넌트 분할</a></li>
+      <li><a href="#조건부-렌더링" id="markdown-toc-조건부-렌더링">조건부 렌더링</a></li>
+      <li><a href="#불변-데이터-사용" id="markdown-toc-불변-데이터-사용">불변 데이터 사용</a></li>
+      <li><a href="#리스트의-키사용" id="markdown-toc-리스트의-키사용">리스트의 키사용</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="컴포넌트-최적화의-중요성">컴포넌트 최적화의 중요성</h2>
+
+<p>리액트의 컴포넌트 성능 최적화에대해 기술하려고 한다.</p>
+
+<ul>
+  <li>컴포넌트 최적화는 앱의 성능을 올리는데에 중요한 과정이다. 특히 대형 프로젝트나 복잡한 UI 구조를 가진 웹,앱에서는 컴포넌트의 효율적인 렌더링이 클라이언트한테 엄청난 영향을 끼친다. 특히 한국인한텐,,</li>
+</ul>
+
+<p>자 성능 최적화를 통해 얻을수 있는 기대값을 살펴보자</p>
+
+<h2 id="성능-개선의-장점">성능 개선의 장점</h2>
+
+<ul>
+  <li>
+    <p><strong>향상된 사용자 경험</strong></p>
+
+    <ul>
+      <li>사용자 경험(UX)은 클라이언트가 페이지를 볼때의 느낌 이런것을 뜻하는데 그러한 느낌이 개선되었다 볼수있다. 이러한 느낌을 개선은 페이지 로딩에서 나오기때문이다.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>자원 사용의 효율성</strong></p>
+
+    <ul>
+      <li>쓸대없는 랜더링 , 메모리사용량 감소 등을 기대해볼수있다.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>유지 관리의 용이성</strong></p>
+
+    <ul>
+      <li>최적화된 코드는 가독성이 유리하고 유지보수가 좀더 쉬워진다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="컴포넌트-최적화-방법">컴포넌트 최적화 방법</h2>
+
+<p>자 그럼 컴포넌트단위에서 할 수 있는 최적화 방법을 알아보자
+일단 컴포넌트가 리랜더 되는 조건은 여러가지다 (더있으면 말해주세요)</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">state</code>가 변경되었을때</li>
+  <li><code class="language-plaintext highlighter-rouge">props</code>가 변경되었을때</li>
+  <li>부모 컴포넌트가 렌더링될 때</li>
+  <li><code class="language-plaintext highlighter-rouge">ContextAPI</code> 값이 변경될 때</li>
+  <li><code class="language-plaintext highlighter-rouge">forceUpdate</code> 함수 호출시</li>
+  <li>그외 <code class="language-plaintext highlighter-rouge">useEffect</code> 같은 hook 들의 의존성배열들</li>
+</ul>
+
+<p>이때에 쓸대없는 리랜더링을 방지해 성능을 올려보자</p>
+
+<h3 id="reactmemo를-활용한-컴포넌트-메모이제이션">React.memo를 활용한 컴포넌트 메모이제이션</h3>
+
+<p><code class="language-plaintext highlighter-rouge">React.memo</code>란 고차 컴포넌트다.
+컴포넌트가 랜더링 될때 전과 동일한 <code class="language-plaintext highlighter-rouge">props</code>로 결과를 랜더한다면 <code class="language-plaintext highlighter-rouge">React.memo</code>를 호출하고 기억해서 렌더링 하지않고 마지막으로 렌더링 된 결과를 재사용 한다.</p>
+
+<p>여기서 몇가지 조건들을 살펴보자</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">React.memo</code>는 <code class="language-plaintext highlighter-rouge">props</code>의 변화에만 영향을 준다.</li>
+  <li>부모 컴포넌트 구현에 <code class="language-plaintext highlighter-rouge">useState</code>, <code class="language-plaintext highlighter-rouge">useReduce</code> ,<code class="language-plaintext highlighter-rouge">useContext</code> 훅을 사용한다면 똑같이 <code class="language-plaintext highlighter-rouge">state</code>나 <code class="language-plaintext highlighter-rouge">context</code>가 변할때 다시 랜더된다.</li>
+  <li>
+    <p>props가 복잡한 구조를 가지고 있으면 안됨, props에 대해 얕은 비교만을 수행한단다. 그럴땐 비교함수를 쓸수 있는데</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">MyComponent</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="cm">/* props를 사용하여 렌더링 */</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">areEqual</span><span class="p">(</span><span class="nx">prevProps</span><span class="p">,</span> <span class="nx">nextProps</span><span class="p">)</span> <span class="p">{</span>
+  <span class="cm">/*
+nextProps가 prevProps와 동일한 값을 가지면 true를 반환하고, 그렇지 않다면 false를 반환
+*/</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">React</span><span class="p">.</span><span class="nx">memo</span><span class="p">(</span><span class="nx">MyComponent</span><span class="p">,</span> <span class="nx">areEqual</span><span class="p">);</span>
+</code></pre></div>    </div>
+
+    <p>두 번째 인자로 비교함수를 넣어주면 된다.</p>
+  </li>
+</ul>
+
+<h4 id="그럼-어떨때-쓰일까-보통">그럼 어떨때 쓰일까 보통</h4>
+
+<p>React.memo 는 보통 <strong>랜더링 비용이 높고 props의 변경이 자주 발생하지 않는 컴포넌트에 사용된다</strong> 주로 리스트나 테이블에 많이 쓰이는데 예제를 살펴보자</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">ItemElement</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">item</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err">;
+</span><span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">MemoizedItemElement</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">memo</span><span class="p">(</span><span class="nx">ItemElement</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">MyList</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">list</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">list</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">MemoizedItemElement</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span> <span class="nx">item</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="p">))}</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">MyList</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>보통 리스트 아이템을 보여주는데 리랜더링을 하는데 시간이 걸리는데 이러한 구조를 가진 컴포넌트는 각 item이 변하지않으면 <code class="language-plaintext highlighter-rouge">ItemElement는</code> 리렌더가 되지않는다.</p>
+
+<p>근데 여기서 의문점 “<code class="language-plaintext highlighter-rouge">React.memo</code>는 props에 대해 얕은 비교를 수행한다고 했는데,,,?”</p>
+
+<p>만약 복잡한 객체 구조를 가진 props가 있을경우 동작하지 않을 수도 있다.
+내부의 값이 안바뀌어도 객체의 참조 자체가 바뀌면 React.memo는 컴포넌트를 다시 렌더링 하게 된다.</p>
+
+<h3 id="usememo"><code class="language-plaintext highlighter-rouge">useMemo</code></h3>
+
+<p>위와 같은 상황을 해결하기위해선 불필요한 객체,함수의 재생성을 <code class="language-plaintext highlighter-rouge">useMemo</code>나 useCallback을 통하여 방지할 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Parent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">item</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Test</span><span class="dl">"</span><span class="p">,</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">123</span><span class="dl">"</span> <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span><span class="o">&gt;</span><span class="nx">Increase</span> <span class="nx">Count</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">MemoizedChild</span> <span class="nx">item</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>위 처럼 코드를 짤시 <code class="language-plaintext highlighter-rouge">item</code>이라는 객체가 랜더링 될때마다 새로 생성된다.</p>
+
+<p>또 그럴때마다 <code class="language-plaintext highlighter-rouge">React.memo</code>된 <code class="language-plaintext highlighter-rouge">MemoziedChild</code> 또한 리랜더링이 되고,,</p>
+
+<p>이것을 방지하려고 쓰이는 것이 <code class="language-plaintext highlighter-rouge">useMemo</code>다</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Parent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">item</span> <span class="o">=</span> <span class="s2">`useMemo`</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">({</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Test</span><span class="dl">"</span><span class="p">,</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">123</span><span class="dl">"</span> <span class="p">}),</span> <span class="p">[]);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>Increase Count<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span>      <span class="err">&lt;</span><span class="na">MemoizedChild</span> <span class="na">item</span><span class="p">=</span><span class="si">{</span><span class="nx">item</span><span class="si">}</span> <span class="p">/&gt;</span>
+ item=<span class="si">{</span><span class="nx">item</span><span class="si">}</span> /&gt;
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>이렇게 하면 <code class="language-plaintext highlighter-rouge">items</code>의 참조가 변경되지 않기 때문에 <code class="language-plaintext highlighter-rouge">MemoizedChild</code> 는 리렌더링이 되지 않는다.</p>
+
+<h3 id="usecallback">useCallback</h3>
+
+<p><code class="language-plaintext highlighter-rouge">useCallback</code>은 <code class="language-plaintext highlighter-rouge">useMemo</code>랑 비슷하지만 <code class="language-plaintext highlighter-rouge">useMemo</code>는 값을 메모이제이션하고 useCallback은 함수의 재생성을 방지한다. useCallback 또한 랜더 사이클에서 함수의 재생성을 방지해서 성능을 향상시킬수 있다.</p>
+
+<p>백문이불여일견 코드보자</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Child</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">memo</span><span class="p">(({</span> <span class="nx">onClick</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">onClick</span><span class="si">}</span><span class="p">&gt;</span>Click Me!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;;</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">Parent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">incrementCount</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Child</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">incrementCount</span><span class="si">}</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Count: <span class="si">{</span><span class="nx">count</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">useMemo</code>때랑도 비슷하게 <code class="language-plaintext highlighter-rouge">Parent</code>가 랜더될때마다 <code class="language-plaintext highlighter-rouge">incremenCount</code> 함수가 새로 생성된다. 이때문에 props로 함수를 받아가는 Child 컴포넌트는 불필요하게 리렌더가 된다. (<code class="language-plaintext highlighter-rouge">parent</code>가 리랜더 될때마다 <code class="language-plaintext highlighter-rouge">incremenCount</code>는 매번 새로운 참조로 간주)</p>
+
+<p><code class="language-plaintext highlighter-rouge">useCallback</code> 사용 예시를 보자</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Child</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">memo</span><span class="p">(({</span> <span class="nx">onClick</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">onClick</span><span class="si">}</span><span class="p">&gt;</span>Click Me!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;;</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">Parent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">incrementCount</span> <span class="o">=</span> <span class="nx">useCallback</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">count</span><span class="p">]);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Child</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">incrementCount</span><span class="si">}</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Count: <span class="si">{</span><span class="nx">count</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>요로코롬 쓰면 이제 <code class="language-plaintext highlighter-rouge">incrementCount</code>함수는 <code class="language-plaintext highlighter-rouge">count</code> 상태 값이 변경 될 때만 재생성 된다. 위와같이 <code class="language-plaintext highlighter-rouge">Parent</code>가 리랜더 되도 Child는 쓸데없이 리렌더가 되지않는다.</p>
+
+<h2 id="근본적인-최적화">근본적인 최적화</h2>
+
+<p>위에는 React의 기능들을 통해 최적화를 하였지만 사실 근본적인 최적화를 하는것이 중요하다. 위의 최적화를 하려면 근본적인 최적화를 먼저 해야만 사용이 가능하다.</p>
+
+<p>그중 몇가지 방법이있는데</p>
+
+<h3 id="컴포넌트-분할">컴포넌트 분할</h3>
+
+<p>컴포넌트 분할을 하자 한파일에 하나로 몰아넣지말자 … 가독성이 좋지 않을뿐더러
+보수 유지도 힘들고 각각 랜더를 관리하기도 힘들다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">UserProfile</span><span class="p">({</span> <span class="nx">user</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>User Profile<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Name: <span class="si">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Email: <span class="si">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">email</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Address: <span class="si">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">address</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="cm">/* ...기타 사용자 정보 렌더링... */</span><span class="si">}</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>User Posts<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="cm">/* 사용자 게시글 렌더링... */</span><span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이런식보단</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">UserInfo</span><span class="p">({</span> <span class="nx">user</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>User Profile<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Name: <span class="si">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Email: <span class="si">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">email</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Address: <span class="si">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">address</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="cm">/* ...기타 사용자 정보 렌더링... */</span><span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">UserPosts</span><span class="p">({</span> <span class="nx">user</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>User Posts<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="cm">/* 사용자 게시글 렌더링... */</span><span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">UserProfile</span><span class="p">({</span> <span class="nx">user</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">UserInfo</span> <span class="na">user</span><span class="p">=</span><span class="si">{</span><span class="nx">user</span><span class="si">}</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nc">UserPosts</span> <span class="na">user</span><span class="p">=</span><span class="si">{</span><span class="nx">user</span><span class="si">}</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이런식으로 나눠주어야 추후 랜더관리도 쉬워진다 예를들면 <code class="language-plaintext highlighter-rouge">Info</code>나 <code class="language-plaintext highlighter-rouge">Post</code>가 변경되면 해당하는 컴포넌트만 리렌더하면 되니까 성능 최적화에도 도움이 된다.</p>
+
+<h3 id="조건부-렌더링">조건부 렌더링</h3>
+
+<p>이것 또한 최적화에 도움이된다. 필요할 때만 컴포넌트를 렌더링 하도록 하는것
+백문이불여일견</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">WelcomeMessage</span><span class="p">({</span> <span class="nx">isLoggedIn</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">isLoggedIn</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">Welcome back!</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Please sign up.</span><span class="dl">"</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>조건부 렌더링은 <strong>논리 연산자</strong>(<code class="language-plaintext highlighter-rouge">&amp;&amp;, ||</code>)와 <strong>삼항 연산자</strong>(<code class="language-plaintext highlighter-rouge">condition ? true : false</code>)를 사용하여 한 줄로도 표현할 수 있다.</p>
+
+<h3 id="불변-데이터-사용">불변 데이터 사용</h3>
+
+<p>JavaScript의 기본 데이터 타입인 <strong>원시 타입</strong>(<code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">number</code>, <code class="language-plaintext highlighter-rouge">boolean</code>, <code class="language-plaintext highlighter-rouge">null</code>, <code class="language-plaintext highlighter-rouge">undefined</code>, <code class="language-plaintext highlighter-rouge">symbol</code>)은 자체적으로 불변이다.</p>
+
+<blockquote>
+  <p>그러므로 얘내들을 변경하려고 하면 사실 새로운 값을 생성한다.</p>
+
+  <p>하지만 객체와 배열을 보자 얘내같은 참조타입은 가변적이다.
+안쪽의 값을 변경할수있기때문에 불변성을 유지하려면 조심히해야한다.</p>
+</blockquote>
+
+<p>새객체 , 새배열을 만들자</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">eun</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">eun</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+<span class="p">};</span>
+<span class="kd">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+
+<span class="kd">const</span> <span class="nx">updatedEun</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">...</span><span class="nx">eun</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">updatedNumbers</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">numbers</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span> <span class="c1">// [1, 2, 3, 4]</span>
+</code></pre></div></div>
+
+<h3 id="리스트의-키사용">리스트의 키사용</h3>
+
+<p>요즘은 필수적으로 키를사용하지만 이것또한 랜더링을 수월하게 하는데 한몫을 한다.
+React는 이 key를 보고 어떤 것을 업뎃을 해야하는지 본다. 꼭 고유Key를 넣어주자</p>
+
+<p>그 외에 좋은 코드들을 사용해서 쓸대없는 리랜더링을 막을 수 있는 방법은 여러가지다.</p>
+
+<p>다음은 최적화에대해 좀더 자세하게 적어보려한다.</p>
+
+  
+</article>
+
+
+
+  <hr class="dingbat related mb6" />
+
+
+
+
+
+
+  
+     
+
+
+  <aside class="about related mt4 mb4" role="complementary">
+    
+    
+
+<div class="author mt4">
+  
+
+  
+    
+
+
+<img
+  
+    src="https://placehold.it/128x128"
+    srcset="https://placehold.it/128x128 1x,https://placehold.it/256x256 2x"
+    
+  
+  alt="최은석"
+  class="avatar"
+  
+  width="120"
+  height="120"
+  loading="lazy"
+/>
+
+  
+
+  
+  
+  <h2  class="page-title hr-bottom">
+    About
+  </h2>
+
+  <p>어제보단 나아졌겠지 ?</p>
+
+
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/nonjk2" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:nonjk2@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+
+  </aside>
+
+
+  
+
+  
+    
+
+
+  
+
+  
+    
+
+
+  <aside class="other-projects related mb0" role="complementary">  <h2>Related Posts</h2>  <div class="columns">          <div class="column column-1-2">                  <article class="project-card">  <a href="/Study/ComputerScience/MarkdownAll" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine fallback-img">          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/Study/ComputerScience/MarkdownAll" class="flip-title">마크다운 작성 feat.markdown 익스텐션</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      내가 마크다운 작성하는법    </p>      <a class="fill-card no-hover" href="/Study/ComputerScience/MarkdownAll" tabindex="-1"><span class="sr-only">보러가기 마크다운 작성 feat.markdown 익스텐션</span></a></article>              </div>          <div class="column column-1-2">                  <article class="project-card">  <a href="/frontend/React/ReactrouterDom" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine flip-project-img">              <img      src="/assets/img/frontend/react/ReactrouterDom.png"        sizes="(min-width:86em)27.5rem,(min-width:54em)22.5rem,(min-width:42em)19.5rem,38rem"    alt="React Router Dom"      width="864"  height="486"  loading="lazy"/>          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/frontend/React/ReactrouterDom" class="flip-title">React Router Dom</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      React Router Dom 을 알아봅시다잉    </p>      <a class="fill-card no-hover" href="/frontend/React/ReactrouterDom" tabindex="-1"><span class="sr-only">보러가기 React Router Dom</span></a></article>              </div>      </div></aside>
+
+  
+
+  
+    
+
+
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Random Posts</h2>  <ul class="related-posts">          <li class="h4">  <a href="/Study/ComputerScience/OSI7" class="flip-title"><span>OSI 7계층</span></a>  <time class="faded fine" datetime="2023-06-19T00:00:00+09:00">2023 Jun 19</time></li>          <li class="h4">  <a href="/frontend/React/lifecycle" class="flip-title"><span>React 의 생명주기</span></a>  <time class="faded fine" datetime="2023-06-24T00:00:00+09:00">2023 Jun 24</time></li>          <li class="h4">  <a href="/frontend/React/virtualdom" class="flip-title"><span>React Virtual DOM</span></a>  <time class="faded fine" datetime="2023-06-23T00:00:00+09:00">2023 Jun 23</time></li>      </ul></aside>
+
+  
+
+  
+    
+<aside class="comments related" role="complementary">
+  <h2 class="hr-bottom">Comments</h2>
+  
+
+<div id="disqus_thread"></div>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script>!function(w, d) {
+  if (d.getElementById("disqus_thread")) {
+    if (w.DISQUS) {
+      w.DISQUS.reset({
+        reload: true,
+        config() {
+          this.page.url = w.location.href;
+          this.page.title = d.title;
+        },
+      });
+    } else {
+      w.disqus_config = function disqusConfig() {
+        this.page.url = w.location.href;
+        this.page.title = d.title;
+      };
+      w.loadJSDeferred(d.getElementById("_hrefDisqus").href + '/embed.js');
+    }
+  }
+}(window, document);</script>
+
+
+</aside>
+
+
+  
+
+
+  
+<footer class="content" role="contentinfo">
+  <hr/>
+  
+    <p><small class="copyright">© 2021. All rights reserved.
+</small></p>
+  
+  
+    <nav class="legal"><small>
+    
+      
+      <a class="heading flip-title" href="/LICENSE/">LICENSE</a>
+      |
+    
+      
+      <a class="heading flip-title" href="/NOTICE/">NOTICE</a>
+      
+    
+    </small></nav>
+  
+  
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+  <hy-drawer
+  id="_drawer"
+  class=""
+  side="left"
+  threshold="10"
+  noscroll
+  
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+
+
+
+
+<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(79,177,186);background-image:url(/assets/img/sidebar-bg.jpeg)"></div>
+
+    <div class="sidebar-sticky">
+  <div class="sidebar-about">
+    
+      <a class="no-hover" href="/" tabindex="-1">
+        <img src="/assets/img/logo.png" class="avatar" alt="Dev.최은석" width="120" height="120" loading="lazy" />
+      </a>
+    
+    <a class="sidebar-title" href="/"><h2 class="h1">Dev.최은석</h2></a>
+    
+    
+      <p class="">
+        반갑습니다.
+
+      </p>
+    
+  </div>
+
+  <nav class="sidebar-nav heading" role="navigation">
+    <span class="sr-only"
+  >Navigation:</span
+>
+<ul>
+   
+                      
+  <li>
+    
+    <input type="checkbox" id="folder-checkbox-9" />
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/devlog/"
+        class="sidebar-nav-item"
+        
+        >devlog</a
+      >
+      
+      <button class="spread-btn" onclick="javascript:spread(9)">
+        <label id="spread-icon-9" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
+    </div>
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-wil/"
+          >WIL</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-til/"
+          >TIL</a
+        >
+      </li>
+      
+    </ul>
+     
+  </li>
+        
+  <li>
+    
+    <input type="checkbox" id="folder-checkbox-10" />
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/frontend/"
+        class="sidebar-nav-item"
+        
+        >frontend</a
+      >
+      
+      <button class="spread-btn" onclick="javascript:spread(10)">
+        <label id="spread-icon-10" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
+    </div>
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-react/"
+          >React</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-javascript/"
+          >JavaScript</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84/"
+          >기능구현</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-algorisme/"
+          >Algorism</a
+        >
+      </li>
+      
+    </ul>
+     
+  </li>
+                    
+  <li>
+    
+    <input type="checkbox" id="folder-checkbox-11" />
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/study/"
+        class="sidebar-nav-item"
+        
+        >Study</a
+      >
+      
+      <button class="spread-btn" onclick="javascript:spread(11)">
+        <label id="spread-icon-11" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
+    </div>
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-computerscience/"
+          >ComputerScience</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-other/"
+          >other</a
+        >
+      </li>
+      
+    </ul>
+     
+  </li>
+        
+</ul>
+
+  </nav>
+
+  
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/nonjk2" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:nonjk2@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+</hy-push-state>
+
+
+  <!--[if gt IE 10]><!---->
+  <script nomodule>!function(){var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())}();
+</script>
+  <script src="/assets/js/hydejack-9.1.6.js" type="module"></script>
+  <script src="/assets/js/LEGACY-hydejack-9.1.6.js" nomodule defer></script>
+  
+
+  
+  <script>!function(w, d) {
+    w.ga=w.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+    /**/
+      ga('create', 'G-43895YHF45', 'auto');
+    /**/
+
+    var pushStateEl = d.getElementById('_pushState');
+    var timeoutId;
+    pushStateEl.addEventListener('hy-push-state-load', function() {
+      w.clearTimeout(timeoutId);
+      timeoutId = w.setTimeout(function() {
+        ga('set', 'page', w.location.pathname);
+        ga('send', 'pageview');
+      }, 500);
+    });
+
+    d.addEventListener('hy--cookies-ok', function () {
+      w.ga(function(tracker) {
+        w.ga("set", "anonymizeIp", undefined);
+        localStorage && localStorage.setItem("ga--client-id", tracker.get("clientId"));
+      });
+    });
+
+    w.loadJSDeferred('https://www.google-analytics.com/analytics.js');
+  }(window, document);</script>
+
+
+  <script type="module">
+    if ('serviceWorker' in navigator) {
+      /**/
+      navigator.serviceWorker.getRegistration()
+        .then(r => r.unregister())
+        .catch(() => {});
+      /**/
+    }
+  </script>
+<!--<![endif]-->
+  
+
+
+
+<div hidden>
+  
+  <h2 class="sr-only">Templates (for web app):</h2>
+
+  <template id="_animation-template">
+  <div class="animation-main fixed-top">
+    <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+</ul></nav>
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+  <template id="_loading-template">
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+  <template id="_error-template">
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
+
+    </p>
+  </div>
+</template>
+
+  <template id="_permalink-template">
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="content-hash"></span>
+  </a>
+</template>
+
+  
+  
+    <template id="_dark-mode-template">
+  <button id="_dark-mode" class="nav-btn no-hover" >
+    <span class="sr-only">Dark Mode</span>
+    <span class="icon-brightness-contrast"></span>
+  </button>
+</template>
+
+  
+  
+</div>
+
+</body>
+</html>
