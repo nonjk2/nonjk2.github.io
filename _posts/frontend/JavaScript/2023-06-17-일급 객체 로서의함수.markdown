@@ -14,7 +14,7 @@ permalink: frontend/JavaScript/func
 {:.no_toc}
 
 * this list will be replaced by the toc
-{:toc .large-only}
+{:toc}
 ---
 
 자바스크립트에서 함수는 일급 객체(First-Class Object). 그래서 함수를 객체처럼 여러가지 방식으로 다룰 수 있다.

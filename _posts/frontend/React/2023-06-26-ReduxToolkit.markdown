@@ -14,7 +14,7 @@ permalink: frontend/React/reduxtoolkit
 {:.no_toc}
 
 * this list will be replaced by the toc
-{:toc .large-only}
+{:toc}
 
 # Redux-toolkit
 
@@ -196,13 +196,28 @@ const todosSlice = createSlice({
 
 다음은 그냥 To Do list redux 올려야겠다.
 
+
+### 그외에
+
+`redux-thunk`
+함수 형태의 액션을 디스패치할 수 있게 해주는 미들웨어. 이 함수 내에서는 비동기 작업을 수행하고, 작업이 끝나면 새로운 액션을 디스패치할 수 있다.
+
+`redux-saga`
+ 제너레이터 함수를 이용하여 비동기 작업을 더 세밀하게 제어할 수 있게 해주는 미들웨어. 복잡한 비동기 작업 흐름을 관리하는데 유용하다.
+
+`redux-promise`
+ Promise를 반환하는 액션을 디스패치할 수 있게 해주는 미들웨어. Promise가 resolve되면, 해당 결과를 payload로 가지는 새로운 액션을 디스패치한다.
+
+`redux-persist`
+
+  Redux 스토어의 상태를 지속적으로 유지하기 위한 라이브러리. 웹 애플리케이션을 새로 고침하거나 재시작할 때, Redux 스토어의 상태가 초기화되는 것을 방지하기 위해 사용한다
 ## 요약 정리
 
 > - `RTK` === `Redux Toolkit` , 떵크 = 대충 API 나 프로미스작업
 > - RTK에는 대부분의 Redux 코드를 단순화하는 API가 포함되있다.
 > - RTK는 리덕스안에서 다른 유용한 패키지를 포함한다.
 > - `sliceReducer`를 자동으로 결합하여 `rootReducer`를 생성한다.
-> - `Redux DevTools Extension` 및 디버깅 미들웨어를 자동으로 설정합니다.
+> - `Redux DevTools Extension` 및 디버깅 미들웨어를 자동으로 설정한다.
 > - createSliceRedux 작업 및 reducer 작성이 단순화됨
 > - slice/reducer 이름을 기반으로 action 생성자를 자동으로 생성한다.
 > - createSlice.Reducer는 Immer를 사용하여 내부 상태를 "변경"할 수 있다 -> 내부 롸입뤄리.
@@ -211,3 +226,5 @@ const todosSlice = createSlice({
 > - 썽크를 디스패치하면 페이로드 생성자가 실행되고 작업이 바로 디스패치됨.
 > - 떵크 작업은 createSlice.extraReducers 에서 처리가능
 > - 그외 기능
+
+다음은 redux-persist에대해 알아보자

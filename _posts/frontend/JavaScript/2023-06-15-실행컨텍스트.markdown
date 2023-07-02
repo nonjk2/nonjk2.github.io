@@ -14,7 +14,7 @@ permalink: frontend/JavaScript/context
 {:.no_toc}
 
 * this list will be replaced by the toc
-{:toc .large-only}
+{:toc}
 ---
 
 ## (1)실행 컨텍스트란 ?

@@ -9,21 +9,10 @@ permalink: Study/ComputerScience/MarkdownAll
 ---
 <!--more-->
 # 마크다운 all in one, markdown preview 많이쓰는 단축키정리
+{:.no_toc}
 
-- [마크다운 all in one, markdown preview 많이쓰는 단축키정리](#마크다운-all-in-one-markdown-preview-많이쓰는-단축키정리)
-  - [목차(Table of Contents) 자동 생성](#목차table-of-contents-자동-생성)
-  - [목차 업데이트](#목차-업데이트)
-  - [미리보기 토글](#미리보기-토글)
-  - [미리보기를 측면에서 열기](#미리보기를-측면에서-열기)
-  - [볼드체(Bold) 토글](#볼드체bold-토글)
-  - [이탤릭체(Italic) 토글](#이탤릭체italic-토글)
-  - [코드블록(Code Block) 토글](#코드블록code-block-토글)
-  - [테이블(Table) 생성 (MarkDownPreView 확장)](#테이블table-생성-markdownpreview-확장)
-  - [링크(Link) 삽입](#링크link-삽입)
-  - [이미지(Image) 삽입](#이미지image-삽입)
-  - [인용구(Blockquote)](#인용구blockquote)
-  - [줄긋기](#줄긋기)
-  - [단어 코드](#단어-코드)
+* this list will be replaced by the toc
+{:toc}
 
 ## 목차(Table of Contents) 자동 생성
 

@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+
+
+
+  
+    
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>WIL state , prop , rerender 정리정리 | Dev.최은석</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="WIL state , prop , rerender 정리정리" />
+<meta name="author" content="최은석" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="description" content="React의 state와 prop rerender" />
+<meta property="og:description" content="React의 state와 prop rerender" />
+<link rel="canonical" href="http://localhost:4000/WIL4" />
+<meta property="og:url" content="http://localhost:4000/WIL4" />
+<meta property="og:site_name" content="Dev.최은석" />
+<meta property="og:image" content="http://localhost:4000/assets/img/frontend/react/WIL0702.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-07-02T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/img/frontend/react/WIL0702.png" />
+<meta property="twitter:title" content="WIL state , prop , rerender 정리정리" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"최은석"},"dateModified":"2023-07-02T00:00:00+09:00","datePublished":"2023-07-02T00:00:00+09:00","description":"React의 state와 prop rerender","headline":"WIL state , prop , rerender 정리정리","image":"http://localhost:4000/assets/img/frontend/react/WIL0702.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/WIL4"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"최은석"},"url":"http://localhost:4000/WIL4"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+    <meta name="keywords" content="dev,frontend,TIL">
+  
+
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Dev.최은석">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="application-name" content="Dev.최은석">
+
+<meta name="generator" content="Hydejack v9.1.6" />
+
+
+<link rel="alternate" href="http://localhost:4000/WIL4" hreflang="ko-kr">
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Dev.최은석" />
+
+
+<link
+  rel="shortcut icon"
+  href="/assets/icons/favicon.ico"
+/>
+<link
+  rel="apple-touch-icon"
+  href="/assets/icons/icon-192x192.png"
+/>
+
+<link rel="manifest" href="/assets/site.webmanifest" />
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" /><link rel="dns-prefetch" href="https://fonts.gstatic.com" /> 
+<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+
+<link
+  rel="preload"
+  href="/assets/img/swipe.svg"
+  as="image"
+  id="_hrefSwipeSVG"
+/>
+
+<link
+  rel="dns-prefetch"
+  href="/assets/js/search-worker-9.1.6.js"
+  as="worker"
+  id="_hrefSearch"
+/>
+  
+<link
+  rel="dns-prefetch"
+  href="https://deveundol.disqus.com"
+  id="_hrefDisqus"
+/>
+
+<!-- ... -->
+
+<!-- For sidebar folder -->
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+<script src="/assets/js/sidebar-folder.js"></script>
+
+
+<script>!function(r,c){"use strict";function a(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=c.createElement("script"),e=(n.src=e,t&&a(n,"load",t,{once:!0}),c.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=c.createElement("script");function o(){r._loaded=!0,t&&a(n,"load",t,{once:!0});var e=c.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():a(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){a(c.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}}(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+!function(w) {
+  w._baseURL = '/';
+  w._publicPath = '/assets/js/';
+  w._noPushState = false;
+  w._noDrawer = false;
+  w._noNavbar = ture;
+  w._noToc = false;
+  w._noSearch = true;
+  w._advertise = false;
+  w._search = {
+    DATA_URL: '/assets/sitedata.json?no-cache',
+    STORAGE_KEY: 'mini-search/',
+    INDEX_KEY: 'index--2023-07-02T23:53:00+09:00',
+  };
+  w._clapButton = true;
+}(window);</script>
+
+
+<script async src="/assets/bower_components/MathJax/es5/tex-mml-chtml.js" id="_MathJax"></script>
+
+
+<!--[if gt IE 8]><!---->
+
+  
+
+
+
+
+<link rel="stylesheet" href="/assets/css/hydejack-9.1.6.css" id="_stylePreload">
+<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans:400,400i,700,700i&display=swap" id="_fontsPreload">
+
+
+
+  <style id="_pageStyle">
+
+html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);--accent-color-highlight: rgba(79,177,186,0.1);--accent-color-darkened: #409ba3;--theme-color: rgb(8,46,57);--dark-mode-body-bg: #282f31;--dark-mode-border-color: #343c3f}
+
+</style>
+
+
+<!--<![endif]-->
+
+
+
+
+
+</head>
+
+<body class="dark-mode no-break-layout">
+  
+<script>
+  window._sunrise = 6;
+  window._sunset =  18;
+  !function(e,s){var d="light-mode",o="dark-mode",a=(new Date).getHours();"matchMedia"in e&&e.matchMedia("(prefers-color-scheme)")||(e=(a=a<=e._sunrise||a>=e._sunset?o:d)==o?d:o,s.body.classList.add(a),s.body.classList.remove(e))}(window,document);
+
+</script>
+
+
+
+<hy-push-state
+  id="_pushState"
+  replace-selector="#_main"
+  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
+  script-selector="script"
+  duration="500"
+  hashchange
+>
+  
+  
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only"
+      >Jump to:</span
+    >
+    <div class="nav-btn-bar">
+      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
+        <span class="sr-only"
+          >Navigation</span
+        >
+        <span class="icon-menu"></span>
+      </a>
+      <div class="nav-span"></div>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+  <main
+  id="_main"
+  class="content layout-post"
+  role="main"
+>
+  <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+    <li><a href="/">home</a></li>
+    
+      <li>
+        
+          <span>/</span>
+          <span>WIL4</span>
+        
+      </li>
+    
+  
+</ul></nav>
+  
+
+
+
+
+
+
+
+
+
+
+<article id="post-ReactWIL2" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        WIL state , prop , rerender 정리정리
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2023-07-02T00:00:00+09:00">2023 Jul 02</time> in <a href="/frontend/" class="flip-title">frontend</a> on <a href="/tag-react/" class="flip-title">React</a>, <a href="/tag-wil/" class="flip-title">WIL</a>
+      </span>
+      
+        
+      
+    </div>
+
+    
+    
+      
+        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
+          
+
+
+<img
+  
+    src="/assets/img/frontend/react/WIL0702.png"
+    
+    
+  
+  alt="WIL state , prop , rerender 정리정리"
+  
+  
+  width="864"
+  height="486"
+  loading="lazy"
+/>
+
+        </div>
+      
+      
+    
+
+    
+
+
+
+  
+    <p class="note-sm" >
+      React의 state와 prop rerender
+
+    </p>
+  
+
+
+  </header>
+
+  
+    <!--more-->
+
+<h1 class="no_toc" id="2주차-wil">2주차 WIL</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#react의-컴포넌트-모델" id="markdown-toc-react의-컴포넌트-모델">React의 컴포넌트 모델</a>    <ul>
+      <li><a href="#함수형-컴포넌트" id="markdown-toc-함수형-컴포넌트">함수형 컴포넌트</a></li>
+      <li><a href="#컴포넌트-라이프-사이클" id="markdown-toc-컴포넌트-라이프-사이클">컴포넌트 라이프 사이클</a></li>
+    </ul>
+  </li>
+  <li><a href="#state" id="markdown-toc-state">State</a>    <ul>
+      <li><a href="#state란" id="markdown-toc-state란">State란</a></li>
+      <li><a href="#state-생성-및-초기화" id="markdown-toc-state-생성-및-초기화">State 생성 및 초기화</a></li>
+    </ul>
+  </li>
+  <li><a href="#props" id="markdown-toc-props">Props</a>    <ul>
+      <li><a href="#예시" id="markdown-toc-예시">예시</a></li>
+      <li><a href="#props-state-차이" id="markdown-toc-props-state-차이">props state 차이</a></li>
+    </ul>
+  </li>
+  <li><a href="#re-rendering" id="markdown-toc-re-rendering">Re-rendering</a>    <ul>
+      <li><a href="#re-rendering이란" id="markdown-toc-re-rendering이란">Re-rendering이란?</a></li>
+    </ul>
+  </li>
+  <li><a href="#고오오오오급-패턴에-대해-알아보자" id="markdown-toc-고오오오오급-패턴에-대해-알아보자">고오오오오급 패턴에 대해 알아보자</a>    <ul>
+      <li><a href="#hooks-usestate-useeffect-등" id="markdown-toc-hooks-usestate-useeffect-등">Hooks (useState, useEffect 등)</a></li>
+      <li><a href="#custom-hooks" id="markdown-toc-custom-hooks">Custom Hooks</a></li>
+      <li><a href="#higher-order-components-hoc" id="markdown-toc-higher-order-components-hoc">Higher Order Components (HOC)</a></li>
+      <li><a href="#render-props" id="markdown-toc-render-props">Render Props</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>내가 알고있는 State와 Props 및 re-render에대해 기술하려고한다.
+얇게 알고 있는만큼 정리하면 그 얇은 지식이라도 완전히 습득하길 기대하면서</p>
+
+<h2 id="react의-컴포넌트-모델">React의 컴포넌트 모델</h2>
+
+<h3 id="함수형-컴포넌트">함수형 컴포넌트</h3>
+
+<p>함수형 컴포넌트는 react에서 주로 사용하는 컴포넌트 모델
+자바 스크립트 함수를 사용</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">함수Component</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FC</span><span class="o">&lt;</span><span class="nx">propsType</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">retrun</span><span class="p">(&lt;&gt;</span>나는야 함수고 옆에는 프롭<span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">item</span><span class="si">}</span><span class="p">&lt;/&gt;);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>이놈은 클래스</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">클래스Component</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="o">&lt;</span><span class="nx">PropsType</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>안뇽, <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="컴포넌트-라이프-사이클">컴포넌트 라이프 사이클</h3>
+
+<p><a href="/frontend/React/lifecycle" class="heading flip-title read-more">React 의 생명주기</a> 요기에서도 언급했던바</p>
+
+<p>사진한장으로 대체
+<br /></p>
+
+<p><img src="/assets/img/frontend/react/lifecycle2.png" alt="라이프사이클" /></p>
+
+<h2 id="state">State</h2>
+
+<h3 id="state란">State란</h3>
+
+<p>React의 State는 컴포넌트에서 관리하는 데이터를 의미</p>
+
+<h3 id="state-생성-및-초기화">State 생성 및 초기화</h3>
+
+<p>React 에서 함수형, 클래스형 각각 state를 생성과 초기화가 틀리다
+아래요약</p>
+
+<p>클래스형</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">클래스Component</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="o">&lt;</span><span class="p">{},</span> <span class="nx">StateType</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="na">props</span><span class="p">:</span> <span class="p">{})</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">쵠석</span><span class="dl">"</span> <span class="p">};</span>
+  <span class="p">}</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">최은석</span><span class="dl">'</span> <span class="p">});</span> <span class="nx">업데이트방법</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>h 1 ~, <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">함수형Component</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FC</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">name</span><span class="p">,</span> <span class="nx">setName</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="o">&lt;</span><span class="kr">string</span><span class="o">&gt;</span><span class="p">(</span><span class="dl">"</span><span class="s2">쵠석</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">setName</span><span class="p">(</span><span class="dl">"</span><span class="s2">최은석</span><span class="dl">"</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="si">{</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>리액의 setState 비동기이기때문에 새배열 새로운 함수로받은값 등을 사용하는게 안전쓰</p>
+
+<p>자세한내용은 <a href="/frontend/React/state" class="heading flip-title read-more">useState</a></p>
+
+<h2 id="props">Props</h2>
+
+<p>React 컴포넌트는 prop을 입력받을수 있다.
+객체로 전달되고 함수 파라미터처럼 컴포넌트 함수에 전달된다.</p>
+
+<h3 id="예시">예시</h3>
+
+<p>요로코롬 사용하면됨</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 함수형 컴포넌트</span>
+<span class="kd">const</span> <span class="nx">함수컴포</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FC</span><span class="o">&lt;</span><span class="nx">PropsType</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>떫, <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span> <span class="c1">//쵠석</span>
+<span class="p">};</span>
+
+<span class="c1">// 클래스 컴포넌트</span>
+<span class="kd">class</span> <span class="nx">클래스컴포</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="o">&lt;</span><span class="nx">PropsType</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>떫, <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 사용 예시</span>
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="err">함수컴포</span> <span class="na">name</span><span class="p">=</span><span class="s">"쵠석"</span> <span class="p">/&gt;;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="props-state-차이">props state 차이</h3>
+
+<ul>
+  <li>Props와 state는 모두 순수 JavaScript 객체다</li>
+  <li>둘 다 렌더링에 영향이 있다.</li>
+  <li>props 부모컴포에서 자식컴포에서 주는값이고 읽기만 가능. 반대로 state는 컴포넌트 내부에서 생성,변경가능하다</li>
+  <li>js안의 함수의 매개변수 , 선언된 변수 각각 props 와 state와 비슷하다.</li>
+  <li>React의 state는 비동기적으로 업데이트된다. 이 업데이트가 발생하면 컴포넌트는 리렌더링된다. 그리고 props는 상위 컴포넌트가 변경하거나 자식 컴포넌트가 새로 렌더링될 때 변경된다.
+    <ul>
+      <li>컴포넌트가 시간이 지나면서 변경될 수 있는 데이터를 가지고 있다면 state를 사용하고</li>
+      <li>부모로부터 주어진 데이터를 단순히 표시하는 경우에는 props를 사용한다.</li>
+    </ul>
+  </li>
+  <li>그리고 props는 <strong>얕은복사로만 자식컴포넌트로 전달된다</strong>. (객체의 최상위 레벨만 복사)
+    <ul>
+      <li>만약 깊은복사로 수행되면 추가적인 성능비용을 발생시킬수도 있기때문</li>
+      <li>따라서 자식컴포넌트로 전달된 예)props.item.name.firstName 이처럼 firstName의 값이 달라지면 원본도 완전히 바뀐다는 뜻이다. (원본객체도 바뀐다는뜻)
+그리고 위는 React Props 의 읽기전용이라는 원칙에 위배되므로 반드시 피하자</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="re-rendering">Re-rendering</h2>
+
+<h3 id="re-rendering이란">Re-rendering이란?</h3>
+
+<p><a href="/frontend/React/goodreact" class="heading flip-title read-more">리액트 컴포넌트 최적화</a> -&gt; 보러가기</p>
+
+<p>React의 컴포넌트에서 Re-rendering은 컴포넌트의 state나 props가 변경되었을 때 해당 컴포넌트가 다시 랜더되는과정이다.
+이때, React는 이전과 다음 상태를 비교하여 실제로 변경된 부분만 업데이트한다.</p>
+
+<p>Re-rendering을 일으키는 요인</p>
+
+<ul>
+  <li>컴포넌트의 state가 변경되었을 때</li>
+  <li>컴포넌트의 props가 변경되었을 때</li>
+  <li>부모 컴포넌트가 re-render될 때</li>
+  <li>Context 값이 변경되었을 때</li>
+  <li>forceUpdate 함수가 호출되었을 때</li>
+</ul>
+
+<h2 id="고오오오오급-패턴에-대해-알아보자">고오오오오급 패턴에 대해 알아보자</h2>
+
+<p>자 React에서 자주 사용되는 state와 prop에 관한 고오오급 패턴에 대해서 알아보자</p>
+
+<h3 id="hooks-usestate-useeffect-등">Hooks (useState, useEffect 등)</h3>
+
+<p>흔히 알고있는 기능도 고오오급 패턴중 일부</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">Counter</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FC</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s2">`Count: </span><span class="p">${</span><span class="nx">count</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">count</span><span class="p">]);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>You clicked <span class="si">{</span><span class="nx">count</span><span class="si">}</span> times<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>Click me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="custom-hooks">Custom Hooks</h3>
+
+<p>개발자가 정의한 특별한 훅!</p>
+
+<p>알다시피 React의 기본 훅들로 보통 구성되어있고
+재사용성이 용이하게 만들어지는게 보통이다.</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">useCounter</span> <span class="o">=</span> <span class="p">(</span><span class="nx">initialCount</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">initialCount</span><span class="p">);</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s2">`Count: </span><span class="p">${</span><span class="nx">count</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">count</span><span class="p">]);</span>
+
+  <span class="kd">const</span> <span class="nx">increment</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">{</span> <span class="nx">count</span><span class="p">,</span> <span class="nx">increment</span> <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">Counter</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FC</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">count</span><span class="p">,</span> <span class="nx">increment</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useCounter</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> <span class="si">{</span><span class="nx">count</span><span class="si">}</span> 번<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">increment</span><span class="si">}</span><span class="p">&gt;</span>업업업<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="higher-order-components-hoc">Higher Order Components (HOC)</h3>
+
+<ul>
+  <li>
+    <p>컴포넌트를 가져와서 새 컴포넌트를 반환하는 함수.</p>
+
+    <ul>
+      <li>이 패턴을 사용하면 컴포넌트 로직을 재사용하고 공유할 수 있다.</li>
+      <li>예시는 로그인 여부에 따라 다른 화면을 보여주는 경우</li>
+      <li>HOC는 추가적인 렌더링을 도입하여 성능에 약간의 영향을 미칠 수 있다 하지만 감당가능한정도</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Redirect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">withAuth</span> <span class="o">=</span>
+  <span class="p">&lt;</span><span class="nc">P</span> <span class="na">extends</span> <span class="na">object</span><span class="p">&gt;</span>(Component: React.ComponentType<span class="p">&lt;</span><span class="nc">P</span><span class="p">&gt;</span>): React.FC<span class="p">&lt;</span><span class="nc">P</span><span class="p">&gt;</span> =&gt;
+  (props: P) =&gt; <span class="si">{</span>
+    <span class="kd">const</span> <span class="nx">isLoggin</span> <span class="o">=</span> <span class="nx">checkIfUserIsLoggin</span><span class="p">();</span> <span class="c1">// 로그인 확인 함수</span>
+
+    <span class="k">return</span> <span class="nx">isLoggin</span> <span class="p">?</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nc">Component</span> <span class="si">{</span><span class="p">...</span><span class="nx">props</span><span class="si">}</span> <span class="p">/&gt;</span> <span class="c1">// 로그인이 되어있으면 원래 컴포넌트 반환</span>
+    <span class="p">)</span> <span class="p">:</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nc">Redirect</span> <span class="na">to</span><span class="p">=</span><span class="s">"/login"</span> <span class="p">/&gt;</span>
+    <span class="p">);</span> <span class="c1">// 로그인이 되어있지 않으면 로그인 페이지로 리다이렉트</span>
+  <span class="si">}</span>;
+
+// 사용 예
+const Dashboard = withAuth(DashboardPage);
+</code></pre></div></div>
+
+<h3 id="render-props">Render Props</h3>
+
+<ul>
+  <li>Render Props는 함수형 자식 또는 자식을 함수로 사용하여 컴포넌트의 로직을 공유하는 React 패턴
+    <ul>
+      <li>예는 react router가 Route가 이러한 구조</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kr">interface</span> <span class="nx">TimeProviderProps</span> <span class="p">{</span>
+  <span class="nl">children</span><span class="p">:</span> <span class="p">(</span><span class="nx">time</span><span class="p">:</span> <span class="nb">Date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">TimeProvider</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FC</span><span class="o">&lt;</span><span class="nx">TimeProviderProps</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">children</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">time</span><span class="p">,</span> <span class="nx">setTime</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="o">&lt;</span><span class="nb">Date</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">setTime</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()),</span> <span class="mi">1000</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
+  <span class="p">},</span> <span class="p">[]);</span>
+
+  <span class="k">return</span> <span class="p">&lt;&gt;</span><span class="si">{</span><span class="nx">children</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span><span class="si">}</span><span class="p">&lt;/&gt;;</span>
+<span class="p">};</span>
+
+<span class="c1">// 사용 예</span>
+<span class="p">&lt;</span><span class="nc">TimeProvider</span><span class="p">&gt;</span>
+  <span class="si">{</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>현재 시간: <span class="si">{</span><span class="nx">time</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">()</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span><span class="si">}</span>
+<span class="p">&lt;/</span><span class="nc">TimeProvider</span><span class="p">&gt;;</span>
+</code></pre></div></div>
+
+<p>이상 이번주 WIL 정리할겸 TIL로 정리한것을 다시 생각해보면서 정리했다.</p>
+
+  
+</article>
+
+
+
+  <hr class="dingbat related mb6" />
+
+
+
+
+
+
+  
+     
+
+
+  <aside class="about related mt4 mb4" role="complementary">
+    
+    
+
+<div class="author mt4">
+  
+
+  
+    
+
+
+<img
+  
+    src="assets/icons/logo128.jpg"
+    srcset="assets/icons/logo128.jpg 1x"
+    
+  
+  alt="최은석"
+  class="avatar"
+  
+  width="120"
+  height="120"
+  loading="lazy"
+/>
+
+  
+
+  
+  
+  <h2  class="page-title hr-bottom">
+    About
+  </h2>
+
+  <p>어제보단 나아졌겠지 ?</p>
+
+
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/nonjk2" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:nonjk2@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+
+  </aside>
+
+
+  
+
+  
+    
+
+
+  
+
+  
+    
+
+
+  <aside class="other-projects related mb0" role="complementary">  <h2>Related Posts</h2>  <div class="columns">          <div class="column column-1-2">                  <article class="project-card">  <a href="/Study/ComputerScience/MarkdownAll" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine fallback-img">          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/Study/ComputerScience/MarkdownAll" class="flip-title">마크다운 작성 feat.markdown 익스텐션</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      내가 마크다운 작성하는법    </p>      <a class="fill-card no-hover" href="/Study/ComputerScience/MarkdownAll" tabindex="-1"><span class="sr-only">보러가기 마크다운 작성 feat.markdown 익스텐션</span></a></article>              </div>          <div class="column column-1-2">                  <article class="project-card">  <a href="/frontend/React/goodreact" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine flip-project-img">              <img      src="/assets/img/frontend/react/background.jpg"        sizes="(min-width:86em)27.5rem,(min-width:54em)22.5rem,(min-width:42em)19.5rem,38rem"    alt="리액트 컴포넌트 최적화"      width="864"  height="486"  loading="lazy"/>          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/frontend/React/goodreact" class="flip-title">리액트 컴포넌트 최적화</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      컴포넌트 최적화 (1) 해보자    </p>      <a class="fill-card no-hover" href="/frontend/React/goodreact" tabindex="-1"><span class="sr-only">보러가기 리액트 컴포넌트 최적화</span></a></article>              </div>      </div></aside>
+
+  
+
+  
+    
+
+
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Random Posts</h2>  <ul class="related-posts">          <li class="h4">  <a href="/frontend/React/lifecycle" class="flip-title"><span>React 의 생명주기</span></a>  <time class="faded fine" datetime="2023-06-24T00:00:00+09:00">2023 Jun 24</time></li>          <li class="h4">  <a href="/frontend/JavaScript/context" class="flip-title"><span>실행 컨텍스트</span></a>  <time class="faded fine" datetime="2023-06-15T00:00:00+09:00">2023 Jun 15</time></li>          <li class="h4">  <a href="/frontend/react/pageNation" class="flip-title"><span>페이지네이션 with Study</span></a>  <time class="faded fine" datetime="2023-06-27T00:00:00+09:00">2023 Jun 27</time></li>      </ul></aside>
+
+  
+
+  
+    
+<aside class="comments related" role="complementary">
+  <h2 class="hr-bottom">Comments</h2>
+  
+
+<div id="disqus_thread"></div>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script>!function(w, d) {
+  if (d.getElementById("disqus_thread")) {
+    if (w.DISQUS) {
+      w.DISQUS.reset({
+        reload: true,
+        config() {
+          this.page.url = w.location.href;
+          this.page.title = d.title;
+        },
+      });
+    } else {
+      w.disqus_config = function disqusConfig() {
+        this.page.url = w.location.href;
+        this.page.title = d.title;
+      };
+      w.loadJSDeferred(d.getElementById("_hrefDisqus").href + '/embed.js');
+    }
+  }
+}(window, document);</script>
+
+
+</aside>
+
+
+  
+
+
+  
+<footer class="content" role="contentinfo">
+  <hr/>
+  
+    <p><small class="copyright">© 2021. All rights reserved.
+</small></p>
+  
+  
+    <nav class="legal"><small>
+    
+      
+      <a class="heading flip-title" href="/LICENSE/">LICENSE</a>
+      |
+    
+      
+      <a class="heading flip-title" href="/NOTICE/">NOTICE</a>
+      
+    
+    </small></nav>
+  
+  
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+  <hy-drawer
+  id="_drawer"
+  class=""
+  side="left"
+  threshold="10"
+  noscroll
+  
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+
+
+
+
+<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(79,177,186);background-image:url(/assets/img/sidebar-bg.jpeg)"></div>
+
+    <div class="sidebar-sticky">
+  <div class="sidebar-about">
+    
+      <a class="no-hover" href="/" tabindex="-1">
+        <img src="/assets/img/logo.png" class="avatar" alt="Dev.최은석" width="120" height="120" loading="lazy" />
+      </a>
+    
+    <a class="sidebar-title" href="/"><h2 class="h1">Dev.최은석</h2></a>
+    
+    
+      <p class="">
+        반갑습니다.
+
+      </p>
+    
+  </div>
+
+  <nav class="sidebar-nav heading" role="navigation">
+    <span class="sr-only"
+  >Navigation:</span
+>
+<ul>
+   
+                      
+  <li>
+    
+    <input type="checkbox" id="folder-checkbox-9" />
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/devlog/"
+        class="sidebar-nav-item"
+        
+        >devlog</a
+      >
+      
+      <button class="spread-btn" onclick="javascript:spread(9)">
+        <label id="spread-icon-9" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
+    </div>
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-wil/"
+          >WIL</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-til/"
+          >TIL</a
+        >
+      </li>
+      
+    </ul>
+     
+  </li>
+        
+  <li>
+    
+    <input type="checkbox" id="folder-checkbox-10" />
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/frontend/"
+        class="sidebar-nav-item"
+        
+        >frontend</a
+      >
+      
+      <button class="spread-btn" onclick="javascript:spread(10)">
+        <label id="spread-icon-10" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
+    </div>
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-react/"
+          >React</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-javascript/"
+          >JavaScript</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84/"
+          >기능구현</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-algorisme/"
+          >Algorism</a
+        >
+      </li>
+      
+    </ul>
+     
+  </li>
+                    
+  <li>
+    
+    <input type="checkbox" id="folder-checkbox-11" />
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/study/"
+        class="sidebar-nav-item"
+        
+        >Study</a
+      >
+      
+      <button class="spread-btn" onclick="javascript:spread(11)">
+        <label id="spread-icon-11" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
+    </div>
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-computerscience/"
+          >ComputerScience</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-other/"
+          >other</a
+        >
+      </li>
+      
+    </ul>
+     
+  </li>
+        
+</ul>
+
+  </nav>
+
+  
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/nonjk2" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:nonjk2@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+</hy-push-state>
+
+
+  <!--[if gt IE 10]><!---->
+  <script nomodule>!function(){var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())}();
+</script>
+  <script src="/assets/js/hydejack-9.1.6.js" type="module"></script>
+  <script src="/assets/js/LEGACY-hydejack-9.1.6.js" nomodule defer></script>
+  
+
+  
+  <script>!function(w, d) {
+    w.ga=w.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+    /**/
+      ga('create', 'G-43895YHF45', 'auto');
+    /**/
+
+    var pushStateEl = d.getElementById('_pushState');
+    var timeoutId;
+    pushStateEl.addEventListener('hy-push-state-load', function() {
+      w.clearTimeout(timeoutId);
+      timeoutId = w.setTimeout(function() {
+        ga('set', 'page', w.location.pathname);
+        ga('send', 'pageview');
+      }, 500);
+    });
+
+    d.addEventListener('hy--cookies-ok', function () {
+      w.ga(function(tracker) {
+        w.ga("set", "anonymizeIp", undefined);
+        localStorage && localStorage.setItem("ga--client-id", tracker.get("clientId"));
+      });
+    });
+
+    w.loadJSDeferred('https://www.google-analytics.com/analytics.js');
+  }(window, document);</script>
+
+
+  <script type="module">
+    if ('serviceWorker' in navigator) {
+      /**/
+      navigator.serviceWorker.getRegistration()
+        .then(r => r.unregister())
+        .catch(() => {});
+      /**/
+    }
+  </script>
+<!--<![endif]-->
+  
+
+
+
+<div hidden>
+  
+  <h2 class="sr-only">Templates (for web app):</h2>
+
+  <template id="_animation-template">
+  <div class="animation-main fixed-top">
+    <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+</ul></nav>
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+  <template id="_loading-template">
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+  <template id="_error-template">
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
+
+    </p>
+  </div>
+</template>
+
+  <template id="_permalink-template">
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="content-hash"></span>
+  </a>
+</template>
+
+  
+  
+    <template id="_dark-mode-template">
+  <button id="_dark-mode" class="nav-btn no-hover" >
+    <span class="sr-only">Dark Mode</span>
+    <span class="icon-brightness-contrast"></span>
+  </button>
+</template>
+
+  
+  
+</div>
+
+</body>
+</html>

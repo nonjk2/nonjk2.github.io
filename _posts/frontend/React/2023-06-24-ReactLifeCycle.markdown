@@ -17,7 +17,7 @@ permalink: frontend/React/lifecycle
 {:.no_toc}
 
 * this list will be replaced by the toc
-{:toc .large-only}
+{:toc}
 
 - Lifecycle method 는 한국말로 **생명주기 메서드**라고 부른다.
 - React 에서 컴포넌트의 생성, 업데이트 및 사라지는 것과 관련된 단계를 나타내는 메서드의 집합이다.

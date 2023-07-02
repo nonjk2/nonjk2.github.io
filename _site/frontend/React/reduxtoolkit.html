@@ -128,7 +128,7 @@
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2023-07-01T13:25:41+09:00',
+    INDEX_KEY: 'index--2023-07-02T23:53:00+09:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -165,7 +165,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
 
 </head>
 
-<body class="no-break-layout">
+<body class="dark-mode no-break-layout">
   
 <script>
   window._sunrise = 6;
@@ -314,7 +314,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
     <!--more-->
 <h1 class="no_toc" id="state란">State란</h1>
 
-<ul class="large-only" id="markdown-toc">
+<ul id="markdown-toc">
   <li><a href="#redux-toolkit" id="markdown-toc-redux-toolkit">Redux-toolkit</a>    <ul>
       <li><a href="#리덕스-데이터-흐름도" id="markdown-toc-리덕스-데이터-흐름도">리덕스 데이터 흐름도</a></li>
       <li><a href="#리덕스는-단방향-데이터-흐름" id="markdown-toc-리덕스는-단방향-데이터-흐름">리덕스는 단방향 데이터 흐름</a></li>
@@ -326,6 +326,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
           <li><a href="#리덕스-기본-state" id="markdown-toc-리덕스-기본-state">리덕스 기본 State</a></li>
           <li><a href="#리덕스-api-떵크" id="markdown-toc-리덕스-api-떵크">리덕스 API 떵크</a></li>
           <li><a href="#정규화엔티티" id="markdown-toc-정규화엔티티">정규화엔티티</a></li>
+          <li><a href="#그외에" id="markdown-toc-그외에">그외에</a></li>
         </ul>
       </li>
       <li><a href="#요약-정리" id="markdown-toc-요약-정리">요약 정리</a></li>
@@ -525,6 +526,20 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
 
 <p>다음은 그냥 To Do list redux 올려야겠다.</p>
 
+<h3 id="그외에">그외에</h3>
+
+<p><code class="language-plaintext highlighter-rouge">redux-thunk</code>
+함수 형태의 액션을 디스패치할 수 있게 해주는 미들웨어. 이 함수 내에서는 비동기 작업을 수행하고, 작업이 끝나면 새로운 액션을 디스패치할 수 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">redux-saga</code>
+ 제너레이터 함수를 이용하여 비동기 작업을 더 세밀하게 제어할 수 있게 해주는 미들웨어. 복잡한 비동기 작업 흐름을 관리하는데 유용하다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">redux-promise</code>
+ Promise를 반환하는 액션을 디스패치할 수 있게 해주는 미들웨어. Promise가 resolve되면, 해당 결과를 payload로 가지는 새로운 액션을 디스패치한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">redux-persist</code></p>
+
+<p>Redux 스토어의 상태를 지속적으로 유지하기 위한 라이브러리. 웹 애플리케이션을 새로 고침하거나 재시작할 때, Redux 스토어의 상태가 초기화되는 것을 방지하기 위해 사용한다</p>
 <h2 id="요약-정리">요약 정리</h2>
 
 <blockquote>
@@ -533,7 +548,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
     <li>RTK에는 대부분의 Redux 코드를 단순화하는 API가 포함되있다.</li>
     <li>RTK는 리덕스안에서 다른 유용한 패키지를 포함한다.</li>
     <li><code class="language-plaintext highlighter-rouge">sliceReducer</code>를 자동으로 결합하여 <code class="language-plaintext highlighter-rouge">rootReducer</code>를 생성한다.</li>
-    <li><code class="language-plaintext highlighter-rouge">Redux DevTools Extension</code> 및 디버깅 미들웨어를 자동으로 설정합니다.</li>
+    <li><code class="language-plaintext highlighter-rouge">Redux DevTools Extension</code> 및 디버깅 미들웨어를 자동으로 설정한다.</li>
     <li>createSliceRedux 작업 및 reducer 작성이 단순화됨</li>
     <li>slice/reducer 이름을 기반으로 action 생성자를 자동으로 생성한다.</li>
     <li>createSlice.Reducer는 Immer를 사용하여 내부 상태를 “변경”할 수 있다 -&gt; 내부 롸입뤄리.</li>
@@ -544,6 +559,8 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
     <li>그외 기능</li>
   </ul>
 </blockquote>
+
+<p>다음은 redux-persist에대해 알아보자</p>
 
   
 </article>
@@ -574,8 +591,8 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
 
 <img
   
-    src="https://placehold.it/128x128"
-    srcset="https://placehold.it/128x128 1x,https://placehold.it/256x256 2x"
+    src="assets/icons/logo128.jpg"
+    srcset="assets/icons/logo128.jpg 1x"
     
   
   alt="최은석"
@@ -671,7 +688,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
     
 
 
-  <aside class="other-projects related mb0" role="complementary">  <h2>Related Posts</h2>  <div class="columns">          <div class="column column-1-2">                  <article class="project-card">  <a href="/Study/ComputerScience/MarkdownAll" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine fallback-img">          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/Study/ComputerScience/MarkdownAll" class="flip-title">마크다운 작성 feat.markdown 익스텐션</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      내가 마크다운 작성하는법    </p>      <a class="fill-card no-hover" href="/Study/ComputerScience/MarkdownAll" tabindex="-1"><span class="sr-only">보러가기 마크다운 작성 feat.markdown 익스텐션</span></a></article>              </div>          <div class="column column-1-2">                  <article class="project-card">  <a href="/frontend/React/goodreact" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine flip-project-img">              <img      src="/assets/img/frontend/react/background.jpg"        sizes="(min-width:86em)27.5rem,(min-width:54em)22.5rem,(min-width:42em)19.5rem,38rem"    alt="리액트 컴포넌트 최적화"      width="864"  height="486"  loading="lazy"/>          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/frontend/React/goodreact" class="flip-title">리액트 컴포넌트 최적화</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      컴포넌트 최적화 (1) 해보자    </p>      <a class="fill-card no-hover" href="/frontend/React/goodreact" tabindex="-1"><span class="sr-only">보러가기 리액트 컴포넌트 최적화</span></a></article>              </div>      </div></aside>
+  <aside class="other-projects related mb0" role="complementary">  <h2>Related Posts</h2>  <div class="columns">          <div class="column column-1-2">                  <article class="project-card">  <a href="/WIL4" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine flip-project-img">              <img      src="/assets/img/frontend/react/WIL0702.png"        sizes="(min-width:86em)27.5rem,(min-width:54em)22.5rem,(min-width:42em)19.5rem,38rem"    alt="WIL state , prop , rerender 정리정리"      width="864"  height="486"  loading="lazy"/>          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/WIL4" class="flip-title">WIL state , prop , rerender 정리정리</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      React의 state와 prop rerender    </p>      <a class="fill-card no-hover" href="/WIL4" tabindex="-1"><span class="sr-only">보러가기 WIL state , prop , rerender 정리정리</span></a></article>              </div>          <div class="column column-1-2">                  <article class="project-card">  <a href="/Study/ComputerScience/MarkdownAll" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine fallback-img">          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/Study/ComputerScience/MarkdownAll" class="flip-title">마크다운 작성 feat.markdown 익스텐션</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      내가 마크다운 작성하는법    </p>      <a class="fill-card no-hover" href="/Study/ComputerScience/MarkdownAll" tabindex="-1"><span class="sr-only">보러가기 마크다운 작성 feat.markdown 익스텐션</span></a></article>              </div>      </div></aside>
 
   
 
@@ -679,7 +696,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
     
 
 
-  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Random Posts</h2>  <ul class="related-posts">          <li class="h4">  <a href="/Study/ComputerScience/Dns" class="flip-title"><span>DNS</span></a>  <time class="faded fine" datetime="2023-06-18T00:00:00+09:00">2023 Jun 18</time></li>          <li class="h4">  <a href="/frontend/react/pageNation" class="flip-title"><span>페이지네이션 with Study</span></a>  <time class="faded fine" datetime="2023-06-27T00:00:00+09:00">2023 Jun 27</time></li>          <li class="h4">  <a href="/frontend/JavaScript/context" class="flip-title"><span>실행 컨텍스트</span></a>  <time class="faded fine" datetime="2023-06-15T00:00:00+09:00">2023 Jun 15</time></li>      </ul></aside>
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Random Posts</h2>  <ul class="related-posts">          <li class="h4">  <a href="/Study/ComputerScience/Dns" class="flip-title"><span>DNS</span></a>  <time class="faded fine" datetime="2023-06-18T00:00:00+09:00">2023 Jun 18</time></li>          <li class="h4">  <a href="/frontend/React/goodreact" class="flip-title"><span>리액트 컴포넌트 최적화</span></a>  <time class="faded fine" datetime="2023-06-29T00:00:00+09:00">2023 Jun 29</time></li>          <li class="h4">  <a href="/frontend/React/virtualdom" class="flip-title"><span>React Virtual DOM</span></a>  <time class="faded fine" datetime="2023-06-23T00:00:00+09:00">2023 Jun 23</time></li>      </ul></aside>
 
   
 

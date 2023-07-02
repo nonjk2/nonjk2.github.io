@@ -16,7 +16,7 @@ permalink: frontend/React/redux
 {:.no_toc}
 
 * this list will be replaced by the toc
-{:toc .large-only}
+{:toc}
 
 React에서 상태관리 라이브러리가 뭐가있을까요 라고 물으면 항상 첫번째로 나오는 리덕스다. 유명한만큼 그 기능들과 엄청난 퍼포먼스를 제공한다.
 
@@ -95,6 +95,31 @@ const store = createStore(reducer);
 리덕스에는 불변성을 유지하기위해 Immutable라이브러리가 내장되있다곤 하는데
 
 그래도 객체를 반환할때는 항상 새배열 새값을 만들어서 **리턴**하자
+
+## 직렬화
+
+아 그리고 리덕스의 state, action에는 직렬화할 수 없는 값들이 포함되지 않도록 추천한다 . 그 이유는 Redux DevTools와 같은 도구가 상태와 액션을 정확하게 기록하고 추적할 수 있게하기 위해서다.
+하지만 추천은 추천일뿐 엄격한 원칙은 아니지만 예외의 경우의 서만 허용하자
+
+
+예를들면 음
+
+```jsx
+const obj = {
+  func: function () {},  
+  sym: Symbol("sym"),  
+  undef: undefined,
+  date: new Date()
+};
+
+const myJSON = JSON.stringify(obj);
+
+console.log(myJSON);  // {}
+
+
+```
+
+요런것들,,, 하지만 date나 undef 는 어쩔수 없이 넣어야하는 경우가있으니까 허용옵션이나 이런것을 알아보자
 
 ## 정규화된 상태
 

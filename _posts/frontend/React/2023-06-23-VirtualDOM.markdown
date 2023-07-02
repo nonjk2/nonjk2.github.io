@@ -15,6 +15,9 @@ permalink: frontend/React/virtualdom
 # React Virtual DOM
 {:.no_toc}
 
+* this list will be replaced by the toc
+{:toc}
+
 
 리액트의 엄청난 장점중 하나인 **리액트 가상돔** 은 리액트가 넘버원이 되는데 일조한 가장 큰 장점중 하나다.
 브라우저에 페이지를 그려주는 속도가 엄청나게 빠르기 때문이다.

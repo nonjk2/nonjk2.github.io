@@ -1,25 +1,322 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko-KR"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko-KR" /><updated>2023-07-01T13:25:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dev.최은석</title><subtitle>공부하자 📚.
-</subtitle><author><name>최은석</name><email>nonjk2@gmail.com</email></author><entry><title type="html">마크다운 작성 feat.markdown 익스텐션</title><link href="http://localhost:4000/Study/ComputerScience/MarkdownAll" rel="alternate" type="text/html" title="마크다운 작성 feat.markdown 익스텐션" /><published>2023-06-30T00:00:00+09:00</published><updated>2023-06-30T00:00:00+09:00</updated><id>http://localhost:4000/Study/ComputerScience/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%20%EC%98%AC%EC%9D%B8%EC%9B%90%20%ED%99%95%EC%9E%A5</id><content type="html" xml:base="http://localhost:4000/Study/ComputerScience/MarkdownAll">&lt;!--more--&gt;
-&lt;h1 id=&quot;마크다운-all-in-one-markdown-preview-많이쓰는-단축키정리&quot;&gt;마크다운 all in one, markdown preview 많이쓰는 단축키정리&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko-KR"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko-KR" /><updated>2023-07-02T23:53:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dev.최은석</title><subtitle>공부하자 📚.
+</subtitle><author><name>최은석</name><email>nonjk2@gmail.com</email></author><entry><title type="html">WIL state , prop , rerender 정리정리</title><link href="http://localhost:4000/WIL4" rel="alternate" type="text/html" title="WIL state , prop , rerender 정리정리" /><published>2023-07-02T00:00:00+09:00</published><updated>2023-07-02T00:00:00+09:00</updated><id>http://localhost:4000/ReactWIL2</id><content type="html" xml:base="http://localhost:4000/WIL4">&lt;!--more--&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#마크다운-all-in-one-markdown-preview-많이쓰는-단축키정리&quot;&gt;마크다운 all in one, markdown preview 많이쓰는 단축키정리&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#목차table-of-contents-자동-생성&quot;&gt;목차(Table of Contents) 자동 생성&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#목차-업데이트&quot;&gt;목차 업데이트&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#미리보기-토글&quot;&gt;미리보기 토글&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#미리보기를-측면에서-열기&quot;&gt;미리보기를 측면에서 열기&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#볼드체bold-토글&quot;&gt;볼드체(Bold) 토글&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#이탤릭체italic-토글&quot;&gt;이탤릭체(Italic) 토글&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#코드블록code-block-토글&quot;&gt;코드블록(Code Block) 토글&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#테이블table-생성-markdownpreview-확장&quot;&gt;테이블(Table) 생성 (MarkDownPreView 확장)&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#링크link-삽입&quot;&gt;링크(Link) 삽입&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#이미지image-삽입&quot;&gt;이미지(Image) 삽입&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#인용구blockquote&quot;&gt;인용구(Blockquote)&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#줄긋기&quot;&gt;줄긋기&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#단어-코드&quot;&gt;단어 코드&lt;/a&gt;&lt;/li&gt;
+&lt;h1 class=&quot;no_toc&quot; id=&quot;2주차-wil&quot;&gt;2주차 WIL&lt;/h1&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#react의-컴포넌트-모델&quot; id=&quot;markdown-toc-react의-컴포넌트-모델&quot;&gt;React의 컴포넌트 모델&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#함수형-컴포넌트&quot; id=&quot;markdown-toc-함수형-컴포넌트&quot;&gt;함수형 컴포넌트&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#컴포넌트-라이프-사이클&quot; id=&quot;markdown-toc-컴포넌트-라이프-사이클&quot;&gt;컴포넌트 라이프 사이클&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#state&quot; id=&quot;markdown-toc-state&quot;&gt;State&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#state란&quot; id=&quot;markdown-toc-state란&quot;&gt;State란&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#state-생성-및-초기화&quot; id=&quot;markdown-toc-state-생성-및-초기화&quot;&gt;State 생성 및 초기화&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#props&quot; id=&quot;markdown-toc-props&quot;&gt;Props&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#예시&quot; id=&quot;markdown-toc-예시&quot;&gt;예시&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#props-state-차이&quot; id=&quot;markdown-toc-props-state-차이&quot;&gt;props state 차이&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#re-rendering&quot; id=&quot;markdown-toc-re-rendering&quot;&gt;Re-rendering&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#re-rendering이란&quot; id=&quot;markdown-toc-re-rendering이란&quot;&gt;Re-rendering이란?&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#고오오오오급-패턴에-대해-알아보자&quot; id=&quot;markdown-toc-고오오오오급-패턴에-대해-알아보자&quot;&gt;고오오오오급 패턴에 대해 알아보자&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#hooks-usestate-useeffect-등&quot; id=&quot;markdown-toc-hooks-usestate-useeffect-등&quot;&gt;Hooks (useState, useEffect 등)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#custom-hooks&quot; id=&quot;markdown-toc-custom-hooks&quot;&gt;Custom Hooks&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#higher-order-components-hoc&quot; id=&quot;markdown-toc-higher-order-components-hoc&quot;&gt;Higher Order Components (HOC)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#render-props&quot; id=&quot;markdown-toc-render-props&quot;&gt;Render Props&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;내가 알고있는 State와 Props 및 re-render에대해 기술하려고한다.
+얇게 알고 있는만큼 정리하면 그 얇은 지식이라도 완전히 습득하길 기대하면서&lt;/p&gt;
+
+&lt;h2 id=&quot;react의-컴포넌트-모델&quot;&gt;React의 컴포넌트 모델&lt;/h2&gt;
+
+&lt;h3 id=&quot;함수형-컴포넌트&quot;&gt;함수형 컴포넌트&lt;/h3&gt;
+
+&lt;p&gt;함수형 컴포넌트는 react에서 주로 사용하는 컴포넌트 모델
+자바 스크립트 함수를 사용&lt;/p&gt;
+
+&lt;div class=&quot;language-tsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;함수Component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;propsType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;retrun&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&amp;lt;&amp;gt;&lt;/span&gt;나는야 함수고 옆에는 프롭&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&amp;gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이놈은 클래스&lt;/p&gt;
+
+&lt;div class=&quot;language-tsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;클래스Component&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PropsType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;안뇽, &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;컴포넌트-라이프-사이클&quot;&gt;컴포넌트 라이프 사이클&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;/frontend/React/lifecycle&quot; class=&quot;heading flip-title read-more&quot;&gt;React 의 생명주기&lt;/a&gt; 요기에서도 언급했던바&lt;/p&gt;
+
+&lt;p&gt;사진한장으로 대체
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/frontend/react/lifecycle2.png&quot; alt=&quot;라이프사이클&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;state&quot;&gt;State&lt;/h2&gt;
+
+&lt;h3 id=&quot;state란&quot;&gt;State란&lt;/h3&gt;
+
+&lt;p&gt;React의 State는 컴포넌트에서 관리하는 데이터를 의미&lt;/p&gt;
+
+&lt;h3 id=&quot;state-생성-및-초기화&quot;&gt;State 생성 및 초기화&lt;/h3&gt;
+
+&lt;p&gt;React 에서 함수형, 클래스형 각각 state를 생성과 초기화가 틀리다
+아래요약&lt;/p&gt;
+
+&lt;p&gt;클래스형&lt;/p&gt;
+
+&lt;div class=&quot;language-tsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;클래스Component&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;StateType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{})&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;쵠석&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;최은석&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;업데이트방법&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;h 1 ~, &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-tsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;함수형Component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;쵠석&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;setName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;최은석&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;Hello, &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;리액의 setState 비동기이기때문에 새배열 새로운 함수로받은값 등을 사용하는게 안전쓰&lt;/p&gt;
+
+&lt;p&gt;자세한내용은 &lt;a href=&quot;/frontend/React/state&quot; class=&quot;heading flip-title read-more&quot;&gt;useState&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;props&quot;&gt;Props&lt;/h2&gt;
+
+&lt;p&gt;React 컴포넌트는 prop을 입력받을수 있다.
+객체로 전달되고 함수 파라미터처럼 컴포넌트 함수에 전달된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;예시&quot;&gt;예시&lt;/h3&gt;
+
+&lt;p&gt;요로코롬 사용하면됨&lt;/p&gt;
+
+&lt;div class=&quot;language-tsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 함수형 컴포넌트&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;함수컴포&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PropsType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;떫, &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//쵠석&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 클래스 컴포넌트&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;클래스컴포&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PropsType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;떫, &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 사용 예시&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;함수컴포&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;쵠석&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&amp;gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;props-state-차이&quot;&gt;props state 차이&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Props와 state는 모두 순수 JavaScript 객체다&lt;/li&gt;
+  &lt;li&gt;둘 다 렌더링에 영향이 있다.&lt;/li&gt;
+  &lt;li&gt;props 부모컴포에서 자식컴포에서 주는값이고 읽기만 가능. 반대로 state는 컴포넌트 내부에서 생성,변경가능하다&lt;/li&gt;
+  &lt;li&gt;js안의 함수의 매개변수 , 선언된 변수 각각 props 와 state와 비슷하다.&lt;/li&gt;
+  &lt;li&gt;React의 state는 비동기적으로 업데이트된다. 이 업데이트가 발생하면 컴포넌트는 리렌더링된다. 그리고 props는 상위 컴포넌트가 변경하거나 자식 컴포넌트가 새로 렌더링될 때 변경된다.
+    &lt;ul&gt;
+      &lt;li&gt;컴포넌트가 시간이 지나면서 변경될 수 있는 데이터를 가지고 있다면 state를 사용하고&lt;/li&gt;
+      &lt;li&gt;부모로부터 주어진 데이터를 단순히 표시하는 경우에는 props를 사용한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;그리고 props는 &lt;strong&gt;얕은복사로만 자식컴포넌트로 전달된다&lt;/strong&gt;. (객체의 최상위 레벨만 복사)
+    &lt;ul&gt;
+      &lt;li&gt;만약 깊은복사로 수행되면 추가적인 성능비용을 발생시킬수도 있기때문&lt;/li&gt;
+      &lt;li&gt;따라서 자식컴포넌트로 전달된 예)props.item.name.firstName 이처럼 firstName의 값이 달라지면 원본도 완전히 바뀐다는 뜻이다. (원본객체도 바뀐다는뜻)
+그리고 위는 React Props 의 읽기전용이라는 원칙에 위배되므로 반드시 피하자&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;re-rendering&quot;&gt;Re-rendering&lt;/h2&gt;
+
+&lt;h3 id=&quot;re-rendering이란&quot;&gt;Re-rendering이란?&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;/frontend/React/goodreact&quot; class=&quot;heading flip-title read-more&quot;&gt;리액트 컴포넌트 최적화&lt;/a&gt; -&amp;gt; 보러가기&lt;/p&gt;
+
+&lt;p&gt;React의 컴포넌트에서 Re-rendering은 컴포넌트의 state나 props가 변경되었을 때 해당 컴포넌트가 다시 랜더되는과정이다.
+이때, React는 이전과 다음 상태를 비교하여 실제로 변경된 부분만 업데이트한다.&lt;/p&gt;
+
+&lt;p&gt;Re-rendering을 일으키는 요인&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;컴포넌트의 state가 변경되었을 때&lt;/li&gt;
+  &lt;li&gt;컴포넌트의 props가 변경되었을 때&lt;/li&gt;
+  &lt;li&gt;부모 컴포넌트가 re-render될 때&lt;/li&gt;
+  &lt;li&gt;Context 값이 변경되었을 때&lt;/li&gt;
+  &lt;li&gt;forceUpdate 함수가 호출되었을 때&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;고오오오오급-패턴에-대해-알아보자&quot;&gt;고오오오오급 패턴에 대해 알아보자&lt;/h2&gt;
+
+&lt;p&gt;자 React에서 자주 사용되는 state와 prop에 관한 고오오급 패턴에 대해서 알아보자&lt;/p&gt;
+
+&lt;h3 id=&quot;hooks-usestate-useeffect-등&quot;&gt;Hooks (useState, useEffect 등)&lt;/h3&gt;
+
+&lt;p&gt;흔히 알고있는 기능도 고오오급 패턴중 일부&lt;/p&gt;
+
+&lt;div class=&quot;language-tsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useEffect&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;`Count: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;You clicked &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; times&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;Click me&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;custom-hooks&quot;&gt;Custom Hooks&lt;/h3&gt;
+
+&lt;p&gt;개발자가 정의한 특별한 훅!&lt;/p&gt;
+
+&lt;p&gt;알다시피 React의 기본 훅들로 보통 구성되어있고
+재사용성이 용이하게 만들어지는게 보통이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-tsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useEffect&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useCounter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initialCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initialCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;`Count: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;increment&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;increment&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;increment&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useCounter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; 번&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;increment&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;업업업&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;higher-order-components-hoc&quot;&gt;Higher Order Components (HOC)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;컴포넌트를 가져와서 새 컴포넌트를 반환하는 함수.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;이 패턴을 사용하면 컴포넌트 로직을 재사용하고 공유할 수 있다.&lt;/li&gt;
+      &lt;li&gt;예시는 로그인 여부에 따라 다른 화면을 보여주는 경우&lt;/li&gt;
+      &lt;li&gt;HOC는 추가적인 렌더링을 도입하여 성능에 약간의 영향을 미칠 수 있다 하지만 감당가능한정도&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-tsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Redirect&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;react-router-dom&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;withAuth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;P&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;(Component: React.ComponentType&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;): React.FC&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; =&amp;gt;
+  (props: P) =&amp;gt; &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isLoggin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;checkIfUserIsLoggin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 로그인 확인 함수&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isLoggin&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&amp;gt;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 로그인이 되어있으면 원래 컴포넌트 반환&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Redirect&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/login&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 로그인이 되어있지 않으면 로그인 페이지로 리다이렉트&lt;/span&gt;
+  &lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;;
+
+// 사용 예
+const Dashboard = withAuth(DashboardPage);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;render-props&quot;&gt;Render Props&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Render Props는 함수형 자식 또는 자식을 함수로 사용하여 컴포넌트의 로직을 공유하는 React 패턴
+    &lt;ul&gt;
+      &lt;li&gt;예는 react router가 Route가 이러한 구조&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-tsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useEffect&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TimeProviderProps&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ReactNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TimeProvider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;TimeProviderProps&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;children&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;clearInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]);&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&amp;gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 사용 예&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;TimeProvider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;현재 시간: &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toLocaleTimeString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;TimeProvider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이상 이번주 WIL 정리할겸 TIL로 정리한것을 다시 생각해보면서 정리했다.&lt;/p&gt;</content><author><name>최은석</name><email>nonjk2@gmail.com</email></author><category term="frontend" /><category term="React" /><category term="WIL" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/frontend/react/WIL0702.png" /><media:content medium="image" url="http://localhost:4000/assets/img/frontend/react/WIL0702.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">마크다운 작성 feat.markdown 익스텐션</title><link href="http://localhost:4000/Study/ComputerScience/MarkdownAll" rel="alternate" type="text/html" title="마크다운 작성 feat.markdown 익스텐션" /><published>2023-06-30T00:00:00+09:00</published><updated>2023-06-30T00:00:00+09:00</updated><id>http://localhost:4000/Study/ComputerScience/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%20%EC%98%AC%EC%9D%B8%EC%9B%90%20%ED%99%95%EC%9E%A5</id><content type="html" xml:base="http://localhost:4000/Study/ComputerScience/MarkdownAll">&lt;!--more--&gt;
+&lt;h1 class=&quot;no_toc&quot; id=&quot;마크다운-all-in-one-markdown-preview-많이쓰는-단축키정리&quot;&gt;마크다운 all in one, markdown preview 많이쓰는 단축키정리&lt;/h1&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#목차table-of-contents-자동-생성&quot; id=&quot;markdown-toc-목차table-of-contents-자동-생성&quot;&gt;목차(Table of Contents) 자동 생성&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#목차-업데이트&quot; id=&quot;markdown-toc-목차-업데이트&quot;&gt;목차 업데이트&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#미리보기-토글&quot; id=&quot;markdown-toc-미리보기-토글&quot;&gt;미리보기 토글&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#미리보기를-측면에서-열기&quot; id=&quot;markdown-toc-미리보기를-측면에서-열기&quot;&gt;미리보기를 측면에서 열기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#볼드체bold-토글&quot; id=&quot;markdown-toc-볼드체bold-토글&quot;&gt;볼드체(Bold) 토글&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#이탤릭체italic-토글&quot; id=&quot;markdown-toc-이탤릭체italic-토글&quot;&gt;이탤릭체(Italic) 토글&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#코드블록code-block-토글&quot; id=&quot;markdown-toc-코드블록code-block-토글&quot;&gt;코드블록(Code Block) 토글&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#테이블table-생성-markdownpreview-확장&quot; id=&quot;markdown-toc-테이블table-생성-markdownpreview-확장&quot;&gt;테이블(Table) 생성 (MarkDownPreView 확장)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#링크link-삽입&quot; id=&quot;markdown-toc-링크link-삽입&quot;&gt;링크(Link) 삽입&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#이미지image-삽입&quot; id=&quot;markdown-toc-이미지image-삽입&quot;&gt;이미지(Image) 삽입&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#인용구blockquote&quot; id=&quot;markdown-toc-인용구blockquote&quot;&gt;인용구(Blockquote)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#줄긋기&quot; id=&quot;markdown-toc-줄긋기&quot;&gt;줄긋기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#단어-코드&quot; id=&quot;markdown-toc-단어-코드&quot;&gt;단어 코드&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;목차table-of-contents-자동-생성&quot;&gt;목차(Table of Contents) 자동 생성&lt;/h2&gt;
@@ -104,7 +401,7 @@
 
 &lt;h1 class=&quot;no_toc&quot; id=&quot;react---router---dom&quot;&gt;React - Router - Dom&lt;/h1&gt;
 
-&lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#single-page-application-spa&quot; id=&quot;markdown-toc-single-page-application-spa&quot;&gt;Single Page Application (SPA)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#react-router-dom-설치하기&quot; id=&quot;markdown-toc-react-router-dom-설치하기&quot;&gt;React Router Dom 설치하기&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#browserrouter&quot; id=&quot;markdown-toc-browserrouter&quot;&gt;BrowserRouter&lt;/a&gt;&lt;/li&gt;
@@ -269,7 +566,7 @@ yarn add react-router-dom
 
 &lt;h1 class=&quot;no_toc&quot; id=&quot;컴포넌트-최적화-1&quot;&gt;컴포넌트 최적화 (1)&lt;/h1&gt;
 
-&lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#컴포넌트-최적화의-중요성&quot; id=&quot;markdown-toc-컴포넌트-최적화의-중요성&quot;&gt;컴포넌트 최적화의 중요성&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#성능-개선의-장점&quot; id=&quot;markdown-toc-성능-개선의-장점&quot;&gt;성능 개선의 장점&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#컴포넌트-최적화-방법&quot; id=&quot;markdown-toc-컴포넌트-최적화-방법&quot;&gt;컴포넌트 최적화 방법&lt;/a&gt;    &lt;ul&gt;
@@ -604,7 +901,7 @@ React는 이 key를 보고 어떤 것을 업뎃을 해야하는지 본다. 꼭 �
 
 &lt;h1 class=&quot;no_toc&quot; id=&quot;리액트-기능구현-스터디-&quot;&gt;리액트 기능구현 스터디 &lt;pagenation&gt;&lt;/pagenation&gt;&lt;/h1&gt;
 
-&lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#페이지네이션&quot; id=&quot;markdown-toc-페이지네이션&quot;&gt;페이지네이션&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#힘들었던상황&quot; id=&quot;markdown-toc-힘들었던상황&quot;&gt;힘들었던상황&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#이미지-그나마-개선&quot; id=&quot;markdown-toc-이미지-그나마-개선&quot;&gt;이미지 그나마 개선&lt;/a&gt;&lt;/li&gt;
@@ -739,7 +1036,7 @@ db의 저장된 순서대로 1~50 51 ~100 이렇게 가져오는 방법이다
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm run dev&lt;/code&gt;를 통해 로컬에서 확인했을때 새로고침이 무난히 잘 실행 되었는데 여기서 문제가 하나 더 발생했다 vercel에 배포를 하였을때 새로고침을하면 &lt;strong&gt;404 not found&lt;/strong&gt;가 떳다.&lt;/p&gt;
 
-&lt;p&gt;무슨일인지 한참을 알아보다가 SPA에서는 모든 경로가 동일한 HTML 파일을 가리키지만 새로고침이나 직접 URL입력 등을 통해 서버에 요청이가면 해당 경로의 파일을 찾지 못한단다…&lt;/p&gt;
+&lt;p&gt;무슨일인지 한참을 알아보다가 SPA에서는 모든 경로가 동일한 HTML 파일을 가리키지만 새로고침이나 직접 URL입력 등을 통해 서버에 요청이가면 해당 경로의 파일을 찾지 못한단다,,,&lt;/p&gt;
 
 &lt;p&gt;이걸 해결하기위해선 서버 설정을 하나의 HTML파일을 바라보게하면 된단다.&lt;/p&gt;
 
@@ -795,7 +1092,7 @@ db의 저장된 순서대로 1~50 51 ~100 이렇게 가져오는 방법이다
 &lt;p&gt;배포중 - &lt;a href=&quot;https://react-study-nu.vercel.app&quot;&gt;페이지네이션&lt;/a&gt;&lt;/p&gt;</content><author><name>최은석</name><email>nonjk2@gmail.com</email></author><category term="frontend" /><category term="기능구현" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/frontend/react/pageNation.png" /><media:content medium="image" url="http://localhost:4000/assets/img/frontend/react/pageNation.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Redux Toolkit</title><link href="http://localhost:4000/frontend/React/reduxtoolkit" rel="alternate" type="text/html" title="Redux Toolkit" /><published>2023-06-26T00:00:00+09:00</published><updated>2023-06-26T00:00:00+09:00</updated><id>http://localhost:4000/frontend/React/ReduxToolkit</id><content type="html" xml:base="http://localhost:4000/frontend/React/reduxtoolkit">&lt;!--more--&gt;
 &lt;h1 class=&quot;no_toc&quot; id=&quot;state란&quot;&gt;State란&lt;/h1&gt;
 
-&lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#redux-toolkit&quot; id=&quot;markdown-toc-redux-toolkit&quot;&gt;Redux-toolkit&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#리덕스-데이터-흐름도&quot; id=&quot;markdown-toc-리덕스-데이터-흐름도&quot;&gt;리덕스 데이터 흐름도&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#리덕스는-단방향-데이터-흐름&quot; id=&quot;markdown-toc-리덕스는-단방향-데이터-흐름&quot;&gt;리덕스는 단방향 데이터 흐름&lt;/a&gt;&lt;/li&gt;
@@ -807,6 +1104,7 @@ db의 저장된 순서대로 1~50 51 ~100 이렇게 가져오는 방법이다
           &lt;li&gt;&lt;a href=&quot;#리덕스-기본-state&quot; id=&quot;markdown-toc-리덕스-기본-state&quot;&gt;리덕스 기본 State&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#리덕스-api-떵크&quot; id=&quot;markdown-toc-리덕스-api-떵크&quot;&gt;리덕스 API 떵크&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#정규화엔티티&quot; id=&quot;markdown-toc-정규화엔티티&quot;&gt;정규화엔티티&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#그외에&quot; id=&quot;markdown-toc-그외에&quot;&gt;그외에&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#요약-정리&quot; id=&quot;markdown-toc-요약-정리&quot;&gt;요약 정리&lt;/a&gt;&lt;/li&gt;
@@ -1006,6 +1304,20 @@ db의 저장된 순서대로 1~50 51 ~100 이렇게 가져오는 방법이다
 
 &lt;p&gt;다음은 그냥 To Do list redux 올려야겠다.&lt;/p&gt;
 
+&lt;h3 id=&quot;그외에&quot;&gt;그외에&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;redux-thunk&lt;/code&gt;
+함수 형태의 액션을 디스패치할 수 있게 해주는 미들웨어. 이 함수 내에서는 비동기 작업을 수행하고, 작업이 끝나면 새로운 액션을 디스패치할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;redux-saga&lt;/code&gt;
+ 제너레이터 함수를 이용하여 비동기 작업을 더 세밀하게 제어할 수 있게 해주는 미들웨어. 복잡한 비동기 작업 흐름을 관리하는데 유용하다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;redux-promise&lt;/code&gt;
+ Promise를 반환하는 액션을 디스패치할 수 있게 해주는 미들웨어. Promise가 resolve되면, 해당 결과를 payload로 가지는 새로운 액션을 디스패치한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;redux-persist&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Redux 스토어의 상태를 지속적으로 유지하기 위한 라이브러리. 웹 애플리케이션을 새로 고침하거나 재시작할 때, Redux 스토어의 상태가 초기화되는 것을 방지하기 위해 사용한다&lt;/p&gt;
 &lt;h2 id=&quot;요약-정리&quot;&gt;요약 정리&lt;/h2&gt;
 
 &lt;blockquote&gt;
@@ -1014,7 +1326,7 @@ db의 저장된 순서대로 1~50 51 ~100 이렇게 가져오는 방법이다
     &lt;li&gt;RTK에는 대부분의 Redux 코드를 단순화하는 API가 포함되있다.&lt;/li&gt;
     &lt;li&gt;RTK는 리덕스안에서 다른 유용한 패키지를 포함한다.&lt;/li&gt;
     &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sliceReducer&lt;/code&gt;를 자동으로 결합하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rootReducer&lt;/code&gt;를 생성한다.&lt;/li&gt;
-    &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Redux DevTools Extension&lt;/code&gt; 및 디버깅 미들웨어를 자동으로 설정합니다.&lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Redux DevTools Extension&lt;/code&gt; 및 디버깅 미들웨어를 자동으로 설정한다.&lt;/li&gt;
     &lt;li&gt;createSliceRedux 작업 및 reducer 작성이 단순화됨&lt;/li&gt;
     &lt;li&gt;slice/reducer 이름을 기반으로 action 생성자를 자동으로 생성한다.&lt;/li&gt;
     &lt;li&gt;createSlice.Reducer는 Immer를 사용하여 내부 상태를 “변경”할 수 있다 -&amp;gt; 내부 롸입뤄리.&lt;/li&gt;
@@ -1024,11 +1336,13 @@ db의 저장된 순서대로 1~50 51 ~100 이렇게 가져오는 방법이다
     &lt;li&gt;떵크 작업은 createSlice.extraReducers 에서 처리가능&lt;/li&gt;
     &lt;li&gt;그외 기능&lt;/li&gt;
   &lt;/ul&gt;
-&lt;/blockquote&gt;</content><author><name>최은석</name><email>nonjk2@gmail.com</email></author><category term="frontend" /><category term="React" /><category term="TIL" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/frontend/react/reduxtoolkit.png" /><media:content medium="image" url="http://localhost:4000/assets/img/frontend/react/reduxtoolkit.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">redux(2)</title><link href="http://localhost:4000/frontend/React/reduxtwo" rel="alternate" type="text/html" title="redux(2)" /><published>2023-06-26T00:00:00+09:00</published><updated>2023-06-26T00:00:00+09:00</updated><id>http://localhost:4000/frontend/React/ReduxLang</id><content type="html" xml:base="http://localhost:4000/frontend/React/reduxtwo">&lt;!--more--&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;다음은 redux-persist에대해 알아보자&lt;/p&gt;</content><author><name>최은석</name><email>nonjk2@gmail.com</email></author><category term="frontend" /><category term="React" /><category term="TIL" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/frontend/react/reduxtoolkit.png" /><media:content medium="image" url="http://localhost:4000/assets/img/frontend/react/reduxtoolkit.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">redux(2)</title><link href="http://localhost:4000/frontend/React/reduxtwo" rel="alternate" type="text/html" title="redux(2)" /><published>2023-06-26T00:00:00+09:00</published><updated>2023-06-26T00:00:00+09:00</updated><id>http://localhost:4000/frontend/React/ReduxLang</id><content type="html" xml:base="http://localhost:4000/frontend/React/reduxtwo">&lt;!--more--&gt;
 
 &lt;h1 class=&quot;no_toc&quot; id=&quot;redux-언어알아보자&quot;&gt;Redux 언어알아보자&lt;/h1&gt;
 
-&lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#state&quot; id=&quot;markdown-toc-state&quot;&gt;state&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#action&quot; id=&quot;markdown-toc-action&quot;&gt;action&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#reducer&quot; id=&quot;markdown-toc-reducer&quot;&gt;reducer&lt;/a&gt;&lt;/li&gt;
@@ -1120,7 +1434,7 @@ db의 저장된 순서대로 1~50 51 ~100 이렇게 가져오는 방법이다
 
 &lt;h1 class=&quot;no_toc&quot; id=&quot;redux&quot;&gt;Redux&lt;/h1&gt;
 
-&lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#리덕스-3가지-원칙&quot; id=&quot;markdown-toc-리덕스-3가지-원칙&quot;&gt;리덕스 3가지 원칙&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#첫째&quot; id=&quot;markdown-toc-첫째&quot;&gt;첫째&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#둘째&quot; id=&quot;markdown-toc-둘째&quot;&gt;둘째&lt;/a&gt;&lt;/li&gt;
@@ -1128,6 +1442,7 @@ db의 저장된 순서대로 1~50 51 ~100 이렇게 가져오는 방법이다
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#불변성&quot; id=&quot;markdown-toc-불변성&quot;&gt;불변성&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#직렬화&quot; id=&quot;markdown-toc-직렬화&quot;&gt;직렬화&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#정규화된-상태&quot; id=&quot;markdown-toc-정규화된-상태&quot;&gt;정규화된 상태&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#기본구조&quot; id=&quot;markdown-toc-기본구조&quot;&gt;기본구조&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#사용방법&quot; id=&quot;markdown-toc-사용방법&quot;&gt;사용방법&lt;/a&gt;&lt;/li&gt;
@@ -1217,6 +1532,29 @@ db의 저장된 순서대로 1~50 51 ~100 이렇게 가져오는 방법이다
 리덕스에는 불변성을 유지하기위해 Immutable라이브러리가 내장되있다곤 하는데&lt;/p&gt;
 
 &lt;p&gt;그래도 객체를 반환할때는 항상 새배열 새값을 만들어서 &lt;strong&gt;리턴&lt;/strong&gt;하자&lt;/p&gt;
+
+&lt;h2 id=&quot;직렬화&quot;&gt;직렬화&lt;/h2&gt;
+
+&lt;p&gt;아 그리고 리덕스의 state, action에는 직렬화할 수 없는 값들이 포함되지 않도록 추천한다 . 그 이유는 Redux DevTools와 같은 도구가 상태와 액션을 정확하게 기록하고 추적할 수 있게하기 위해서다.
+하지만 추천은 추천일뿐 엄격한 원칙은 아니지만 예외의 경우의 서만 허용하자&lt;/p&gt;
+
+&lt;p&gt;예를들면 음&lt;/p&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;  
+  &lt;span class=&quot;na&quot;&gt;sym&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Symbol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;sym&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;  
+  &lt;span class=&quot;na&quot;&gt;undef&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myJSON&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myJSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// {}&lt;/span&gt;
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;요런것들,,, 하지만 date나 undef 는 어쩔수 없이 넣어야하는 경우가있으니까 허용옵션이나 이런것을 알아보자&lt;/p&gt;
 
 &lt;h2 id=&quot;정규화된-상태&quot;&gt;정규화된 상태&lt;/h2&gt;
 
@@ -1526,7 +1864,7 @@ db의 저장된 순서대로 1~50 51 ~100 이렇게 가져오는 방법이다
 
 &lt;h1 class=&quot;no_toc&quot; id=&quot;2주차-wil&quot;&gt;2주차 WIL&lt;/h1&gt;
 
-&lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#react-가상돔virtual-dom&quot; id=&quot;markdown-toc-react-가상돔virtual-dom&quot;&gt;React 가상돔(Virtual DOM)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#state&quot; id=&quot;markdown-toc-state&quot;&gt;State&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#lifecycle&quot; id=&quot;markdown-toc-lifecycle&quot;&gt;Lifecycle&lt;/a&gt;&lt;/li&gt;
@@ -1620,226 +1958,12 @@ DOM은 변경사항을 반영하는 것은 연산 비용이 많이 들고 느리
 
 &lt;p&gt;아마 이번주는 의식의 흐름따라 props와 proptype , 그리고 redux , contextAPI 를 쓸수도 있겠다.&lt;/p&gt;
 
-&lt;p&gt;스터디 팀원들과 리액트 기능중 하나인 페이지네이션 기능구현을했는데 그것에 대해서도 작성해보자 한다. 주로 코드밖에 없을듯하지만…&lt;/p&gt;</content><author><name>최은석</name><email>nonjk2@gmail.com</email></author><category term="frontend" /><category term="React" /><category term="WIL" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/frontend/react/WIL0625.png" /><media:content medium="image" url="http://localhost:4000/assets/img/frontend/react/WIL0625.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">useState</title><link href="http://localhost:4000/frontend/React/state" rel="alternate" type="text/html" title="useState" /><published>2023-06-24T00:00:00+09:00</published><updated>2023-06-24T00:00:00+09:00</updated><id>http://localhost:4000/frontend/React/useState</id><content type="html" xml:base="http://localhost:4000/frontend/React/state">&lt;!--more--&gt;
-&lt;h1 class=&quot;no_toc&quot; id=&quot;state란&quot;&gt;State란&lt;/h1&gt;
-
-&lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#usestate&quot; id=&quot;markdown-toc-usestate&quot;&gt;useState&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#사용법&quot; id=&quot;markdown-toc-사용법&quot;&gt;사용법&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#setstate-작동-원리에대해-감을-잡아보자&quot; id=&quot;markdown-toc-setstate-작동-원리에대해-감을-잡아보자&quot;&gt;setState 작동 원리에대해 감을 잡아보자&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#setstate는-비동기함수-&quot; id=&quot;markdown-toc-setstate는-비동기함수-&quot;&gt;setState는 비동기함수 ?&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#usestate-독립성&quot; id=&quot;markdown-toc-usestate-독립성&quot;&gt;useState 독립성&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#정리-및-알아야하는내용&quot; id=&quot;markdown-toc-정리-및-알아야하는내용&quot;&gt;정리 및 알아야하는내용&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;react docs에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 를 컴포넌트 별 &lt;strong&gt;메모리&lt;/strong&gt;라고 부른다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 가 변경 되는 컴포넌트는 화면의 표시되는 내용이 바뀐다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;자세히 예를 들면 Caroucel 에서 다음버튼을 누르면 이미지가 바뀌어야 하고 , 장바구니 담기 버튼을 누르면 장바구니에 제품이 장바구니에 담겨야한다.&lt;/p&gt;
-
-&lt;p&gt;그리고 컴포넌트는 입력 값 , 이미지 , 장바구니 등을 기억해야한다.
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;React&lt;/code&gt; 에서 이러한 컴포넌트별 메모리를 State라고한다.
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;usestate&quot;&gt;useState&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useState&lt;/code&gt;를 기술 하기에 앞서 일반 변수로 위와같은것이 가능한지 알아보자.&lt;/p&gt;
-
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Gallery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;handleClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sculpture&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sculptureList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;handleClick&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;Next&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sculpture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        by &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sculpture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;artist&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        (&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; of &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sculptureList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;)
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sculpture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sculpture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sculpture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;출처 : &lt;a href=&quot;https://react.dev/learn/state-a-components-memory&quot;&gt;React Docs&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;handleClick&lt;/code&gt; 함수로 index를 바꿔 데이터를 핸들링 하고 있다. 하지만 React에서는 새 랜더링이 될때마다 지역변수를 기억하지않는다 즉 index의 값을 기억을 하지못하고 계속 0값으로 초기화 된다.&lt;/li&gt;
-  &lt;li&gt;그리고나서 React는 초기화된 값을 가지고 컴포넌트를 랜더링을 시킨다.&lt;/li&gt;
-  &lt;li&gt;따라서 일반 로컬 변수로는 React 에서 컴포넌트 랜더링을 핸들링 할수 없다.
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useState&lt;/code&gt; 는 데이터를 유지하기 위한 &lt;strong&gt;상태 변수&lt;/strong&gt; Hook 이라 볼수있다.
-또한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setState&lt;/code&gt; 를 통해 컴포넌트를 다시 렌더링하도록 트리거하는 상태 설정 함수라 볼수있다.
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;사용법&quot;&gt;사용법&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;상태&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;set상태&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;초기값&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//원하는 대로 이름을 지어도 된다. 하지만 규칙성을 지켜 네이밍을 하자 가독성,이해&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;handleClick&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;setIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;초기값&lt;/code&gt;은 처음으로 랜더를 위한 값&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;set상태&lt;/code&gt;는 상태를 업데이트하고 React가 현재 상태가 바뀌고 이것임을 알리는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;비동기 함수&lt;/code&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;setstate-작동-원리에대해-감을-잡아보자&quot;&gt;setState 작동 원리에대해 감을 잡아보자&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;아래 예제코드를 보고 약간 감을 잡아보자&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initialValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;currentIndex&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;initialValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;newState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//리랜더 컴포넌트&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-  &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 0&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;useState 호출 시 현재 인덱스를 기록하고, 상태가 없으면 초기값을 할당한다. 그리고 setState 함수를 사용하여 상태를 업데이트하고 index는 호출할 때마다 증가한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;React가 이러한 로직으로 돌아가는것이 아니지만 이러한 메커니즘으로 컴포넌트의 상태관리를 한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setState&lt;/code&gt;는 비동기함수이지만 동기적으로 작동되게 보인다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;setstate는-비동기함수-&quot;&gt;setState는 비동기함수 ?&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;handleIncrement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;handleCallback&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prevCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;prevCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prevCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;prevCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prevCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;prevCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prevCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;prevCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;handleIncrement&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;one&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;handleCallback&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;callback&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;Count: &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위의 예제를 실행해보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;handleIncrement&lt;/code&gt; 함수는 1씩 증가하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;handleCallback&lt;/code&gt; 함수는 4가 증가하는걸 볼수있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;React에서는 각각의 리랜더를 막기위해서 한 번의 업데이트로 여러 상태 변경을 처리한다. 이것을 배치(Batch)한다고 표현한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;handleCallback&lt;/code&gt; 은 setState에 콜백함수를 전달해 콜백함수내에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;State&lt;/code&gt;에 접근을 한다. 이 콜백함수는 이미 업데이트된 state를 가지고실행한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;즉 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setState&lt;/code&gt;는 요청을 해두고 render를 해야한다고 알리는 역할이다&lt;/li&gt;
-  &lt;li&gt;따라서 요청한 알림들을 모아두고 React는 한번에 처리를 하여 위 코드가 정상적으로 실행하는것을 이해할 수 있다.&lt;/li&gt;
-  &lt;li&gt;그리고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setState&lt;/code&gt;의 콜백함수는 업데이트 함수라 볼 수 있다.
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;usestate-독립성&quot;&gt;useState 독립성&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Counter&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;./Counter.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Page&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Counter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Counter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;위의 Counter 내에 state는 독립적으로 실행이 된다.&lt;/li&gt;
-  &lt;li&gt;Counter 내에 있는 변경된 State와 현재 State는 부모요소인 Page가 알수없다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;정리-및-알아야하는내용&quot;&gt;정리 및 알아야하는내용&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt;는 컴포넌트가 렌더링 사이에 일부 정보를 &lt;strong&gt;기억&lt;/strong&gt;해야 할 때 사용된다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt;는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useState Hook&lt;/code&gt;을 호출하여 선언된다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hook&lt;/code&gt;은 use로 시작하는 특별한 함수로, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;State&lt;/code&gt;와 같은 React의 다른 기능에 연계하여 사용할수 있다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hook&lt;/code&gt;은 import문과 유사한 역할을 할 수 있는데, 조건 없이 호출되어야 한다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useState를&lt;/code&gt; 포함한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hook&lt;/code&gt;의 호출은 컴포넌트나 다른 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hook&lt;/code&gt;의 최상위 수준에서만 유효하다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useState Hook&lt;/code&gt;은 현재 상태와 상태를 업데이트하는 함수의 쌍을 반환한다.&lt;/li&gt;
-  &lt;li&gt;여러 개의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt;를 가질 수 있다. 내부적으로 React는 순서에 따라 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt;를 매칭한다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt;는 컴포넌트에 대해 독립적이다. 같은 컴포넌트를 두 군데에서 렌더링한다면, 각각의 복사본은 고유한 상태를 가진다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;
-다음은 React의 Lifecycle 을 알아보아 useState가 Lifecycle에서 어떻게 사용되는지 정리해보려한다.&lt;/p&gt;</content><author><name>최은석</name><email>nonjk2@gmail.com</email></author><category term="frontend" /><category term="React" /><category term="TIL" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/frontend/react/usestate.png" /><media:content medium="image" url="http://localhost:4000/assets/img/frontend/react/usestate.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">React 의 생명주기</title><link href="http://localhost:4000/frontend/React/lifecycle" rel="alternate" type="text/html" title="React 의 생명주기" /><published>2023-06-24T00:00:00+09:00</published><updated>2023-06-24T00:00:00+09:00</updated><id>http://localhost:4000/frontend/React/ReactLifeCycle</id><content type="html" xml:base="http://localhost:4000/frontend/React/lifecycle">&lt;p&gt;리액트 16.4v 이후 버전 라이프사이클
+&lt;p&gt;스터디 팀원들과 리액트 기능중 하나인 페이지네이션 기능구현을했는데 그것에 대해서도 작성해보자 한다. 주로 코드밖에 없을듯하지만…&lt;/p&gt;</content><author><name>최은석</name><email>nonjk2@gmail.com</email></author><category term="frontend" /><category term="React" /><category term="WIL" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/frontend/react/WIL0625.png" /><media:content medium="image" url="http://localhost:4000/assets/img/frontend/react/WIL0625.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">React 의 생명주기</title><link href="http://localhost:4000/frontend/React/lifecycle" rel="alternate" type="text/html" title="React 의 생명주기" /><published>2023-06-24T00:00:00+09:00</published><updated>2023-06-24T00:00:00+09:00</updated><id>http://localhost:4000/frontend/React/ReactLifeCycle</id><content type="html" xml:base="http://localhost:4000/frontend/React/lifecycle">&lt;p&gt;리액트 16.4v 이후 버전 라이프사이클
 &lt;!--more--&gt;&lt;/p&gt;
 
 &lt;h1 class=&quot;no_toc&quot; id=&quot;react-lifecycle&quot;&gt;React LifeCycle&lt;/h1&gt;
 
-&lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#생성-단계mounting-phase&quot; id=&quot;markdown-toc-생성-단계mounting-phase&quot;&gt;생성 단계(Mounting Phase)&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#1-constructor&quot; id=&quot;markdown-toc-1-constructor&quot;&gt;1. constructor&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#2-getderivedstatefromprops&quot; id=&quot;markdown-toc-2-getderivedstatefromprops&quot;&gt;2. getDerivedStateFromProps&lt;/a&gt;&lt;/li&gt;

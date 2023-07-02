@@ -1,0 +1,236 @@
+---
+layout: post
+title: "검색창 with Study"
+category: frontend
+description: >
+  검색창을 구현하자
+image:
+  path: /assets/img/frontend/react/search.png
+tags: 기능구현
+permalink: frontend/react/search
+---
+
+<!--more-->
+
+
+
+# 리액트 스터디 검색창 구현
+{:.no_toc}
+
+
+* this list will be replaced by the toc
+{:toc}
+
+
+이번주에도 다같이 사람을 모아서 기능구현중하나인 검색창을 구현해 보았다.
+
+
+
+## 검색창
+
+검색창은 여러종류의 검색창이 있는데 대표적으로 많이 사용하는 통합검색은 백엔드서버와 프론트엔드의 협업을 통해
+효율적으로 이루어질수있다.
+
+우리는 프론트엔드로 이루어진 스터디로서 오픈API의 요청에 따른 데이터를 받고 구현할 수 있는 검색창을 구현하려하였다.
+
+기준이 6시간인탓에 5단계까지 생각을 해두었지만 **3단계를 최종**으로 선별하였다.
+
+### 각 단계
+
+- **1단계**
+
+  **일반 텍스트 입력 상자 구현**
+
+  검색창에서 값을 입력후 확인이나 엔터버튼을 누르면 리스트를 가져와서 UI 뿌려주기
+
+- **2단계**
+
+  **자동 완성 검색창 구현**
+
+  검색어를 입력하는 동안 자동으로 관련된 검색어나 검색어 예측을 보여주는 검색창만들기.
+
+- **3단계**
+
+  **카테고리별 필터 검색창**
+
+  검색어와 함께 해당 카테고리를 선택할 수 있는 검색창을 만들기.
+
+- **4단계**
+
+  **고급 검색 옵션 제공 검색창 (필터)**
+  검색어 이외에도 고급 검색 옵션을 제공하는 검색창. (필터링, 정렬, 날짜 범위, 가격 범위 등과 같은 추가적인 검색 조건!).
+
+- **5단계**
+
+  **실시간 검색 결과 표시 검색창**
+
+  검색어를 입력하는 동안 실시간으로 검색 결과를 표시하는 검색창만들기.
+
+## 시작
+
+일단 리액트를 생성하고 코딩을 하기 앞서서 어떻게 구조를잡고 어떻게 코드를 짤지부터 생각을 먼저하였다.
+
+3단계 최종을 기준으로 폴더 구조를 생각하였고 카테고리별 가져오는 응답데이터의 타입,인터페이스가 다르므로
+
+랜더페이지에서 스위치문으로 각각의 아이템컴포넌트로 뿌려줄 생각으로 구조를 잡았다.
+
+### 폴더 구조
+
+그래서 완성된 폴더구조는 다음과 같았다.
+
+- `src`
+  - `components`
+    - `searchlist`
+      - `blog.jsx`
+      - `book.jsx`
+      - `cafe.jsx`
+      - `image.jsx`
+      - `vclip.jsx`
+      - `web.jsx`
+    - `ListContainer.jsx`
+  - `hooks`
+    - `useInput.js`
+    - `useSearch.js`
+  - `pages `
+    - `search.jsx`
+  - `util`
+    - `globalStyle.js`
+  - `App.jsx`
+  - `main.jsx`
+
+### useSearch
+
+내 `useSearch`의 로직은 다음과같다 .
+.env에서 받아온 KEY와 URL을 통해 응답을 받고
+input에서 가져온 value와 카테고리가 update되도록하기위해 useEffect의 의존성 배열에 추가해준
+같단한 useHook을 작성하였다.
+
+```js
+import axios from "axios";
+import { useEffect, useState } from "react";
+const KaKaoconfig = {
+  kakaoURL: import.meta.env.VITE_KAKAO_URL,
+  kakaoKEY: import.meta.env.VITE_KAKAO_API_KEY,
+};
+const useSearch = (inputValue, category) => {
+  const [data, setData] = useState([]);
+  const [error, setError] = useState();
+
+  useEffect(() => {
+    const FetchSearch = async () => {
+      if (!inputValue || inputValue.trim() === "") {
+        setData([]);
+        return;
+      }
+      try {
+        const response = await axios.get(
+          `${KaKaoconfig.kakaoURL}/${category}`,
+          {
+            headers: {
+              Authorization: `KakaoAK ${KaKaoconfig.kakaoKEY}`,
+            },
+            params: { query: inputValue },
+          }
+        );
+        setData(response.data.documents);
+      } catch (error) {
+        setError(error);
+      }
+    };
+    FetchSearch();
+  }, [inputValue, category]);
+
+  return [data, error];
+};
+export default useSearch;
+```
+
+받아온 응답값을 보고 data와 error를 넘겨주었다.
+
+- 보통 나는 CRA를 통해 리액트를 생성하여 만들었고 dotenv라이브러리를 통해
+  process.env.REACT\_...환경변수를 가져왔었는데 vite로 생성한 리액트에서는 .env안 변수 앞글자에 VITE를 꼭붙이고 가져올때는 `import.meta.env.VITE_...`를 해줘야한단다.
+- api 함수를 따로 만들어줄 필요가 있어보인다 Custom Hook 의 장점중하나인 재사용성을 고려한 리펙트링.
+  매개변수로 환경변수와 함수를 추가해 사용하는것이 어떤가에대해 아직도 고민중이다.
+
+### dangerouslySetInnerHTML
+
+이번 검색창 기능구현을 하면서 처음안 React에서 사용하는 props중 하나다.
+
+- 이 기능은 HTML 문자열을 React 컴포넌트의 특정 요소에 직접 삽입할 수 있다.
+- 이 기능을 사용한 이유는 kakaoAPI 응답을 살펴보던중에 응답값안에 예를들어 title 안에 우리가 요청할때 보냈던 string의 값이 `<b>{요청값}</b>` 이렇게 오는걸 볼수 있었다. 처음에 정규화를 써서 지워내자 하다가 저렇게 보내는 이유를 살펴보던중 `dangerouslySetInnerHTML`라는 props를 알게되었다.
+- 아마 이렇게 보내는 이유는 요청보낸쿼리값을 하이라이팅하기 위해 이렇게 응답을 해주는것같았다.
+  그래서 나는 b태그의 스타일을 아주쉽게 스타일링할수 있었다.
+
+> **하지만 이 props는 위험이 따른다.**
+> XSS(Cross Site Scripting) 공격을 받을수 있다.
+> 이 공격은 value에 스크립트 삽입해 강제로 URL을 클릭하게 할수있어 사용자가 위험에 노출되게할수있다.
+> 그 이외에 쿠키 정보 및 세션 ID 탈취, 시스템 관리자 탈취, 거짓페이지 노출 ,악성코드 다운로드 등 매우 위험한 공격에 당할 수 있음
+> 따라서 경우에 맞게 조심하게 사용하자
+
+### hidden
+
+```jsx
+<ul
+    className="autoComplete"
+    hidden={!value.length}
+>
+```
+
+예전에 구현할때는 ref를 달아서 상태값이 변경되면 ref style을 찾아 display: none 을 해주었는데
+state나 prop으로 넘어온 동적인 값으로 true false를 통해 hidden 을 할 수 있었다.
+
+### Switch Render
+
+사실 검색창을 하면 이 switch랜더문을 꼭 써주고 싶었다.
+카테고리가 Vclip이나 image면 Container의 flexdirection을 row , column 핸들링 해주었다.
+
+```jsx
+const ListContainer = (props, category) => {
+  const { data } = props;
+  const flex = category === "image" || category === "vclip";
+  return (
+    <SearchResponseContainer flex={flex}>
+      {data &&
+        data.map((item) => {
+          switch (item.type) {
+            case "web":
+              return <WebItems key={item.title} item={item} />;
+            case "cafe":
+              return <CafeItems key={item.title} item={item} />;
+            case "book":
+              return <BookItems key={item.title} item={item} />;
+            case "image":
+              return <ImageItems key={item.image_url} item={item} />;
+            case "vclip":
+              return <VClipItems key={item.thumbnail} item={item} />;
+            case "blog":
+              return <BlogItems key={item.title} item={item} />;
+
+            default:
+              return null;
+          }
+        })}
+    </SearchResponseContainer>
+  );
+};
+export default ListContainer;
+```
+
+## 개선
+
+개선은 4단계를 추가해주면서 서버 부담을 줄일수 있는 디바운스를 적용해보려 한다.
+보통 프론트엔드 개발자가 검색창 하면 떠오르는 단어인 디바운스는 실제 중요하기도 하다
+
+api 호출을 엄청나게 줄일수있고 사람마다 로직을 쓰는 방법이 달라서 웬만해선
+스터디 단계중에 추가해보고 싶었지만 나중에 백엔드와 같이 스터디 기회가생기면 추가해보려한다.
+
+폴더 구조도 조금 손봐야할거같기도 하다.
+
+## 아쉬운점
+
+1. 이번 기능구현도 그렇고 저번 기능구현도 그렇고. 프론트엔드끼리 스터디할때는 **기능구현을할때엔 서버배제를 하고 UX나 디자인 측에서 코딩을 하는것이** 강하게 나타나는것같다. 백엔드에서 혹은 서버에서 오는 부담되는 고민들을 같이 고민하면서 로직을 한번 구성해보고싶다.
+   - 프론트엔드에선 **디바운스** 백엔드에선 **데이터캐싱, 프리패치** 등
+   - 혹은 서버가 있었다면 통합검색쪽으로 검색엔진 기능구현으로 바뀌지않았을까
+2. **타입스크립트**를 썼다면 더욱 시간단축을 할 수 있었겠다 싶었다. 간단한 기능구현이라 js로 시간을 단축하자 라는 생각을 가지고 뒤도 안볼아보고 js로시작을했는데 아무래도 각각의 요청마다 다른 응답을 받는 타입을 미리 정의했다면 타입가드에서 미리 알수 있어서 좀더 각각의 컴포넌트를 쉽게 코딩할수 있었을텐데
+
+3. 시간이 있었다면 생각한 기능들을 다 넣을 수 있었는데 그것또한 아쉬웠다.

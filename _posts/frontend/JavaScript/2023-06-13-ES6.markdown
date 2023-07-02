@@ -15,7 +15,7 @@ permalink: frontend/JavaScript/ES6
 {:.no_toc}
 
 * this list will be replaced by the toc
-{:toc .large-only}
+{:toc}
 
 <aside>
 💡 ECMAScript 6 (ES6)는 JavaScript의 버전 중 하나로, 2015년에 발표되었다. ES6는 이전 버전인 ES5에서 새로운 문법과 기능을 도입하여 JavaScript 개발자들이 보다 쉽고 효율적으로 코드를 작성할 수 있도록 개선!.

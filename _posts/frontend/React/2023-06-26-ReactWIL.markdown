@@ -15,7 +15,7 @@ permalink: WIL3
 {:.no_toc}
 
 * this list will be replaced by the toc
-{:toc .large-only}
+{:toc}
 
 이번주부터 react에대해 자세히 하나하나 차근차근 공부하기 시작했다.
 

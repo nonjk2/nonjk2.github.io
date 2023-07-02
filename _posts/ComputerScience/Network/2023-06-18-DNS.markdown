@@ -15,7 +15,7 @@ permalink: Study/ComputerScience/Dns
 {:.no_toc}
 
 * this list will be replaced by the toc
-{:toc .large-only}
+{:toc}
 ---
 
 - DNS란 Domain Name System의 약자로 인터넷 주소창에 Host Domain Name을 입력했을 때 해당 문자를 IP주소로 변환해주는 시스템

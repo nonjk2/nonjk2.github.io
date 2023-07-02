@@ -15,7 +15,7 @@ permalink: frontend/React/ReactrouterDom
 {:.no_toc}
 
 * this list will be replaced by the toc
-{:toc .large-only}
+{:toc}
 
 요즘 Next.js 를 기본으로 다들 써가지고 CRA를 쓰지 않는것 같지만 나같이 이제 리액트를 시작하는 사람에겐 혹은 CRA를 쓰는 사람들에겐 라우터, 라우팅은 필수다
 

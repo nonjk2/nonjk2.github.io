@@ -17,7 +17,7 @@ permalink: frontend/React/reduxtwo
 {:.no_toc}
 
 * this list will be replaced by the toc
-{:toc .large-only}
+{:toc}
 
 
 리덕스에는 주로 사용되는 용어들이있다 함수, state , 리듀서 등 그걸 한번알아보자

@@ -17,7 +17,7 @@ permalink: frontend/JavaScript/variable
 {:.no_toc}
 
 * this list will be replaced by the toc
-{:toc .large-only}
+{:toc}
 
 
 - **변수 선언** : 변수를 정의하는 것을 의미
