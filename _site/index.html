@@ -126,7 +126,7 @@
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2023-07-02T23:53:00+09:00',
+    INDEX_KEY: 'index--2023-07-04T01:38:16+09:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -222,6 +222,136 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
 
 
 
+<article id="post-frontend-React-UseEffect추가정리" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      <a href="/frontend/React/TIL0703" class="flip-title">
+        UseEffect hook
+      </a>
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2023-07-03T00:00:00+09:00">2023 Jul 03</time> in <a href="/frontend/" class="flip-title">frontend</a> on <a href="/tag-react/" class="flip-title">React</a>, <a href="/tag-til/" class="flip-title">TIL</a>
+      </span>
+      
+        
+      
+    </div>
+
+    
+    
+      <a href="/frontend/React/TIL0703" class="no-hover no-print-link flip-project" tabindex="-1">
+        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
+          
+
+
+<img
+  
+    src="/assets/img/TIL.png"
+    
+    
+  
+  alt="UseEffect hook"
+  
+  
+  width="864"
+  height="486"
+  loading="lazy"
+/>
+
+        </div>
+      </a>
+      
+    
+
+    
+
+
+
+  
+    <p class="note-sm" >
+      공부를 하다가 useEffect에 대해 알았던것을 기술해보자 또 오늘 알았던것을 기술
+
+    </p>
+  
+
+
+  </header>
+
+  
+    
+
+<p>useEffect는 <a href="/frontend/React/lifecycle" class="heading flip-title read-more">React 의 생명주기</a>를 기술할때에 조금 정리를 했지만
+오늘 같이 공부하는 스터디원과 공부를 같이하다가 알아낸게 있어 기록한다.</p>
+
+<p>useEffect의 의존성 배열이 한개이상일때에 인자값이 바뀌면</p>
+
+<p>useEffect내에서 두가지를 수행한다.</p>
+
+<p>첫째는 이전 useEffect의 return ()=&gt; {} 즉 <code class="language-plaintext highlighter-rouge">clean up 함수</code>를 실행한다.
+두번째로 의존성배열에 담겨있는 바뀐state로 인해 새로운 useEffect의 sideEffect를 수행한다.</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">countOne</span><span class="p">,</span> <span class="nx">setCountOne</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="o">&lt;</span><span class="kr">number</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">countTwo</span><span class="p">,</span> <span class="nx">setCountTwo</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="o">&lt;</span><span class="kr">number</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">들어옴 sideEffect </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">countOne</span><span class="p">);</span>
+  <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">들어옴 clean Up : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">countOne</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">},</span> <span class="p">[</span><span class="nx">countOne</span><span class="p">,</span> <span class="nx">countTwo</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<p><img src="../../../assets/img/frontend/TIL0703.png" alt="콘솔" /></p>
+
+<p>이렇게 들어온다</p>
+
+<p>그리고</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">countOne</span><span class="p">,</span> <span class="nx">setCountOne</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="o">&lt;</span><span class="kr">number</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">countTwo</span><span class="p">,</span> <span class="nx">setCountTwo</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="o">&lt;</span><span class="kr">number</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">ChangeValue</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setValue</span><span class="p">();</span>
+  <span class="p">};</span>
+  <span class="nx">ChangeValue</span><span class="p">();</span>
+<span class="p">},</span> <span class="p">[</span><span class="nx">countOne</span><span class="p">,</span> <span class="nx">countTwo</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<p>이렇게 작성된 useEffect 안에서 선언된 함수는 의존성배열 안에 있는 값이 변경될때마다
+<strong>값이 재참조되어</strong> 즉 함수가 새로 생성되어 메모리가 낭비될수도 있다,
+이때에는 useEffect내부말고 외부에서 함수를 한번만 선언하거나 <code class="language-plaintext highlighter-rouge">useMemo</code>나 <code class="language-plaintext highlighter-rouge">useCallback</code>을 이용해서
+재생성을 방지하자</p>
+
+<p>정리</p>
+
+<ol>
+  <li>의존성 배열안의 값이 한개 이상일때에 그 값들 혹은 그값이 달라질때에 이전의 <code class="language-plaintext highlighter-rouge">clean up</code>함수를 실행한다. 그후에 값이 달라진 값을 가지고 useEffect 콜백함수를 실행한다.</li>
+  <li>useEffect 의존성배열안에 값이 있을경우 내부에 함수를 선언된 함수는 값이 변경될때마다 재생성되어 메모리효울이 좋지않다. 외부에 선언하자.</li>
+</ol>
+
+
+    
+    
+    <footer>
+      <p class="read-more">
+        보러가기 <a class="heading flip-title" href="/frontend/React/TIL0703">UseEffect hook</a>
+
+      </p>
+    </footer>
+  
+</article>
+
+
+  
+
+
+
+
+
 <article id="post-ReactWIL2" class="page post mb6" role="article">
   <header>
     <h1 class="post-title flip-project-title">
@@ -289,6 +419,86 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
     <footer>
       <p class="read-more">
         보러가기 <a class="heading flip-title" href="/WIL4">WIL state , prop , rerender 정리정리</a>
+
+      </p>
+    </footer>
+  
+</article>
+
+
+  
+
+
+
+
+
+<article id="post-frontend-react-검색창" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      <a href="/frontend/react/search" class="flip-title">
+        검색창 with Study
+      </a>
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2023-07-01T00:00:00+09:00">2023 Jul 01</time> in <a href="/frontend/" class="flip-title">frontend</a> on <a href="/tag-%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84/" class="flip-title">기능구현</a>
+      </span>
+      
+        
+      
+    </div>
+
+    
+    
+      <a href="/frontend/react/search" class="no-hover no-print-link flip-project" tabindex="-1">
+        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
+          
+
+
+<img
+  
+    src="/assets/img/frontend/react/search.png"
+    
+    
+  
+  alt="검색창 with Study"
+  
+  
+  width="864"
+  height="486"
+  loading="lazy"
+/>
+
+        </div>
+      </a>
+      
+    
+
+    
+
+
+
+  
+    <p class="note-sm" >
+      검색창을 구현하자
+
+    </p>
+  
+
+
+  </header>
+
+  
+    
+
+
+    
+    
+    <footer>
+      <p class="read-more">
+        보러가기 <a class="heading flip-title" href="/frontend/react/search">검색창 with Study</a>
 
       </p>
     </footer>
@@ -826,166 +1036,6 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
     <footer>
       <p class="read-more">
         보러가기 <a class="heading flip-title" href="/frontend/React/redux">redux</a>
-
-      </p>
-    </footer>
-  
-</article>
-
-
-  
-
-
-
-
-
-<article id="post-ReactWIL" class="page post mb6" role="article">
-  <header>
-    <h1 class="post-title flip-project-title">
-      <a href="/WIL3" class="flip-title">
-        정리해보자...
-      </a>
-    </h1>
-
-    <div class="post-date">
-      
-      <span class="ellipsis mr1">
-        <time datetime="2023-06-26T00:00:00+09:00">2023 Jun 26</time> in <a href="/frontend/" class="flip-title">frontend</a> on <a href="/tag-react/" class="flip-title">React</a>, <a href="/tag-wil/" class="flip-title">WIL</a>
-      </span>
-      
-        
-      
-    </div>
-
-    
-    
-      <a href="/WIL3" class="no-hover no-print-link flip-project" tabindex="-1">
-        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
-          
-
-
-<img
-  
-    src="/assets/img/frontend/react/WIL0625.png"
-    
-    
-  
-  alt="정리해보자..."
-  
-  
-  width="864"
-  height="486"
-  loading="lazy"
-/>
-
-        </div>
-      </a>
-      
-    
-
-    
-
-
-
-  
-    <p class="note-sm" >
-      React의 virtualDOM , State  ,LifeCycle
-
-    </p>
-  
-
-
-  </header>
-
-  
-    
-
-
-    
-    
-    <footer>
-      <p class="read-more">
-        보러가기 <a class="heading flip-title" href="/WIL3">정리해보자...</a>
-
-      </p>
-    </footer>
-  
-</article>
-
-
-  
-
-
-
-
-
-<article id="post-frontend-React-useState" class="page post mb6" role="article">
-  <header>
-    <h1 class="post-title flip-project-title">
-      <a href="/frontend/React/state" class="flip-title">
-        useState
-      </a>
-    </h1>
-
-    <div class="post-date">
-      
-      <span class="ellipsis mr1">
-        <time datetime="2023-06-24T00:00:00+09:00">2023 Jun 24</time> in <a href="/frontend/" class="flip-title">frontend</a> on <a href="/tag-react/" class="flip-title">React</a>, <a href="/tag-til/" class="flip-title">TIL</a>
-      </span>
-      
-        
-      
-    </div>
-
-    
-    
-      <a href="/frontend/React/state" class="no-hover no-print-link flip-project" tabindex="-1">
-        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
-          
-
-
-<img
-  
-    src="/assets/img/frontend/react/usestate.png"
-    
-    
-  
-  alt="useState"
-  
-  
-  width="864"
-  height="486"
-  loading="lazy"
-/>
-
-        </div>
-      </a>
-      
-    
-
-    
-
-
-
-  
-    <p class="note-sm" >
-      useState 파헤지기
-
-    </p>
-  
-
-
-  </header>
-
-  
-    
-
-
-    
-    
-    <footer>
-      <p class="read-more">
-        보러가기 <a class="heading flip-title" href="/frontend/React/state">useState</a>
 
       </p>
     </footer>

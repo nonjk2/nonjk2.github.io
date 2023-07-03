@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+
+
+
+  
+    
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>검색창 with Study | Dev.최은석</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="검색창 with Study" />
+<meta name="author" content="최은석" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="description" content="검색창을 구현하자" />
+<meta property="og:description" content="검색창을 구현하자" />
+<link rel="canonical" href="http://localhost:4000/frontend/react/search" />
+<meta property="og:url" content="http://localhost:4000/frontend/react/search" />
+<meta property="og:site_name" content="Dev.최은석" />
+<meta property="og:image" content="http://localhost:4000/assets/img/frontend/react/search.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-07-01T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/img/frontend/react/search.png" />
+<meta property="twitter:title" content="검색창 with Study" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"최은석"},"dateModified":"2023-07-01T00:00:00+09:00","datePublished":"2023-07-01T00:00:00+09:00","description":"검색창을 구현하자","headline":"검색창 with Study","image":"http://localhost:4000/assets/img/frontend/react/search.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/frontend/react/search"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"최은석"},"url":"http://localhost:4000/frontend/react/search"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+    <meta name="keywords" content="dev,frontend,TIL">
+  
+
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Dev.최은석">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="application-name" content="Dev.최은석">
+
+<meta name="generator" content="Hydejack v9.1.6" />
+
+
+<link rel="alternate" href="http://localhost:4000/frontend/react/search" hreflang="ko-kr">
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Dev.최은석" />
+
+
+<link
+  rel="shortcut icon"
+  href="/assets/icons/favicon.ico"
+/>
+<link
+  rel="apple-touch-icon"
+  href="/assets/icons/icon-192x192.png"
+/>
+
+<link rel="manifest" href="/assets/site.webmanifest" />
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" /><link rel="dns-prefetch" href="https://fonts.gstatic.com" /> 
+<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+
+<link
+  rel="preload"
+  href="/assets/img/swipe.svg"
+  as="image"
+  id="_hrefSwipeSVG"
+/>
+
+<link
+  rel="dns-prefetch"
+  href="/assets/js/search-worker-9.1.6.js"
+  as="worker"
+  id="_hrefSearch"
+/>
+  
+<link
+  rel="dns-prefetch"
+  href="https://deveundol.disqus.com"
+  id="_hrefDisqus"
+/>
+
+<!-- ... -->
+
+<!-- For sidebar folder -->
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+<script src="/assets/js/sidebar-folder.js"></script>
+
+
+<script>!function(r,c){"use strict";function a(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=c.createElement("script"),e=(n.src=e,t&&a(n,"load",t,{once:!0}),c.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=c.createElement("script");function o(){r._loaded=!0,t&&a(n,"load",t,{once:!0});var e=c.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():a(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){a(c.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}}(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+!function(w) {
+  w._baseURL = '/';
+  w._publicPath = '/assets/js/';
+  w._noPushState = false;
+  w._noDrawer = false;
+  w._noNavbar = ture;
+  w._noToc = false;
+  w._noSearch = true;
+  w._advertise = false;
+  w._search = {
+    DATA_URL: '/assets/sitedata.json?no-cache',
+    STORAGE_KEY: 'mini-search/',
+    INDEX_KEY: 'index--2023-07-04T01:38:16+09:00',
+  };
+  w._clapButton = true;
+}(window);</script>
+
+
+<script async src="/assets/bower_components/MathJax/es5/tex-mml-chtml.js" id="_MathJax"></script>
+
+
+<!--[if gt IE 8]><!---->
+
+  
+
+
+
+
+<link rel="stylesheet" href="/assets/css/hydejack-9.1.6.css" id="_stylePreload">
+<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans:400,400i,700,700i&display=swap" id="_fontsPreload">
+
+
+
+  <style id="_pageStyle">
+
+html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);--accent-color-highlight: rgba(79,177,186,0.1);--accent-color-darkened: #409ba3;--theme-color: rgb(8,46,57);--dark-mode-body-bg: #282f31;--dark-mode-border-color: #343c3f}
+
+</style>
+
+
+<!--<![endif]-->
+
+
+
+
+
+</head>
+
+<body class="dark-mode no-break-layout">
+  
+<script>
+  window._sunrise = 6;
+  window._sunset =  18;
+  !function(e,s){var d="light-mode",o="dark-mode",a=(new Date).getHours();"matchMedia"in e&&e.matchMedia("(prefers-color-scheme)")||(e=(a=a<=e._sunrise||a>=e._sunset?o:d)==o?d:o,s.body.classList.add(a),s.body.classList.remove(e))}(window,document);
+
+</script>
+
+
+
+<hy-push-state
+  id="_pushState"
+  replace-selector="#_main"
+  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
+  script-selector="script"
+  duration="500"
+  hashchange
+>
+  
+  
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only"
+      >Jump to:</span
+    >
+    <div class="nav-btn-bar">
+      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
+        <span class="sr-only"
+          >Navigation</span
+        >
+        <span class="icon-menu"></span>
+      </a>
+      <div class="nav-span"></div>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+  <main
+  id="_main"
+  class="content layout-post"
+  role="main"
+>
+  <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+    <li><a href="/">home</a></li>
+    
+      <li>
+        
+          <span>/</span>
+          
+          
+          <a href="/frontend/">frontend</a>
+        
+      </li>
+    
+      <li>
+        
+          <span>/</span>
+          
+          
+          <a href="/frontend/react/">react</a>
+        
+      </li>
+    
+      <li>
+        
+          <span>/</span>
+          <span>search</span>
+        
+      </li>
+    
+  
+</ul></nav>
+  
+
+
+
+
+
+
+
+
+
+
+<article id="post-frontend-react-검색창" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        검색창 with Study
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2023-07-01T00:00:00+09:00">2023 Jul 01</time> in <a href="/frontend/" class="flip-title">frontend</a> on <a href="/tag-%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84/" class="flip-title">기능구현</a>
+      </span>
+      
+        
+      
+    </div>
+
+    
+    
+      
+        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
+          
+
+
+<img
+  
+    src="/assets/img/frontend/react/search.png"
+    
+    
+  
+  alt="검색창 with Study"
+  
+  
+  width="864"
+  height="486"
+  loading="lazy"
+/>
+
+        </div>
+      
+      
+    
+
+    
+
+
+
+  
+    <p class="note-sm" >
+      검색창을 구현하자
+
+    </p>
+  
+
+
+  </header>
+
+  
+    <!--more-->
+
+<h1 class="no_toc" id="리액트-스터디-검색창-구현">리액트 스터디 검색창 구현</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#검색창" id="markdown-toc-검색창">검색창</a>    <ul>
+      <li><a href="#각-단계" id="markdown-toc-각-단계">각 단계</a></li>
+    </ul>
+  </li>
+  <li><a href="#시작" id="markdown-toc-시작">시작</a>    <ul>
+      <li><a href="#폴더-구조" id="markdown-toc-폴더-구조">폴더 구조</a></li>
+      <li><a href="#usesearch" id="markdown-toc-usesearch">useSearch</a></li>
+      <li><a href="#dangerouslysetinnerhtml" id="markdown-toc-dangerouslysetinnerhtml">dangerouslySetInnerHTML</a></li>
+      <li><a href="#hidden" id="markdown-toc-hidden">hidden</a></li>
+      <li><a href="#switch-render" id="markdown-toc-switch-render">Switch Render</a></li>
+    </ul>
+  </li>
+  <li><a href="#개선" id="markdown-toc-개선">개선</a></li>
+  <li><a href="#아쉬운점" id="markdown-toc-아쉬운점">아쉬운점</a></li>
+</ul>
+
+<p>이번주에도 다같이 사람을 모아서 기능구현중하나인 검색창을 구현해 보았다.</p>
+
+<h2 id="검색창">검색창</h2>
+
+<p>검색창은 여러종류의 검색창이 있는데 대표적으로 많이 사용하는 통합검색은 백엔드서버와 프론트엔드의 협업을 통해
+효율적으로 이루어질수있다.</p>
+
+<p>우리는 프론트엔드로 이루어진 스터디로서 오픈API의 요청에 따른 데이터를 받고 구현할 수 있는 검색창을 구현하려하였다.</p>
+
+<p>기준이 6시간인탓에 5단계까지 생각을 해두었지만 <strong>3단계를 최종</strong>으로 선별하였다.</p>
+
+<h3 id="각-단계">각 단계</h3>
+
+<ul>
+  <li>
+    <p><strong>1단계</strong></p>
+
+    <p><strong>일반 텍스트 입력 상자 구현</strong></p>
+
+    <p>검색창에서 값을 입력후 확인이나 엔터버튼을 누르면 리스트를 가져와서 UI 뿌려주기</p>
+  </li>
+  <li>
+    <p><strong>2단계</strong></p>
+
+    <p><strong>자동 완성 검색창 구현</strong></p>
+
+    <p>검색어를 입력하는 동안 자동으로 관련된 검색어나 검색어 예측을 보여주는 검색창만들기.</p>
+  </li>
+  <li>
+    <p><strong>3단계</strong></p>
+
+    <p><strong>카테고리별 필터 검색창</strong></p>
+
+    <p>검색어와 함께 해당 카테고리를 선택할 수 있는 검색창을 만들기.</p>
+  </li>
+  <li>
+    <p><strong>4단계</strong></p>
+
+    <p><strong>고급 검색 옵션 제공 검색창 (필터)</strong>
+검색어 이외에도 고급 검색 옵션을 제공하는 검색창. (필터링, 정렬, 날짜 범위, 가격 범위 등과 같은 추가적인 검색 조건!).</p>
+  </li>
+  <li>
+    <p><strong>5단계</strong></p>
+
+    <p><strong>실시간 검색 결과 표시 검색창</strong></p>
+
+    <p>검색어를 입력하는 동안 실시간으로 검색 결과를 표시하는 검색창만들기.</p>
+  </li>
+</ul>
+
+<h2 id="시작">시작</h2>
+
+<p>일단 리액트를 생성하고 코딩을 하기 앞서서 어떻게 구조를잡고 어떻게 코드를 짤지부터 생각을 먼저하였다.</p>
+
+<p>3단계 최종을 기준으로 폴더 구조를 생각하였고 카테고리별 가져오는 응답데이터의 타입,인터페이스가 다르므로</p>
+
+<p>랜더페이지에서 스위치문으로 각각의 아이템컴포넌트로 뿌려줄 생각으로 구조를 잡았다.</p>
+
+<h3 id="폴더-구조">폴더 구조</h3>
+
+<p>그래서 완성된 폴더구조는 다음과 같았다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">src</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">components</code>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">searchlist</code>
+            <ul>
+              <li><code class="language-plaintext highlighter-rouge">blog.jsx</code></li>
+              <li><code class="language-plaintext highlighter-rouge">book.jsx</code></li>
+              <li><code class="language-plaintext highlighter-rouge">cafe.jsx</code></li>
+              <li><code class="language-plaintext highlighter-rouge">image.jsx</code></li>
+              <li><code class="language-plaintext highlighter-rouge">vclip.jsx</code></li>
+              <li><code class="language-plaintext highlighter-rouge">web.jsx</code></li>
+            </ul>
+          </li>
+          <li><code class="language-plaintext highlighter-rouge">ListContainer.jsx</code></li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">hooks</code>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">useInput.js</code></li>
+          <li><code class="language-plaintext highlighter-rouge">useSearch.js</code></li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">pages </code>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">search.jsx</code></li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">util</code>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">globalStyle.js</code></li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">App.jsx</code></li>
+      <li><code class="language-plaintext highlighter-rouge">main.jsx</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="usesearch">useSearch</h3>
+
+<p>내 <code class="language-plaintext highlighter-rouge">useSearch</code>의 로직은 다음과같다 .
+.env에서 받아온 KEY와 URL을 통해 응답을 받고
+input에서 가져온 value와 카테고리가 update되도록하기위해 useEffect의 의존성 배열에 추가해준
+같단한 useHook을 작성하였다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">KaKaoconfig</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">kakaoURL</span><span class="p">:</span> <span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VITE_KAKAO_URL</span><span class="p">,</span>
+  <span class="na">kakaoKEY</span><span class="p">:</span> <span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VITE_KAKAO_API_KEY</span><span class="p">,</span>
+<span class="p">};</span>
+<span class="kd">const</span> <span class="nx">useSearch</span> <span class="o">=</span> <span class="p">(</span><span class="nx">inputValue</span><span class="p">,</span> <span class="nx">category</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">data</span><span class="p">,</span> <span class="nx">setData</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([]);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">error</span><span class="p">,</span> <span class="nx">setError</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">();</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">FetchSearch</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">inputValue</span> <span class="o">||</span> <span class="nx">inputValue</span><span class="p">.</span><span class="nx">trim</span><span class="p">()</span> <span class="o">===</span> <span class="dl">""</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">setData</span><span class="p">([]);</span>
+        <span class="k">return</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span>
+          <span class="s2">`</span><span class="p">${</span><span class="nx">KaKaoconfig</span><span class="p">.</span><span class="nx">kakaoURL</span><span class="p">}</span><span class="s2">/</span><span class="p">${</span><span class="nx">category</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
+          <span class="p">{</span>
+            <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+              <span class="na">Authorization</span><span class="p">:</span> <span class="s2">`KakaoAK </span><span class="p">${</span><span class="nx">KaKaoconfig</span><span class="p">.</span><span class="nx">kakaoKEY</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="na">params</span><span class="p">:</span> <span class="p">{</span> <span class="na">query</span><span class="p">:</span> <span class="nx">inputValue</span> <span class="p">},</span>
+          <span class="p">}</span>
+        <span class="p">);</span>
+        <span class="nx">setData</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">documents</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">setError</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+    <span class="nx">FetchSearch</span><span class="p">();</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">inputValue</span><span class="p">,</span> <span class="nx">category</span><span class="p">]);</span>
+
+  <span class="k">return</span> <span class="p">[</span><span class="nx">data</span><span class="p">,</span> <span class="nx">error</span><span class="p">];</span>
+<span class="p">};</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">useSearch</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>받아온 응답값을 보고 data와 error를 넘겨주었다.</p>
+
+<ul>
+  <li>보통 나는 CRA를 통해 리액트를 생성하여 만들었고 dotenv라이브러리를 통해
+process.env.REACT_…환경변수를 가져왔었는데 vite로 생성한 리액트에서는 .env안 변수 앞글자에 VITE를 꼭붙이고 가져올때는 <code class="language-plaintext highlighter-rouge">import.meta.env.VITE_...</code>를 해줘야한단다.</li>
+  <li>api 함수를 따로 만들어줄 필요가 있어보인다 Custom Hook 의 장점중하나인 재사용성을 고려한 리펙트링.
+매개변수로 환경변수와 함수를 추가해 사용하는것이 어떤가에대해 아직도 고민중이다.</li>
+</ul>
+
+<h3 id="dangerouslysetinnerhtml">dangerouslySetInnerHTML</h3>
+
+<p>이번 검색창 기능구현을 하면서 처음안 React에서 사용하는 props중 하나다.</p>
+
+<ul>
+  <li>이 기능은 HTML 문자열을 React 컴포넌트의 특정 요소에 직접 삽입할 수 있다.</li>
+  <li>이 기능을 사용한 이유는 kakaoAPI 응답을 살펴보던중에 응답값안에 예를들어 title 안에 우리가 요청할때 보냈던 string의 값이 <code class="language-plaintext highlighter-rouge">&lt;b&gt;{요청값}&lt;/b&gt;</code> 이렇게 오는걸 볼수 있었다. 처음에 정규화를 써서 지워내자 하다가 저렇게 보내는 이유를 살펴보던중 <code class="language-plaintext highlighter-rouge">dangerouslySetInnerHTML</code>라는 props를 알게되었다.</li>
+  <li>아마 이렇게 보내는 이유는 요청보낸쿼리값을 하이라이팅하기 위해 이렇게 응답을 해주는것같았다.
+그래서 나는 b태그의 스타일을 아주쉽게 스타일링할수 있었다.</li>
+</ul>
+
+<blockquote>
+  <p><strong>하지만 이 props는 위험이 따른다.</strong>
+XSS(Cross Site Scripting) 공격을 받을수 있다.
+이 공격은 value에 스크립트 삽입해 강제로 URL을 클릭하게 할수있어 사용자가 위험에 노출되게할수있다.
+그 이외에 쿠키 정보 및 세션 ID 탈취, 시스템 관리자 탈취, 거짓페이지 노출 ,악성코드 다운로드 등 매우 위험한 공격에 당할 수 있음
+따라서 경우에 맞게 조심하게 사용하자</p>
+</blockquote>
+
+<h3 id="hidden">hidden</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">ul</span>
+    <span class="na">className</span><span class="p">=</span><span class="s">"autoComplete"</span>
+    <span class="na">hidden</span><span class="p">=</span><span class="si">{</span><span class="o">!</span><span class="nx">value</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span>
+<span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p>예전에 구현할때는 ref를 달아서 상태값이 변경되면 ref style을 찾아 display: none 을 해주었는데
+state나 prop으로 넘어온 동적인 값으로 true false를 통해 hidden 을 할 수 있었다.</p>
+
+<h3 id="switch-render">Switch Render</h3>
+
+<p>사실 검색창을 하면 이 switch랜더문을 꼭 써주고 싶었다.
+카테고리가 Vclip이나 image면 Container의 flexdirection을 row , column 핸들링 해주었다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">ListContainer</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">,</span> <span class="nx">category</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">flex</span> <span class="o">=</span> <span class="nx">category</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">image</span><span class="dl">"</span> <span class="o">||</span> <span class="nx">category</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">vclip</span><span class="dl">"</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">SearchResponseContainer</span> <span class="na">flex</span><span class="p">=</span><span class="si">{</span><span class="nx">flex</span><span class="si">}</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="nx">data</span> <span class="o">&amp;&amp;</span>
+        <span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">switch</span> <span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="dl">"</span><span class="s2">web</span><span class="dl">"</span><span class="p">:</span>
+              <span class="k">return</span> <span class="p">&lt;</span><span class="nc">WebItems</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span> <span class="na">item</span><span class="p">=</span><span class="si">{</span><span class="nx">item</span><span class="si">}</span> <span class="p">/&gt;;</span>
+            <span class="k">case</span> <span class="dl">"</span><span class="s2">cafe</span><span class="dl">"</span><span class="p">:</span>
+              <span class="k">return</span> <span class="p">&lt;</span><span class="nc">CafeItems</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span> <span class="na">item</span><span class="p">=</span><span class="si">{</span><span class="nx">item</span><span class="si">}</span> <span class="p">/&gt;;</span>
+            <span class="k">case</span> <span class="dl">"</span><span class="s2">book</span><span class="dl">"</span><span class="p">:</span>
+              <span class="k">return</span> <span class="p">&lt;</span><span class="nc">BookItems</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span> <span class="na">item</span><span class="p">=</span><span class="si">{</span><span class="nx">item</span><span class="si">}</span> <span class="p">/&gt;;</span>
+            <span class="k">case</span> <span class="dl">"</span><span class="s2">image</span><span class="dl">"</span><span class="p">:</span>
+              <span class="k">return</span> <span class="p">&lt;</span><span class="nc">ImageItems</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">image_url</span><span class="si">}</span> <span class="na">item</span><span class="p">=</span><span class="si">{</span><span class="nx">item</span><span class="si">}</span> <span class="p">/&gt;;</span>
+            <span class="k">case</span> <span class="dl">"</span><span class="s2">vclip</span><span class="dl">"</span><span class="p">:</span>
+              <span class="k">return</span> <span class="p">&lt;</span><span class="nc">VClipItems</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">thumbnail</span><span class="si">}</span> <span class="na">item</span><span class="p">=</span><span class="si">{</span><span class="nx">item</span><span class="si">}</span> <span class="p">/&gt;;</span>
+            <span class="k">case</span> <span class="dl">"</span><span class="s2">blog</span><span class="dl">"</span><span class="p">:</span>
+              <span class="k">return</span> <span class="p">&lt;</span><span class="nc">BlogItems</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span> <span class="na">item</span><span class="p">=</span><span class="si">{</span><span class="nx">item</span><span class="si">}</span> <span class="p">/&gt;;</span>
+
+            <span class="nl">default</span><span class="p">:</span>
+              <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+          <span class="p">}</span>
+        <span class="p">})</span><span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nc">SearchResponseContainer</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">ListContainer</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="개선">개선</h2>
+
+<p>개선은 4단계를 추가해주면서 서버 부담을 줄일수 있는 디바운스를 적용해보려 한다.
+보통 프론트엔드 개발자가 검색창 하면 떠오르는 단어인 디바운스는 실제 중요하기도 하다</p>
+
+<p>api 호출을 엄청나게 줄일수있고 사람마다 로직을 쓰는 방법이 달라서 웬만해선
+스터디 단계중에 추가해보고 싶었지만 나중에 백엔드와 같이 스터디 기회가생기면 추가해보려한다.</p>
+
+<p>폴더 구조도 조금 손봐야할거같기도 하다.</p>
+
+<h2 id="아쉬운점">아쉬운점</h2>
+
+<ol>
+  <li>이번 기능구현도 그렇고 저번 기능구현도 그렇고. 프론트엔드끼리 스터디할때는 <strong>기능구현을할때엔 서버배제를 하고 UX나 디자인 측에서 코딩을 하는것이</strong> 강하게 나타나는것같다. 백엔드에서 혹은 서버에서 오는 부담되는 고민들을 같이 고민하면서 로직을 한번 구성해보고싶다.
+    <ul>
+      <li>프론트엔드에선 <strong>디바운스</strong> 백엔드에선 <strong>데이터캐싱, 프리패치</strong> 등</li>
+      <li>혹은 서버가 있었다면 통합검색쪽으로 검색엔진 기능구현으로 바뀌지않았을까</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>타입스크립트</strong>를 썼다면 더욱 시간단축을 할 수 있었겠다 싶었다. 간단한 기능구현이라 js로 시간을 단축하자 라는 생각을 가지고 뒤도 안볼아보고 js로시작을했는데 아무래도 각각의 요청마다 다른 응답을 받는 타입을 미리 정의했다면 타입가드에서 미리 알수 있어서 좀더 각각의 컴포넌트를 쉽게 코딩할수 있었을텐데</p>
+  </li>
+  <li>시간이 있었다면 생각한 기능들을 다 넣을 수 있었는데 그것또한 아쉬웠다.</li>
+</ol>
+
+  
+</article>
+
+
+
+  <hr class="dingbat related mb6" />
+
+
+
+
+
+
+  
+     
+
+
+  <aside class="about related mt4 mb4" role="complementary">
+    
+    
+
+<div class="author mt4">
+  
+
+  
+    
+
+
+<img
+  
+    src="assets/icons/logo128.jpg"
+    srcset="assets/icons/logo128.jpg 1x"
+    
+  
+  alt="최은석"
+  class="avatar"
+  
+  width="120"
+  height="120"
+  loading="lazy"
+/>
+
+  
+
+  
+  
+  <h2  class="page-title hr-bottom">
+    About
+  </h2>
+
+  <p>어제보단 나아졌겠지 ?</p>
+
+
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/nonjk2" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:nonjk2@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+
+  </aside>
+
+
+  
+
+  
+    
+
+
+  
+
+  
+    
+
+
+  <aside class="other-projects related mb0" role="complementary">  <h2>Related Posts</h2>  <div class="columns">          <div class="column column-1-2">                  <article class="project-card">  <a href="/frontend/React/TIL0703" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine flip-project-img">              <img      src="/assets/img/TIL.png"        sizes="(min-width:86em)27.5rem,(min-width:54em)22.5rem,(min-width:42em)19.5rem,38rem"    alt="UseEffect hook"      width="864"  height="486"  loading="lazy"/>          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/frontend/React/TIL0703" class="flip-title">UseEffect hook</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      공부를 하다가 useEffect에 대해 알았던것을 기술해보자 또 오늘 알았던것을 기술    </p>      <a class="fill-card no-hover" href="/frontend/React/TIL0703" tabindex="-1"><span class="sr-only">보러가기 UseEffect hook</span></a></article>              </div>          <div class="column column-1-2">                  <article class="project-card">  <a href="/WIL4" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine flip-project-img">              <img      src="/assets/img/frontend/react/WIL0702.png"        sizes="(min-width:86em)27.5rem,(min-width:54em)22.5rem,(min-width:42em)19.5rem,38rem"    alt="WIL state , prop , rerender 정리정리"      width="864"  height="486"  loading="lazy"/>          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/WIL4" class="flip-title">WIL state , prop , rerender 정리정리</a>  </h3>      <p class="project-card-text fine" property="disambiguatingDescription">      React의 state와 prop rerender    </p>      <a class="fill-card no-hover" href="/WIL4" tabindex="-1"><span class="sr-only">보러가기 WIL state , prop , rerender 정리정리</span></a></article>              </div>      </div></aside>
+
+  
+
+  
+    
+
+
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Random Posts</h2>  <ul class="related-posts">          <li class="h4">  <a href="/Study/ComputerScience/MarkdownAll" class="flip-title"><span>마크다운 작성 feat.markdown 익스텐션</span></a>  <time class="faded fine" datetime="2023-06-30T00:00:00+09:00">2023 Jun 30</time></li>          <li class="h4">  <a href="/WIL3" class="flip-title"><span>정리해보자...</span></a>  <time class="faded fine" datetime="2023-06-26T00:00:00+09:00">2023 Jun 26</time></li>          <li class="h4">  <a href="/Study/ComputerScience/OSI7" class="flip-title"><span>OSI 7계층</span></a>  <time class="faded fine" datetime="2023-06-19T00:00:00+09:00">2023 Jun 19</time></li>      </ul></aside>
+
+  
+
+  
+    
+<aside class="comments related" role="complementary">
+  <h2 class="hr-bottom">Comments</h2>
+  
+
+<div id="disqus_thread"></div>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script>!function(w, d) {
+  if (d.getElementById("disqus_thread")) {
+    if (w.DISQUS) {
+      w.DISQUS.reset({
+        reload: true,
+        config() {
+          this.page.url = w.location.href;
+          this.page.title = d.title;
+        },
+      });
+    } else {
+      w.disqus_config = function disqusConfig() {
+        this.page.url = w.location.href;
+        this.page.title = d.title;
+      };
+      w.loadJSDeferred(d.getElementById("_hrefDisqus").href + '/embed.js');
+    }
+  }
+}(window, document);</script>
+
+
+</aside>
+
+
+  
+
+
+  
+<footer class="content" role="contentinfo">
+  <hr/>
+  
+    <p><small class="copyright">© 2021. All rights reserved.
+</small></p>
+  
+  
+    <nav class="legal"><small>
+    
+      
+      <a class="heading flip-title" href="/LICENSE/">LICENSE</a>
+      |
+    
+      
+      <a class="heading flip-title" href="/NOTICE/">NOTICE</a>
+      
+    
+    </small></nav>
+  
+  
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+  <hy-drawer
+  id="_drawer"
+  class=""
+  side="left"
+  threshold="10"
+  noscroll
+  
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+
+
+
+
+<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(79,177,186);background-image:url(/assets/img/sidebar-bg.jpeg)"></div>
+
+    <div class="sidebar-sticky">
+  <div class="sidebar-about">
+    
+      <a class="no-hover" href="/" tabindex="-1">
+        <img src="/assets/img/logo.png" class="avatar" alt="Dev.최은석" width="120" height="120" loading="lazy" />
+      </a>
+    
+    <a class="sidebar-title" href="/"><h2 class="h1">Dev.최은석</h2></a>
+    
+    
+      <p class="">
+        반갑습니다.
+
+      </p>
+    
+  </div>
+
+  <nav class="sidebar-nav heading" role="navigation">
+    <span class="sr-only"
+  >Navigation:</span
+>
+<ul>
+   
+                      
+  <li>
+    
+    <input type="checkbox" id="folder-checkbox-9" />
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/devlog/"
+        class="sidebar-nav-item"
+        
+        >devlog</a
+      >
+      
+      <button class="spread-btn" onclick="javascript:spread(9)">
+        <label id="spread-icon-9" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
+    </div>
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-wil/"
+          >WIL</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-til/"
+          >TIL</a
+        >
+      </li>
+      
+    </ul>
+     
+  </li>
+        
+  <li>
+    
+    <input type="checkbox" id="folder-checkbox-10" />
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/frontend/"
+        class="sidebar-nav-item"
+        
+        >frontend</a
+      >
+      
+      <button class="spread-btn" onclick="javascript:spread(10)">
+        <label id="spread-icon-10" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
+    </div>
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-react/"
+          >React</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-javascript/"
+          >JavaScript</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84/"
+          >기능구현</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-algorisme/"
+          >Algorism</a
+        >
+      </li>
+      
+    </ul>
+     
+  </li>
+                    
+  <li>
+    
+    <input type="checkbox" id="folder-checkbox-11" />
+    
+    <div class="list-wrapper">
+      <a
+        
+        href="/study/"
+        class="sidebar-nav-item"
+        
+        >Study</a
+      >
+      
+      <button class="spread-btn" onclick="javascript:spread(11)">
+        <label id="spread-icon-11" class="material-icons"
+          >arrow_right</label
+        >
+      </button>
+      
+    </div>
+     
+    <ul class="list-body">
+      
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-computerscience/"
+          >ComputerScience</a
+        >
+      </li>
+        
+      <li>
+        <a class="sidebar-nav-subitem" href="/tag-other/"
+          >other</a
+        >
+      </li>
+      
+    </ul>
+     
+  </li>
+        
+</ul>
+
+  </nav>
+
+  
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/nonjk2" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:nonjk2@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+</hy-push-state>
+
+
+  <!--[if gt IE 10]><!---->
+  <script nomodule>!function(){var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())}();
+</script>
+  <script src="/assets/js/hydejack-9.1.6.js" type="module"></script>
+  <script src="/assets/js/LEGACY-hydejack-9.1.6.js" nomodule defer></script>
+  
+
+  
+  <script>!function(w, d) {
+    w.ga=w.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+    /**/
+      ga('create', 'G-43895YHF45', 'auto');
+    /**/
+
+    var pushStateEl = d.getElementById('_pushState');
+    var timeoutId;
+    pushStateEl.addEventListener('hy-push-state-load', function() {
+      w.clearTimeout(timeoutId);
+      timeoutId = w.setTimeout(function() {
+        ga('set', 'page', w.location.pathname);
+        ga('send', 'pageview');
+      }, 500);
+    });
+
+    d.addEventListener('hy--cookies-ok', function () {
+      w.ga(function(tracker) {
+        w.ga("set", "anonymizeIp", undefined);
+        localStorage && localStorage.setItem("ga--client-id", tracker.get("clientId"));
+      });
+    });
+
+    w.loadJSDeferred('https://www.google-analytics.com/analytics.js');
+  }(window, document);</script>
+
+
+  <script type="module">
+    if ('serviceWorker' in navigator) {
+      /**/
+      navigator.serviceWorker.getRegistration()
+        .then(r => r.unregister())
+        .catch(() => {});
+      /**/
+    }
+  </script>
+<!--<![endif]-->
+  
+
+
+
+<div hidden>
+  
+  <h2 class="sr-only">Templates (for web app):</h2>
+
+  <template id="_animation-template">
+  <div class="animation-main fixed-top">
+    <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+</ul></nav>
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+  <template id="_loading-template">
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+  <template id="_error-template">
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
+
+    </p>
+  </div>
+</template>
+
+  <template id="_permalink-template">
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="content-hash"></span>
+  </a>
+</template>
+
+  
+  
+    <template id="_dark-mode-template">
+  <button id="_dark-mode" class="nav-btn no-hover" >
+    <span class="sr-only">Dark Mode</span>
+    <span class="icon-brightness-contrast"></span>
+  </button>
+</template>
+
+  
+  
+</div>
+
+</body>
+</html>
