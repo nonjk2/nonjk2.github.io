@@ -5,6 +5,8 @@ category: Study
 description: >
   내가 마크다운 작성하는법
 tags: other TIL
+image:
+  path: /assets/img/TIL.png
 permalink: Study/ComputerScience/MarkdownAll
 ---
 <!--more-->
