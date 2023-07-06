@@ -9,6 +9,9 @@ image:
   path: /assets/img/TIL.png
 permalink: Study/ComputerScience/MarkdownAll
 ---
+
+블로그 기술할때나 깃허브 TIL 작성할때 사용하는 마크다운 문법정리
+
 <!--more-->
 # 마크다운 all in one, markdown preview 많이쓰는 단축키정리
 {:.no_toc}

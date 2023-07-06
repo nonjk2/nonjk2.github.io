@@ -10,7 +10,7 @@ image:
 tags: React TIL
 permalink: frontend/React/virtualdom
 ---
-<!--more-->
+
 
 # React Virtual DOM
 {:.no_toc}
@@ -23,6 +23,8 @@ permalink: frontend/React/virtualdom
 브라우저에 페이지를 그려주는 속도가 엄청나게 빠르기 때문이다.
 
 가상돔에 대해 알아보고 이것의 장단점을 알아보자
+
+<!--more-->
 
 일단 **React Virtual DOM**에서 DOM을 알아보자
 

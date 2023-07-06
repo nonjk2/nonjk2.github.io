@@ -9,7 +9,7 @@ image:
 tags: React TIL
 permalink: frontend/React/redux
 ---
-<!--more-->
+
 
 
 # Redux
@@ -23,6 +23,8 @@ React에서 상태관리 라이브러리가 뭐가있을까요 라고 물으면 
 ~~요즘은 안쓴다던데 ?~~
 
 암튼 그 리덕스를 알아보려 한다. 일단 redux ,redux-toolkit 으로 나눠 기술하려한다. redux를 알면 redux-toolkit은 5분만 봐도 알수있다고 한다.
+
+<!--more-->
 
 - [redux용어](./2023-06-26-ReduxLang.markdown){:.heading.flip-title}{:.read-more}에 대해 대충 기억을 하면서 Todo List에 적용을 해보자
 

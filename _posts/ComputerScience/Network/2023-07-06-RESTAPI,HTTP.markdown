@@ -18,6 +18,9 @@ permalink: Study/ComputerScience/restapi
 * this list will be replaced by the toc
 {:toc}
 
+REST API를 알아보자
+
+<!--more-->
 ## HTTP 메서드
 
 - GET ,HEAD ,POST ,PUT, DELETE , CONNECT , OPTIONS , TRACE

@@ -10,7 +10,6 @@ tags: 기능구현
 permalink: frontend/react/search
 ---
 
-<!--more-->
 
 
 
@@ -23,6 +22,7 @@ permalink: frontend/react/search
 
 
 이번주에도 다같이 사람을 모아서 기능구현중하나인 검색창을 구현해 보았다.
+<!--more-->
 
 
 

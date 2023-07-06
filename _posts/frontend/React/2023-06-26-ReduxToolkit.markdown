@@ -9,7 +9,7 @@ image:
 tags: React TIL
 permalink: frontend/React/reduxtoolkit
 ---
-<!--more-->
+
 # State란
 {:.no_toc}
 
@@ -19,6 +19,9 @@ permalink: frontend/React/reduxtoolkit
 # Redux-toolkit
 
 [redux](./2023-06-26-Redux.markdown){:.heading.flip-title}{:.read-more}에서 뭔가 내용을 많이 빠뜨리고 적은거같아 다시 정리해보려한다.
+
+
+<!--more-->
 
 ## 리덕스 데이터 흐름도
 

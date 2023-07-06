@@ -9,7 +9,7 @@ image:
 tags: React TIL
 permalink: frontend/React/reduxtwo
 ---
-<!--more-->
+
 
 
 
@@ -22,6 +22,7 @@ permalink: frontend/React/reduxtwo
 
 리덕스에는 주로 사용되는 용어들이있다 함수, state , 리듀서 등 그걸 한번알아보자
 
+<!--more-->
 ## state
 
 state는 어떻게보면 넓은 의미의 단어다. useState에 의해 관리도 되고 또한 변수에 어떤값을 할당시켜서 어떤식으로든 보관시키면 그걸 state라 지칭해 보관할수 있다. redux에서 state는 보통 저장소에의해 관리되고 `getState()`에 의해 반환되는 하나의 상태값을 말한다.

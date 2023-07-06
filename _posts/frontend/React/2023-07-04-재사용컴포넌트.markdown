@@ -21,6 +21,7 @@ permalink: frontend/React/comporecycle
 
 재사용 컴포넌트는 개발을 함에 있어서 엄청난 이점을 가져다 준다.
 
+<!--more-->
 ## 재사용컴포넌트 장점
 
 장점 차례대로 보자

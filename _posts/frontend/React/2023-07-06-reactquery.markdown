@@ -20,6 +20,8 @@ permalink: frontend/React/reactquery
 
 > `React Query`는 JavaScript 라이브러리로, 주로 React에서 비동기 데이터를 가져오고 (fetch), 캐시하고 (cache), 동기화하고 (synchronize) 상태를 관리하는 (state management) 작업을 매우 쉽게 할수 있다.
 
+
+<!--more-->
 ## 왜 `React Query`를 사용해야 하는가?
 
 > `React Query`를 쓰면 여러 가지 힘들었던 상황을 한번에 해결 할수 있댜.

@@ -10,7 +10,6 @@ tags: 기능구현
 permalink: frontend/react/pageNation
 ---
 
-<!--more-->
 
 # 리액트 기능구현 스터디 <pagenation>
 {:.no_toc}
@@ -21,6 +20,7 @@ permalink: frontend/react/pageNation
 
 리액트의 폼을 끌어올리기위해 웹,앱을 제작할때 알면좋은 , 배우기 좋은 기능들을 연습해보자 생각하다가 페이지네이션을 공부하기로 맘먹었다.
 
+<!--more-->
 
 혼자 스터디를 하기 적적해서 스터디를 같이할 사람들을 끌어모았고 반응이 생각보다 좋았다.
 사람이 모인김에 혼자할때와는 다른 방식으로 할겸 같은 input 에 다른 output이 나오길 기대하며 여러가지 조건들을 추가했다.

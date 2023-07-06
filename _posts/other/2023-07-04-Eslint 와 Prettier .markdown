@@ -9,7 +9,6 @@ image:
   path: /assets/img/TIL.png
 permalink: Study/ComputerScience/eslintPrettier
 ---
-<!--more-->
 
 # Eslint 와 Prettier
 {:.no_toc}
@@ -17,6 +16,8 @@ permalink: Study/ComputerScience/eslintPrettier
 * this list will be replaced by the toc
 {:toc}
 
+eslint 의 사용법과 prettier 개념과 사용법을 알아보자
+<!--more-->
 
 ## Eslint
 

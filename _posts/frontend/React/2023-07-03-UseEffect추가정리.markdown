@@ -20,6 +20,7 @@ permalink: frontend/React/TIL0703
 useEffect는 [React 의 생명주기](./2023-06-24-ReactLifeCycle.markdown){:.heading.flip-title}{:.read-more}를 기술할때에 조금 정리를 했지만
 오늘 같이 공부하는 스터디원과 공부를 같이하다가 알아낸게 있어 기록한다.
 
+<!--more-->
 
 useEffect의 의존성 배열이 한개이상일때에 인자값이 바뀌면
 

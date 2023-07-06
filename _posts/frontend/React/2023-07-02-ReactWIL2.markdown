@@ -9,7 +9,7 @@ image:
 tags: React WIL
 permalink: WIL4
 ---
-<!--more-->
+
 
 # 2주차 WIL
 {:.no_toc}
@@ -20,7 +20,7 @@ permalink: WIL4
 
 내가 알고있는 State와 Props 및 re-render에대해 기술하려고한다.
 얇게 알고 있는만큼 정리하면 그 얇은 지식이라도 완전히 습득하길 기대하면서
-
+<!--more-->
 ## React의 컴포넌트 모델
 
 ### 함수형 컴포넌트
