@@ -110,7 +110,7 @@ Query를 사용하는 방법은 `useQuery` 훅을 사용하면 된다.
 import { useQuery } from "react-query";
 
 function App() {
-  const { isLoading, error, data } = useQuery("posts", fetchPosts);
+  const { isLoading, error, data } = useQuery("posts", fetchPosts , {옵션});
 
   if (isLoading) return "로딩중...";
   if (error) return "에러발생 " + error.message;
@@ -132,6 +132,28 @@ function App() {
 
 - useQuery를 통해 얻은 결과물은 객체다.
 - 안에 isLoding , errro ,data 그외 등등을 볼수있다.
+
+
+#### 아주 유용한 옵션!
+
+
+1. `staleTime`: 데이터의 "stale" 상태를 지정하는 시간이다. 예를들어 페이지가 업데이트되고 부터 시작, 페이지 재접속해서 다시 캐시를 하는 함수가있으면 다시 데이터 가져와서 캐시함
+
+2. `cacheTime`: 데이터를 캐시하는 시간과 동시에 데이터를 유지하는 시간을 지정하는옵션. `staleTime`보다 우선시되어 데이터를 삭제하지 않고 유지한다.
+
+3. `refetchInterval`: 일정한 간격으로 데이터를 자동으로 다시 가져오는 시간 간격을 설정하는 옵션. 밀리초 단위로 지정하거나, `{ enabled: false }`로 설정하여 자동으로 다시 요청하지 않도록 할 수 있다.
+
+4. `retry`: 요청이 실패할 경우 자동으로 재시도하는 옵션. 
+
+5. `onSuccess`, `onError`, `onSettled`: 각각 성공, 실패, 또는 완료 상태일 때 실행되는 콜백 함수를 설정할 수 있다. 
+
+6. `enabled`: 데이터 요청을 활성화 또는 비활성화하는 옵션이다. `enabled`를 `false`로 설정하면 해당 쿼리는 요청되지 않고, 이전에 캐시된 데이터만 사용한다.
+
+7. `initialData`: 쿼리의 초기 데이터를 설정한다. 초기 데이터를 제공하여 로딩 상태에서도 UI를 렌더링할 수 있다.
+
+8. `keepPreviousData`: 이전 데이터를 유지하고, 새로운 데이터를 가져올 때까지 UI에 이전 데이터를 표시하는 옵션이다. UX증가를 기대할수 있다.
+
+[리액트쿼리문서](https://react-query.tanstack.com/) 여러 디테일한 옵션들을 찾아서 서보자
 
 ### Mutation (Create , Update , Delete)
 
