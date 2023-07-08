@@ -50,7 +50,9 @@ permalink: frontend/React/reactquery
 ### 설치
 
 ```shell
-npm install react-query
+npm install react-query #3버전
+npm i @tanstack/react-query #4버전
+
 ```
 
 끝
@@ -83,7 +85,8 @@ export default App;
 > 개발모드에서만 로드되도록하는게 좋다
 
 ```shell
-npm install react-query/devtools
+npm install react-query/devtools #3
+npm i @tanstack/react-query-devtools #4
 ```
 
 설치하고
