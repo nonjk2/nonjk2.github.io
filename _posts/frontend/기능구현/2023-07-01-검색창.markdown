@@ -16,7 +16,6 @@ permalink: frontend/react/search
 # 리액트 스터디 검색창 구현
 {:.no_toc}
 
-
 * this list will be replaced by the toc
 {:toc}
 
