@@ -11,7 +11,7 @@ permalink: WIL3
 ---
 
 
-# 2주차 WIL
+# 1주차 WIL
 {:.no_toc}
 
 * this list will be replaced by the toc

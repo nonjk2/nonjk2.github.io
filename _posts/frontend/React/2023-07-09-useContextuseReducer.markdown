@@ -7,9 +7,9 @@ description: >
 image:
   path: /assets/img/frontend/react/WIL0709.png
 tags: React WIL
-permalink: WIL3
+permalink: WIL5
 ---
-# 2주차 WIL
+# 3주차 WIL
 {:.no_toc}
 
 * this list will be replaced by the toc
